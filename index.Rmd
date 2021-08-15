@@ -12,6 +12,6 @@ description: |
     Introduction to Quantitative, by DS Falconer.
 ---
 
-# Introduction
+# Introduction {.unnumbered}
 
 This book contains R-based solutions for the exercises in "Introduction to Quantitative", by DS Falconer. The goal here is to provide students with a more modern and real-life approach to quantitative genetics, without pens, paper and calculators.

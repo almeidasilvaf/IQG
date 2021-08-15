@@ -75,3 +75,11 @@ HardyWeinberg::HWChisq(observed, verbose=TRUE)
 ```
 
 The $\chi^2$ statistic is very close to 0, with *P* > 0.05. Then, we conclude that the observed and expected frequencies are not different.
+
+## Problem 2
+
+**About 30 per cent of people do not recognize the bitter taste of phenyl-thio-carbamate (PTC). Inability to taste it is due to a single autosomal recessive gene. What is the frequency of the non-tasting gene, assuming the population to be in Hardy-Weinberg equilibrium?**
+
+If the trait is caused by two recessive alleles (*aa*), then the frequency of *aa* will be equal to $q^2$. As $q^2 = 0.3$, $q = \sqrt{0.3} = 0.548$.
+
+
