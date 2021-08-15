@@ -1,1 +1,3 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
+# About
+
+Repository for a book with R-based solutions for the exercises in "Introduction to Quantitative Genetics", by DS Falconer.

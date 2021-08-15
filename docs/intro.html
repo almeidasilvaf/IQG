@@ -4,24 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Introduction | A Minimal Book Example</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <title>Chapter 2 Genetic constitution of a population | Solutions for Introduction to Quantitative Genetics</title>
+  <meta name="description" content="<p>This book contains R-based solutions for the exercises in
+Introduction to Quantitative, by DS Falconer.</p>" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Introduction | A Minimal Book Example" />
+  <meta property="og:title" content="Chapter 2 Genetic constitution of a population | Solutions for Introduction to Quantitative Genetics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="<p>This book contains R-based solutions for the exercises in
+Introduction to Quantitative, by DS Falconer.</p>" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Introduction | A Minimal Book Example" />
+  <meta name="twitter:title" content="Chapter 2 Genetic constitution of a population | Solutions for Introduction to Quantitative Genetics" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="<p>This book contains R-based solutions for the exercises in
+Introduction to Quantitative, by DS Falconer.</p>" />
   
 
-<meta name="author" content="Yihui Xie" />
+<meta name="author" content="Fabrício Almeida-Silva" />
 
 
 <meta name="date" content="2021-08-15" />
@@ -32,7 +35,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="literature.html"/>
+
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -120,28 +123,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -159,17 +140,11 @@ div.csl-indent {
 <li><a href="./">Exercise solutions for "Introduction to Quantitative Genetics"</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Genetic constitution of a population</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#problem-1"><i class="fa fa-check"></i><b>2.1</b> Problem 1</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -182,7 +157,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Solutions for Introduction to Quantitative Genetics</a>
           </h1>
         </div>
 
@@ -191,186 +166,82 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="intro" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
-<p>You can label chapter and section titles using <code>{#label}</code> after them, e.g., we can reference Chapter <a href="intro.html#intro">2</a>. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter <a href="methods.html#methods">4</a>.</p>
-<p>Figures and tables with captions will be placed in <code>figure</code> and <code>table</code> environments, respectively.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
-<span id="cb2-2"><a href="intro.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>, <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:nice-fig"></span>
-<img src="IQG_solutions_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
-<p class="caption">
-Figure 2.1: Here is a nice figure!
-</p>
-</div>
-<p>Reference a figure by its code chunk label with the <code>fig:</code> prefix, e.g., see Figure <a href="intro.html#fig:nice-fig">2.1</a>. Similarly, you can reference tables generated from <code>knitr::kable()</code>, e.g., see Table <a href="intro.html#tab:nice-tab">2.1</a>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="intro.html#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb3-2"><a href="intro.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(iris, <span class="dv">20</span>), <span class="at">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</span>
-<span id="cb3-3"><a href="intro.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">booktabs =</span> <span class="cn">TRUE</span></span>
-<span id="cb3-4"><a href="intro.html#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<h1><span class="header-section-number">Chapter 2</span> Genetic constitution of a population</h1>
+<div id="problem-1" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Problem 1</h2>
+<p>The following numbers of the human M-N blood groups were recorded in a sample of American Whites.</p>
 <table>
-<caption><span id="tab:nice-tab">Table 2.1: </span>Here is a nice table!</caption>
-<thead>
-<tr class="header">
-<th align="right">Sepal.Length</th>
-<th align="right">Sepal.Width</th>
-<th align="right">Petal.Length</th>
-<th align="right">Petal.Width</th>
-<th align="left">Species</th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td align="right">5.1</td>
-<td align="right">3.5</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
+<td>M</td>
+<td>MN</td>
+<td>N</td>
 </tr>
 <tr class="even">
-<td align="right">4.9</td>
-<td align="right">3.0</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.7</td>
-<td align="right">3.2</td>
-<td align="right">1.3</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.6</td>
-<td align="right">3.1</td>
-<td align="right">1.5</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.0</td>
-<td align="right">3.6</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.4</td>
-<td align="right">3.9</td>
-<td align="right">1.7</td>
-<td align="right">0.4</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.6</td>
-<td align="right">3.4</td>
-<td align="right">1.4</td>
-<td align="right">0.3</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.0</td>
-<td align="right">3.4</td>
-<td align="right">1.5</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.4</td>
-<td align="right">2.9</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.9</td>
-<td align="right">3.1</td>
-<td align="right">1.5</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.4</td>
-<td align="right">3.7</td>
-<td align="right">1.5</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.8</td>
-<td align="right">3.4</td>
-<td align="right">1.6</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.8</td>
-<td align="right">3.0</td>
-<td align="right">1.4</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.3</td>
-<td align="right">3.0</td>
-<td align="right">1.1</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.8</td>
-<td align="right">4.0</td>
-<td align="right">1.2</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.7</td>
-<td align="right">4.4</td>
-<td align="right">1.5</td>
-<td align="right">0.4</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.4</td>
-<td align="right">3.9</td>
-<td align="right">1.3</td>
-<td align="right">0.4</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.1</td>
-<td align="right">3.5</td>
-<td align="right">1.4</td>
-<td align="right">0.3</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.7</td>
-<td align="right">3.8</td>
-<td align="right">1.7</td>
-<td align="right">0.3</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.1</td>
-<td align="right">3.8</td>
-<td align="right">1.5</td>
-<td align="right">0.3</td>
-<td align="left">setosa</td>
+<td>1787</td>
+<td>3039</td>
+<td>1303</td>
 </tr>
 </tbody>
 </table>
-<p>You can write citations, too. For example, we are using the <strong>bookdown</strong> package <span class="citation">(<a href="#ref-R-bookdown" role="doc-biblioref">Xie 2021</a>)</span> in this sample book, which was built on top of R Markdown and <strong>knitr</strong> <span class="citation">(<a href="#ref-xie2015" role="doc-biblioref">Xie 2015</a>)</span>.</p>
+<p><strong>(1) What are the genotype frequencies observed in this sample?</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="intro.html#cb1-1" aria-hidden="true" tabindex="-1"></a>MM <span class="ot">&lt;-</span> <span class="dv">1787</span></span>
+<span id="cb1-2"><a href="intro.html#cb1-2" aria-hidden="true" tabindex="-1"></a>MN <span class="ot">&lt;-</span> <span class="dv">3039</span></span>
+<span id="cb1-3"><a href="intro.html#cb1-3" aria-hidden="true" tabindex="-1"></a>NN <span class="ot">&lt;-</span> <span class="dv">1303</span></span>
+<span id="cb1-4"><a href="intro.html#cb1-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> MM <span class="sc">+</span> MN <span class="sc">+</span> NN</span>
+<span id="cb1-5"><a href="intro.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="intro.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Genotype frequencies</span></span>
+<span id="cb1-7"><a href="intro.html#cb1-7" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> MM <span class="sc">/</span> n</span>
+<span id="cb1-8"><a href="intro.html#cb1-8" aria-hidden="true" tabindex="-1"></a>P</span></code></pre></div>
+<pre><code>## [1] 0.2915647</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="intro.html#cb3-1" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> MN <span class="sc">/</span> n</span>
+<span id="cb3-2"><a href="intro.html#cb3-2" aria-hidden="true" tabindex="-1"></a>H</span></code></pre></div>
+<pre><code>## [1] 0.4958395</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="intro.html#cb5-1" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> NN <span class="sc">/</span> n</span>
+<span id="cb5-2"><a href="intro.html#cb5-2" aria-hidden="true" tabindex="-1"></a>Q</span></code></pre></div>
+<pre><code>## [1] 0.2125959</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>What are the gene frequencies?</li>
+</ol>
+<p>Given that:</p>
+<p><span class="math display">\[p = P + \frac{1}{2}H\]</span> and <span class="math display">\[q = Q + \frac{1}{2}H\]</span></p>
+<p>We get to:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="intro.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gene frequencies</span></span>
+<span id="cb7-2"><a href="intro.html#cb7-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> P <span class="sc">+</span> H<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb7-3"><a href="intro.html#cb7-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<pre><code>## [1] 0.5394844</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="intro.html#cb9-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> Q <span class="sc">+</span> H<span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>With the gene frequencies observed, what are the genotype frequencies expected from the Hardy-Weinberg law?</li>
+</ol>
+<p>Expected frequencies in the equilibrium:</p>
+<p><span class="math display">\[p^2 + 2pq + q^2 = 1\]</span></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="intro.html#cb10-1" aria-hidden="true" tabindex="-1"></a>expected <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> p<span class="sc">^</span><span class="dv">2</span>, </span>
+<span id="cb10-2"><a href="intro.html#cb10-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">MN =</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q, </span>
+<span id="cb10-3"><a href="intro.html#cb10-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">NN =</span> q<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb10-4"><a href="intro.html#cb10-4" aria-hidden="true" tabindex="-1"></a>expected</span></code></pre></div>
+<pre><code>##        MM        MN        NN 
+## 0.2910434 0.4968820 0.2120746</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>How well do the observed frequencies agree with the expectation? Data from Wiener, A.S. (1943) quoted by Stem, C. (1973) Principles of Human Genetics. Freeman, San Francisco.</li>
+</ol>
+<p>We can measure how well the observed frequencies agree with the expected ones with a Chi-squared test:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="intro.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarizing what we have</span></span>
+<span id="cb12-2"><a href="intro.html#cb12-2" aria-hidden="true" tabindex="-1"></a>exp_obs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-3"><a href="intro.html#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Expected freq</span><span class="st">`</span> <span class="ot">=</span> expected,</span>
+<span id="cb12-4"><a href="intro.html#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Observed freq</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(P, H, Q))</span>
+<span id="cb12-5"><a href="intro.html#cb12-5" aria-hidden="true" tabindex="-1"></a>exp_obs</span></code></pre></div>
+<pre><code>##    Expected.freq Observed.freq
+## MM     0.2910434     0.2915647
+## MN     0.4968820     0.4958395
+## NN     0.2120746     0.2125959</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="intro.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying Chi-squared test</span></span>
+<span id="cb14-2"><a href="intro.html#cb14-2" aria-hidden="true" tabindex="-1"></a>observed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> <span class="dv">1787</span>, <span class="at">MN =</span> <span class="dv">3039</span>, <span class="at">NN =</span> <span class="dv">1303</span>)</span>
+<span id="cb14-3"><a href="intro.html#cb14-3" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(observed, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Chi-square test with continuity correction for Hardy-Weinberg equilibrium (autosomal)
+## Chi2 =  0.02104769 DF =  1 p-value =  0.8846491 D =  -3.194771 f =  0.002098103</code></pre>
+<p>The <span class="math inline">\(\chi^2\)</span> statistic is very close to 0, with <em>P</em> &gt; 0.05. Then, we conclude that the observed and expected frequencies are not different.</p>
 
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-xie2015" class="csl-entry">
-Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
-</div>
-<div id="ref-R-bookdown" class="csl-entry">
-———. 2021. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
 </div>
 </div>
             </section>
@@ -378,8 +249,8 @@ Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="literature.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

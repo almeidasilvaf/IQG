@@ -1,0 +1,77 @@
+# Genetic constitution of a population {#intro}
+
+## Problem 1
+
+The following numbers of the human M-N blood groups were recorded in a sample of American Whites.
+
+|      |      |      |
+|------|------|------|
+| M    | MN   | N    |
+| 1787 | 3039 | 1303 |
+
+
+**(1) What are the genotype frequencies observed in this sample?**
+
+```{r}
+MM <- 1787
+MN <- 3039
+NN <- 1303
+n <- MM + MN + NN
+
+# Genotype frequencies
+P <- MM / n
+P
+
+H <- MN / n
+H
+
+Q <- NN / n
+Q
+```
+
+(2) What are the gene frequencies?
+
+Given that:
+
+$$p = P + \frac{1}{2}H$$ and $$q = Q + \frac{1}{2}H$$
+
+We get to:
+
+```{r}
+# Gene frequencies
+p <- P + H/2
+p
+
+q <- Q + H/2
+```
+
+(3) With the gene frequencies observed, what are the genotype frequencies expected from the Hardy-Weinberg law?
+
+Expected frequencies in the equilibrium:
+
+$$p^2 + 2pq + q^2 = 1$$
+
+```{r}
+expected <- c(MM = p^2, 
+              MN = 2*p*q, 
+              NN = q^2)
+expected
+```
+
+(4) How well do the observed frequencies agree with the expectation? Data from Wiener, A.S. (1943) quoted by Stem, C. (1973) Principles of Human Genetics. Freeman, San Francisco.
+
+We can measure how well the observed frequencies agree with the expected ones with a Chi-squared test:
+
+```{r}
+# Summarizing what we have
+exp_obs <- data.frame(
+    `Expected freq` = expected,
+    `Observed freq` = c(P, H, Q))
+exp_obs
+
+# Applying Chi-squared test
+observed <- c(MM = 1787, MN = 3039, NN = 1303)
+HardyWeinberg::HWChisq(observed, verbose=TRUE)
+```
+
+The $\chi^2$ statistic is very close to 0, with *P* > 0.05. Then, we conclude that the observed and expected frequencies are not different.
