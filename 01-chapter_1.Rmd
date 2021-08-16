@@ -9,7 +9,6 @@ The following numbers of the human M-N blood groups were recorded in a sample of
 | M    | MN   | N    |
 | 1787 | 3039 | 1303 |
 
-
 **(1) What are the genotype frequencies observed in this sample?**
 
 ```{r}
@@ -74,7 +73,7 @@ observed <- c(MM = 1787, MN = 3039, NN = 1303)
 HardyWeinberg::HWChisq(observed, verbose=TRUE)
 ```
 
-The $\chi^2$ statistic is very close to 0, with *P* > 0.05. Then, we conclude that the observed and expected frequencies are not different.
+The $\chi^2$ statistic is very close to 0, with *P* \> 0.05. Then, we conclude that the observed and expected frequencies are not different.
 
 ## Problem 2
 
@@ -82,4 +81,45 @@ The $\chi^2$ statistic is very close to 0, with *P* > 0.05. Then, we conclude th
 
 If the trait is caused by two recessive alleles (*aa*), then the frequency of *aa* will be equal to $q^2$. As $q^2 = 0.3$, $q = \sqrt{0.3} = 0.548$.
 
+## Problem 3
 
+**Albinism occurs with a frequency of about 1 in 20,000 in European populations. Assuming it to be due to a single autosomal recessive gene, and assuming the population to be in Hardy-Weinberg equilibrium, what proportion of people are carriers? Only an approximate answer is needed.**
+
+Carriers are heterozigote individuals, i.e., *2pq*. From $q^2$, we can calculate p and, hence, *2pq* as follows:
+
+```{r}
+q2 <- 1/20000 
+q <- sqrt(q2)
+p <- 1 - q
+heterozygotes <- 2*p*q
+heterozygotes
+```
+
+## Problem 4
+
+**As an exercise in algebra, work out the gene frequency of a recessive mutant in a random-breeding population that would result in one-third of normal individuals being carriers.**
+
+1/3 of the normal individuals as carriers means:
+
+$$
+\frac{2pq}{1-q^2} = \frac{2q(1-q)}{1-q^2} = \frac{2q(1-q)}{(1+q)(1-q)} = \frac{2q}{1+q}
+$$
+
+## Problem 5
+
+**Three allelic variants, A, B, and C, of the red cell acid phosphatase enzyme were found in a sample of 178 English people. All genotypes were distinguishable by electrophoresis, and the frequencies in the sample were**
+
+| Genotype | AA  | AB   | BB   | AC  | BC  | CC  |
+|----------|-----|------|------|-----|-----|-----|
+| Freq (%) | 9.6 | 48.3 | 34.3 | 2.8 | 5.0 | 0.0 |
+
+**What are the gene frequencies in the sample? Why were no CC individuals found?**
+
+As the frequency of a gene is equal to the frequency of homozygotes + 1/2 the frequency of heterozygotes, we have:
+
+$$A = 0.096 + \frac{1}{2}(0.483 + 0.028) = 0.3515$$
+
+$$B = 0.343 + \frac{1}{2}(0.483 + 0.05) = 0.6095$$
+
+$$C = 0.0 + \frac{1}{2}(0.028 + 0.05) = 0.039$$
+The expected frequency of CC individuals is $C^2 = 0.039^2 = 0.0015$. As we have a sample size of 178 individuals, we would expect $178 * 0.0015 = 0.27$ CC individuals (less than 1). Thus, the observed frequency (zero) is expected. We would be able to observe CC individuals if the sample size was larger.
