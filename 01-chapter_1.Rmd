@@ -121,5 +121,19 @@ $$A = 0.096 + \frac{1}{2}(0.483 + 0.028) = 0.3515$$
 
 $$B = 0.343 + \frac{1}{2}(0.483 + 0.05) = 0.6095$$
 
-$$C = 0.0 + \frac{1}{2}(0.028 + 0.05) = 0.039$$
-The expected frequency of CC individuals is $C^2 = 0.039^2 = 0.0015$. As we have a sample size of 178 individuals, we would expect $178 * 0.0015 = 0.27$ CC individuals (less than 1). Thus, the observed frequency (zero) is expected. We would be able to observe CC individuals if the sample size was larger.
+$$C = 0.0 + \frac{1}{2}(0.028 + 0.05) = 0.039$$ The expected frequency of CC individuals is $C^2 = 0.039^2 = 0.0015$. As we have a sample size of 178 individuals, we would expect $178 * 0.0015 = 0.27$ CC individuals (less than 1). Thus, the observed frequency (zero) is expected. We would be able to observe CC individuals if the sample size was larger.
+
+## Problem 6
+
+**About 7 per cent of men are colour-blind in consequence of a sex-linked recessive gene. Assuming Hardy-Weinberg equilibrium, what proportion of women are expected to be (1) carriers, and (2) colour-blind? (3) In what proportion of marriages are both husband and wife expected to be colour-blind?**
+
+## Problem 7
+
+**Sine oculis (so) and cinnabar (cn) are two autosomal recessive genes in Drosophila melanogaster. They are very closely linked and can be treated as if they were alleles at one locus. The 'heterozygote', so/cn, is wild-type and is distinguishable from both homozygotes; (so/so has no eyes; cn/cn has white eyes if the stock is made homozygous for another eye- colour mutant, brown, hw). In a class experiment 4 males and 4 females of an so/so stock were put in a vial together with 16 males and 16 females from a cn/cn stock and allowed to mate. There were 20 such vials. The total count of progeny, classified by genotype, was as follows.**
+
+| so/so | so/cn | cn/cn |
+|-------|-------|-------|
+| 135   | 359   | 947   |
+
+
+**How do these numbers differ from the Hardy-Weinberg expectations? Suggest a reason for the discrepancy.**
