@@ -235,6 +235,44 @@ ggplot(hfreq, aes(y = Hfreq, x = Diff, group=1)) +
 
 **Suppose that a strain of genotype AA BB is mixed with another strain of genotype aa bb, with equal numbers of the two strains and equal numbers of males and females, which mate at random. Call this generation of parents generation 0. Subsequent generations also mate at random and there are no differences of fertility or viability among the genotypes. What will be the frequency of the genotype AA bb in the progeny of generation 2, i.e. after two generations of recombination, if the two loci are (1) unlinked, (2) linked with a recombination frequency of 20 per cent?**
 
+The genotype AAbb results from two recombinant gametes Ab (i.e., $p_Aq_B$). The equilibrium frequency of Ab gametes is represented as **s** (repulsion phase).
+
+As the population is in equilibrium, we know that:
+
+$$p = q = 0.5$$
+
+NOTE: Under Hardy-Weinberg equilibrium, **the frequency of gametes in coupling phase is equal to the frequency of gametes in repulsion phase**, or $2ru = 2st$.
+
+$$
+\hat{s} = 0.5 \times 0.5 = 0.25
+$$
+
+Disequilibrium in any generation calculated from the frequencies of Ab gametes:
+
+$$
+\begin{aligned}
+-D &= s - \hat{s} \\
+-D &= 0 - 0.25 \\
+D &= 0.25
+\end{aligned}
+$$
+
+Then, the coefficient of linkage disequilibrium in generation *t* can be calculated with:
+
+$$
+D_{t} = D_{0}(1-c)^t
+$$
+
+After 2 generations of recombination, with unlinked loci (c = 0.5), we have:
+
+$$
+\begin{aligned}
+D_2 &= 0.25(0.5)^2 \\
+&= 0.25 \times 0.25 \\
+&= 0.05
+\end{aligned}
+$$
+
 ## Problem 11
 
 **How will the solutions of Problem 1.10 be altered if the two strains are crossed by taking males of one strain and females of the other?**

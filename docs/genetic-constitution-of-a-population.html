@@ -27,7 +27,7 @@ Introduction to Quantitative, by DS Falconer.</p>" />
 <meta name="author" content="Fabrício Almeida-Silva" />
 
 
-<meta name="date" content="2021-08-16" />
+<meta name="date" content="2021-08-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -415,6 +415,33 @@ Obtaining genotype frequencies from the gene frequencies:</p>
 <div id="problem-10" class="section level2" number="1.10">
 <h2><span class="header-section-number">1.10</span> Problem 10</h2>
 <p><strong>Suppose that a strain of genotype AA BB is mixed with another strain of genotype aa bb, with equal numbers of the two strains and equal numbers of males and females, which mate at random. Call this generation of parents generation 0. Subsequent generations also mate at random and there are no differences of fertility or viability among the genotypes. What will be the frequency of the genotype AA bb in the progeny of generation 2, i.e. after two generations of recombination, if the two loci are (1) unlinked, (2) linked with a recombination frequency of 20 per cent?</strong></p>
+<p>The genotype AAbb results from two recombinant gametes Ab (i.e., <span class="math inline">\(p_Aq_B\)</span>). The equilibrium frequency of Ab gametes is represented as <strong>s</strong> (repulsion phase).</p>
+<p>As the population is in equilibrium, we know that:</p>
+<p><span class="math display">\[p = q = 0.5\]</span></p>
+<p>NOTE: Under Hardy-Weinberg equilibrium, <strong>the frequency of gametes in coupling phase is equal to the frequency of gametes in repulsion phase</strong>, or <span class="math inline">\(2ru = 2st\)</span>.</p>
+<p><span class="math display">\[
+\hat{s} = 0.5 \times 0.5 = 0.25
+\]</span></p>
+<p>Disequilibrium in any generation calculated from the frequencies of Ab gametes:</p>
+<p><span class="math display">\[
+\begin{aligned}
+-D &amp;= s - \hat{s} \\
+-D &amp;= 0 - 0.25 \\
+D &amp;= 0.25
+\end{aligned}
+\]</span></p>
+<p>Then, the coefficient of linkage disequilibrium in generation <em>t</em> can be calculated with:</p>
+<p><span class="math display">\[
+D_{t} = D_{0}(1-c)^t
+\]</span></p>
+<p>After 2 generations of recombination, with unlinked loci (c = 0.5), we have:</p>
+<p><span class="math display">\[
+\begin{aligned}
+D_2 &amp;= 0.25(0.5)^2 \\
+&amp;= 0.25 \times 0.25 \\
+&amp;= 0.05
+\end{aligned}
+\]</span></p>
 </div>
 <div id="problem-11" class="section level2" number="1.11">
 <h2><span class="header-section-number">1.11</span> Problem 11</h2>

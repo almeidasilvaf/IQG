@@ -4,3 +4,14 @@ Nessa página, encontram-se as soluções para as sabatinas de cada semana. Essa
 
 ## Semana 1 {.unnumbered}
 
+Probabilidade de ter 3 filhos, pelo menos 1 do sexo masculino.
+
+As opções são:
+
+1. MMM
+2. MMF
+3. MFF
+4. FFF
+
+Nesse caso, a ordem não importa. Logo, $P = \frac{3}{4}$.
+
