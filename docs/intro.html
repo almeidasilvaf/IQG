@@ -151,6 +151,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#problem-5"><i class="fa fa-check"></i><b>1.5</b> Problem 5</a></li>
 <li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#problem-6"><i class="fa fa-check"></i><b>1.6</b> Problem 6</a></li>
 <li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#problem-7"><i class="fa fa-check"></i><b>1.7</b> Problem 7</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#problem-8"><i class="fa fa-check"></i><b>1.8</b> Problem 8</a></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#problem-9"><i class="fa fa-check"></i><b>1.9</b> Problem 9</a></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#problem-10"><i class="fa fa-check"></i><b>1.10</b> Problem 10</a></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#problem-11"><i class="fa fa-check"></i><b>1.11</b> Problem 11</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -309,10 +313,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="problem-6" class="section level2" number="1.6">
 <h2><span class="header-section-number">1.6</span> Problem 6</h2>
 <p><strong>About 7 per cent of men are colour-blind in consequence of a sex-linked recessive gene. Assuming Hardy-Weinberg equilibrium, what proportion of women are expected to be (1) carriers, and (2) colour-blind? (3) In what proportion of marriages are both husband and wife expected to be colour-blind?</strong></p>
+<p>7% of men are color-blind, which means that <span class="math inline">\(q = 0.07\)</span>. Under Hardy-Weinberg equilibrium, the frequency in men is equal to the frequency in women. Then:</p>
+<p><span class="math display">\[Carriers = 2pq = 2q(1-q)\]</span></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="intro.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carriers</span></span>
+<span id="cb18-2"><a href="intro.html#cb18-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fl">0.07</span></span>
+<span id="cb18-3"><a href="intro.html#cb18-3" aria-hidden="true" tabindex="-1"></a>carriers <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>q<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>q)</span>
+<span id="cb18-4"><a href="intro.html#cb18-4" aria-hidden="true" tabindex="-1"></a>carriers</span></code></pre></div>
+<pre><code>## [1] 0.1302</code></pre>
+<p>Color-blind = <span class="math inline">\(q^2 = 0.0049\)</span>.</p>
+<p>To find the frequency of marriages with both men and women color-blind, we simply multiply the frequency of color-blind men <strong>and</strong> the frequency of color-blind women. That is:</p>
+<p><span class="math display">\[P(men) \times P(women) = 0.07 \times 0.0049 = 0.000343\]</span></p>
 </div>
 <div id="problem-7" class="section level2" number="1.7">
 <h2><span class="header-section-number">1.7</span> Problem 7</h2>
-<p><strong>Sine oculis (so) and cinnabar (cn) are two autosomal recessive genes in Drosophila melanogaster. They are very closely linked and can be treated as if they were alleles at one locus. The ‘heterozygote,’ so/cn, is wild-type and is distinguishable from both homozygotes; (so/so has no eyes; cn/cn has white eyes if the stock is made homozygous for another eye- colour mutant, brown, hw). In a class experiment 4 males and 4 females of an so/so stock were put in a vial together with 16 males and 16 females from a cn/cn stock and allowed to mate. There were 20 such vials. The total count of progeny, classified by genotype, was as follows.</strong></p>
+<p><strong>Sine oculis (so) and cinnabar (cn) are two autosomal recessive genes in Drosophila melanogaster. They are very closely linked and can be treated as if they were alleles at one locus. The ‘heterozygote,’ so/cn, is wild-type and is distinguishable from both homozygotes; (so/so has no eyes; cn/cn has white eyes if the stock is made homozygous for another eye-colour mutant, brown, hw). In a class experiment 4 males and 4 females of an so/so stock were put in a vial together with 16 males and 16 females from a cn/cn stock and allowed to mate. There were 20 such vials. The total count of progeny, classified by genotype, was as follows.</strong></p>
 <table>
 <thead>
 <tr class="header">
@@ -330,6 +344,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p><strong>How do these numbers differ from the Hardy-Weinberg expectations? Suggest a reason for the discrepancy.</strong></p>
+<p>To compare the observed frequencies to the expected under HW equilibrium, we can perform a <span class="math inline">\(\chi^2\)</span> test.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="intro.html#cb20-1" aria-hidden="true" tabindex="-1"></a>obs_freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">SS =</span> <span class="dv">135</span>, <span class="at">SC =</span> <span class="dv">359</span>, <span class="at">CC =</span> <span class="dv">947</span>)</span>
+<span id="cb20-2"><a href="intro.html#cb20-2" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(obs_freq, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Chi-square test with continuity correction for Hardy-Weinberg equilibrium (autosomal)
+## Chi2 =  103.671 DF =  1 p-value =  2.388595e-24 D =  -66.35999 f =  0.2699097</code></pre>
+<p>We can see, the <span class="math inline">\(\chi^2\)</span> statistic is very high, and so is the linkage disequilibrium coefficient (D = -66.35). A possible reason for this is assortative mating.</p>
+</div>
+<div id="problem-8" class="section level2" number="1.8">
+<h2><span class="header-section-number">1.8</span> Problem 8</h2>
+<p><strong>Suppose that Drosophila cultures are set up in vials as described in Problem 1.7, but this time with a gene frequency of 0.5. This is done by putting 10 males and 10 females of each stock in each vial. The supply of so/so females ran out and only 4 were left for the last vial. So, to preserve the intended gene frequency and numbers of parents, this vial was made up as follows: 16 males + 4 females of so/so with 4 males + 16 females of cn/cn. The student who got this vial was a bit surprised by what he found. What genotype frequencies would you expect in the progeny?</strong></p>
+<p>We would not expect HW equilibrium, as the gene frequencies are different between males and females.</p>
+<p><span class="math display">\[so_{males} = \frac{16}{20} = 0.8\]</span></p>
+<p><span class="math display">\[so_{females} = \frac{4}{20} = 0.2\]</span>
+Obtaining genotype frequencies from the gene frequencies:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="intro.html#cb22-1" aria-hidden="true" tabindex="-1"></a>soso <span class="ot">&lt;-</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fl">0.2</span></span>
+<span id="cb22-2"><a href="intro.html#cb22-2" aria-hidden="true" tabindex="-1"></a>soso</span></code></pre></div>
+<pre><code>## [1] 0.16</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="intro.html#cb24-1" aria-hidden="true" tabindex="-1"></a>cncn <span class="ot">&lt;-</span> <span class="fl">0.2</span> <span class="sc">*</span> <span class="fl">0.8</span></span>
+<span id="cb24-2"><a href="intro.html#cb24-2" aria-hidden="true" tabindex="-1"></a>cncn</span></code></pre></div>
+<pre><code>## [1] 0.16</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="intro.html#cb26-1" aria-hidden="true" tabindex="-1"></a>socn <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (soso <span class="sc">+</span> cncn)</span>
+<span id="cb26-2"><a href="intro.html#cb26-2" aria-hidden="true" tabindex="-1"></a>socn</span></code></pre></div>
+<pre><code>## [1] 0.68</code></pre>
+<p>Under Hardy-Weinberg equilibrium, we would expect genotype frequencies to be 0.25, 0.5, 0.25.</p>
+</div>
+<div id="problem-9" class="section level2" number="1.9">
+<h2><span class="header-section-number">1.9</span> Problem 9</h2>
+<p><strong>Prove that when there are any number of alleles at a locus the total frequency of heterozygotes is greatest when all alleles have the same frequency. What is then the total frequency of heterozygotes?</strong></p>
+<p>This can be demonstrated by simulating two alelles with increasingly similar frequencies and calculating the frequency of heterozygotes for each simulation step.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="intro.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define function to calculate heterozygote frequency</span></span>
+<span id="cb28-2"><a href="intro.html#cb28-2" aria-hidden="true" tabindex="-1"></a>heterozygote_freq <span class="ot">&lt;-</span> <span class="cf">function</span>(p, q) {</span>
+<span id="cb28-3"><a href="intro.html#cb28-3" aria-hidden="true" tabindex="-1"></a>    heterozygotes <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q</span>
+<span id="cb28-4"><a href="intro.html#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(heterozygotes)</span>
+<span id="cb28-5"><a href="intro.html#cb28-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-6"><a href="intro.html#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="intro.html#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create vectors of frequencies for p and q</span></span>
+<span id="cb28-8"><a href="intro.html#cb28-8" aria-hidden="true" tabindex="-1"></a>psim <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.01</span>, <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">50</span>)</span>
+<span id="cb28-9"><a href="intro.html#cb28-9" aria-hidden="true" tabindex="-1"></a>qsim <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.99</span>, <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">50</span>)</span>
+<span id="cb28-10"><a href="intro.html#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="intro.html#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate heterozygote frequency for simulated p and q freqs</span></span>
+<span id="cb28-12"><a href="intro.html#cb28-12" aria-hidden="true" tabindex="-1"></a>hfreq <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_along</span>(psim), <span class="cf">function</span>(x) {</span>
+<span id="cb28-13"><a href="intro.html#cb28-13" aria-hidden="true" tabindex="-1"></a>    freq <span class="ot">&lt;-</span> <span class="fu">heterozygote_freq</span>(<span class="at">p =</span> psim[x], <span class="at">q =</span> qsim[x])</span>
+<span id="cb28-14"><a href="intro.html#cb28-14" aria-hidden="true" tabindex="-1"></a>    distance <span class="ot">&lt;-</span> <span class="fu">abs</span>(psim[x] <span class="sc">-</span> qsim[x])</span>
+<span id="cb28-15"><a href="intro.html#cb28-15" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb28-16"><a href="intro.html#cb28-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">Hfreq</span><span class="st">`</span> <span class="ot">=</span> freq,</span>
+<span id="cb28-17"><a href="intro.html#cb28-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">Diff</span><span class="st">`</span> <span class="ot">=</span> distance</span>
+<span id="cb28-18"><a href="intro.html#cb28-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb28-19"><a href="intro.html#cb28-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df)</span>
+<span id="cb28-20"><a href="intro.html#cb28-20" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb28-21"><a href="intro.html#cb28-21" aria-hidden="true" tabindex="-1"></a>hfreq <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(rbind, hfreq)</span>
+<span id="cb28-22"><a href="intro.html#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-23"><a href="intro.html#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspecting visually</span></span>
+<span id="cb28-24"><a href="intro.html#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(ggplot2))</span>
+<span id="cb28-25"><a href="intro.html#cb28-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hfreq, <span class="fu">aes</span>(<span class="at">y =</span> Hfreq, <span class="at">x =</span> Diff, <span class="at">group=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb28-26"><a href="intro.html#cb28-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb28-27"><a href="intro.html#cb28-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb28-28"><a href="intro.html#cb28-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb28-29"><a href="intro.html#cb28-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>)) <span class="sc">+</span></span>
+<span id="cb28-30"><a href="intro.html#cb28-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Allele frequency difference&quot;</span>,</span>
+<span id="cb28-31"><a href="intro.html#cb28-31" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Relative frequency of heterozygotes&quot;</span>,</span>
+<span id="cb28-32"><a href="intro.html#cb28-32" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">&quot;Frequency of heterozygotes as a function of allele frequency differences&quot;</span>,</span>
+<span id="cb28-33"><a href="intro.html#cb28-33" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;The frequency of heterozygotes reaches its maximum when p and q have equal frequencies&quot;</span>)</span></code></pre></div>
+<p><img src="IQG_solutions_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="problem-10" class="section level2" number="1.10">
+<h2><span class="header-section-number">1.10</span> Problem 10</h2>
+</div>
+<div id="problem-11" class="section level2" number="1.11">
+<h2><span class="header-section-number">1.11</span> Problem 11</h2>
 
 </div>
 </div>

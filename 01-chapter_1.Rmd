@@ -127,9 +127,25 @@ $$C = 0.0 + \frac{1}{2}(0.028 + 0.05) = 0.039$$ The expected frequency of CC ind
 
 **About 7 per cent of men are colour-blind in consequence of a sex-linked recessive gene. Assuming Hardy-Weinberg equilibrium, what proportion of women are expected to be (1) carriers, and (2) colour-blind? (3) In what proportion of marriages are both husband and wife expected to be colour-blind?**
 
+7% of men are color-blind, which means that $q = 0.07$. Under Hardy-Weinberg equilibrium, the frequency in men is equal to the frequency in women. Then:
+
+$$Carriers = 2pq = 2q(1-q)$$
+```{r}
+# Carriers
+q <- 0.07
+carriers <- 2*q*(1-q)
+carriers
+```
+
+Color-blind = $q^2 = 0.0049$.
+
+To find the frequency of marriages with both men and women color-blind, we simply multiply the frequency of color-blind men **and** the frequency of color-blind women. That is:
+
+$$P(men) \times P(women) = 0.07 \times 0.0049 = 0.000343$$
+
 ## Problem 7
 
-**Sine oculis (so) and cinnabar (cn) are two autosomal recessive genes in Drosophila melanogaster. They are very closely linked and can be treated as if they were alleles at one locus. The 'heterozygote', so/cn, is wild-type and is distinguishable from both homozygotes; (so/so has no eyes; cn/cn has white eyes if the stock is made homozygous for another eye- colour mutant, brown, hw). In a class experiment 4 males and 4 females of an so/so stock were put in a vial together with 16 males and 16 females from a cn/cn stock and allowed to mate. There were 20 such vials. The total count of progeny, classified by genotype, was as follows.**
+**Sine oculis (so) and cinnabar (cn) are two autosomal recessive genes in Drosophila melanogaster. They are very closely linked and can be treated as if they were alleles at one locus. The 'heterozygote', so/cn, is wild-type and is distinguishable from both homozygotes; (so/so has no eyes; cn/cn has white eyes if the stock is made homozygous for another eye-colour mutant, brown, hw). In a class experiment 4 males and 4 females of an so/so stock were put in a vial together with 16 males and 16 females from a cn/cn stock and allowed to mate. There were 20 such vials. The total count of progeny, classified by genotype, was as follows.**
 
 | so/so | so/cn | cn/cn |
 |-------|-------|-------|
@@ -137,3 +153,85 @@ $$C = 0.0 + \frac{1}{2}(0.028 + 0.05) = 0.039$$ The expected frequency of CC ind
 
 
 **How do these numbers differ from the Hardy-Weinberg expectations? Suggest a reason for the discrepancy.**
+
+To compare the observed frequencies to the expected under HW equilibrium, we can perform a $\chi^2$ test.
+
+```{r}
+obs_freq <- c(SS = 135, SC = 359, CC = 947)
+HardyWeinberg::HWChisq(obs_freq, verbose=TRUE)
+```
+
+We can see, the $\chi^2$ statistic is very high, and so is the linkage disequilibrium coefficient (D = -66.35). A possible reason for this is assortative mating.
+
+## Problem 8
+
+**Suppose that Drosophila cultures are set up in vials as described in Problem 1.7, but this time with a gene frequency of 0.5. This is done by putting 10 males and 10 females of each stock in each vial. The supply of so/so females ran out and only 4 were left for the last vial. So, to preserve the intended gene frequency and numbers of parents, this vial was made up as follows: 16 males + 4 females of so/so with 4 males + 16 females of cn/cn. The student who got this vial was a bit surprised by what he found. What genotype frequencies would you expect in the progeny?**
+
+We would not expect HW equilibrium, as the gene frequencies are different between males and females. 
+
+$$so_{males} = \frac{16}{20} = 0.8$$
+
+$$so_{females} = \frac{4}{20} = 0.2$$
+Obtaining genotype frequencies from the gene frequencies:
+
+```{r}
+soso <- 0.8 * 0.2
+soso
+
+cncn <- 0.2 * 0.8
+cncn
+
+socn <- 1 - (soso + cncn)
+socn
+```
+
+Under Hardy-Weinberg equilibrium, we would expect genotype frequencies to be 0.25, 0.5, 0.25.
+
+## Problem 9
+
+**Prove that when there are any number of alleles at a locus the total frequency of heterozygotes is greatest when all alleles have the same frequency. What is then the total frequency of heterozygotes?**
+
+This can be demonstrated by simulating two alelles with increasingly similar frequencies and calculating the frequency of heterozygotes for each simulation step.
+
+```{r}
+# Define function to calculate heterozygote frequency
+heterozygote_freq <- function(p, q) {
+    heterozygotes <- 2*p*q
+    return(heterozygotes)
+}
+
+# Create vectors of frequencies for p and q
+psim <- seq(0.01, 0.5, length.out = 50)
+qsim <- seq(0.99, 0.5, length.out = 50)
+
+# Calculate heterozygote frequency for simulated p and q freqs
+hfreq <- lapply(seq_along(psim), function(x) {
+    freq <- heterozygote_freq(p = psim[x], q = qsim[x])
+    distance <- abs(psim[x] - qsim[x])
+    df <- data.frame(
+        `Hfreq` = freq,
+        `Diff` = distance
+    )
+    return(df)
+})
+hfreq <- Reduce(rbind, hfreq)
+
+# Inspecting visually
+suppressPackageStartupMessages(library(ggplot2))
+ggplot(hfreq, aes(y = Hfreq, x = Diff, group=1)) +
+    geom_point() +
+    geom_line() + 
+    theme_classic() +
+    scale_y_continuous(breaks = seq(0, 0.5, 0.1)) +
+    labs(x = "Allele frequency difference",
+         y = "Relative frequency of heterozygotes",
+         title = "Frequency of heterozygotes as a function of allele frequency differences",
+         subtitle = "The frequency of heterozygotes reaches its maximum when p and q have equal frequencies")
+
+```
+
+
+## Problem 10
+
+
+## Problem 11
