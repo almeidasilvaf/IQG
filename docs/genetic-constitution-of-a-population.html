@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Genetic constitution of a population | Solutions for Introduction to Quantitative Genetics</title>
+  <meta name="description" content="<p>This book contains R-based solutions for the exercises in
+Introduction to Quantitative, by DS Falconer.</p>" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Genetic constitution of a population | Solutions for Introduction to Quantitative Genetics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>This book contains R-based solutions for the exercises in
+Introduction to Quantitative, by DS Falconer.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Genetic constitution of a population | Solutions for Introduction to Quantitative Genetics" />
+  
+  <meta name="twitter:description" content="<p>This book contains R-based solutions for the exercises in
+Introduction to Quantitative, by DS Falconer.</p>" />
+  
+
+<meta name="author" content="Fabrício Almeida-Silva" />
+
+
+<meta name="date" content="2021-08-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="sabatinas.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Exercise solutions for "Introduction to Quantitative Genetics"</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="1" data-path="genetic-constitution-of-a-population.html"><a href="genetic-constitution-of-a-population.html"><i class="fa fa-check"></i><b>1</b> Genetic constitution of a population</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="genetic-constitution-of-a-population.html"><a href="genetic-constitution-of-a-population.html#problem-1"><i class="fa fa-check"></i><b>1.1</b> Problem 1</a></li>
+<li class="chapter" data-level="1.2" data-path="genetic-constitution-of-a-population.html"><a href="genetic-constitution-of-a-population.html#problem-2"><i class="fa fa-check"></i><b>1.2</b> Problem 2</a></li>
+<li class="chapter" data-level="1.3" data-path="genetic-constitution-of-a-population.html"><a href="genetic-constitution-of-a-population.html#problem-3"><i class="fa fa-check"></i><b>1.3</b> Problem 3</a></li>
+<li class="chapter" data-level="1.4" data-path="genetic-constitution-of-a-population.html"><a href="genetic-constitution-of-a-population.html#problem-4"><i class="fa fa-check"></i><b>1.4</b> Problem 4</a></li>
+<li class="chapter" data-level="1.5" data-path="genetic-constitution-of-a-population.html"><a href="genetic-constitution-of-a-population.html#problem-5"><i class="fa fa-check"></i><b>1.5</b> Problem 5</a></li>
+<li class="chapter" data-level="1.6" data-path="genetic-constitution-of-a-population.html"><a href="genetic-constitution-of-a-population.html#problem-6"><i class="fa fa-check"></i><b>1.6</b> Problem 6</a></li>
+<li class="chapter" data-level="1.7" data-path="genetic-constitution-of-a-population.html"><a href="genetic-constitution-of-a-population.html#problem-7"><i class="fa fa-check"></i><b>1.7</b> Problem 7</a></li>
+<li class="chapter" data-level="1.8" data-path="genetic-constitution-of-a-population.html"><a href="genetic-constitution-of-a-population.html#problem-8"><i class="fa fa-check"></i><b>1.8</b> Problem 8</a></li>
+<li class="chapter" data-level="1.9" data-path="genetic-constitution-of-a-population.html"><a href="genetic-constitution-of-a-population.html#problem-9"><i class="fa fa-check"></i><b>1.9</b> Problem 9</a></li>
+<li class="chapter" data-level="1.10" data-path="genetic-constitution-of-a-population.html"><a href="genetic-constitution-of-a-population.html#problem-10"><i class="fa fa-check"></i><b>1.10</b> Problem 10</a></li>
+<li class="chapter" data-level="1.11" data-path="genetic-constitution-of-a-population.html"><a href="genetic-constitution-of-a-population.html#problem-11"><i class="fa fa-check"></i><b>1.11</b> Problem 11</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html"><i class="fa fa-check"></i>Sabatinas</a>
+<ul>
+<li class="chapter" data-level="1.12" data-path="sabatinas.html"><a href="sabatinas.html#semana-1"><i class="fa fa-check"></i><b>1.12</b> Semana 1</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Solutions for Introduction to Quantitative Genetics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="genetic-constitution-of-a-population" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Genetic constitution of a population</h1>
+<div id="problem-1" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Problem 1</h2>
+<p>The following numbers of the human M-N blood groups were recorded in a sample of American Whites.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>M</td>
+<td>MN</td>
+<td>N</td>
+</tr>
+<tr class="even">
+<td>1787</td>
+<td>3039</td>
+<td>1303</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(1) What are the genotype frequencies observed in this sample?</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="genetic-constitution-of-a-population.html#cb1-1" aria-hidden="true" tabindex="-1"></a>MM <span class="ot">&lt;-</span> <span class="dv">1787</span></span>
+<span id="cb1-2"><a href="genetic-constitution-of-a-population.html#cb1-2" aria-hidden="true" tabindex="-1"></a>MN <span class="ot">&lt;-</span> <span class="dv">3039</span></span>
+<span id="cb1-3"><a href="genetic-constitution-of-a-population.html#cb1-3" aria-hidden="true" tabindex="-1"></a>NN <span class="ot">&lt;-</span> <span class="dv">1303</span></span>
+<span id="cb1-4"><a href="genetic-constitution-of-a-population.html#cb1-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> MM <span class="sc">+</span> MN <span class="sc">+</span> NN</span>
+<span id="cb1-5"><a href="genetic-constitution-of-a-population.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="genetic-constitution-of-a-population.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Genotype frequencies</span></span>
+<span id="cb1-7"><a href="genetic-constitution-of-a-population.html#cb1-7" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> MM <span class="sc">/</span> n</span>
+<span id="cb1-8"><a href="genetic-constitution-of-a-population.html#cb1-8" aria-hidden="true" tabindex="-1"></a>P</span></code></pre></div>
+<pre><code>## [1] 0.2915647</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="genetic-constitution-of-a-population.html#cb3-1" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> MN <span class="sc">/</span> n</span>
+<span id="cb3-2"><a href="genetic-constitution-of-a-population.html#cb3-2" aria-hidden="true" tabindex="-1"></a>H</span></code></pre></div>
+<pre><code>## [1] 0.4958395</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="genetic-constitution-of-a-population.html#cb5-1" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> NN <span class="sc">/</span> n</span>
+<span id="cb5-2"><a href="genetic-constitution-of-a-population.html#cb5-2" aria-hidden="true" tabindex="-1"></a>Q</span></code></pre></div>
+<pre><code>## [1] 0.2125959</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>What are the gene frequencies?</li>
+</ol>
+<p>Given that:</p>
+<p><span class="math display">\[p = P + \frac{1}{2}H\]</span> and <span class="math display">\[q = Q + \frac{1}{2}H\]</span></p>
+<p>We get to:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="genetic-constitution-of-a-population.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gene frequencies</span></span>
+<span id="cb7-2"><a href="genetic-constitution-of-a-population.html#cb7-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> P <span class="sc">+</span> H<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb7-3"><a href="genetic-constitution-of-a-population.html#cb7-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<pre><code>## [1] 0.5394844</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="genetic-constitution-of-a-population.html#cb9-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> Q <span class="sc">+</span> H<span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>With the gene frequencies observed, what are the genotype frequencies expected from the Hardy-Weinberg law?</li>
+</ol>
+<p>Expected frequencies in the equilibrium:</p>
+<p><span class="math display">\[p^2 + 2pq + q^2 = 1\]</span></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="genetic-constitution-of-a-population.html#cb10-1" aria-hidden="true" tabindex="-1"></a>expected <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> p<span class="sc">^</span><span class="dv">2</span>, </span>
+<span id="cb10-2"><a href="genetic-constitution-of-a-population.html#cb10-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">MN =</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q, </span>
+<span id="cb10-3"><a href="genetic-constitution-of-a-population.html#cb10-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">NN =</span> q<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb10-4"><a href="genetic-constitution-of-a-population.html#cb10-4" aria-hidden="true" tabindex="-1"></a>expected</span></code></pre></div>
+<pre><code>##        MM        MN        NN 
+## 0.2910434 0.4968820 0.2120746</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>How well do the observed frequencies agree with the expectation? Data from Wiener, A.S. (1943) quoted by Stem, C. (1973) Principles of Human Genetics. Freeman, San Francisco.</li>
+</ol>
+<p>We can measure how well the observed frequencies agree with the expected ones with a Chi-squared test:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="genetic-constitution-of-a-population.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarizing what we have</span></span>
+<span id="cb12-2"><a href="genetic-constitution-of-a-population.html#cb12-2" aria-hidden="true" tabindex="-1"></a>exp_obs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-3"><a href="genetic-constitution-of-a-population.html#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Expected freq</span><span class="st">`</span> <span class="ot">=</span> expected,</span>
+<span id="cb12-4"><a href="genetic-constitution-of-a-population.html#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Observed freq</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(P, H, Q))</span>
+<span id="cb12-5"><a href="genetic-constitution-of-a-population.html#cb12-5" aria-hidden="true" tabindex="-1"></a>exp_obs</span></code></pre></div>
+<pre><code>##    Expected.freq Observed.freq
+## MM     0.2910434     0.2915647
+## MN     0.4968820     0.4958395
+## NN     0.2120746     0.2125959</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="genetic-constitution-of-a-population.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying Chi-squared test</span></span>
+<span id="cb14-2"><a href="genetic-constitution-of-a-population.html#cb14-2" aria-hidden="true" tabindex="-1"></a>observed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> <span class="dv">1787</span>, <span class="at">MN =</span> <span class="dv">3039</span>, <span class="at">NN =</span> <span class="dv">1303</span>)</span>
+<span id="cb14-3"><a href="genetic-constitution-of-a-population.html#cb14-3" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(observed, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Chi-square test with continuity correction for Hardy-Weinberg equilibrium (autosomal)
+## Chi2 =  0.02104769 DF =  1 p-value =  0.8846491 D =  -3.194771 f =  0.002098103</code></pre>
+<p>The <span class="math inline">\(\chi^2\)</span> statistic is very close to 0, with <em>P</em> &gt; 0.05. Then, we conclude that the observed and expected frequencies are not different.</p>
+</div>
+<div id="problem-2" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Problem 2</h2>
+<p><strong>About 30 per cent of people do not recognize the bitter taste of phenyl-thio-carbamate (PTC). Inability to taste it is due to a single autosomal recessive gene. What is the frequency of the non-tasting gene, assuming the population to be in Hardy-Weinberg equilibrium?</strong></p>
+<p>If the trait is caused by two recessive alleles (<em>aa</em>), then the frequency of <em>aa</em> will be equal to <span class="math inline">\(q^2\)</span>. As <span class="math inline">\(q^2 = 0.3\)</span>, <span class="math inline">\(q = \sqrt{0.3} = 0.548\)</span>.</p>
+</div>
+<div id="problem-3" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Problem 3</h2>
+<p><strong>Albinism occurs with a frequency of about 1 in 20,000 in European populations. Assuming it to be due to a single autosomal recessive gene, and assuming the population to be in Hardy-Weinberg equilibrium, what proportion of people are carriers? Only an approximate answer is needed.</strong></p>
+<p>Carriers are heterozigote individuals, i.e., <em>2pq</em>. From <span class="math inline">\(q^2\)</span>, we can calculate p and, hence, <em>2pq</em> as follows:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="genetic-constitution-of-a-population.html#cb16-1" aria-hidden="true" tabindex="-1"></a>q2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">20000</span> </span>
+<span id="cb16-2"><a href="genetic-constitution-of-a-population.html#cb16-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(q2)</span>
+<span id="cb16-3"><a href="genetic-constitution-of-a-population.html#cb16-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> q</span>
+<span id="cb16-4"><a href="genetic-constitution-of-a-population.html#cb16-4" aria-hidden="true" tabindex="-1"></a>heterozygotes <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q</span>
+<span id="cb16-5"><a href="genetic-constitution-of-a-population.html#cb16-5" aria-hidden="true" tabindex="-1"></a>heterozygotes</span></code></pre></div>
+<pre><code>## [1] 0.01404214</code></pre>
+</div>
+<div id="problem-4" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Problem 4</h2>
+<p><strong>As an exercise in algebra, work out the gene frequency of a recessive mutant in a random-breeding population that would result in one-third of normal individuals being carriers.</strong></p>
+<p>1/3 of the normal individuals as carriers means:</p>
+<p><span class="math display">\[
+\frac{2pq}{1-q^2} = \frac{2q(1-q)}{1-q^2} = \frac{2q(1-q)}{(1+q)(1-q)} = \frac{2q}{1+q}
+\]</span></p>
+</div>
+<div id="problem-5" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Problem 5</h2>
+<p><strong>Three allelic variants, A, B, and C, of the red cell acid phosphatase enzyme were found in a sample of 178 English people. All genotypes were distinguishable by electrophoresis, and the frequencies in the sample were</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Genotype</th>
+<th>AA</th>
+<th>AB</th>
+<th>BB</th>
+<th>AC</th>
+<th>BC</th>
+<th>CC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Freq (%)</td>
+<td>9.6</td>
+<td>48.3</td>
+<td>34.3</td>
+<td>2.8</td>
+<td>5.0</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What are the gene frequencies in the sample? Why were no CC individuals found?</strong></p>
+<p>As the frequency of a gene is equal to the frequency of homozygotes + 1/2 the frequency of heterozygotes, we have:</p>
+<p><span class="math display">\[A = 0.096 + \frac{1}{2}(0.483 + 0.028) = 0.3515\]</span></p>
+<p><span class="math display">\[B = 0.343 + \frac{1}{2}(0.483 + 0.05) = 0.6095\]</span></p>
+<p><span class="math display">\[C = 0.0 + \frac{1}{2}(0.028 + 0.05) = 0.039\]</span> The expected frequency of CC individuals is <span class="math inline">\(C^2 = 0.039^2 = 0.0015\)</span>. As we have a sample size of 178 individuals, we would expect <span class="math inline">\(178 * 0.0015 = 0.27\)</span> CC individuals (less than 1). Thus, the observed frequency (zero) is expected. We would be able to observe CC individuals if the sample size was larger.</p>
+</div>
+<div id="problem-6" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Problem 6</h2>
+<p><strong>About 7 per cent of men are colour-blind in consequence of a sex-linked recessive gene. Assuming Hardy-Weinberg equilibrium, what proportion of women are expected to be (1) carriers, and (2) colour-blind? (3) In what proportion of marriages are both husband and wife expected to be colour-blind?</strong></p>
+<p>7% of men are color-blind, which means that <span class="math inline">\(q = 0.07\)</span>. Under Hardy-Weinberg equilibrium, the frequency in men is equal to the frequency in women. Then:</p>
+<p><span class="math display">\[Carriers = 2pq = 2q(1-q)\]</span></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="genetic-constitution-of-a-population.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carriers</span></span>
+<span id="cb18-2"><a href="genetic-constitution-of-a-population.html#cb18-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fl">0.07</span></span>
+<span id="cb18-3"><a href="genetic-constitution-of-a-population.html#cb18-3" aria-hidden="true" tabindex="-1"></a>carriers <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>q<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>q)</span>
+<span id="cb18-4"><a href="genetic-constitution-of-a-population.html#cb18-4" aria-hidden="true" tabindex="-1"></a>carriers</span></code></pre></div>
+<pre><code>## [1] 0.1302</code></pre>
+<p>Color-blind = <span class="math inline">\(q^2 = 0.0049\)</span>.</p>
+<p>To find the frequency of marriages with both men and women color-blind, we simply multiply the frequency of color-blind men <strong>and</strong> the frequency of color-blind women. That is:</p>
+<p><span class="math display">\[P(men) \times P(women) = 0.07 \times 0.0049 = 0.000343\]</span></p>
+</div>
+<div id="problem-7" class="section level2" number="1.7">
+<h2><span class="header-section-number">1.7</span> Problem 7</h2>
+<p><strong>Sine oculis (so) and cinnabar (cn) are two autosomal recessive genes in Drosophila melanogaster. They are very closely linked and can be treated as if they were alleles at one locus. The ‘heterozygote,’ so/cn, is wild-type and is distinguishable from both homozygotes; (so/so has no eyes; cn/cn has white eyes if the stock is made homozygous for another eye-colour mutant, brown, hw). In a class experiment 4 males and 4 females of an so/so stock were put in a vial together with 16 males and 16 females from a cn/cn stock and allowed to mate. There were 20 such vials. The total count of progeny, classified by genotype, was as follows.</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>so/so</th>
+<th>so/cn</th>
+<th>cn/cn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>135</td>
+<td>359</td>
+<td>947</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How do these numbers differ from the Hardy-Weinberg expectations? Suggest a reason for the discrepancy.</strong></p>
+<p>To compare the observed frequencies to the expected under HW equilibrium, we can perform a <span class="math inline">\(\chi^2\)</span> test.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="genetic-constitution-of-a-population.html#cb20-1" aria-hidden="true" tabindex="-1"></a>obs_freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">SS =</span> <span class="dv">135</span>, <span class="at">SC =</span> <span class="dv">359</span>, <span class="at">CC =</span> <span class="dv">947</span>)</span>
+<span id="cb20-2"><a href="genetic-constitution-of-a-population.html#cb20-2" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(obs_freq, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Chi-square test with continuity correction for Hardy-Weinberg equilibrium (autosomal)
+## Chi2 =  103.671 DF =  1 p-value =  2.388595e-24 D =  -66.35999 f =  0.2699097</code></pre>
+<p>We can see, the <span class="math inline">\(\chi^2\)</span> statistic is very high, and so is the linkage disequilibrium coefficient (D = -66.35). A possible reason for this is assortative mating.</p>
+</div>
+<div id="problem-8" class="section level2" number="1.8">
+<h2><span class="header-section-number">1.8</span> Problem 8</h2>
+<p><strong>Suppose that Drosophila cultures are set up in vials as described in Problem 1.7, but this time with a gene frequency of 0.5. This is done by putting 10 males and 10 females of each stock in each vial. The supply of so/so females ran out and only 4 were left for the last vial. So, to preserve the intended gene frequency and numbers of parents, this vial was made up as follows: 16 males + 4 females of so/so with 4 males + 16 females of cn/cn. The student who got this vial was a bit surprised by what he found. What genotype frequencies would you expect in the progeny?</strong></p>
+<p>We would not expect HW equilibrium, as the gene frequencies are different between males and females.</p>
+<p><span class="math display">\[so_{males} = \frac{16}{20} = 0.8\]</span></p>
+<p><span class="math display">\[so_{females} = \frac{4}{20} = 0.2\]</span>
+Obtaining genotype frequencies from the gene frequencies:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="genetic-constitution-of-a-population.html#cb22-1" aria-hidden="true" tabindex="-1"></a>soso <span class="ot">&lt;-</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fl">0.2</span></span>
+<span id="cb22-2"><a href="genetic-constitution-of-a-population.html#cb22-2" aria-hidden="true" tabindex="-1"></a>soso</span></code></pre></div>
+<pre><code>## [1] 0.16</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="genetic-constitution-of-a-population.html#cb24-1" aria-hidden="true" tabindex="-1"></a>cncn <span class="ot">&lt;-</span> <span class="fl">0.2</span> <span class="sc">*</span> <span class="fl">0.8</span></span>
+<span id="cb24-2"><a href="genetic-constitution-of-a-population.html#cb24-2" aria-hidden="true" tabindex="-1"></a>cncn</span></code></pre></div>
+<pre><code>## [1] 0.16</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="genetic-constitution-of-a-population.html#cb26-1" aria-hidden="true" tabindex="-1"></a>socn <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (soso <span class="sc">+</span> cncn)</span>
+<span id="cb26-2"><a href="genetic-constitution-of-a-population.html#cb26-2" aria-hidden="true" tabindex="-1"></a>socn</span></code></pre></div>
+<pre><code>## [1] 0.68</code></pre>
+<p>Under Hardy-Weinberg equilibrium, we would expect genotype frequencies to be 0.25, 0.5, 0.25.</p>
+</div>
+<div id="problem-9" class="section level2" number="1.9">
+<h2><span class="header-section-number">1.9</span> Problem 9</h2>
+<p><strong>Prove that when there are any number of alleles at a locus the total frequency of heterozygotes is greatest when all alleles have the same frequency. What is then the total frequency of heterozygotes?</strong></p>
+<p>This can be demonstrated by simulating two alelles with increasingly similar frequencies and calculating the frequency of heterozygotes for each simulation step.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="genetic-constitution-of-a-population.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define function to calculate heterozygote frequency</span></span>
+<span id="cb28-2"><a href="genetic-constitution-of-a-population.html#cb28-2" aria-hidden="true" tabindex="-1"></a>heterozygote_freq <span class="ot">&lt;-</span> <span class="cf">function</span>(p, q) {</span>
+<span id="cb28-3"><a href="genetic-constitution-of-a-population.html#cb28-3" aria-hidden="true" tabindex="-1"></a>    heterozygotes <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q</span>
+<span id="cb28-4"><a href="genetic-constitution-of-a-population.html#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(heterozygotes)</span>
+<span id="cb28-5"><a href="genetic-constitution-of-a-population.html#cb28-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-6"><a href="genetic-constitution-of-a-population.html#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="genetic-constitution-of-a-population.html#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create vectors of frequencies for p and q</span></span>
+<span id="cb28-8"><a href="genetic-constitution-of-a-population.html#cb28-8" aria-hidden="true" tabindex="-1"></a>psim <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.01</span>, <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">50</span>)</span>
+<span id="cb28-9"><a href="genetic-constitution-of-a-population.html#cb28-9" aria-hidden="true" tabindex="-1"></a>qsim <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.99</span>, <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">50</span>)</span>
+<span id="cb28-10"><a href="genetic-constitution-of-a-population.html#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="genetic-constitution-of-a-population.html#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate heterozygote frequency for simulated p and q freqs</span></span>
+<span id="cb28-12"><a href="genetic-constitution-of-a-population.html#cb28-12" aria-hidden="true" tabindex="-1"></a>hfreq <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_along</span>(psim), <span class="cf">function</span>(x) {</span>
+<span id="cb28-13"><a href="genetic-constitution-of-a-population.html#cb28-13" aria-hidden="true" tabindex="-1"></a>    freq <span class="ot">&lt;-</span> <span class="fu">heterozygote_freq</span>(<span class="at">p =</span> psim[x], <span class="at">q =</span> qsim[x])</span>
+<span id="cb28-14"><a href="genetic-constitution-of-a-population.html#cb28-14" aria-hidden="true" tabindex="-1"></a>    distance <span class="ot">&lt;-</span> <span class="fu">abs</span>(psim[x] <span class="sc">-</span> qsim[x])</span>
+<span id="cb28-15"><a href="genetic-constitution-of-a-population.html#cb28-15" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb28-16"><a href="genetic-constitution-of-a-population.html#cb28-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">Hfreq</span><span class="st">`</span> <span class="ot">=</span> freq,</span>
+<span id="cb28-17"><a href="genetic-constitution-of-a-population.html#cb28-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">Diff</span><span class="st">`</span> <span class="ot">=</span> distance</span>
+<span id="cb28-18"><a href="genetic-constitution-of-a-population.html#cb28-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb28-19"><a href="genetic-constitution-of-a-population.html#cb28-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df)</span>
+<span id="cb28-20"><a href="genetic-constitution-of-a-population.html#cb28-20" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb28-21"><a href="genetic-constitution-of-a-population.html#cb28-21" aria-hidden="true" tabindex="-1"></a>hfreq <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(rbind, hfreq)</span>
+<span id="cb28-22"><a href="genetic-constitution-of-a-population.html#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-23"><a href="genetic-constitution-of-a-population.html#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspecting visually</span></span>
+<span id="cb28-24"><a href="genetic-constitution-of-a-population.html#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(ggplot2))</span>
+<span id="cb28-25"><a href="genetic-constitution-of-a-population.html#cb28-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hfreq, <span class="fu">aes</span>(<span class="at">y =</span> Hfreq, <span class="at">x =</span> Diff, <span class="at">group=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb28-26"><a href="genetic-constitution-of-a-population.html#cb28-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb28-27"><a href="genetic-constitution-of-a-population.html#cb28-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb28-28"><a href="genetic-constitution-of-a-population.html#cb28-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb28-29"><a href="genetic-constitution-of-a-population.html#cb28-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>)) <span class="sc">+</span></span>
+<span id="cb28-30"><a href="genetic-constitution-of-a-population.html#cb28-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Allele frequency difference&quot;</span>,</span>
+<span id="cb28-31"><a href="genetic-constitution-of-a-population.html#cb28-31" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Relative frequency of heterozygotes&quot;</span>,</span>
+<span id="cb28-32"><a href="genetic-constitution-of-a-population.html#cb28-32" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">&quot;Frequency of heterozygotes as a function of allele frequency differences&quot;</span>,</span>
+<span id="cb28-33"><a href="genetic-constitution-of-a-population.html#cb28-33" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;The frequency of heterozygotes reaches its maximum when p and q have equal frequencies&quot;</span>)</span></code></pre></div>
+<p><img src="IQG_solutions_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="problem-10" class="section level2" number="1.10">
+<h2><span class="header-section-number">1.10</span> Problem 10</h2>
+<p><strong>Suppose that a strain of genotype AA BB is mixed with another strain of genotype aa bb, with equal numbers of the two strains and equal numbers of males and females, which mate at random. Call this generation of parents generation 0. Subsequent generations also mate at random and there are no differences of fertility or viability among the genotypes. What will be the frequency of the genotype AA bb in the progeny of generation 2, i.e. after two generations of recombination, if the two loci are (1) unlinked, (2) linked with a recombination frequency of 20 per cent?</strong></p>
+</div>
+<div id="problem-11" class="section level2" number="1.11">
+<h2><span class="header-section-number">1.11</span> Problem 11</h2>
+<p><strong>How will the solutions of Problem 1.10 be altered if the two strains are crossed by taking males of one strain and females of the other?</strong></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sabatinas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["IQG_solutions.pdf", "IQG_solutions.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

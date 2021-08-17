@@ -1,4 +1,4 @@
-# Genetic constitution of a population {#intro}
+# Genetic constitution of a population
 
 ## Problem 1
 
@@ -233,5 +233,8 @@ ggplot(hfreq, aes(y = Hfreq, x = Diff, group=1)) +
 
 ## Problem 10
 
+**Suppose that a strain of genotype AA BB is mixed with another strain of genotype aa bb, with equal numbers of the two strains and equal numbers of males and females, which mate at random. Call this generation of parents generation 0. Subsequent generations also mate at random and there are no differences of fertility or viability among the genotypes. What will be the frequency of the genotype AA bb in the progeny of generation 2, i.e. after two generations of recombination, if the two loci are (1) unlinked, (2) linked with a recombination frequency of 20 per cent?**
 
 ## Problem 11
+
+**How will the solutions of Problem 1.10 be altered if the two strains are crossed by taking males of one strain and females of the other?**
