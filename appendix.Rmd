@@ -17,5 +17,5 @@ As opções são:
 7. FMF
 8. FFM
 
-Nesse caso, a ordem não importa. Logo, $P = \frac{7}{8}$.
+Logo, $P = \frac{7}{8}$.
 
