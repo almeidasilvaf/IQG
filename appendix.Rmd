@@ -10,8 +10,12 @@ As opções são:
 
 1. MMM
 2. MMF
-3. MFF
-4. FFF
+3. MFM
+4. MFF
+5. FFF
+6. FMM
+7. FMF
+8. FFM
 
-Nesse caso, a ordem não importa. Logo, $P = \frac{3}{4}$.
+Nesse caso, a ordem não importa. Logo, $P = \frac{7}{8}$.
 
