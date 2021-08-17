@@ -263,16 +263,55 @@ $$
 D_{t} = D_{0}(1-c)^t
 $$
 
-After 2 generations of recombination, with unlinked loci (c = 0.5), we have:
+1) After 2 generations of recombination, with unlinked loci (c = 0.5), we have:
 
 $$
 \begin{aligned}
 D_2 &= 0.25(0.5)^2 \\
 &= 0.25 \times 0.25 \\
-&= 0.05
+&= 0.0625
+\end{aligned}
+$$
+
+2) After 2 generations of recombination, with linked loci with a recombination frequency of 20% (c = 0.2):
+
+$$
+\begin{aligned}
+D_2 &= 0.25(0.8)^2 \\
+&= 0.25 \times 0.64 \\
+&= 0.16
+\end{aligned}
+$$
+
+Now that we have $D_2$ for these 2 scenarios, we can replace it in the previous formula. As $s$ is the frequency of the Ab gamete, the frequency of the genotype AAbb will be $s^2$.
+
+Unlinked loci:
+
+$$
+\begin{aligned}
+-D &= s - \hat{s} \\
+s &= \hat{s} - D \\
+&= 0.25 - 0.0625 \\
+&= 0.1875 \\
+\\
+s^2 &= 0.03515
+\end{aligned}
+$$
+Linked loci, with 20% of recombination:
+
+$$
+\begin{aligned}
+-D &= s - \hat{s} \\
+s &= \hat{s} - D \\
+&= 0.25 - 0.16 \\
+&= 0.09 \\
+\\
+s^2 &= 0.0081
 \end{aligned}
 $$
 
 ## Problem 11
 
 **How will the solutions of Problem 1.10 be altered if the two strains are crossed by taking males of one strain and females of the other?**
+
+There would be more disequilibrium, as mating would not be random.
