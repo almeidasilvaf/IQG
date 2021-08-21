@@ -1,0 +1,271 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Exercícios {.unnumbered}
+
+Nessa página, encontram-se as soluções para os exercícios de cada
+semana. Essa página é atualizada semanalmente.
+
+## Semana 1: Probabilidade {.unnumbered}
+
+### Q1 {.unnumbered}
+
+**Dois genes ligados (r = 0.20).**
+
+**Pai 1 = AAbb** <br /> **Pai 2 = aaBB**
+
+**Qual é a probabilidade de gametas AB oriundos da autofecundação da planta F1?**
+
+Gametas produzidos pelo pai 1: Ab <br /> Gametas produzidos pelo
+pai 2: aB
+
+Geração $F_1$ = 100% Ab/aB (duplo heterozigoto em fase repulsão).
+
+Da autofecundação de Ab/aB, temos os possíveis gametas:
+
+| Gametas | Tipo         | Frequências               |
+|:---------|:--------------|:---------------------------|
+| Ab      | Parental     | $\frac{(1-0.2)}{2} = 0.4$ |
+| aB      | Parental     | $\frac{(1-0.2)}{2} = 0.4$ |
+| AB      | Recombinante | 0.1                       |
+| ab      | Recombinante | 0.1                       |
+
+Portanto, a probabilidade de obtermos o gameta AB é de 10%.
+
+### Q2 {.unnumbered}
+
+**Caracter cor de flor em soja:**
+
+**Branca = rr** <br />roxa = R-
+
+**Pai 1 = RR** <br />Pai 2 = rr
+
+**Considerando-se a coleta de 8 plantas ao acaso na geração F2,
+pergunta-se:**
+
+**a) Qual a probabilidade de todas as plantas serem de flor roxa?**
+
+Do cruzamento de RR e rr, teremos as seguintes proporções genotípicas e
+fenotípicas na F1:
+
+Genotípicas: 100% RrRr <br /> Fenotípicas: 100% roxas
+
+Da autofecundação das plantas da F1 (RrRr x RrRr), teremos as seguintes
+proporções genotípicas e fenotípicas na F1:
+
+Genotípicas: $\frac{1}{4}$ RR : $\frac{1}{2}$ Rr : $\frac{1}{4}$ rr
+<br /> Fenotípicas: $\frac{3}{4}$ roxas : $\frac{1}{4}$ brancas
+
+Assim, tomando 8 plantas ao acaso, a probabilidade de todas serem de
+flor roxa é:
+
+$$
+\begin{aligned}
+P(8\ roxas) &= (\frac{3}{4})^8 \\
+&= 0.1001129 \\
+&\approx ~10\%
+\end{aligned}
+$$
+
+**b) Qual a probabilidade de obter pelo menos uma planta de flor
+branca?**
+
+$$
+\begin{aligned}
+P(pelo\ menos\ uma\ branca) &= 1 - P(8\ roxas) \\
+&= 1 - 0.1001129 \\
+&\approx 0.8998871 
+\end{aligned}
+$$
+
+**c) Qual a probabilidade de obter 5 plantas de flor roxa?**
+
+$$
+\begin{aligned}
+P(5\ roxas) &= (\frac{3}{4})^5 \\
+&= 0.2373047 \\
+&\approx 23.7\%
+\end{aligned}
+$$
+
+**d) Se todas as 8 plantas apresentarem flor roxa, qual o nível de
+probabilidade de que o pai 2 não possua o genótipo rr?**
+
+100% de probabilidade de que o pai 2 não possui o genótipo rr, pois a
+frequência observada de plantas de flor roxa demonstra que todas as
+plantas da F2 são *R\_*, o que é incompatível com a possibilidade de um
+dos pais ser *rr*.
+
+### Q3 {.unnumbered}
+
+**Considerando-se dois pares de genes independentes em uma população.**
+
+**RR + Rr = plantas resistentes** <br /> **rr = plantas susceptíveis**
+
+**AA + Aa = plantas altas** <br /> **aa = plantas baixas**
+
+**Freq. de plantas susceptíveis = 0.2** <br /> **Freq. de plantas baixas = 0.4**
+
+**Calcular:**
+
+**a) Qual a proporção de plantas baixas susceptíveis?**
+
+$$
+\begin{aligned}
+F(baixas\ e\ susceptíveis) &= F(baixas) \times F(susceptíveis) \\
+&= 0.4 \times 0.2 \\
+&= 0.08
+\end{aligned}
+$$
+
+**b) Coletando-se 5 plantas, qual a probabilidade de todas serem altas e susceptíveis?**
+
+$$
+\begin{aligned}
+P(5\ altas\ e\ susceptíveis) &= P(altas\ e\ susceptíveis)^5 \\
+&= (0.6 \times 0.2)^5 \\
+&= 0.12^5 \\
+&= 0.0000248832 = 0.00249\%
+\end{aligned}
+$$
+
+
+
+**c) Coletando-se 5 plantas, qual a probabilidade de obter:**
+
+- **01 plantas altas/resistentes:**
+
+```{r}
+# P(alta e resistente)
+p <- 0.6 * 0.8
+p
+
+# P(alta e resistente) tomando-se 5
+dbinom(1, 5, p)
+```
+
+- **03 plantas altas/susceptíveis**
+
+```{r}
+# P(alta e susceptível)
+p <- 0.6 * 0.2
+p
+
+# P(3 altas e susceptíveis) tomando-se 5
+dbinom(3, 5, p)
+```
+
+- **01 plantas baixas/resistentes**
+
+```{r}
+# P(baixa e resistente)
+p <- 0.4 * 0.8
+p
+
+# P(baixa e resistente) tomando-se 5
+dbinom(1, 5, p)
+```
+
+### Q4 {.unnumbered}
+
+**Considerando-se um indivíduo hexaploide com o seguinte genótipo: "AAAaaa"**
+
+**Se o gene "A" se localizar distante do centrômero, considerando uma autofecundação, calcular:**
+
+**a) Quais os tipos de gametas?**
+
+Segregação cromatídica: AAAaaa = AAAAAAaaaaaa
+
+AAA <br />
+AAa <br />
+Aaa <br />
+aaa
+
+
+**b) Qual a proporção de gametas "AAa?"**
+
+
+$$
+\begin{aligned}
+P(AAa) &= \frac{combinação\ de\ 6\ tomados\ 2\ a\ 2\ \times combinação\ de\ 6\ tomados\ 1\ a\ 1}{combinação\ de\ 12\ tomados\ 3\ a\ 3} \\
+&= \frac{{6 \choose 2} \times {6 \choose 1}}{{12 \choose 3}} \\
+&= \frac{\frac{6!}{2! \times 4!} \times \frac{6!}{1!\times5!}}{\frac{12!}{3! \times 9!}} \\
+\end{aligned}
+$$
+
+Resolvendo com R:
+
+```{r}
+numerador1 <- choose(6, 2)
+numerador2 <- choose(6, 1)
+denominador <- choose(12, 3)
+pAAa <- (numerador1 * numerador2) / denominador
+pAAa
+```
+
+Demonstrando o cálculo passo-a-passo:
+
+$$
+\begin{aligned}
+P(AAa) &= \frac{{6 \choose 2} \times {6 \choose 1}}{{12 \choose 3}} \\
+&= \frac{\frac{6!}{2! \times 4!} \times \frac{6!}{1!\times5!}}{\frac{12!}{3! \times 9!}} \\
+&= \frac{\frac{6\ 5\ 4!}{2 \times 4! } \times \frac{6\ 5!}{1 \times 5!}} {\frac{12\ 11\ 10\ 9!}{3\ 2\ 1 \times 9!}} \\
+&= \frac{\frac{30}{2} \times 6} {\frac{1320}{6}} \\
+&= \frac{90}{220} = 0.409
+\end{aligned}
+$$
+
+**c) Quais as frequências dos genótipos: "aaaaaa" e "AAAaaa" resultantes da autofecundação?**
+
+$$
+\begin{aligned}
+P(aaaaaa) &= P(aaa)^2 \\
+&= (\frac{{6 \choose 3}}{{12 \choose 3}})^2 \\
+\end{aligned}
+$$
+
+```{r}
+#---Genótipo aaaaaa----
+# P(aaa)
+P_aaa <- choose(6, 3) / choose(12, 3)
+
+# P(aaaaaa)
+P_aaa^2
+```
+
+$$
+\begin{aligned}
+P(AAAaaa) &= 2 \times P(AAA) \times P(aaa) \\
+&= 2 \times \frac{{6 \choose 3}}{{12 \choose 3}} \times \frac{{6 \choose 3}}{{12 \choose 3}} \\
+\end{aligned}
+$$
+
+```{r}
+#----Genótipo AAAaaa----
+# P(AAA)
+P_AAA <- choose(6, 3) / choose(12, 3)
+
+# P(aaa)
+P_aaa <- choose(6, 3) / choose(12, 3)
+
+# P(AAAaaa)
+2 * P_AAA * P_aaa
+```
+
+### Q5 {.unnumbered}
+
+**Em bovinos, o fenótipo mocho é devido a um alelo dominante, o alelo recessivo confere o fenótipo chifrudo. Um touro mocho foi cruzado com 10 vacas sabidamente heterozigóticas e todos os descendentes foram mochos. Qual a probabilidade do touro ser homozigoto?**
+
+Cruzamento: A_ x Aa &emsp;&emsp;&emsp;&emsp; Descendentes: 100% A_
+
+
+Se o touro fosse homozigoto, teríamos AA x Aa, que resultaria em 50% AA : 50% Aa (todos mochos).
+
+
+Se o touro fosse heterozigoto, teríamos Aa x Aa, que resultaria em 25% AA : 50% Aa : 25% aa
+
+Se o segundo caso fosse verdadeiro, esperaríamos encontrar 2 touros chifrudos. Portanto, temos 100% de certeza de que o touro é homozigoto.
+
