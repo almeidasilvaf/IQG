@@ -237,15 +237,11 @@ Frequências:
 
 ### Q5 {.unnumbered}
 
-**Em bovinos, o fenótipo mocho é devido a um alelo dominante, o alelo
-recessivo confere o fenótipo chifrudo. Um touro mocho foi cruzado com 10
-vacas sabidamente heterozigóticas e todos os descendentes foram mochos.
-Qual a probabilidade do touro ser homozigoto?**
+**Em bovinos, o fenótipo mocho é devido a um alelo dominante, o alelo recessivo confere o fenótipo chifrudo. Um touro mocho foi cruzado com 10 vacas sabidamente heterozigóticas e todos os descendentes foram mochos. Qual a probabilidade do touro ser homozigoto?**
 
-Cruzamento: A\_ x Aa      Descendentes: 100% A\_
+Cruzamento: A_ x Aa &emsp; &emsp; Descendentes: 100% A_
 
-Se o touro fosse homozigoto, teríamos AA x Aa, que resultaria em 50% AA
-: 50% Aa (todos mochos).
+Se o touro fosse homozigoto, teríamos AA x Aa, que resultaria em 50% AA : 50% Aa (todos mochos).
 
 Se o touro fosse heterozigoto, teríamos Aa x Aa, que resultaria em 25%
 AA : 50% Aa : 25% aa
