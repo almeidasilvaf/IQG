@@ -17,17 +17,18 @@ semana. Essa página é atualizada semanalmente.
 
 **Pai 1 = AAbb** <br /> **Pai 2 = aaBB**
 
-**Qual é a probabilidade de gametas AB oriundos da autofecundação da planta F1?**
+**Qual é a probabilidade de gametas AB oriundos da autofecundação da
+planta F1?**
 
-Gametas produzidos pelo pai 1: Ab <br /> Gametas produzidos pelo
-pai 2: aB
+Gametas produzidos pelo pai 1: Ab <br /> Gametas produzidos pelo pai 2:
+aB
 
 Geração $F_1$ = 100% Ab/aB (duplo heterozigoto em fase repulsão).
 
 Da autofecundação de Ab/aB, temos os possíveis gametas:
 
 | Gametas | Tipo         | Frequências               |
-|:---------|:--------------|:---------------------------|
+|:--------|:-------------|:--------------------------|
 | Ab      | Parental     | $\frac{(1-0.2)}{2} = 0.4$ |
 | aB      | Parental     | $\frac{(1-0.2)}{2} = 0.4$ |
 | AB      | Recombinante | 0.1                       |
@@ -107,7 +108,8 @@ dos pais ser *rr*.
 
 **AA + Aa = plantas altas** <br /> **aa = plantas baixas**
 
-**Freq. de plantas susceptíveis = 0.2** <br /> **Freq. de plantas baixas = 0.4**
+**Freq. de plantas susceptíveis = 0.2** <br /> **Freq. de plantas baixas
+= 0.4**
 
 **Calcular:**
 
@@ -121,7 +123,8 @@ F(baixas\ e\ susceptíveis) &= F(baixas) \times F(susceptíveis) \\
 \end{aligned}
 $$
 
-**b) Coletando-se 5 plantas, qual a probabilidade de todas serem altas e susceptíveis?**
+**b) Coletando-se 5 plantas, qual a probabilidade de todas serem altas e
+susceptíveis?**
 
 $$
 \begin{aligned}
@@ -132,11 +135,9 @@ P(5\ altas\ e\ susceptíveis) &= P(altas\ e\ susceptíveis)^5 \\
 \end{aligned}
 $$
 
-
-
 **c) Coletando-se 5 plantas, qual a probabilidade de obter:**
 
-- **01 plantas altas/resistentes:**
+-   **01 plantas altas/resistentes:**
 
 ```{r}
 # P(alta e resistente)
@@ -147,7 +148,7 @@ p
 dbinom(1, 5, p)
 ```
 
-- **03 plantas altas/susceptíveis**
+-   **03 plantas altas/susceptíveis**
 
 ```{r}
 # P(alta e susceptível)
@@ -158,7 +159,7 @@ p
 dbinom(3, 5, p)
 ```
 
-- **01 plantas baixas/resistentes**
+-   **01 plantas baixas/resistentes**
 
 ```{r}
 # P(baixa e resistente)
@@ -171,22 +172,19 @@ dbinom(1, 5, p)
 
 ### Q4 {.unnumbered}
 
-**Considerando-se um indivíduo hexaploide com o seguinte genótipo: "AAAaaa"**
+**Considerando-se um indivíduo hexaploide com o seguinte genótipo:
+"AAAaaa"**
 
-**Se o gene "A" se localizar distante do centrômero, considerando uma autofecundação, calcular:**
+**Se o gene "A" se localizar distante do centrômero, considerando uma
+autofecundação, calcular:**
 
 **a) Quais os tipos de gametas?**
 
 Segregação cromatídica: AAAaaa = AAAAAAaaaaaa
 
-AAA <br />
-AAa <br />
-Aaa <br />
-aaa
-
+AAA <br /> AAa <br /> Aaa <br /> aaa
 
 **b) Qual a proporção de gametas "AAa?"**
-
 
 $$
 \begin{aligned}
@@ -218,54 +216,39 @@ P(AAa) &= \frac{{6 \choose 2} \times {6 \choose 1}}{{12 \choose 3}} \\
 \end{aligned}
 $$
 
-**c) Quais as frequências dos genótipos: "aaaaaa" e "AAAaaa" resultantes da autofecundação?**
+**c) Quais as frequências dos genótipos: "aaaaaa" e "AAAaaa" resultantes
+da autofecundação?**
 
-$$
-\begin{aligned}
-P(aaaaaa) &= P(aaa)^2 \\
-&= (\frac{{6 \choose 3}}{{12 \choose 3}})^2 \\
-\end{aligned}
-$$
+Frequências:
 
-```{r}
-#---Genótipo aaaaaa----
-# P(aaa)
-P_aaa <- choose(6, 3) / choose(12, 3)
+| F / M | AAA    | AAa    | Aaa    | aaa    |
+|:-------|:--------|:--------|:--------|:--------|
+| AAA   | AAAAAA | AAAAAa | AAAAaa | AAAaaa |
+| AAa   | AAAAAa | AAaAAa | AAaAaa | AAaaaa |
+| Aaa   | AAAAaa | AaaAAa | AaaAaa | Aaaaaa |
+| aaa   | AAAaaa | AAaaaa | Aaaaaa | aaaaaa |
 
-# P(aaaaaa)
-P_aaa^2
-```
 
-$$
-\begin{aligned}
-P(AAAaaa) &= 2 \times P(AAA) \times P(aaa) \\
-&= 2 \times \frac{{6 \choose 3}}{{12 \choose 3}} \times \frac{{6 \choose 3}}{{12 \choose 3}} \\
-\end{aligned}
-$$
+**aaaaaa:** $\frac{1}{16}$
 
-```{r}
-#----Genótipo AAAaaa----
-# P(AAA)
-P_AAA <- choose(6, 3) / choose(12, 3)
 
-# P(aaa)
-P_aaa <- choose(6, 3) / choose(12, 3)
+**AAAaaa:** $\frac{2}{16} = \frac{1}{8}$
 
-# P(AAAaaa)
-2 * P_AAA * P_aaa
-```
 
 ### Q5 {.unnumbered}
 
-**Em bovinos, o fenótipo mocho é devido a um alelo dominante, o alelo recessivo confere o fenótipo chifrudo. Um touro mocho foi cruzado com 10 vacas sabidamente heterozigóticas e todos os descendentes foram mochos. Qual a probabilidade do touro ser homozigoto?**
+**Em bovinos, o fenótipo mocho é devido a um alelo dominante, o alelo
+recessivo confere o fenótipo chifrudo. Um touro mocho foi cruzado com 10
+vacas sabidamente heterozigóticas e todos os descendentes foram mochos.
+Qual a probabilidade do touro ser homozigoto?**
 
-Cruzamento: A_ x Aa &emsp;&emsp;&emsp;&emsp; Descendentes: 100% A_
+Cruzamento: A\_ x Aa      Descendentes: 100% A\_
 
+Se o touro fosse homozigoto, teríamos AA x Aa, que resultaria em 50% AA
+: 50% Aa (todos mochos).
 
-Se o touro fosse homozigoto, teríamos AA x Aa, que resultaria em 50% AA : 50% Aa (todos mochos).
+Se o touro fosse heterozigoto, teríamos Aa x Aa, que resultaria em 25%
+AA : 50% Aa : 25% aa
 
-
-Se o touro fosse heterozigoto, teríamos Aa x Aa, que resultaria em 25% AA : 50% Aa : 25% aa
-
-Se o segundo caso fosse verdadeiro, esperaríamos encontrar 2 touros chifrudos. Portanto, temos 100% de certeza de que o touro é homozigoto.
-
+Se o segundo caso fosse verdadeiro, esperaríamos encontrar 2 touros
+chifrudos. Portanto, temos 100% de certeza de que o touro é homozigoto.
