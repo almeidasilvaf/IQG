@@ -29,7 +29,11 @@ a) Quais os tipos de gametas possíveis?
 
 AA e Aa
 
-
 b) Qual a proporção de homozigotos dominantes?
 
+```{r}
+choose(3, 2) / choose(4, 2)
+```
+
 50%
+
