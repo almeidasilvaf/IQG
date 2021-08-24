@@ -19,3 +19,17 @@ As opções são:
 
 Logo, $P = \frac{7}{8}$.
 
+
+## Semana 2 {.unnumbered}
+
+Segregagação cromossômica de uma espécie tetraploide com o seguinte genótipo: <br /> AAAa
+
+
+a) Quais os tipos de gametas possíveis?
+
+AA e Aa
+
+
+b) Qual a proporção de homozigotos dominantes?
+
+50%
