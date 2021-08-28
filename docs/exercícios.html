@@ -27,7 +27,7 @@ Introduction to Quantitative, by DS Falconer.</p>" />
 <meta name="author" content="Fabrício Almeida-Silva" />
 
 
-<meta name="date" content="2021-08-24" />
+<meta name="date" content="2021-08-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q3"><i class="fa fa-check"></i>Q3</a></li>
 <li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q4"><i class="fa fa-check"></i>Q4</a></li>
 <li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q5"><i class="fa fa-check"></i>Q5</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#semana-2-constituição-genética-da-população"><i class="fa fa-check"></i>Semana 2: Constituição genética da população</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q1-1"><i class="fa fa-check"></i>Q1</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q2-1"><i class="fa fa-check"></i>Q2</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q3-1"><i class="fa fa-check"></i>Q3</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q4-1"><i class="fa fa-check"></i>Q4</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q5-1"><i class="fa fa-check"></i>Q5</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q6"><i class="fa fa-check"></i>Q6</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -381,8 +390,7 @@ P(AAa) &amp;= \frac{{6 \choose 2} \times {6 \choose 1}}{{12 \choose 3}} \\
 &amp;= \frac{90}{220} = 0.409
 \end{aligned}
 \]</span></p>
-<p><strong>c) Quais as frequências dos genótipos: “aaaaaa” e “AAAaaa” resultantes
-da autofecundação?</strong></p>
+<p><strong>c) Quais as frequências dos genótipos: “aaaaaa” e “AAAaaa” resultantes da autofecundação?</strong></p>
 <p>Frequências:</p>
 <table>
 <thead>
@@ -437,6 +445,244 @@ da autofecundação?</strong></p>
 AA : 50% Aa : 25% aa</p>
 <p>Se o segundo caso fosse verdadeiro, esperaríamos encontrar 2 touros
 chifrudos. Portanto, temos 100% de certeza de que o touro é homozigoto.</p>
+</div>
+</div>
+<div id="semana-2-constituição-genética-da-população" class="section level2 unnumbered">
+<h2>Semana 2: Constituição genética da população</h2>
+<div id="q1-1" class="section level3 unnumbered">
+<h3>Q1</h3>
+<p><strong>Grupo sanguíneo M-N na espécie humana.</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">M</th>
+<th align="left">MN</th>
+<th align="left">N</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">5000</td>
+<td align="left">3000</td>
+<td align="left">2000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>a) Qual a freqüência genotípica observada nesta amostra?</strong></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="exercícios.html#cb45-1" aria-hidden="true" tabindex="-1"></a>total <span class="ot">&lt;-</span> <span class="dv">5000</span> <span class="sc">+</span> <span class="dv">3000</span> <span class="sc">+</span> <span class="dv">2000</span></span>
+<span id="cb45-2"><a href="exercícios.html#cb45-2" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="dv">5000</span> <span class="sc">/</span> total</span>
+<span id="cb45-3"><a href="exercícios.html#cb45-3" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="dv">3000</span> <span class="sc">/</span> total</span>
+<span id="cb45-4"><a href="exercícios.html#cb45-4" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> <span class="dv">2000</span> <span class="sc">/</span> total</span>
+<span id="cb45-5"><a href="exercícios.html#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="exercícios.html#cb45-6" aria-hidden="true" tabindex="-1"></a>P <span class="co"># homozigotos dominantes</span></span></code></pre></div>
+<pre><code>## [1] 0.5</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="exercícios.html#cb47-1" aria-hidden="true" tabindex="-1"></a>H <span class="co"># heterozigotos</span></span></code></pre></div>
+<pre><code>## [1] 0.3</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="exercícios.html#cb49-1" aria-hidden="true" tabindex="-1"></a>Q <span class="co"># homozigotos recessivos</span></span></code></pre></div>
+<pre><code>## [1] 0.2</code></pre>
+<p><strong>b) Quais são as freqüências gênicas?</strong></p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="exercícios.html#cb51-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> P <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> H</span>
+<span id="cb51-2"><a href="exercícios.html#cb51-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> Q <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> H</span>
+<span id="cb51-3"><a href="exercícios.html#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="exercícios.html#cb51-4" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<pre><code>## [1] 0.65</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="exercícios.html#cb53-1" aria-hidden="true" tabindex="-1"></a>q</span></code></pre></div>
+<pre><code>## [1] 0.35</code></pre>
+<p><strong>c) Utilizando-se as freqüências gênicas observadas, quais seriam as freqüências genotípicas esperadas de acordo com a lei de Hardy-Weinberg?</strong></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="exercícios.html#cb55-1" aria-hidden="true" tabindex="-1"></a>esperado <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">P =</span> p<span class="sc">^</span><span class="dv">2</span>,</span>
+<span id="cb55-2"><a href="exercícios.html#cb55-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">H =</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q,</span>
+<span id="cb55-3"><a href="exercícios.html#cb55-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">Q =</span> q<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb55-4"><a href="exercícios.html#cb55-4" aria-hidden="true" tabindex="-1"></a>esperado</span></code></pre></div>
+<pre><code>##      P      H      Q 
+## 0.4225 0.4550 0.1225</code></pre>
+<p><strong>d) Como os valores observados concordam com os valores esperados?</strong></p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="exercícios.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Teste de qui-quadrado</span></span>
+<span id="cb57-2"><a href="exercícios.html#cb57-2" aria-hidden="true" tabindex="-1"></a>observado <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> <span class="dv">5000</span>, <span class="at">MN =</span> <span class="dv">3000</span>, <span class="at">NN =</span> <span class="dv">2000</span>)</span>
+<span id="cb57-3"><a href="exercícios.html#cb57-3" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(observado)</span></code></pre></div>
+<pre><code>## Chi-square test with continuity correction for Hardy-Weinberg equilibrium (autosomal)
+## Chi2 =  1159.331 DF =  1 p-value =  4.205711e-254 D =  -775 f =  0.3406593</code></pre>
+<p>O teste resultou em um <span class="math inline">\(\chi^2\)</span> muito elevado, com valor de P &lt; 0.05, indicando que a população está em desequilíbrio. O mesmo fato pode ser constatado pelo valor de D.</p>
+</div>
+<div id="q2-1" class="section level3 unnumbered">
+<h3>Q2</h3>
+<p><strong>Em uma população, 80% das plantas apresentam flor roxa. Cor de flor branca é governada por um gene autossomal recessivo. Quais as frequências gênicas, genotípicas e fenotípicas nesta população considerando E.H.W?</strong></p>
+<p>Dados da questão: 80% B_ : 20% bb</p>
+<ul>
+<li><p>Frequência fenotípica: 80% roxas : 20% brancas</p></li>
+<li><p>Frequência gênica:</p></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+q^2 &amp;= 0.2 \\
+q &amp;= \sqrt{0.2} \\
+q &amp;= 0.44721 \\
+\\
+p &amp;= 1 - 0.4472136 \\
+p &amp;= 0.5527864 
+\end{aligned}
+\]</span></p>
+<ul>
+<li>Frequência genotípica:</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P\ (BB) &amp;= 0.5527864^2 = 0.3055728 \\
+\\
+H\ (Bb) &amp;= 2 \times 0.5527864 \times 0.4472136 = 0.4944271 \\
+\\
+Q\ (bb) &amp;= 0.4472136^2 = 0.2
+\end{aligned}
+\]</span></p>
+</div>
+<div id="q3-1" class="section level3 unnumbered">
+<h3>Q3</h3>
+<p><strong>Qual a freqüência de um gene recessivo em uma população em cruzamento ao acaso, se metade dos indivíduos normais são portadores (heterozigotos)?</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\text{Heterozigotos}}{Normais} = \frac{2pq}{1-q^2} = \frac{2q(1-q)}{1-q^2} = \frac{2q(1-q)}{(1+q)(1-q)} = \frac{2q}{1+q} \\
+\end{aligned}
+\]</span></p>
+<p>Resolvendo para encontrar q:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{2q}{1+q} &amp;= \frac{1}{2} \\
+4q &amp;= 1+q \\
+3q &amp;= 1 \\
+q &amp;= \frac{1}{3}
+\end{aligned}
+\]</span></p>
+</div>
+<div id="q4-1" class="section level3 unnumbered">
+<h3>Q4</h3>
+<p><strong>Três alelos (A, B, e C) presentes em uma população. Todos os genótipos foram identificados por eletroforese e as freqüências na amostra analisada foram:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Genótipo</th>
+<th align="left">Frequência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AA</td>
+<td align="left">9.6</td>
+</tr>
+<tr class="even">
+<td align="left">AB</td>
+<td align="left">48.3</td>
+</tr>
+<tr class="odd">
+<td align="left">BB</td>
+<td align="left">34.3</td>
+</tr>
+<tr class="even">
+<td align="left">AC</td>
+<td align="left">2.8</td>
+</tr>
+<tr class="odd">
+<td align="left">BC</td>
+<td align="left">5.0</td>
+</tr>
+<tr class="even">
+<td align="left">CC</td>
+<td align="left">0.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>a) Quais são as freqüências gênicas na amostra?</strong></p>
+<p>Como a frequência de um gene é igual à frequência de homozigots + metade da frequência de heterozigotos, temos:</p>
+<p><span class="math display">\[A = 0.096 + \frac{1}{2}(0.483 + 0.028) = 0.3515\]</span></p>
+<p><span class="math display">\[B = 0.343 + \frac{1}{2}(0.483 + 0.05) = 0.6095\]</span></p>
+<p><span class="math display">\[C = 0.0 + \frac{1}{2}(0.028 + 0.05) = 0.039\]</span></p>
+<p><strong>b) Porque não se observou indivíduos do genótipo CC?</strong></p>
+<p>A frequência esperada de indivíduos CC é <span class="math inline">\(C^2 = 0.039^2 = 0.0015\)</span>. Como o tamanho amostral é de 178 indivíduos, espera-se encontrar <span class="math inline">\(178 \times 0.0015 = 0.27\)</span> indivíduos CC (menos de 1). Portanto, a frequência observada é esperada. Se o tamanho amostral fosse maior, poderíamos observar indivíduos CC.</p>
+</div>
+<div id="q5-1" class="section level3 unnumbered">
+<h3>Q5</h3>
+<p><strong>Um gene “A” ligado ao sexo. Supondo P(A) = 0.2 nos machos e 1,0 nas fêmeas na geração t1:</strong></p>
+<p><strong>a) Qual será a freqüência do gene A na população como um todo quando em E.H.W.?</strong></p>
+<p>Implementando uma função para calcular frequências de genes ligados ao sexo em machos e fêmeas:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="exercícios.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">99999</span>)</span>
+<span id="cb59-2"><a href="exercícios.html#cb59-2" aria-hidden="true" tabindex="-1"></a>calc_freq_xlinked <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">pm0 =</span> <span class="cn">NULL</span>, <span class="at">pf0 =</span> <span class="cn">NULL</span>, </span>
+<span id="cb59-3"><a href="exercícios.html#cb59-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">generations =</span> <span class="dv">10</span>) {</span>
+<span id="cb59-4"><a href="exercícios.html#cb59-4" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb59-5"><a href="exercícios.html#cb59-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">Generation =</span> <span class="fu">seq_len</span>(generations),</span>
+<span id="cb59-6"><a href="exercícios.html#cb59-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">pf =</span> <span class="fu">c</span>(pf0, <span class="fu">rep</span>(<span class="cn">NA</span>, generations <span class="sc">-</span> <span class="dv">1</span>)),</span>
+<span id="cb59-7"><a href="exercícios.html#cb59-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">pm =</span> <span class="fu">c</span>(pm0, <span class="fu">rep</span>(<span class="cn">NA</span>, generations <span class="sc">-</span> <span class="dv">1</span>))</span>
+<span id="cb59-8"><a href="exercícios.html#cb59-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb59-9"><a href="exercícios.html#cb59-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>generations) {</span>
+<span id="cb59-10"><a href="exercícios.html#cb59-10" aria-hidden="true" tabindex="-1"></a>        df[t, <span class="st">&quot;pf&quot;</span>] <span class="ot">&lt;-</span> (df[t<span class="dv">-1</span>, <span class="st">&quot;pm&quot;</span>] <span class="sc">+</span> df[t<span class="dv">-1</span>, <span class="st">&quot;pf&quot;</span>]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb59-11"><a href="exercícios.html#cb59-11" aria-hidden="true" tabindex="-1"></a>        df[t, <span class="st">&quot;pm&quot;</span>] <span class="ot">&lt;-</span> df[t<span class="dv">-1</span>, <span class="st">&quot;pf&quot;</span>]</span>
+<span id="cb59-12"><a href="exercícios.html#cb59-12" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb59-13"><a href="exercícios.html#cb59-13" aria-hidden="true" tabindex="-1"></a>    df<span class="sc">$</span>difference <span class="ot">&lt;-</span> df<span class="sc">$</span>pf <span class="sc">-</span> df<span class="sc">$</span>pm</span>
+<span id="cb59-14"><a href="exercícios.html#cb59-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df)</span>
+<span id="cb59-15"><a href="exercícios.html#cb59-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb59-16"><a href="exercícios.html#cb59-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-17"><a href="exercícios.html#cb59-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando função com dados do enunciado</span></span>
+<span id="cb59-18"><a href="exercícios.html#cb59-18" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.2</span>, <span class="at">pf0 =</span> <span class="dv">1</span>, <span class="at">generations =</span> <span class="dv">15</span>)</span></code></pre></div>
+<pre><code>##    Generation        pf        pm     difference
+## 1           1 1.0000000 0.2000000  0.80000000000
+## 2           2 0.6000000 1.0000000 -0.40000000000
+## 3           3 0.8000000 0.6000000  0.20000000000
+## 4           4 0.7000000 0.8000000 -0.10000000000
+## 5           5 0.7500000 0.7000000  0.05000000000
+## 6           6 0.7250000 0.7500000 -0.02500000000
+## 7           7 0.7375000 0.7250000  0.01250000000
+## 8           8 0.7312500 0.7375000 -0.00625000000
+## 9           9 0.7343750 0.7312500  0.00312500000
+## 10         10 0.7328125 0.7343750 -0.00156250000
+## 11         11 0.7335938 0.7328125  0.00078125000
+## 12         12 0.7332031 0.7335938 -0.00039062500
+## 13         13 0.7333984 0.7332031  0.00019531250
+## 14         14 0.7333008 0.7333984 -0.00009765625
+## 15         15 0.7333496 0.7333008  0.00004882813</code></pre>
+<p>Para verificar a frequência de A no equilíbrio, vamos simular 100 gerações de cruzamento ao acaso e obter a frequência na geração 100.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="exercícios.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.2</span>, <span class="at">pf0 =</span> <span class="dv">1</span>, <span class="at">generations =</span> <span class="dv">100</span>)<span class="sc">$</span>pf[<span class="dv">100</span>]</span></code></pre></div>
+<pre><code>## [1] 0.7333333</code></pre>
+<p>Verificando de forma visual:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="exercícios.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb63-2"><a href="exercícios.html#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-3"><a href="exercícios.html#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando 20 gerações</span></span>
+<span id="cb63-4"><a href="exercícios.html#cb63-4" aria-hidden="true" tabindex="-1"></a>freq50 <span class="ot">&lt;-</span> <span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.2</span>, <span class="at">pf0 =</span> <span class="dv">1</span>, <span class="at">generations =</span> <span class="dv">20</span>)</span>
+<span id="cb63-5"><a href="exercícios.html#cb63-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-6"><a href="exercícios.html#cb63-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizando simulação</span></span>
+<span id="cb63-7"><a href="exercícios.html#cb63-7" aria-hidden="true" tabindex="-1"></a>freq50[, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>] <span class="sc">%&gt;%</span></span>
+<span id="cb63-8"><a href="exercícios.html#cb63-8" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(</span>
+<span id="cb63-9"><a href="exercícios.html#cb63-9" aria-hidden="true" tabindex="-1"></a>        <span class="sc">!</span>Generation, <span class="at">names_to =</span> <span class="st">&quot;sex&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;freq&quot;</span></span>
+<span id="cb63-10"><a href="exercícios.html#cb63-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb63-11"><a href="exercícios.html#cb63-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">str_replace_all</span>(sex, <span class="fu">c</span>(<span class="st">&quot;pf&quot;</span> <span class="ot">=</span> <span class="st">&quot;Fêmea&quot;</span>,</span>
+<span id="cb63-12"><a href="exercícios.html#cb63-12" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;pm&quot;</span> <span class="ot">=</span> <span class="st">&quot;Macho&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb63-13"><a href="exercícios.html#cb63-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x =</span> Generation, <span class="at">y =</span> freq)) <span class="sc">+</span></span>
+<span id="cb63-14"><a href="exercícios.html#cb63-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb63-15"><a href="exercícios.html#cb63-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group=</span>sex, <span class="at">color=</span>sex)) <span class="sc">+</span></span>
+<span id="cb63-16"><a href="exercícios.html#cb63-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey40&quot;</span>, <span class="st">&quot;goldenrod&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb63-17"><a href="exercícios.html#cb63-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb63-18"><a href="exercícios.html#cb63-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb63-19"><a href="exercícios.html#cb63-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb63-20"><a href="exercícios.html#cb63-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">&quot;Sexo&quot;</span>,</span>
+<span id="cb63-21"><a href="exercícios.html#cb63-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;Frequência do gene A ao longo de 20 gerações&quot;</span>,</span>
+<span id="cb63-22"><a href="exercícios.html#cb63-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">&quot;O gene A é ligado ao sexo&quot;</span>,</span>
+<span id="cb63-23"><a href="exercícios.html#cb63-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">&quot;Geração&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequência&quot;</span></span>
+<span id="cb63-24"><a href="exercícios.html#cb63-24" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<p><img src="IQG_solutions_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><strong>b) Após três gerações de acasalamento ao acaso, (t4), qual será a freqüência do gene “A” nos machos (pm) e nas fêmeas (pf)?</strong></p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="exercícios.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.2</span>, <span class="at">pf0 =</span> <span class="dv">1</span>, <span class="at">generations =</span> <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>##   Generation  pf  pm difference
+## 1          1 1.0 0.2        0.8
+## 2          2 0.6 1.0       -0.4
+## 3          3 0.8 0.6        0.2
+## 4          4 0.7 0.8       -0.1</code></pre>
+<p>pm = 0.8    pf = 0.7</p>
+<p><strong>c) Qual a proporção do grau de desequilíbrio (pm - pf) da geração t4 em relação à geração t1?</strong></p>
+<p>O desequilíbio na geração t4 equivale a 1/8 do desequilíbrio na geração t1.</p>
+</div>
+<div id="q6" class="section level3 unnumbered">
+<h3>Q6</h3>
+<p><strong>Na geração parental “0,” 30% dos genótipos são “AAbb” e 70% são “aaBB.” Considerando cruzamento ao acaso em gerações sucessivas pergunta-se:</strong></p>
+<p><strong>Qual a freq. do genótipo “AABB” na progênie da geração 2 (após duas gerações de cruzamento ao acaso), se os locos estiverem (1) não ligados, (2) ligados com uma freqüência de recombinação de 10%? Idem para o genótipo AaBb.</strong></p>
+<p>30% Ab/Ab : 70% aB/aB</p>
+<p>Ab = pAqB = s</p>
+<p>aB = qApB = t</p>
 
 </div>
 </div>

@@ -216,8 +216,7 @@ P(AAa) &= \frac{{6 \choose 2} \times {6 \choose 1}}{{12 \choose 3}} \\
 \end{aligned}
 $$
 
-**c) Quais as frequências dos genótipos: "aaaaaa" e "AAAaaa" resultantes
-da autofecundação?**
+**c) Quais as frequências dos genótipos: "aaaaaa" e "AAAaaa" resultantes da autofecundação?**
 
 Frequências:
 
@@ -248,3 +247,235 @@ AA : 50% Aa : 25% aa
 
 Se o segundo caso fosse verdadeiro, esperaríamos encontrar 2 touros
 chifrudos. Portanto, temos 100% de certeza de que o touro é homozigoto.
+
+
+
+## Semana 2: Constituição genética da população {.unnumbered}
+
+### Q1 {.unnumbered}
+
+**Grupo sanguíneo M-N na espécie humana.**
+
+| M | MN | N |
+|:----|:----|:----|
+| 5000 | 3000 | 2000 |
+
+**a) Qual a freqüência genotípica observada nesta amostra?**
+
+```{r}
+total <- 5000 + 3000 + 2000
+P <- 5000 / total
+H <- 3000 / total
+Q <- 2000 / total
+
+P # homozigotos dominantes
+H # heterozigotos
+Q # homozigotos recessivos
+```
+
+**b) Quais são as freqüências gênicas?**
+
+```{r}
+p <- P + 0.5 * H
+q <- Q + 0.5 * H
+
+p
+q
+```
+
+
+**c) Utilizando-se as freqüências gênicas observadas, quais seriam as freqüências genotípicas esperadas de acordo com a lei de Hardy-Weinberg?**
+
+```{r}
+esperado <- c(P = p^2,
+              H = 2*p*q,
+              Q = q^2)
+esperado
+```
+
+**d) Como os valores observados concordam com os valores esperados?**
+
+```{r}
+# Teste de qui-quadrado
+observado <- c(MM = 5000, MN = 3000, NN = 2000)
+HardyWeinberg::HWChisq(observado)
+```
+
+O teste resultou em um $\chi^2$ muito elevado, com valor de P < 0.05, indicando que a população está em desequilíbrio. O mesmo fato pode ser constatado pelo valor de D.
+
+
+### Q2 {.unnumbered}
+
+**Em uma população, 80% das plantas apresentam flor roxa. Cor de flor branca é governada por um gene autossomal recessivo. Quais as frequências gênicas, genotípicas e fenotípicas nesta população considerando E.H.W?**
+
+Dados da questão: 80% B_ : 20% bb
+
+- Frequência fenotípica: 80% roxas : 20% brancas
+
+- Frequência gênica: 
+
+$$
+\begin{aligned}
+q^2 &= 0.2 \\
+q &= \sqrt{0.2} \\
+q &= 0.44721 \\
+\\
+p &= 1 - 0.4472136 \\
+p &= 0.5527864 
+\end{aligned}
+$$
+
+- Frequência genotípica:
+
+$$
+\begin{aligned}
+P\ (BB) &= 0.5527864^2 = 0.3055728 \\
+\\
+H\ (Bb) &= 2 \times 0.5527864 \times 0.4472136 = 0.4944271 \\
+\\
+Q\ (bb) &= 0.4472136^2 = 0.2
+\end{aligned}
+$$
+
+### Q3 {.unnumbered}
+
+**Qual a freqüência de um gene recessivo em uma população em cruzamento ao acaso, se metade dos indivíduos normais são portadores (heterozigotos)?**
+
+$$
+\begin{aligned}
+\frac{\text{Heterozigotos}}{Normais} = \frac{2pq}{1-q^2} = \frac{2q(1-q)}{1-q^2} = \frac{2q(1-q)}{(1+q)(1-q)} = \frac{2q}{1+q} \\
+\end{aligned}
+$$
+
+Resolvendo para encontrar q:
+
+$$
+\begin{aligned}
+\frac{2q}{1+q} &= \frac{1}{2} \\
+4q &= 1+q \\
+3q &= 1 \\
+q &= \frac{1}{3}
+\end{aligned}
+$$
+
+### Q4 {.unnumbered}
+
+**Três alelos (A, B, e C) presentes em uma população. Todos os genótipos foram identificados por eletroforese e as freqüências na amostra analisada foram:**
+
+| Genótipo | Frequência |
+|:----|:----|
+|AA|9.6|
+|AB|48.3|
+|BB|34.3|
+|AC|2.8|
+|BC|5.0|
+|CC|0.0|
+
+
+**a) Quais são as freqüências gênicas na amostra?**
+
+Como a frequência de um gene é igual à frequência de homozigots + metade da frequência de heterozigotos, temos:
+
+$$A = 0.096 + \frac{1}{2}(0.483 + 0.028) = 0.3515$$
+
+$$B = 0.343 + \frac{1}{2}(0.483 + 0.05) = 0.6095$$
+
+$$C = 0.0 + \frac{1}{2}(0.028 + 0.05) = 0.039$$ 
+
+**b) Porque não se observou indivíduos do genótipo CC?**
+
+A frequência esperada de indivíduos CC é $C^2 = 0.039^2 = 0.0015$. Como o tamanho amostral é de 178 indivíduos, espera-se encontrar $178 \times 0.0015 = 0.27$ indivíduos CC (menos de 1). Portanto, a frequência observada é esperada. Se o tamanho amostral fosse maior, poderíamos observar indivíduos CC.
+
+### Q5 {.unnumbered}
+
+**Um gene "A" ligado ao sexo. Supondo P(A) = 0.2 nos machos e 1,0 nas fêmeas na geração t1:**
+
+**a) Qual será a freqüência do gene A na população como um todo quando em E.H.W.?**
+
+Implementando uma função para calcular frequências de genes ligados ao sexo em machos e fêmeas:
+
+```{r}
+options(scipen = 99999)
+calc_freq_xlinked <- function(pm0 = NULL, pf0 = NULL, 
+                              generations = 10) {
+    df <- data.frame(
+        Generation = seq_len(generations),
+        pf = c(pf0, rep(NA, generations - 1)),
+        pm = c(pm0, rep(NA, generations - 1))
+    )
+    for(t in 2:generations) {
+        df[t, "pf"] <- (df[t-1, "pm"] + df[t-1, "pf"]) / 2
+        df[t, "pm"] <- df[t-1, "pf"]
+    }
+    df$difference <- df$pf - df$pm
+    return(df)
+}
+
+# Aplicando função com dados do enunciado
+calc_freq_xlinked(pm0 = 0.2, pf0 = 1, generations = 15)
+```
+
+Para verificar a frequência de A no equilíbrio, vamos simular 100 gerações de cruzamento ao acaso e obter a frequência na geração 100.
+
+```{r}
+calc_freq_xlinked(pm0 = 0.2, pf0 = 1, generations = 100)$pf[100]
+```
+
+Verificando de forma visual:
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+
+# Simulando 20 gerações
+freq50 <- calc_freq_xlinked(pm0 = 0.2, pf0 = 1, generations = 20)
+
+# Visualizando simulação
+freq50[, 1:3] %>%
+    tidyr::pivot_longer(
+        !Generation, names_to = "sex", values_to = "freq"
+) %>%
+    mutate(sex = str_replace_all(sex, c("pf" = "Fêmea",
+                                        "pm" = "Macho"))) %>%
+    ggplot(., aes(x = Generation, y = freq)) +
+    geom_point(aes(color = sex)) +
+    geom_line(aes(group=sex, color=sex)) +
+    scale_color_manual(values = c("grey40", "goldenrod")) +
+    theme_bw() +
+    ylim(0,1) + 
+    labs(
+        color = "Sexo",
+        title = "Frequência do gene A ao longo de 20 gerações",
+        subtitle = "O gene A é ligado ao sexo",
+        x = "Geração", y = "Frequência"
+    )
+```
+
+
+**b) Após três gerações de acasalamento ao acaso, (t4), qual será a freqüência do gene "A" nos machos (pm) e nas fêmeas (pf)?**
+
+```{r}
+calc_freq_xlinked(pm0 = 0.2, pf0 = 1, generations = 4)
+```
+
+pm = 0.8 &emsp;&emsp; pf = 0.7
+
+**c) Qual a proporção do grau de desequilíbrio (pm - pf) da geração t4 em relação à geração t1?**
+
+O desequilíbio na geração t4 equivale a 1/8 do desequilíbrio na geração t1.
+
+
+### Q6 {.unnumbered}
+
+**Na geração parental "0", 30% dos genótipos são "AAbb" e 70% são "aaBB". Considerando cruzamento ao acaso em gerações sucessivas pergunta-se:**
+
+**Qual a freq. do genótipo "AABB" na progênie da geração 2 (após duas gerações de cruzamento ao acaso), se os locos estiverem (1) não ligados, (2) ligados com uma freqüência de recombinação de 10%? Idem para o genótipo AaBb.**
+
+30% Ab/Ab : 70% aB/aB
+
+Ab = pAqB = s
+
+aB = qApB = t
+
+
+
+
