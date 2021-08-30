@@ -577,7 +577,7 @@ ab <- 0.21 - D
 - Frequência para *loci* ligados com c = 0.1:
 
 ```{r}
-# Frequências gaméticas na geração 2 para genes independentes
+# Frequências gaméticas na geração 2 para genes ligados
 D <- 0.1701
 AB <- 0.21 - D
 Ab <- 0.09 + D
