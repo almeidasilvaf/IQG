@@ -216,31 +216,33 @@ P(AAa) &= \frac{{6 \choose 2} \times {6 \choose 1}}{{12 \choose 3}} \\
 \end{aligned}
 $$
 
-**c) Quais as frequências dos genótipos: "aaaaaa" e "AAAaaa" resultantes da autofecundação?**
+**c) Quais as frequências dos genótipos: "aaaaaa" e "AAAaaa" resultantes
+da autofecundação?**
 
 Frequências:
 
 | F / M | AAA    | AAa    | Aaa    | aaa    |
-|:-------|:--------|:--------|:--------|:--------|
+|:------|:-------|:-------|:-------|:-------|
 | AAA   | AAAAAA | AAAAAa | AAAAaa | AAAaaa |
 | AAa   | AAAAAa | AAaAAa | AAaAaa | AAaaaa |
 | Aaa   | AAAAaa | AaaAAa | AaaAaa | Aaaaaa |
 | aaa   | AAAaaa | AAaaaa | Aaaaaa | aaaaaa |
 
-
 **aaaaaa:** $\frac{1}{16}$
-
 
 **AAAaaa:** $\frac{2}{16} = \frac{1}{8}$
 
-
 ### Q5 {.unnumbered}
 
-**Em bovinos, o fenótipo mocho é devido a um alelo dominante, o alelo recessivo confere o fenótipo chifrudo. Um touro mocho foi cruzado com 10 vacas sabidamente heterozigóticas e todos os descendentes foram mochos. Qual a probabilidade do touro ser homozigoto?**
+**Em bovinos, o fenótipo mocho é devido a um alelo dominante, o alelo
+recessivo confere o fenótipo chifrudo. Um touro mocho foi cruzado com 10
+vacas sabidamente heterozigóticas e todos os descendentes foram mochos.
+Qual a probabilidade do touro ser homozigoto?**
 
-Cruzamento: A_ x Aa &emsp; &emsp; Descendentes: 100% A_
+Cruzamento: A\_ x Aa     Descendentes: 100% A\_
 
-Se o touro fosse homozigoto, teríamos AA x Aa, que resultaria em 50% AA : 50% Aa (todos mochos).
+Se o touro fosse homozigoto, teríamos AA x Aa, que resultaria em 50% AA
+: 50% Aa (todos mochos).
 
 Se o touro fosse heterozigoto, teríamos Aa x Aa, que resultaria em 25%
 AA : 50% Aa : 25% aa
@@ -248,16 +250,14 @@ AA : 50% Aa : 25% aa
 Se o segundo caso fosse verdadeiro, esperaríamos encontrar 2 touros
 chifrudos. Portanto, temos 100% de certeza de que o touro é homozigoto.
 
-
-
 ## Semana 2: Constituição genética da população {.unnumbered}
 
 ### Q1 {.unnumbered}
 
 **Grupo sanguíneo M-N na espécie humana.**
 
-| M | MN | N |
-|:----|:----|:----|
+| M    | MN   | N    |
+|:-----|:-----|:-----|
 | 5000 | 3000 | 2000 |
 
 **a) Qual a freqüência genotípica observada nesta amostra?**
@@ -283,8 +283,9 @@ p
 q
 ```
 
-
-**c) Utilizando-se as freqüências gênicas observadas, quais seriam as freqüências genotípicas esperadas de acordo com a lei de Hardy-Weinberg?**
+**c) Utilizando-se as freqüências gênicas observadas, quais seriam as
+freqüências genotípicas esperadas de acordo com a lei de
+Hardy-Weinberg?**
 
 ```{r}
 esperado <- c(P = p^2,
@@ -301,18 +302,22 @@ observado <- c(MM = 5000, MN = 3000, NN = 2000)
 HardyWeinberg::HWChisq(observado)
 ```
 
-O teste resultou em um $\chi^2$ muito elevado, com valor de P < 0.05, indicando que a população está em desequilíbrio. O mesmo fato pode ser constatado pelo valor de D.
-
+O teste resultou em um $\chi^2$ muito elevado, com valor de P \< 0.05,
+indicando que a população está em desequilíbrio. O mesmo fato pode ser
+constatado pelo valor de D.
 
 ### Q2 {.unnumbered}
 
-**Em uma população, 80% das plantas apresentam flor roxa. Cor de flor branca é governada por um gene autossomal recessivo. Quais as frequências gênicas, genotípicas e fenotípicas nesta população considerando E.H.W?**
+**Em uma população, 80% das plantas apresentam flor roxa. Cor de flor
+branca é governada por um gene autossomal recessivo. Quais as
+frequências gênicas, genotípicas e fenotípicas nesta população
+considerando E.H.W?**
 
-Dados da questão: 80% B_ : 20% bb
+Dados da questão: 80% B\_ : 20% bb
 
-- Frequência fenotípica: 80% roxas : 20% brancas
+-   Frequência fenotípica: 80% roxas : 20% brancas
 
-- Frequência gênica: 
+-   Frequência gênica:
 
 $$
 \begin{aligned}
@@ -325,7 +330,7 @@ p &= 0.5527864
 \end{aligned}
 $$
 
-- Frequência genotípica:
+-   Frequência genotípica:
 
 $$
 \begin{aligned}
@@ -339,7 +344,9 @@ $$
 
 ### Q3 {.unnumbered}
 
-**Qual a freqüência de um gene recessivo em uma população em cruzamento ao acaso, se metade dos indivíduos normais são portadores (heterozigotos)?**
+**Qual a freqüência de um gene recessivo em uma população em cruzamento
+ao acaso, se metade dos indivíduos normais são portadores
+(heterozigotos)?**
 
 $$
 \begin{aligned}
@@ -360,39 +367,48 @@ $$
 
 ### Q4 {.unnumbered}
 
-**Três alelos (A, B, e C) presentes em uma população. Todos os genótipos foram identificados por eletroforese e as freqüências na amostra analisada foram:**
+**Três alelos (A, B, e C) presentes em uma população. Todos os genótipos
+foram identificados por eletroforese e as freqüências na amostra
+analisada foram:**
 
 | Genótipo | Frequência |
-|:----|:----|
-|AA|9.6|
-|AB|48.3|
-|BB|34.3|
-|AC|2.8|
-|BC|5.0|
-|CC|0.0|
-
+|:---------|:-----------|
+| AA       | 9.6        |
+| AB       | 48.3       |
+| BB       | 34.3       |
+| AC       | 2.8        |
+| BC       | 5.0        |
+| CC       | 0.0        |
 
 **a) Quais são as freqüências gênicas na amostra?**
 
-Como a frequência de um gene é igual à frequência de homozigots + metade da frequência de heterozigotos, temos:
+Como a frequência de um gene é igual à frequência de homozigots + metade
+da frequência de heterozigotos, temos:
 
 $$A = 0.096 + \frac{1}{2}(0.483 + 0.028) = 0.3515$$
 
 $$B = 0.343 + \frac{1}{2}(0.483 + 0.05) = 0.6095$$
 
-$$C = 0.0 + \frac{1}{2}(0.028 + 0.05) = 0.039$$ 
+$$C = 0.0 + \frac{1}{2}(0.028 + 0.05) = 0.039$$
 
 **b) Porque não se observou indivíduos do genótipo CC?**
 
-A frequência esperada de indivíduos CC é $C^2 = 0.039^2 = 0.0015$. Como o tamanho amostral é de 178 indivíduos, espera-se encontrar $178 \times 0.0015 = 0.27$ indivíduos CC (menos de 1). Portanto, a frequência observada é esperada. Se o tamanho amostral fosse maior, poderíamos observar indivíduos CC.
+A frequência esperada de indivíduos CC é $C^2 = 0.039^2 = 0.0015$. Como
+o tamanho amostral é de 178 indivíduos, espera-se encontrar
+$178 \times 0.0015 = 0.27$ indivíduos CC (menos de 1). Portanto, a
+frequência observada é esperada. Se o tamanho amostral fosse maior,
+poderíamos observar indivíduos CC.
 
 ### Q5 {.unnumbered}
 
-**Um gene "A" ligado ao sexo. Supondo P(A) = 0.2 nos machos e 1,0 nas fêmeas na geração t1:**
+**Um gene "A" ligado ao sexo. Supondo P(A) = 0.2 nos machos e 1,0 nas
+fêmeas na geração t1:**
 
-**a) Qual será a freqüência do gene A na população como um todo quando em E.H.W.?**
+**a) Qual será a freqüência do gene A na população como um todo quando
+em E.H.W.?**
 
-Implementando uma função para calcular frequências de genes ligados ao sexo em machos e fêmeas:
+Implementando uma função para calcular frequências de genes ligados ao
+sexo em machos e fêmeas:
 
 ```{r}
 options(scipen = 99999)
@@ -415,7 +431,8 @@ calc_freq_xlinked <- function(pm0 = NULL, pf0 = NULL,
 calc_freq_xlinked(pm0 = 0.2, pf0 = 1, generations = 15)
 ```
 
-Para verificar a frequência de A no equilíbrio, vamos simular 100 gerações de cruzamento ao acaso e obter a frequência na geração 100.
+Para verificar a frequência de A no equilíbrio, vamos simular 100
+gerações de cruzamento ao acaso e obter a frequência na geração 100.
 
 ```{r}
 calc_freq_xlinked(pm0 = 0.2, pf0 = 1, generations = 100)$pf[100]
@@ -450,31 +467,126 @@ freq50[, 1:3] %>%
     )
 ```
 
-
-**b) Após três gerações de acasalamento ao acaso, (t4), qual será a freqüência do gene "A" nos machos (pm) e nas fêmeas (pf)?**
+**b) Após três gerações de acasalamento ao acaso, (t4), qual será a
+freqüência do gene "A" nos machos (pm) e nas fêmeas (pf)?**
 
 ```{r}
 calc_freq_xlinked(pm0 = 0.2, pf0 = 1, generations = 4)
 ```
 
-pm = 0.8 &emsp;&emsp; pf = 0.7
+pm = 0.8    pf = 0.7
 
-**c) Qual a proporção do grau de desequilíbrio (pm - pf) da geração t4 em relação à geração t1?**
+**c) Qual a proporção do grau de desequilíbrio (pm - pf) da geração t4
+em relação à geração t1?**
 
-O desequilíbio na geração t4 equivale a 1/8 do desequilíbrio na geração t1.
-
+O desequilíbio na geração t4 equivale a 1/8 do desequilíbrio na geração
+t1.
 
 ### Q6 {.unnumbered}
 
-**Na geração parental "0", 30% dos genótipos são "AAbb" e 70% são "aaBB". Considerando cruzamento ao acaso em gerações sucessivas pergunta-se:**
+**Na geração parental "0", 30% dos genótipos são "AAbb" e 70% são
+"aaBB". Considerando cruzamento ao acaso em gerações sucessivas
+pergunta-se:**
 
-**Qual a freq. do genótipo "AABB" na progênie da geração 2 (após duas gerações de cruzamento ao acaso), se os locos estiverem (1) não ligados, (2) ligados com uma freqüência de recombinação de 10%? Idem para o genótipo AaBb.**
+**Qual a freq. do genótipo "AABB" na progênie da geração 2 (após duas
+gerações de cruzamento ao acaso), se os locos estiverem (1) não ligados,
+(2) ligados com uma freqüência de recombinação de 10%? Idem para o
+genótipo AaBb.**
 
-30% Ab/Ab : 70% aB/aB
+30% Ab/Ab : 70% aB/aB, portanto:
 
-Ab = pAqB = s
+$p_A$ = 0.3   $q_A$ = 0.7 <br /> $p_B$ = 0.7   $q_B$ = 0.3
 
-aB = qApB = t
+| Gametas    | AB              | Ab              | aB              | ab              |
+|------------|-----------------|-----------------|-----------------|-----------------|
+| Freq. EHW  | $p_Ap_B = 0.21$ | $p_Aq_B = 0.09$ | $q_Ap_B = 0.49$ | $q_Aq_B = 0.21$ |
+| Freq. obs. | r = 0           | s = 0.3         | t = 0.7         | u = 0           |
+| Dif. EHW   | +D = 0.21      |  -D = -0.21     |  -D = -0.21      |  +D = 0.21     |
+
+
+Agora que conhecemos $D_0$, podemos calcular $D_2$ nos dois cenários apresentados no enunciado:
+
+- *Loci* não ligados:
+
+$$
+\begin{aligned}
+D_t &= D_0(1-c)^t \\
+D_2 &= 0.21(1-0.5)^2 \\
+&= 0.21 \times 0.25 \\
+&= 0.0525
+\end{aligned}
+$$
+
+- *Loci* ligados com c = 0.1:
+
+$$
+\begin{aligned}
+D_2 &= 0.21(1-0.1)^2 \\
+&= 0.21 \times 0.81 \\
+&= 0.1701
+\end{aligned}
+$$
+
+
+Sendo r a frequência do gameta AB, a frequência do genótipo AABB será $r^2$.
+
+- Frequência de AABB para *loci* não ligados:
+
+$$
+\begin{aligned}
+r &= \hat{r} - D \\
+&= 0.21 - 0.0525 \\
+&= 0.1575 \\
+\\
+r^2 &= 0.02480625
+\end{aligned}
+$$
+
+- Frequência de AABB para *loci* ligados com c = 0.1:
+
+$$
+\begin{aligned}
+r &= 0.21 - 0.1721 \\
+&= 0.0379 \\
+\\
+r^2 &= 0.00143641
+\end{aligned}
+$$
+
+Para o genótipo AaBb (duplo heterozigoto), temos 4 possíveis combinações de gametas:
+
+1. AB e ab
+2. Ab e aB
+3. aB e Ab
+4. ab e AB
+
+- Frequência para *loci* não ligados:
+
+```{r}
+# Frequências gaméticas na geração 2 para genes independentes
+D <- 0.0525
+AB <- 0.21 - D
+Ab <- 0.09 + D
+aB <- 0.49 + D
+ab <- 0.21 - D
+
+# Soma dos produtos
+(AB * ab) + (Ab * aB) + (aB * Ab) + (ab * AB)
+```
+
+- Frequência para *loci* ligados com c = 0.1:
+
+```{r}
+# Frequências gaméticas na geração 2 para genes independentes
+D <- 0.1701
+AB <- 0.21 - D
+Ab <- 0.09 + D
+aB <- 0.49 + D
+ab <- 0.21 - D
+
+# Soma dos produtos
+(AB * ab) + (Ab * aB) + (aB * Ab) + (ab * AB)
+```
 
 
 
