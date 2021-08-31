@@ -37,3 +37,33 @@ choose(3, 2) / choose(4, 2)
 
 50%
 
+
+## Semana 3 {.unnumbered}
+
+População em EHW para um loco com 3 alelos com as seguintes frequências:
+
+- P(A1) = p = 0,1
+- P(A2) = q = 0,3
+- P(A3) = r = 0,6
+
+Quais as respectivas frequências genotípicas?
+
+$A1A1 = p^2 = 0.01$
+
+$A1A2 = 2pq = 2 \times 0,1 \times 0,3 = 0,06$
+
+$A1A3 = 2pr = 2 \times 0,1 \times 0,6 = 0,12$
+
+$A2A3 = 2qr = 2 \times 0,3 \times 0,6 = 0,36$
+
+$A2A2 = q^2 = 0.09$
+
+$A3A3 = r^2 = 0.36$
+
+
+Conferindo se as frequências somam a 1:
+
+```{r}
+0.01 + 0.06 + 0.12 + 0.36 + 0.09 + 0.36
+```
+
