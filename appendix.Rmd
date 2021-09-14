@@ -67,3 +67,13 @@ Conferindo se as frequências somam a 1:
 0.01 + 0.06 + 0.12 + 0.36 + 0.09 + 0.36
 ```
 
+## Semana 4 {.unnumbered}
+
+Quais fatores contribuem com a mudança de frequência gênica devido à migração?
+
+
+Os fatores são: 
+
+- Diferença nas frequências gênicas na população de nativos e migrantes
+
+- Taxa de migração
