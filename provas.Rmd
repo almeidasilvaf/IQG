@@ -138,27 +138,35 @@ pB = qB = 0.5
 | Gametas | AB | Ab | aB | ab |
 |:----|:----|:----|:----|:----|
 |Freq. EHW|0.25|0.25|0.25|0.25|
-|Freq. obs.|r = 0.5|s = 0|t = 0|u = 0.5|
+|Freq. obs. inicial|r = 0.5|s = 0|t = 0|u = 0.5|
 |Desequilíbrio|0.25|-0.25|-0.25|0.25|
 
 Sabendo que $D_0 = 0.25$, podemos calcular $D_t$, sendo t a geração usando a seguinte fórmula:
 
 $D_t = D_0(1-c)^t$
 
-A partir do desequilíbrio na geração t, $D_t$, podemos calcular a frequência de qualquer gameta subtraindo o desequilíbrio na geração t da frequência do gameta no equilíbrio. Por exemplo:
+A partir do desequilíbrio na geração t, $D_t$, podemos calcular a frequência de qualquer gameta usando:
 
-$s = \hat{s} - D_t$
+$$
+\begin{aligned}
+r &= \hat{r} + D_t \\
+s &= \hat{s} - D_t \\
+t &= \hat{t} - D_t \\
+u &= \hat{u} + D_t
+\end{aligned}
+$$
 
-Implementando função para calcular a desequilíbrio e a frequência gamética em t gerações:
+
+Implementando função para calcular o desequilíbrio e a frequência gamética em t gerações:
 
 ```{r}
 calc_D_freq <- function(D0 = 0.25, feq = c(0.25, 0.25, 0.25, 0.25),
                         c = 0.5, t = c(1:5)) {
     dt <- D0 * (1-c)^t
-    rt <- feq[1] - dt
-    st <- feq[2] + dt
-    tt <- feq[3] + dt
-    ut <- feq[4] - dt
+    rt <- feq[1] + dt
+    st <- feq[2] - dt
+    tt <- feq[3] - dt
+    ut <- feq[4] + dt
     
     df_result <- data.frame(D=NA, r=NA, s=NA, t=NA, u=NA, Generation=NA)
     for(i in seq_along(t)) {
@@ -171,20 +179,51 @@ calc_D_freq <- function(D0 = 0.25, feq = c(0.25, 0.25, 0.25, 0.25),
     df_result$Generation <- t
     return(df_result)
 }
-# Frequencias para c=0.5 (locos independentes)
-calc_D_freq(c = 0.5, t=1:20)
-
-# Frequencias para c=0.4 (locos ligados)
-calc_D_freq(c = 0.4, t=1:20)
 ```
-- Locos não ligados:
 
-Gametas: 25% AB : 25% ab : 25% Ab : 25% aB
+Agora, podemos simular 20 gerações de cruzamento ao acaso e verificar as frequências gaméticas no equilíbrio para c = 0.5 e c = 0.4.
 
-- Locos ligados:
+```{r}
+# Frequencias para c = 0.5 (locos independentes)
+independentes <- calc_D_freq(c = 0.5, t=1:20)
+independentes
+
+# Frequencias para c = 0.4 (locos ligados com taxa de recombinação de 40%)
+ligados <- calc_D_freq(c = 0.4, t=1:20)
+ligados
+```
 
 
 **b) Qual a freq. do genótipo "AaBb" quando a população estiver atingida o equilíbrio, se os locos estiverem (1) não ligados, (2) ligados (fase aproximação) com uma frequência de recombinação de 40%?**
+
+O genótipo AaBb pode ser gerado por:
+
+- AB e ab (ru)
+- Ab e aB (st)
+- aB e Ab (ts)
+- ab e AB (ur)
+
+Usando as frequências obtidas na **letra A)**, temos:
+
+```{r}
+i <- independentes
+
+# Para c = 0.5
+(i$r[20] * i$u[20]) + 
+    (i$s[20] * i$t[20]) + 
+    (i$t[20] * i$s[20]) + 
+    (i$u[20] * i$r[20])
+```
+
+```{r}
+l <- ligados
+
+# Para c = 0.4 
+(l$r[20] * l$u[20]) + 
+    (l$s[20] * l$t[20]) + 
+    (l$t[20] * l$s[20]) + 
+    (l$u[20] * l$r[20])
+```
 
 ### Q4 {.unnumbered}
 
