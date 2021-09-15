@@ -160,17 +160,22 @@ calc_D_freq <- function(D0 = 0.25, feq = c(0.25, 0.25, 0.25, 0.25),
     tt <- feq[3] + dt
     ut <- feq[4] - dt
     
-    df_result <- data.frame(r=NA, s=NA, t=NA, u=NA, Generation=NA)
+    df_result <- data.frame(D=NA, r=NA, s=NA, t=NA, u=NA, Generation=NA)
     for(i in seq_along(t)) {
         df_result[i, "r"] <- rt[i]
         df_result[i, "s"] <- st[i]
         df_result[i, "t"] <- tt[i]
         df_result[i, "u"] <- ut[i]
     }
+    df_result$D <- dt
     df_result$Generation <- t
     return(df_result)
 }
-calc_D_freq(c = 0.4, t=1:10)
+# Frequencias para c=0.5 (locos independentes)
+calc_D_freq(c = 0.5, t=1:20)
+
+# Frequencias para c=0.4 (locos ligados)
+calc_D_freq(c = 0.4, t=1:20)
 ```
 - Locos não ligados:
 
