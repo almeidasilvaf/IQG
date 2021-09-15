@@ -130,11 +130,53 @@ A frequência de q no equilíbrio é de aproximadamente 0.40 ou 40%.
 
 **a) Quais as frequências gaméticas iniciais e no equilíbrio se os locos estiverem (1) não ligados, (2) ligados (fase aproximação) com uma frequência de recombinação de 40%?**
 
+100% AaBb, logo:
+
+pA = qA = 0.5 <br />
+pB = qB = 0.5
+
+| Gametas | AB | Ab | aB | ab |
+|:----|:----|:----|:----|:----|
+|Freq. EHW|0.25|0.25|0.25|0.25|
+|Freq. obs.|r = 0.5|s = 0|t = 0|u = 0.5|
+|Desequilíbrio|0.25|-0.25|-0.25|0.25|
+
+Sabendo que $D_0 = 0.25$, podemos calcular $D_t$, sendo t a geração usando a seguinte fórmula:
+
+$D_t = D_0(1-c)^t$
+
+A partir do desequilíbrio na geração t, $D_t$, podemos calcular a frequência de qualquer gameta subtraindo o desequilíbrio na geração t da frequência do gameta no equilíbrio. Por exemplo:
+
+$s = \hat{s} - D_t$
+
+Implementando função para calcular a desequilíbrio e a frequência gamética em t gerações:
+
+```{r}
+calc_D_freq <- function(D0 = 0.25, feq = c(0.25, 0.25, 0.25, 0.25),
+                        c = 0.5, t = c(1:5)) {
+    dt <- D0 * (1-c)^t
+    rt <- feq[1] - dt
+    st <- feq[2] + dt
+    tt <- feq[3] + dt
+    ut <- feq[4] - dt
+    
+    df_result <- data.frame(r=NA, s=NA, t=NA, u=NA, Generation=NA)
+    for(i in seq_along(t)) {
+        df_result[i, "r"] <- rt[i]
+        df_result[i, "s"] <- st[i]
+        df_result[i, "t"] <- tt[i]
+        df_result[i, "u"] <- ut[i]
+    }
+    df_result$Generation <- t
+    return(df_result)
+}
+calc_D_freq(c = 0.4, t=1:10)
+```
 - Locos não ligados:
 
 Gametas: 25% AB : 25% ab : 25% Ab : 25% aB
 
-- Loco ligados:
+- Locos ligados:
 
 
 **b) Qual a freq. do genótipo "AaBb" quando a população estiver atingida o equilíbrio, se os locos estiverem (1) não ligados, (2) ligados (fase aproximação) com uma frequência de recombinação de 40%?**
@@ -145,7 +187,44 @@ Gametas: 25% AB : 25% ab : 25% Ab : 25% aB
 
 **a) Quais os tipos de gametas a serem produzidos e as respectivas proporções?**
 
+Segregação cromatídica: AAAAAAaaaaaa
+
+Gametas: 
+
+- AAA
+- AAa
+- Aaa
+- aaa
+
+Calculando frequências:
+
+```{r}
+# Frequência de AAA
+AAA <- choose(6, 3) / choose(12, 3)
+AAA
+
+# Frequência de AAa
+AAa <- ( choose(6, 2) * choose(6, 1) ) / choose(12, 3)
+AAa
+
+# Frequência de Aaa
+Aaa <- ( choose(6, 1) * choose(6,2) ) / choose(12, 3)
+Aaa
+
+# Frequência de aaa
+aaa <- choose(6, 3) / choose(12, 3)
+aaa
+
+# Conferindo se as frequências somam a 1
+AAA + AAa + Aaa + aaa
+```
+
 **b) Quais as frequências fenotípicas?**
+
+Como indivíduos de porte baixo são representados pelo genótipo aaaaaa, a sua frequência será $aaa^2 = 0.008264463$ ou 0.8264463%. Sendo assim, temos as seguintes frequências fenotípicas:
+
+0.8264463% porte baixo : 99.17355% porte alto
+
 
 ### Q5 {.unnumbered}
 
