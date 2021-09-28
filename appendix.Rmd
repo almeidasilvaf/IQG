@@ -80,7 +80,7 @@ Os fatores são:
 
 ## Semana 5 {.unnumbered}
 
-Em que circunstâncias seleção e mutação se equilibram?
+Considerando seleção uma causa de mudaça de frequência gênica muito mais forte que a mutação, em que circunstâncias ocorre o equilíbrio da frequência gênica resultante de ambas as forças?
 
 Quando q estiver muito baixo, pois isso favorece a mutação e desfavorece a seleção.
 
