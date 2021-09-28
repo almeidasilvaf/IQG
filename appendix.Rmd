@@ -77,3 +77,10 @@ Os fatores são:
 - Diferença nas frequências gênicas na população de nativos e migrantes
 
 - Taxa de migração
+
+## Semana 5 {.unnumbered}
+
+Em que circunstâncias seleção e mutação se equilibram?
+
+Quando q estiver muito baixo, pois isso favorece a mutação e desfavorece a seleção.
+
