@@ -88,4 +88,4 @@ Quando q estiver muito baixo, pois isso favorece a mutação e desfavorece a sel
 ## Semana 6 {.unnumbered}
 
 
-A média da frequência gênica entre todas as linhas permanecerá igual à frequência inicial. Logo, $\bar{p} = p_0 = 0.4$ e $\bar{q} = q_0 = 0.6$, e as frequências genotípicas serão $p_0^2\ e\ q_0^2$.
+A média da frequência gênica entre todas as linhas permanecerá igual à frequência inicial. Logo, $\bar{p} = p_0 = 0.4$ e $\bar{q} = q_0 = 0.6$, e as frequências genotípicas serão $A1A1 = p_0^2$, $A1A2 = 0$ e $A2A2=q_0^2$.
