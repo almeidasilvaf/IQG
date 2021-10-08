@@ -1071,7 +1071,7 @@ F_{10} = 1 - 0.99375^10 = 0.0607712
 <h3>Q3</h3>
 <p><strong>Um grupo de pesquisadores, cada um recebeu 20 indivíduos tomados ao acaso de uma grande população que continha um alelo mutante com uma frequência gênica = 0.2. Cada pesquisador conduziu sua sub-população mantendo 20 indivíduos ao acaso para ser progenitores da próxima geração. Após 10 gerações cada pesquisador determinou a freq. gênica de sua sub-pop. através da avaliação de 20 indivíduos da progênie.</strong></p>
 <p><strong>a) Qual seria a freq. gênica média encontrada?</strong></p>
-<p>A frequência gênica média seria igual à frequência gênica inicial. Ou seja, sendo q o alelo mutante:</p>
+<p>A frequência gênica média seria igual à frequência gênica inicial. Ou seja:</p>
 <p><span class="math inline">\(\bar{p} = p_0 = 0.2\)</span>.</p>
 <p><strong>b) Quanta variação seria esperada entre pesquisadores, quanto à suas estimativas de freq. gênica?</strong></p>
 <p>Após 10 gerações, 11 gerações de deriva teriam ocorrido nas amostras de cada pesquisador. Calculando <span class="math inline">\(F_{11}\)</span> com a função implementada anteriormente:</p>
@@ -1089,13 +1089,17 @@ F_{10} = 1 - 0.99375^10 = 0.0607712
 <div id="q4-3" class="section level3 unnumbered">
 <h3>Q4</h3>
 <p><strong>Se o número dos três genótipos contados pelos pesquisadores no experimento do problema 3 fossem acumulados, qual seria a freq. genotípica resultante?</strong></p>
+<p>Sendo <span class="math inline">\(p_0 = 0.2\)</span> e <span class="math inline">\(q_0 = 0.8\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-A_1A_1 &amp;= p_0^2 + \sigma^2_q = 0.2 \times 0.03889258 = 0.007778516 \\
-A_1A_2 &amp;= 2p_0q_0 - \sigma^2_q = 2 \times 0.2 \times 0.8 - 0.03889258 = 0.2811074 \\
-A_2A_2 &amp;= q_0^2 + \sigma^2_q = 0.8 + 0.03889258 = 0.8388926
+A_1A_1 &amp;= p_0^2 + \sigma^2_q = 0.04 + 0.03889258 = 0.07889258 \\
+A_1A_2 &amp;= 2p_0q_0 - 2\sigma^2_q = 2 \times 0.2 \times 0.8 - 2 \times 0.03889258 = 0.2422148 \\
+A_2A_2 &amp;= q_0^2 + \sigma^2_q = 0.64 + 0.03889258 = 0.6788926
 \end{aligned}
 \]</span></p>
+<p>Conferindo se as frequências somam a 1:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="exercícios.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.07889258</span> <span class="sc">+</span> <span class="fl">0.2422148</span> <span class="sc">+</span> <span class="fl">0.6788926</span></span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
 </div>
 <div id="q5-3" class="section level3 unnumbered">
 <h3>Q5</h3>

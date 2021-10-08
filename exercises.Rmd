@@ -793,7 +793,7 @@ calc_inbreeding(N = 80, t = 10)
 
 **a) Qual seria a freq. gênica média encontrada?**
 
-A frequência gênica média seria igual à frequência gênica inicial. Ou seja, sendo q o alelo mutante:
+A frequência gênica média seria igual à frequência gênica inicial. Ou seja:
 
 $\bar{p} = p_0 = 0.2$.
 
@@ -821,13 +821,21 @@ Logo, a variância esperada seria $\sigma^2_q = 0.03889258$, e o desvio padrão 
 
 **Se o número dos três genótipos contados pelos pesquisadores no experimento do problema 3 fossem acumulados, qual seria a freq. genotípica resultante?**
 
+Sendo $p_0 = 0.2$ e $q_0 = 0.8$:
+
 $$
 \begin{aligned}
-A_1A_1 &= p_0^2 + \sigma^2_q = 0.2 \times 0.03889258 = 0.007778516 \\
-A_1A_2 &= 2p_0q_0 - \sigma^2_q = 2 \times 0.2 \times 0.8 - 0.03889258 = 0.2811074 \\
-A_2A_2 &= q_0^2 + \sigma^2_q = 0.8 + 0.03889258 = 0.8388926
+A_1A_1 &= p_0^2 + \sigma^2_q = 0.04 + 0.03889258 = 0.07889258 \\
+A_1A_2 &= 2p_0q_0 - 2\sigma^2_q = 2 \times 0.2 \times 0.8 - 2 \times 0.03889258 = 0.2422148 \\
+A_2A_2 &= q_0^2 + \sigma^2_q = 0.64 + 0.03889258 = 0.6788926
 \end{aligned}
 $$
+
+Conferindo se as frequências somam a 1:
+
+```{r}
+0.07889258 + 0.2422148 + 0.6788926
+```
 
 
 ### Q5 {.unnumbered}
