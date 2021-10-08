@@ -1017,21 +1017,85 @@ q_{15} &amp;= 0.08735422
 </tbody>
 </table>
 <p><strong>a) As freq. correspondentes são compatíveis com uma amostra vinda de uma pop. em cruzamento ao acaso?</strong></p>
+<p>Se a população estivesse em cruzamento ao acaso, as frequências observadas seriam iguais às frequências no equilíbrio de Hardy-Weinberg. Verificando se a população está em equilíbrio:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="exercícios.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(HardyWeinberg)</span></code></pre></div>
+<pre><code>## Loading required package: mice</code></pre>
+<pre><code>## 
+## Attaching package: &#39;mice&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     filter</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     cbind, rbind</code></pre>
+<pre><code>## Loading required package: Rsolnp</code></pre>
+<pre><code>## 
+## Attaching package: &#39;HardyWeinberg&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     recode</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="exercícios.html#cb54-1" aria-hidden="true" tabindex="-1"></a>frequencies <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">AA =</span> <span class="dv">180</span>, <span class="at">Aa =</span> <span class="dv">713</span>, <span class="at">aa =</span> <span class="dv">1708</span>)</span>
+<span id="cb54-2"><a href="exercícios.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">HWChisq</span>(frequencies)</span></code></pre></div>
+<pre><code>## Chi-square test with continuity correction for Hardy-Weinberg equilibrium (autosomal)
+## Chi2 =  68.13025 DF =  1 p-value =  0.0000000000000001530447 D =  -69.33785 f =  0.1628269</code></pre>
+<p>A estatística <span class="math inline">\(\chi^2\)</span> é muito elevada, com <em>P</em> &lt; 0.05, indicando que a população não está em equilíbrio. O mesmo pode ser observado pelo valor de D.</p>
 <p><strong>b) O que as freq. sugerem sobre a estrutura genética da população?</strong></p>
+<p>As frequências sugerem que a população não está em cruzamento ao acaso, e que essa pode ter sido formada pela união de sub-populações com frequências gênicas diferentes entre si.</p>
 </div>
 <div id="q2-3" class="section level3 unnumbered">
 <h3>Q2</h3>
 <p><strong>Se uma população é mantida através de acasalamento ao acaso envolvendo 40 pares de indivíduos tomados ao acaso de uma grande população, qual será o coef. de endogamia “F” após 5 e após 10 gerações?</strong></p>
+<p>Com N = 80, temos <span class="math inline">\(\Delta{F} = \frac{1}{2N} = \frac{1}{160} = 0.00625\)</span></p>
+<p>Sendo <span class="math inline">\(F_t = 1 - (1-\Delta{F})^t\)</span>, temos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_5 = 1 - 0.99375^5 = 0.0308618 \\
+\\
+F_{10} = 1 - 0.99375^10 = 0.0607712
+\end{aligned}
+\]</span></p>
+<p>Implementando função para calcular <span class="math inline">\(F_t\)</span> para dado N:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="exercícios.html#cb56-1" aria-hidden="true" tabindex="-1"></a>calc_inbreeding <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">N =</span> <span class="cn">NULL</span>, <span class="at">t =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb56-2"><a href="exercícios.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  deltaF <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>N)</span>
+<span id="cb56-3"><a href="exercícios.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  Ft <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> deltaF)<span class="sc">^</span>t</span>
+<span id="cb56-4"><a href="exercícios.html#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(Ft)</span>
+<span id="cb56-5"><a href="exercícios.html#cb56-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-6"><a href="exercícios.html#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="exercícios.html#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Testando</span></span>
+<span id="cb56-8"><a href="exercícios.html#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding</span>(<span class="at">N =</span> <span class="dv">80</span>, <span class="at">t =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 0.03086181</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="exercícios.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding</span>(<span class="at">N =</span> <span class="dv">80</span>, <span class="at">t =</span> <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## [1] 0.06077117</code></pre>
 </div>
 <div id="q3-3" class="section level3 unnumbered">
 <h3>Q3</h3>
-<p><strong>Um grupo de pesquisadores, cada um recebeu 20 indivíduos tomados ao acaso de uma grande população que continha um alelo mutante com uma freqüência gênica = 0.2. Cada pesquisador conduziu sua sub-população mantendo 20 indivíduos ao acaso para ser progenitores da próxima geração. Após 10 gerações cada pesquisador determinou a freq. gênica de sua sub-pop. através da avaliação de 20 indivíduos da progênie.</strong></p>
+<p><strong>Um grupo de pesquisadores, cada um recebeu 20 indivíduos tomados ao acaso de uma grande população que continha um alelo mutante com uma frequência gênica = 0.2. Cada pesquisador conduziu sua sub-população mantendo 20 indivíduos ao acaso para ser progenitores da próxima geração. Após 10 gerações cada pesquisador determinou a freq. gênica de sua sub-pop. através da avaliação de 20 indivíduos da progênie.</strong></p>
 <p><strong>a) Qual seria a freq. gênica média encontrada?</strong></p>
+<p>A frequência gênica média seria igual à frequência gênica inicial. Ou seja, sendo q o alelo mutante:</p>
+<p><span class="math inline">\(\bar{p} = p_0 = 0.2\)</span>.</p>
 <p><strong>b) Quanta variação seria esperada entre pesquisadores, quanto à suas estimativas de freq. gênica?</strong></p>
+<p>Após 10 gerações, 11 gerações de deriva teriam ocorrido nas amostras de cada pesquisador. Calculando <span class="math inline">\(F_{11}\)</span> com a função implementada anteriormente:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="exercícios.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding</span>(<span class="at">N =</span> <span class="dv">20</span>, <span class="at">t =</span> <span class="dv">11</span>)</span></code></pre></div>
+<pre><code>## [1] 0.2430786</code></pre>
+<p>Sabendo que <span class="math inline">\(\sigma^2_q = p_0q_0F_t\)</span>, temos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sigma^2_q &amp;= 0.2 \times 0.8 \times 0.2430786 \\
+&amp;= 0.03889258
+\end{aligned}
+\]</span></p>
+<p>Logo, a variância esperada seria <span class="math inline">\(\sigma^2_q = 0.03889258\)</span>, e o desvio padrão seria <span class="math inline">\(\sigma_q = \sqrt{0.03889258} = 0.197212\)</span>.</p>
 </div>
 <div id="q4-3" class="section level3 unnumbered">
 <h3>Q4</h3>
 <p><strong>Se o número dos três genótipos contados pelos pesquisadores no experimento do problema 3 fossem acumulados, qual seria a freq. genotípica resultante?</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+A_1A_1 &amp;= p_0^2 + \sigma^2_q = 0.2 \times 0.03889258 = 0.007778516 \\
+A_1A_2 &amp;= 2p_0q_0 - \sigma^2_q = 2 \times 0.2 \times 0.8 - 0.03889258 = 0.2811074 \\
+A_2A_2 &amp;= q_0^2 + \sigma^2_q = 0.8 + 0.03889258 = 0.8388926
+\end{aligned}
+\]</span></p>
 </div>
 <div id="q5-3" class="section level3 unnumbered">
 <h3>Q5</h3>
@@ -1055,6 +1119,25 @@ q_{15} &amp;= 0.08735422
 </tbody>
 </table>
 <p><strong>Calcular o coef. de endogamia com base nos números apresentados.</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+P &amp;= \frac{42}{566} = 0.0742 \\ 
+H &amp;= \frac{76}{566} = 0.1343 \\
+Q &amp;= \frac{448}{566} = 0.7915 \\
+\\
+p &amp;= P + \frac{1}{2} H = 0.1413 \\
+q &amp;= Q + \frac{1}{2} H = 0.8587
+\end{aligned}
+\]</span></p>
+<p>Com essas frequências gênicas, a frequência de heterozigotos em uma população em cruzamento ao acaso é <span class="math inline">\(2pq = 0.2427\)</span>. Logo:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P_t &amp;= 1-F_t = \frac{H_t}{H_0} \\
+&amp;= \frac{0.1343}{0.2427} = 0.553 \\
+\\
+F &amp;= 1-P = 0.447
+\end{aligned}
+\]</span></p>
 
 </div>
 </div>

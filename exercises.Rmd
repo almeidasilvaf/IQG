@@ -742,26 +742,93 @@ Frequência de heterozigotos entre mutantes = $\frac{0.1594}{0.1670} = 0.9543 = 
 
 **a) As freq. correspondentes são compatíveis com uma amostra vinda de uma pop. em cruzamento ao acaso?**
 
+Se a população estivesse em cruzamento ao acaso, as frequências observadas seriam iguais às frequências no equilíbrio de Hardy-Weinberg. Verificando se a população está em equilíbrio:
+
+```{r}
+library(HardyWeinberg)
+frequencies <- c(AA = 180, Aa = 713, aa = 1708)
+HWChisq(frequencies)
+```
+
+A estatística $\chi^2$ é muito elevada, com *P* < 0.05, indicando que a população não está em equilíbrio. O mesmo pode ser observado pelo valor de D.
+
 **b) O que as freq. sugerem sobre a estrutura genética da população?**
 
+As frequências sugerem que a população não está em cruzamento ao acaso, e que essa pode ter sido formada pela união de sub-populações com frequências gênicas diferentes entre si.
 
 ### Q2 {.unnumbered}
 
 **Se uma população é mantida através de acasalamento ao acaso envolvendo 40 pares de indivíduos tomados ao acaso de uma grande população, qual será o coef. de endogamia “F” após 5 e após 10 gerações?**
 
+Com N = 80, temos $\Delta{F} = \frac{1}{2N} = \frac{1}{160} = 0.00625$
+
+Sendo $F_t = 1 - (1-\Delta{F})^t$, temos:
+
+$$
+\begin{aligned}
+F_5 = 1 - 0.99375^5 = 0.0308618 \\
+\\
+F_{10} = 1 - 0.99375^10 = 0.0607712
+\end{aligned}
+$$
+
+Implementando função para calcular $F_t$ para dado N:
+
+```{r}
+calc_inbreeding <- function(N = NULL, t = NULL) {
+  deltaF <- 1 / (2*N)
+  Ft <- 1 - (1 - deltaF)^t
+  return(Ft)
+}
+
+# Testando
+calc_inbreeding(N = 80, t = 5)
+calc_inbreeding(N = 80, t = 10)
+```
+
 
 ### Q3 {.unnumbered}
 
-**Um grupo de pesquisadores, cada um recebeu 20 indivíduos tomados ao acaso de uma grande população que continha um alelo mutante com uma freqüência gênica = 0.2. Cada pesquisador conduziu sua sub-população mantendo 20 indivíduos ao acaso para ser progenitores da próxima geração. Após 10 gerações cada pesquisador determinou a freq. gênica de sua sub-pop. através da avaliação de 20 indivíduos da progênie.**
+**Um grupo de pesquisadores, cada um recebeu 20 indivíduos tomados ao acaso de uma grande população que continha um alelo mutante com uma frequência gênica = 0.2. Cada pesquisador conduziu sua sub-população mantendo 20 indivíduos ao acaso para ser progenitores da próxima geração. Após 10 gerações cada pesquisador determinou a freq. gênica de sua sub-pop. através da avaliação de 20 indivíduos da progênie.**
 
 **a) Qual seria a freq. gênica média encontrada?**
 
+A frequência gênica média seria igual à frequência gênica inicial. Ou seja, sendo q o alelo mutante:
+
+$\bar{p} = p_0 = 0.2$.
+
 **b) Quanta variação seria esperada entre pesquisadores, quanto à suas estimativas de freq. gênica?**
+
+Após 10 gerações, 11 gerações de deriva teriam ocorrido nas amostras de cada pesquisador. Calculando $F_{11}$ com a função implementada anteriormente:
+
+```{r}
+calc_inbreeding(N = 20, t = 11)
+```
+
+Sabendo que $\sigma^2_q = p_0q_0F_t$, temos:
+
+$$
+\begin{aligned}
+\sigma^2_q &= 0.2 \times 0.8 \times 0.2430786 \\
+&= 0.03889258
+\end{aligned}
+$$
+
+Logo, a variância esperada seria $\sigma^2_q = 0.03889258$, e o desvio padrão seria $\sigma_q = \sqrt{0.03889258} = 0.197212$.
 
 
 ### Q4 {.unnumbered}
 
 **Se o número dos três genótipos contados pelos pesquisadores no experimento do problema 3 fossem acumulados, qual seria a freq. genotípica resultante?**
+
+$$
+\begin{aligned}
+A_1A_1 &= p_0^2 + \sigma^2_q = 0.2 \times 0.03889258 = 0.007778516 \\
+A_1A_2 &= 2p_0q_0 - \sigma^2_q = 2 \times 0.2 \times 0.8 - 0.03889258 = 0.2811074 \\
+A_2A_2 &= q_0^2 + \sigma^2_q = 0.8 + 0.03889258 = 0.8388926
+\end{aligned}
+$$
+
 
 ### Q5 {.unnumbered}
 
@@ -773,8 +840,26 @@ Frequência de heterozigotos entre mutantes = $\frac{0.1594}{0.1670} = 0.9543 = 
 
 **Calcular o coef. de endogamia com base nos números apresentados.**
 
+$$
+\begin{aligned}
+P &= \frac{42}{566} = 0.0742 \\ 
+H &= \frac{76}{566} = 0.1343 \\
+Q &= \frac{448}{566} = 0.7915 \\
+\\
+p &= P + \frac{1}{2} H = 0.1413 \\
+q &= Q + \frac{1}{2} H = 0.8587
+\end{aligned}
+$$
+
+Com essas frequências gênicas, a frequência de heterozigotos em uma população em cruzamento ao acaso é $2pq = 0.2427$. Logo:
 
 
-
-
+$$
+\begin{aligned}
+P_t &= 1-F_t = \frac{H_t}{H_0} \\
+&= \frac{0.1343}{0.2427} = 0.553 \\
+\\
+F &= 1-P = 0.447
+\end{aligned}
+$$
 

@@ -280,20 +280,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p><strong>(1) What are the genotype frequencies observed in this sample?</strong></p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="falconers-iqg---exercises.html#cb46-1" aria-hidden="true" tabindex="-1"></a>MM <span class="ot">&lt;-</span> <span class="dv">1787</span></span>
-<span id="cb46-2"><a href="falconers-iqg---exercises.html#cb46-2" aria-hidden="true" tabindex="-1"></a>MN <span class="ot">&lt;-</span> <span class="dv">3039</span></span>
-<span id="cb46-3"><a href="falconers-iqg---exercises.html#cb46-3" aria-hidden="true" tabindex="-1"></a>NN <span class="ot">&lt;-</span> <span class="dv">1303</span></span>
-<span id="cb46-4"><a href="falconers-iqg---exercises.html#cb46-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> MM <span class="sc">+</span> MN <span class="sc">+</span> NN</span>
-<span id="cb46-5"><a href="falconers-iqg---exercises.html#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-6"><a href="falconers-iqg---exercises.html#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Genotype frequencies</span></span>
-<span id="cb46-7"><a href="falconers-iqg---exercises.html#cb46-7" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> MM <span class="sc">/</span> n</span>
-<span id="cb46-8"><a href="falconers-iqg---exercises.html#cb46-8" aria-hidden="true" tabindex="-1"></a>P</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="falconers-iqg---exercises.html#cb62-1" aria-hidden="true" tabindex="-1"></a>MM <span class="ot">&lt;-</span> <span class="dv">1787</span></span>
+<span id="cb62-2"><a href="falconers-iqg---exercises.html#cb62-2" aria-hidden="true" tabindex="-1"></a>MN <span class="ot">&lt;-</span> <span class="dv">3039</span></span>
+<span id="cb62-3"><a href="falconers-iqg---exercises.html#cb62-3" aria-hidden="true" tabindex="-1"></a>NN <span class="ot">&lt;-</span> <span class="dv">1303</span></span>
+<span id="cb62-4"><a href="falconers-iqg---exercises.html#cb62-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> MM <span class="sc">+</span> MN <span class="sc">+</span> NN</span>
+<span id="cb62-5"><a href="falconers-iqg---exercises.html#cb62-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-6"><a href="falconers-iqg---exercises.html#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Genotype frequencies</span></span>
+<span id="cb62-7"><a href="falconers-iqg---exercises.html#cb62-7" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> MM <span class="sc">/</span> n</span>
+<span id="cb62-8"><a href="falconers-iqg---exercises.html#cb62-8" aria-hidden="true" tabindex="-1"></a>P</span></code></pre></div>
 <pre><code>## [1] 0.2915647</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="falconers-iqg---exercises.html#cb48-1" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> MN <span class="sc">/</span> n</span>
-<span id="cb48-2"><a href="falconers-iqg---exercises.html#cb48-2" aria-hidden="true" tabindex="-1"></a>H</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="falconers-iqg---exercises.html#cb64-1" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> MN <span class="sc">/</span> n</span>
+<span id="cb64-2"><a href="falconers-iqg---exercises.html#cb64-2" aria-hidden="true" tabindex="-1"></a>H</span></code></pre></div>
 <pre><code>## [1] 0.4958395</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="falconers-iqg---exercises.html#cb50-1" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> NN <span class="sc">/</span> n</span>
-<span id="cb50-2"><a href="falconers-iqg---exercises.html#cb50-2" aria-hidden="true" tabindex="-1"></a>Q</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="falconers-iqg---exercises.html#cb66-1" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> NN <span class="sc">/</span> n</span>
+<span id="cb66-2"><a href="falconers-iqg---exercises.html#cb66-2" aria-hidden="true" tabindex="-1"></a>Q</span></code></pre></div>
 <pre><code>## [1] 0.2125959</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>What are the gene frequencies?</li>
@@ -301,38 +301,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Given that:</p>
 <p><span class="math display">\[p = P + \frac{1}{2}H\]</span> and <span class="math display">\[q = Q + \frac{1}{2}H\]</span></p>
 <p>We get to:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="falconers-iqg---exercises.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gene frequencies</span></span>
-<span id="cb52-2"><a href="falconers-iqg---exercises.html#cb52-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> P <span class="sc">+</span> H<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb52-3"><a href="falconers-iqg---exercises.html#cb52-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="falconers-iqg---exercises.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gene frequencies</span></span>
+<span id="cb68-2"><a href="falconers-iqg---exercises.html#cb68-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> P <span class="sc">+</span> H<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb68-3"><a href="falconers-iqg---exercises.html#cb68-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <pre><code>## [1] 0.5394844</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="falconers-iqg---exercises.html#cb54-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> Q <span class="sc">+</span> H<span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="falconers-iqg---exercises.html#cb70-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> Q <span class="sc">+</span> H<span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>With the gene frequencies observed, what are the genotype frequencies expected from the Hardy-Weinberg law?</li>
 </ol>
 <p>Expected frequencies in the equilibrium:</p>
 <p><span class="math display">\[p^2 + 2pq + q^2 = 1\]</span></p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="falconers-iqg---exercises.html#cb55-1" aria-hidden="true" tabindex="-1"></a>expected <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> p<span class="sc">^</span><span class="dv">2</span>, </span>
-<span id="cb55-2"><a href="falconers-iqg---exercises.html#cb55-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">MN =</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q, </span>
-<span id="cb55-3"><a href="falconers-iqg---exercises.html#cb55-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">NN =</span> q<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb55-4"><a href="falconers-iqg---exercises.html#cb55-4" aria-hidden="true" tabindex="-1"></a>expected</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="falconers-iqg---exercises.html#cb71-1" aria-hidden="true" tabindex="-1"></a>expected <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> p<span class="sc">^</span><span class="dv">2</span>, </span>
+<span id="cb71-2"><a href="falconers-iqg---exercises.html#cb71-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">MN =</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q, </span>
+<span id="cb71-3"><a href="falconers-iqg---exercises.html#cb71-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">NN =</span> q<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb71-4"><a href="falconers-iqg---exercises.html#cb71-4" aria-hidden="true" tabindex="-1"></a>expected</span></code></pre></div>
 <pre><code>##        MM        MN        NN 
 ## 0.2910434 0.4968820 0.2120746</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>How well do the observed frequencies agree with the expectation? Data from Wiener, A.S. (1943) quoted by Stem, C. (1973) Principles of Human Genetics. Freeman, San Francisco.</li>
 </ol>
 <p>We can measure how well the observed frequencies agree with the expected ones with a Chi-squared test:</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="falconers-iqg---exercises.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarizing what we have</span></span>
-<span id="cb57-2"><a href="falconers-iqg---exercises.html#cb57-2" aria-hidden="true" tabindex="-1"></a>exp_obs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb57-3"><a href="falconers-iqg---exercises.html#cb57-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Expected freq</span><span class="st">`</span> <span class="ot">=</span> expected,</span>
-<span id="cb57-4"><a href="falconers-iqg---exercises.html#cb57-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Observed freq</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(P, H, Q))</span>
-<span id="cb57-5"><a href="falconers-iqg---exercises.html#cb57-5" aria-hidden="true" tabindex="-1"></a>exp_obs</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="falconers-iqg---exercises.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarizing what we have</span></span>
+<span id="cb73-2"><a href="falconers-iqg---exercises.html#cb73-2" aria-hidden="true" tabindex="-1"></a>exp_obs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb73-3"><a href="falconers-iqg---exercises.html#cb73-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Expected freq</span><span class="st">`</span> <span class="ot">=</span> expected,</span>
+<span id="cb73-4"><a href="falconers-iqg---exercises.html#cb73-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Observed freq</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(P, H, Q))</span>
+<span id="cb73-5"><a href="falconers-iqg---exercises.html#cb73-5" aria-hidden="true" tabindex="-1"></a>exp_obs</span></code></pre></div>
 <pre><code>##    Expected.freq Observed.freq
 ## MM     0.2910434     0.2915647
 ## MN     0.4968820     0.4958395
 ## NN     0.2120746     0.2125959</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="falconers-iqg---exercises.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying Chi-squared test</span></span>
-<span id="cb59-2"><a href="falconers-iqg---exercises.html#cb59-2" aria-hidden="true" tabindex="-1"></a>observed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> <span class="dv">1787</span>, <span class="at">MN =</span> <span class="dv">3039</span>, <span class="at">NN =</span> <span class="dv">1303</span>)</span>
-<span id="cb59-3"><a href="falconers-iqg---exercises.html#cb59-3" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(observed, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="falconers-iqg---exercises.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying Chi-squared test</span></span>
+<span id="cb75-2"><a href="falconers-iqg---exercises.html#cb75-2" aria-hidden="true" tabindex="-1"></a>observed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> <span class="dv">1787</span>, <span class="at">MN =</span> <span class="dv">3039</span>, <span class="at">NN =</span> <span class="dv">1303</span>)</span>
+<span id="cb75-3"><a href="falconers-iqg---exercises.html#cb75-3" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(observed, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Chi-square test with continuity correction for Hardy-Weinberg equilibrium (autosomal)
 ## Chi2 =  0.02104769 DF =  1 p-value =  0.8846491 D =  -3.194771 f =  0.002098103</code></pre>
 <p>The <span class="math inline">\(\chi^2\)</span> statistic is very close to 0, with <em>P</em> &gt; 0.05. Then, we conclude that the observed and expected frequencies are not different.</p>
@@ -346,11 +346,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>Problem 3</h3>
 <p><strong>Albinism occurs with a frequency of about 1 in 20,000 in European populations. Assuming it to be due to a single autosomal recessive gene, and assuming the population to be in Hardy-Weinberg equilibrium, what proportion of people are carriers? Only an approximate answer is needed.</strong></p>
 <p>Carriers are heterozigote individuals, i.e., <em>2pq</em>. From <span class="math inline">\(q^2\)</span>, we can calculate p and, hence, <em>2pq</em> as follows:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="falconers-iqg---exercises.html#cb61-1" aria-hidden="true" tabindex="-1"></a>q2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">20000</span> </span>
-<span id="cb61-2"><a href="falconers-iqg---exercises.html#cb61-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(q2)</span>
-<span id="cb61-3"><a href="falconers-iqg---exercises.html#cb61-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> q</span>
-<span id="cb61-4"><a href="falconers-iqg---exercises.html#cb61-4" aria-hidden="true" tabindex="-1"></a>heterozygotes <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q</span>
-<span id="cb61-5"><a href="falconers-iqg---exercises.html#cb61-5" aria-hidden="true" tabindex="-1"></a>heterozygotes</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="falconers-iqg---exercises.html#cb77-1" aria-hidden="true" tabindex="-1"></a>q2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">20000</span> </span>
+<span id="cb77-2"><a href="falconers-iqg---exercises.html#cb77-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(q2)</span>
+<span id="cb77-3"><a href="falconers-iqg---exercises.html#cb77-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> q</span>
+<span id="cb77-4"><a href="falconers-iqg---exercises.html#cb77-4" aria-hidden="true" tabindex="-1"></a>heterozygotes <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q</span>
+<span id="cb77-5"><a href="falconers-iqg---exercises.html#cb77-5" aria-hidden="true" tabindex="-1"></a>heterozygotes</span></code></pre></div>
 <pre><code>## [1] 0.01404214</code></pre>
 </div>
 <div id="problem-4" class="section level3 unnumbered">
@@ -399,10 +399,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>About 7 per cent of men are colour-blind in consequence of a sex-linked recessive gene. Assuming Hardy-Weinberg equilibrium, what proportion of women are expected to be (1) carriers, and (2) colour-blind? (3) In what proportion of marriages are both husband and wife expected to be colour-blind?</strong></p>
 <p>7% of men are color-blind, which means that <span class="math inline">\(q = 0.07\)</span>. Under Hardy-Weinberg equilibrium, the frequency in men is equal to the frequency in women. Then:</p>
 <p><span class="math display">\[Carriers = 2pq = 2q(1-q)\]</span></p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="falconers-iqg---exercises.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carriers</span></span>
-<span id="cb63-2"><a href="falconers-iqg---exercises.html#cb63-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fl">0.07</span></span>
-<span id="cb63-3"><a href="falconers-iqg---exercises.html#cb63-3" aria-hidden="true" tabindex="-1"></a>carriers <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>q<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>q)</span>
-<span id="cb63-4"><a href="falconers-iqg---exercises.html#cb63-4" aria-hidden="true" tabindex="-1"></a>carriers</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="falconers-iqg---exercises.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carriers</span></span>
+<span id="cb79-2"><a href="falconers-iqg---exercises.html#cb79-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fl">0.07</span></span>
+<span id="cb79-3"><a href="falconers-iqg---exercises.html#cb79-3" aria-hidden="true" tabindex="-1"></a>carriers <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>q<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>q)</span>
+<span id="cb79-4"><a href="falconers-iqg---exercises.html#cb79-4" aria-hidden="true" tabindex="-1"></a>carriers</span></code></pre></div>
 <pre><code>## [1] 0.1302</code></pre>
 <p>Color-blind = <span class="math inline">\(q^2 = 0.0049\)</span>.</p>
 <p>To find the frequency of marriages with both men and women color-blind, we simply multiply the frequency of color-blind men <strong>and</strong> the frequency of color-blind women. That is:</p>
@@ -429,8 +429,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p><strong>How do these numbers differ from the Hardy-Weinberg expectations? Suggest a reason for the discrepancy.</strong></p>
 <p>To compare the observed frequencies to the expected under HW equilibrium, we can perform a <span class="math inline">\(\chi^2\)</span> test.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="falconers-iqg---exercises.html#cb65-1" aria-hidden="true" tabindex="-1"></a>obs_freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">SS =</span> <span class="dv">135</span>, <span class="at">SC =</span> <span class="dv">359</span>, <span class="at">CC =</span> <span class="dv">947</span>)</span>
-<span id="cb65-2"><a href="falconers-iqg---exercises.html#cb65-2" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(obs_freq, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="falconers-iqg---exercises.html#cb81-1" aria-hidden="true" tabindex="-1"></a>obs_freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">SS =</span> <span class="dv">135</span>, <span class="at">SC =</span> <span class="dv">359</span>, <span class="at">CC =</span> <span class="dv">947</span>)</span>
+<span id="cb81-2"><a href="falconers-iqg---exercises.html#cb81-2" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(obs_freq, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Chi-square test with continuity correction for Hardy-Weinberg equilibrium (autosomal)
 ## Chi2 =  103.671 DF =  1 p-value =  0.000000000000000000000002388595 D =  -66.35999 f =  0.2699097</code></pre>
 <p>We can see, the <span class="math inline">\(\chi^2\)</span> statistic is very high, and so is the linkage disequilibrium coefficient (D = -66.35). A possible reason for this is assortative mating.</p>
@@ -442,14 +442,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math display">\[so_{males} = \frac{16}{20} = 0.8\]</span></p>
 <p><span class="math display">\[so_{females} = \frac{4}{20} = 0.2\]</span>
 Obtaining genotype frequencies from the gene frequencies:</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="falconers-iqg---exercises.html#cb67-1" aria-hidden="true" tabindex="-1"></a>soso <span class="ot">&lt;-</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fl">0.2</span></span>
-<span id="cb67-2"><a href="falconers-iqg---exercises.html#cb67-2" aria-hidden="true" tabindex="-1"></a>soso</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="falconers-iqg---exercises.html#cb83-1" aria-hidden="true" tabindex="-1"></a>soso <span class="ot">&lt;-</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fl">0.2</span></span>
+<span id="cb83-2"><a href="falconers-iqg---exercises.html#cb83-2" aria-hidden="true" tabindex="-1"></a>soso</span></code></pre></div>
 <pre><code>## [1] 0.16</code></pre>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="falconers-iqg---exercises.html#cb69-1" aria-hidden="true" tabindex="-1"></a>cncn <span class="ot">&lt;-</span> <span class="fl">0.2</span> <span class="sc">*</span> <span class="fl">0.8</span></span>
-<span id="cb69-2"><a href="falconers-iqg---exercises.html#cb69-2" aria-hidden="true" tabindex="-1"></a>cncn</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="falconers-iqg---exercises.html#cb85-1" aria-hidden="true" tabindex="-1"></a>cncn <span class="ot">&lt;-</span> <span class="fl">0.2</span> <span class="sc">*</span> <span class="fl">0.8</span></span>
+<span id="cb85-2"><a href="falconers-iqg---exercises.html#cb85-2" aria-hidden="true" tabindex="-1"></a>cncn</span></code></pre></div>
 <pre><code>## [1] 0.16</code></pre>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="falconers-iqg---exercises.html#cb71-1" aria-hidden="true" tabindex="-1"></a>socn <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (soso <span class="sc">+</span> cncn)</span>
-<span id="cb71-2"><a href="falconers-iqg---exercises.html#cb71-2" aria-hidden="true" tabindex="-1"></a>socn</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="falconers-iqg---exercises.html#cb87-1" aria-hidden="true" tabindex="-1"></a>socn <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (soso <span class="sc">+</span> cncn)</span>
+<span id="cb87-2"><a href="falconers-iqg---exercises.html#cb87-2" aria-hidden="true" tabindex="-1"></a>socn</span></code></pre></div>
 <pre><code>## [1] 0.68</code></pre>
 <p>Under Hardy-Weinberg equilibrium, we would expect genotype frequencies to be 0.25, 0.5, 0.25.</p>
 </div>
@@ -457,40 +457,40 @@ Obtaining genotype frequencies from the gene frequencies:</p>
 <h3>Problem 9</h3>
 <p><strong>Prove that when there are any number of alleles at a locus the total frequency of heterozygotes is greatest when all alleles have the same frequency. What is then the total frequency of heterozygotes?</strong></p>
 <p>This can be demonstrated by simulating two alelles with increasingly similar frequencies and calculating the frequency of heterozygotes for each simulation step.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="falconers-iqg---exercises.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define function to calculate heterozygote frequency</span></span>
-<span id="cb73-2"><a href="falconers-iqg---exercises.html#cb73-2" aria-hidden="true" tabindex="-1"></a>heterozygote_freq <span class="ot">&lt;-</span> <span class="cf">function</span>(p, q) {</span>
-<span id="cb73-3"><a href="falconers-iqg---exercises.html#cb73-3" aria-hidden="true" tabindex="-1"></a>    heterozygotes <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q</span>
-<span id="cb73-4"><a href="falconers-iqg---exercises.html#cb73-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(heterozygotes)</span>
-<span id="cb73-5"><a href="falconers-iqg---exercises.html#cb73-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb73-6"><a href="falconers-iqg---exercises.html#cb73-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-7"><a href="falconers-iqg---exercises.html#cb73-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create vectors of frequencies for p and q</span></span>
-<span id="cb73-8"><a href="falconers-iqg---exercises.html#cb73-8" aria-hidden="true" tabindex="-1"></a>psim <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.01</span>, <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">50</span>)</span>
-<span id="cb73-9"><a href="falconers-iqg---exercises.html#cb73-9" aria-hidden="true" tabindex="-1"></a>qsim <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.99</span>, <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">50</span>)</span>
-<span id="cb73-10"><a href="falconers-iqg---exercises.html#cb73-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-11"><a href="falconers-iqg---exercises.html#cb73-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate heterozygote frequency for simulated p and q freqs</span></span>
-<span id="cb73-12"><a href="falconers-iqg---exercises.html#cb73-12" aria-hidden="true" tabindex="-1"></a>hfreq <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_along</span>(psim), <span class="cf">function</span>(x) {</span>
-<span id="cb73-13"><a href="falconers-iqg---exercises.html#cb73-13" aria-hidden="true" tabindex="-1"></a>    freq <span class="ot">&lt;-</span> <span class="fu">heterozygote_freq</span>(<span class="at">p =</span> psim[x], <span class="at">q =</span> qsim[x])</span>
-<span id="cb73-14"><a href="falconers-iqg---exercises.html#cb73-14" aria-hidden="true" tabindex="-1"></a>    distance <span class="ot">&lt;-</span> <span class="fu">abs</span>(psim[x] <span class="sc">-</span> qsim[x])</span>
-<span id="cb73-15"><a href="falconers-iqg---exercises.html#cb73-15" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb73-16"><a href="falconers-iqg---exercises.html#cb73-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">Hfreq</span><span class="st">`</span> <span class="ot">=</span> freq,</span>
-<span id="cb73-17"><a href="falconers-iqg---exercises.html#cb73-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">Diff</span><span class="st">`</span> <span class="ot">=</span> distance</span>
-<span id="cb73-18"><a href="falconers-iqg---exercises.html#cb73-18" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb73-19"><a href="falconers-iqg---exercises.html#cb73-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df)</span>
-<span id="cb73-20"><a href="falconers-iqg---exercises.html#cb73-20" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb73-21"><a href="falconers-iqg---exercises.html#cb73-21" aria-hidden="true" tabindex="-1"></a>hfreq <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(rbind, hfreq)</span>
-<span id="cb73-22"><a href="falconers-iqg---exercises.html#cb73-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-23"><a href="falconers-iqg---exercises.html#cb73-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspecting visually</span></span>
-<span id="cb73-24"><a href="falconers-iqg---exercises.html#cb73-24" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(ggplot2))</span>
-<span id="cb73-25"><a href="falconers-iqg---exercises.html#cb73-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hfreq, <span class="fu">aes</span>(<span class="at">y =</span> Hfreq, <span class="at">x =</span> Diff, <span class="at">group=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb73-26"><a href="falconers-iqg---exercises.html#cb73-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb73-27"><a href="falconers-iqg---exercises.html#cb73-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
-<span id="cb73-28"><a href="falconers-iqg---exercises.html#cb73-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb73-29"><a href="falconers-iqg---exercises.html#cb73-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>)) <span class="sc">+</span></span>
-<span id="cb73-30"><a href="falconers-iqg---exercises.html#cb73-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Allele frequency difference&quot;</span>,</span>
-<span id="cb73-31"><a href="falconers-iqg---exercises.html#cb73-31" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Relative frequency of heterozygotes&quot;</span>,</span>
-<span id="cb73-32"><a href="falconers-iqg---exercises.html#cb73-32" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">&quot;Frequency of heterozygotes as a function of allele frequency differences&quot;</span>,</span>
-<span id="cb73-33"><a href="falconers-iqg---exercises.html#cb73-33" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;The frequency of heterozygotes reaches its maximum when p and q have equal frequencies&quot;</span>)</span></code></pre></div>
-<p><img src="IQG_solutions_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="falconers-iqg---exercises.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define function to calculate heterozygote frequency</span></span>
+<span id="cb89-2"><a href="falconers-iqg---exercises.html#cb89-2" aria-hidden="true" tabindex="-1"></a>heterozygote_freq <span class="ot">&lt;-</span> <span class="cf">function</span>(p, q) {</span>
+<span id="cb89-3"><a href="falconers-iqg---exercises.html#cb89-3" aria-hidden="true" tabindex="-1"></a>    heterozygotes <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q</span>
+<span id="cb89-4"><a href="falconers-iqg---exercises.html#cb89-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(heterozygotes)</span>
+<span id="cb89-5"><a href="falconers-iqg---exercises.html#cb89-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb89-6"><a href="falconers-iqg---exercises.html#cb89-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-7"><a href="falconers-iqg---exercises.html#cb89-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create vectors of frequencies for p and q</span></span>
+<span id="cb89-8"><a href="falconers-iqg---exercises.html#cb89-8" aria-hidden="true" tabindex="-1"></a>psim <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.01</span>, <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">50</span>)</span>
+<span id="cb89-9"><a href="falconers-iqg---exercises.html#cb89-9" aria-hidden="true" tabindex="-1"></a>qsim <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.99</span>, <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">50</span>)</span>
+<span id="cb89-10"><a href="falconers-iqg---exercises.html#cb89-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-11"><a href="falconers-iqg---exercises.html#cb89-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate heterozygote frequency for simulated p and q freqs</span></span>
+<span id="cb89-12"><a href="falconers-iqg---exercises.html#cb89-12" aria-hidden="true" tabindex="-1"></a>hfreq <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_along</span>(psim), <span class="cf">function</span>(x) {</span>
+<span id="cb89-13"><a href="falconers-iqg---exercises.html#cb89-13" aria-hidden="true" tabindex="-1"></a>    freq <span class="ot">&lt;-</span> <span class="fu">heterozygote_freq</span>(<span class="at">p =</span> psim[x], <span class="at">q =</span> qsim[x])</span>
+<span id="cb89-14"><a href="falconers-iqg---exercises.html#cb89-14" aria-hidden="true" tabindex="-1"></a>    distance <span class="ot">&lt;-</span> <span class="fu">abs</span>(psim[x] <span class="sc">-</span> qsim[x])</span>
+<span id="cb89-15"><a href="falconers-iqg---exercises.html#cb89-15" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb89-16"><a href="falconers-iqg---exercises.html#cb89-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">Hfreq</span><span class="st">`</span> <span class="ot">=</span> freq,</span>
+<span id="cb89-17"><a href="falconers-iqg---exercises.html#cb89-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">Diff</span><span class="st">`</span> <span class="ot">=</span> distance</span>
+<span id="cb89-18"><a href="falconers-iqg---exercises.html#cb89-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb89-19"><a href="falconers-iqg---exercises.html#cb89-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df)</span>
+<span id="cb89-20"><a href="falconers-iqg---exercises.html#cb89-20" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb89-21"><a href="falconers-iqg---exercises.html#cb89-21" aria-hidden="true" tabindex="-1"></a>hfreq <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(rbind, hfreq)</span>
+<span id="cb89-22"><a href="falconers-iqg---exercises.html#cb89-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-23"><a href="falconers-iqg---exercises.html#cb89-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspecting visually</span></span>
+<span id="cb89-24"><a href="falconers-iqg---exercises.html#cb89-24" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(ggplot2))</span>
+<span id="cb89-25"><a href="falconers-iqg---exercises.html#cb89-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hfreq, <span class="fu">aes</span>(<span class="at">y =</span> Hfreq, <span class="at">x =</span> Diff, <span class="at">group=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb89-26"><a href="falconers-iqg---exercises.html#cb89-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb89-27"><a href="falconers-iqg---exercises.html#cb89-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb89-28"><a href="falconers-iqg---exercises.html#cb89-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb89-29"><a href="falconers-iqg---exercises.html#cb89-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>)) <span class="sc">+</span></span>
+<span id="cb89-30"><a href="falconers-iqg---exercises.html#cb89-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Allele frequency difference&quot;</span>,</span>
+<span id="cb89-31"><a href="falconers-iqg---exercises.html#cb89-31" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Relative frequency of heterozygotes&quot;</span>,</span>
+<span id="cb89-32"><a href="falconers-iqg---exercises.html#cb89-32" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">&quot;Frequency of heterozygotes as a function of allele frequency differences&quot;</span>,</span>
+<span id="cb89-33"><a href="falconers-iqg---exercises.html#cb89-33" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;The frequency of heterozygotes reaches its maximum when p and q have equal frequencies&quot;</span>)</span></code></pre></div>
+<p><img src="IQG_solutions_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 </div>
 <div id="problem-10" class="section level3 unnumbered">
 <h3>Problem 10</h3>
@@ -610,7 +610,7 @@ aa &amp;= q^2 = 0.8264463
 \end{aligned}
 \]</span></p>
 <p>Checking if frequencies sum um to 1:</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="falconers-iqg---exercises.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.008264628</span> <span class="sc">+</span> <span class="fl">0.1652907</span> <span class="sc">+</span> <span class="fl">0.8264446</span></span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="falconers-iqg---exercises.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.008264628</span> <span class="sc">+</span> <span class="fl">0.1652907</span> <span class="sc">+</span> <span class="fl">0.8264446</span></span></code></pre></div>
 <pre><code>## [1] 0.9999999</code></pre>
 </div>
 <div id="problem-4-1" class="section level3 unnumbered">
@@ -657,11 +657,11 @@ q_1^2 &amp;= 0.0004158337
 \end{aligned}
 \]</span></p>
 <p>Checking percent increase:</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="falconers-iqg---exercises.html#cb76-1" aria-hidden="true" tabindex="-1"></a>percent_increase <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">initial =</span> <span class="cn">NULL</span>, <span class="at">final =</span> <span class="cn">NULL</span>) {</span>
-<span id="cb76-2"><a href="falconers-iqg---exercises.html#cb76-2" aria-hidden="true" tabindex="-1"></a>    inc <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> ( (final <span class="sc">-</span> initial) <span class="sc">/</span> <span class="fu">abs</span>(initial) )</span>
-<span id="cb76-3"><a href="falconers-iqg---exercises.html#cb76-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(inc)</span>
-<span id="cb76-4"><a href="falconers-iqg---exercises.html#cb76-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb76-5"><a href="falconers-iqg---exercises.html#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="fu">percent_increase</span>(<span class="at">initial =</span> <span class="fl">0.0004</span>, <span class="at">final =</span> <span class="fl">0.0004158337</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="falconers-iqg---exercises.html#cb92-1" aria-hidden="true" tabindex="-1"></a>percent_increase <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">initial =</span> <span class="cn">NULL</span>, <span class="at">final =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb92-2"><a href="falconers-iqg---exercises.html#cb92-2" aria-hidden="true" tabindex="-1"></a>    inc <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> ( (final <span class="sc">-</span> initial) <span class="sc">/</span> <span class="fu">abs</span>(initial) )</span>
+<span id="cb92-3"><a href="falconers-iqg---exercises.html#cb92-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(inc)</span>
+<span id="cb92-4"><a href="falconers-iqg---exercises.html#cb92-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb92-5"><a href="falconers-iqg---exercises.html#cb92-5" aria-hidden="true" tabindex="-1"></a><span class="fu">percent_increase</span>(<span class="at">initial =</span> <span class="fl">0.0004</span>, <span class="at">final =</span> <span class="fl">0.0004158337</span>)</span></code></pre></div>
 <pre><code>## [1] 3.958425</code></pre>
 <p>Then, doubling the mutation rate would increase the gene frequency by ~4%, which means there would be 16 additional cases per million births.</p>
 </div>
