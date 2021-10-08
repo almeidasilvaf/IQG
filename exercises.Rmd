@@ -729,3 +729,52 @@ Frequência de heterozigotos = $2pq = 0.1594 = 15.94\%$
 
 Frequência de heterozigotos entre mutantes = $\frac{0.1594}{0.1670} = 0.9543 = 95.43\%$
 
+
+## Semana 4: Processos dispersivos {.unnumbered}
+
+### Q1 {.unnumbered}
+
+**Um caráter codominante, determinado pelos alelos A1 e A2 em um loco. Em uma amostra determinou-se os seguintes quantitativos:**
+
+| A1A1| A1A2| A2A2| Total|
+|:----|:----|:----|:----|
+|180|713|1708|2601|
+
+**a) As freq. correspondentes são compatíveis com uma amostra vinda de uma pop. em cruzamento ao acaso?**
+
+**b) O que as freq. sugerem sobre a estrutura genética da população?**
+
+
+### Q2 {.unnumbered}
+
+**Se uma população é mantida através de acasalamento ao acaso envolvendo 40 pares de indivíduos tomados ao acaso de uma grande população, qual será o coef. de endogamia “F” após 5 e após 10 gerações?**
+
+
+### Q3 {.unnumbered}
+
+**Um grupo de pesquisadores, cada um recebeu 20 indivíduos tomados ao acaso de uma grande população que continha um alelo mutante com uma freqüência gênica = 0.2. Cada pesquisador conduziu sua sub-população mantendo 20 indivíduos ao acaso para ser progenitores da próxima geração. Após 10 gerações cada pesquisador determinou a freq. gênica de sua sub-pop. através da avaliação de 20 indivíduos da progênie.**
+
+**a) Qual seria a freq. gênica média encontrada?**
+
+**b) Quanta variação seria esperada entre pesquisadores, quanto à suas estimativas de freq. gênica?**
+
+
+### Q4 {.unnumbered}
+
+**Se o número dos três genótipos contados pelos pesquisadores no experimento do problema 3 fossem acumulados, qual seria a freq. genotípica resultante?**
+
+### Q5 {.unnumbered}
+
+**Um estoque de animais consistiu de 50 sub-pop. todas derivadas de uma mesma pop. base, mas mantidas para cruzamentos separadamente (por sub-pop.). O estoque foi polimórfico para um loco autossomal com dois alelos, A1 e A2. Após 25 gerações os animais foram avaliados em todas as sub. Pop. obtendo-se a seguinte freq. genotípica.**
+
+|A1A1 | A1A2| A2A2|Total|
+|:----|:----|:----|:----|
+| 42  | 76  | 448 | 566 |
+
+**Calcular o coef. de endogamia com base nos números apresentados.**
+
+
+
+
+
+

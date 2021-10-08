@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Falconer’s IQG - Exercises | Genética Quantitativa</title>
+  <meta name="description" content="<p>Esse livro contém soluções para exerícios do livro “Introduction to
+Quantitative Genetics” de DS Falconer, e exercícios e sabatinas da
+disciplina “Genética Quantitativa” da UENF, ministrada pelo professor
+Messias Gonzaga Pereira.</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Falconer’s IQG - Exercises | Genética Quantitativa" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Esse livro contém soluções para exerícios do livro “Introduction to
+Quantitative Genetics” de DS Falconer, e exercícios e sabatinas da
+disciplina “Genética Quantitativa” da UENF, ministrada pelo professor
+Messias Gonzaga Pereira.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Falconer’s IQG - Exercises | Genética Quantitativa" />
+  
+  <meta name="twitter:description" content="<p>Esse livro contém soluções para exerícios do livro “Introduction to
+Quantitative Genetics” de DS Falconer, e exercícios e sabatinas da
+disciplina “Genética Quantitativa” da UENF, ministrada pelo professor
+Messias Gonzaga Pereira.</p>" />
+  
+
+<meta name="author" content="Fabrício Almeida-Silva" />
+
+
+<meta name="date" content="2021-10-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exercícios.html"/>
+<link rel="next" href="provas.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Genética Quantitativa</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introdução</a></li>
+<li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html"><i class="fa fa-check"></i>Sabatinas</a>
+<ul>
+<li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-1"><i class="fa fa-check"></i>Semana 1</a></li>
+<li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-2"><i class="fa fa-check"></i>Semana 2</a></li>
+<li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-3"><i class="fa fa-check"></i>Semana 3</a></li>
+<li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-4"><i class="fa fa-check"></i>Semana 4</a></li>
+<li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-5"><i class="fa fa-check"></i>Semana 5</a></li>
+<li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-6"><i class="fa fa-check"></i>Semana 6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html"><i class="fa fa-check"></i>Exercícios</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#semana-1-probabilidade"><i class="fa fa-check"></i>Semana 1: Probabilidade</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q1"><i class="fa fa-check"></i>Q1</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q2"><i class="fa fa-check"></i>Q2</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q3"><i class="fa fa-check"></i>Q3</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q4"><i class="fa fa-check"></i>Q4</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q5"><i class="fa fa-check"></i>Q5</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#semana-2-constituição-genética-da-população"><i class="fa fa-check"></i>Semana 2: Constituição genética da população</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q1-1"><i class="fa fa-check"></i>Q1</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q2-1"><i class="fa fa-check"></i>Q2</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q3-1"><i class="fa fa-check"></i>Q3</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q4-1"><i class="fa fa-check"></i>Q4</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q5-1"><i class="fa fa-check"></i>Q5</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q6"><i class="fa fa-check"></i>Q6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#semana-3-mudanças-na-frequência-gênica"><i class="fa fa-check"></i>Semana 3: Mudanças na Frequência Gênica</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q1-2"><i class="fa fa-check"></i>Q1</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q2-2"><i class="fa fa-check"></i>Q2</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q3-2"><i class="fa fa-check"></i>Q3</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q4-2"><i class="fa fa-check"></i>Q4</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q5-2"><i class="fa fa-check"></i>Q5</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q6-1"><i class="fa fa-check"></i>Q6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#semana-4-processos-dispersivos"><i class="fa fa-check"></i>Semana 4: Processos dispersivos</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q1-3"><i class="fa fa-check"></i>Q1</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q2-3"><i class="fa fa-check"></i>Q2</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q3-3"><i class="fa fa-check"></i>Q3</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q4-3"><i class="fa fa-check"></i>Q4</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q5-3"><i class="fa fa-check"></i>Q5</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html"><i class="fa fa-check"></i><b>1</b> Falconer’s IQG - Exercises</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#genetic-constitution-of-a-population"><i class="fa fa-check"></i><b>1.1</b> Genetic constitution of a population</a>
+<ul>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-1"><i class="fa fa-check"></i>Problem 1</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-2"><i class="fa fa-check"></i>Problem 2</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-3"><i class="fa fa-check"></i>Problem 3</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-4"><i class="fa fa-check"></i>Problem 4</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-5"><i class="fa fa-check"></i>Problem 5</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-6"><i class="fa fa-check"></i>Problem 6</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-7"><i class="fa fa-check"></i>Problem 7</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-8"><i class="fa fa-check"></i>Problem 8</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-9"><i class="fa fa-check"></i>Problem 9</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-10"><i class="fa fa-check"></i>Problem 10</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-11"><i class="fa fa-check"></i>Problem 11</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#changes-of-gene-frequency"><i class="fa fa-check"></i><b>1.2</b> Changes of gene frequency</a>
+<ul>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-1-1"><i class="fa fa-check"></i>Problem 1</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-2-1"><i class="fa fa-check"></i>Problem 2</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-3-1"><i class="fa fa-check"></i>Problem 3</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-4-1"><i class="fa fa-check"></i>Problem 4</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-5-1"><i class="fa fa-check"></i>Problem 5</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-6-1"><i class="fa fa-check"></i>Problem 6</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-7-1"><i class="fa fa-check"></i>Problem 7</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-8-1"><i class="fa fa-check"></i>Problem 8</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-9-1"><i class="fa fa-check"></i>Problem 9</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-10-1"><i class="fa fa-check"></i>Problem 10</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-11-1"><i class="fa fa-check"></i>Problem 11</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-12"><i class="fa fa-check"></i>Problem 12</a></li>
+<li class="chapter" data-level="" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html#problem-13"><i class="fa fa-check"></i>Problem 13</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html"><i class="fa fa-check"></i>Provas</a>
+<ul>
+<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#prova-1"><i class="fa fa-check"></i>Prova 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q1-4"><i class="fa fa-check"></i>Q1</a></li>
+<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q2-4"><i class="fa fa-check"></i>Q2</a></li>
+<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q3-4"><i class="fa fa-check"></i>Q3</a></li>
+<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q4-4"><i class="fa fa-check"></i>Q4</a></li>
+<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q5-4"><i class="fa fa-check"></i>Q5</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Genética Quantitativa</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="falconers-iqg---exercises" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Falconer’s IQG - Exercises</h1>
+<div id="genetic-constitution-of-a-population" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Genetic constitution of a population</h2>
+<div id="problem-1" class="section level3 unnumbered">
+<h3>Problem 1</h3>
+<p>The following numbers of the human M-N blood groups were recorded in a sample of American Whites.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>M</td>
+<td>MN</td>
+<td>N</td>
+</tr>
+<tr class="even">
+<td>1787</td>
+<td>3039</td>
+<td>1303</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(1) What are the genotype frequencies observed in this sample?</strong></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="falconers-iqg---exercises.html#cb46-1" aria-hidden="true" tabindex="-1"></a>MM <span class="ot">&lt;-</span> <span class="dv">1787</span></span>
+<span id="cb46-2"><a href="falconers-iqg---exercises.html#cb46-2" aria-hidden="true" tabindex="-1"></a>MN <span class="ot">&lt;-</span> <span class="dv">3039</span></span>
+<span id="cb46-3"><a href="falconers-iqg---exercises.html#cb46-3" aria-hidden="true" tabindex="-1"></a>NN <span class="ot">&lt;-</span> <span class="dv">1303</span></span>
+<span id="cb46-4"><a href="falconers-iqg---exercises.html#cb46-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> MM <span class="sc">+</span> MN <span class="sc">+</span> NN</span>
+<span id="cb46-5"><a href="falconers-iqg---exercises.html#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-6"><a href="falconers-iqg---exercises.html#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Genotype frequencies</span></span>
+<span id="cb46-7"><a href="falconers-iqg---exercises.html#cb46-7" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> MM <span class="sc">/</span> n</span>
+<span id="cb46-8"><a href="falconers-iqg---exercises.html#cb46-8" aria-hidden="true" tabindex="-1"></a>P</span></code></pre></div>
+<pre><code>## [1] 0.2915647</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="falconers-iqg---exercises.html#cb48-1" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> MN <span class="sc">/</span> n</span>
+<span id="cb48-2"><a href="falconers-iqg---exercises.html#cb48-2" aria-hidden="true" tabindex="-1"></a>H</span></code></pre></div>
+<pre><code>## [1] 0.4958395</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="falconers-iqg---exercises.html#cb50-1" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> NN <span class="sc">/</span> n</span>
+<span id="cb50-2"><a href="falconers-iqg---exercises.html#cb50-2" aria-hidden="true" tabindex="-1"></a>Q</span></code></pre></div>
+<pre><code>## [1] 0.2125959</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>What are the gene frequencies?</li>
+</ol>
+<p>Given that:</p>
+<p><span class="math display">\[p = P + \frac{1}{2}H\]</span> and <span class="math display">\[q = Q + \frac{1}{2}H\]</span></p>
+<p>We get to:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="falconers-iqg---exercises.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gene frequencies</span></span>
+<span id="cb52-2"><a href="falconers-iqg---exercises.html#cb52-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> P <span class="sc">+</span> H<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb52-3"><a href="falconers-iqg---exercises.html#cb52-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<pre><code>## [1] 0.5394844</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="falconers-iqg---exercises.html#cb54-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> Q <span class="sc">+</span> H<span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>With the gene frequencies observed, what are the genotype frequencies expected from the Hardy-Weinberg law?</li>
+</ol>
+<p>Expected frequencies in the equilibrium:</p>
+<p><span class="math display">\[p^2 + 2pq + q^2 = 1\]</span></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="falconers-iqg---exercises.html#cb55-1" aria-hidden="true" tabindex="-1"></a>expected <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> p<span class="sc">^</span><span class="dv">2</span>, </span>
+<span id="cb55-2"><a href="falconers-iqg---exercises.html#cb55-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">MN =</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q, </span>
+<span id="cb55-3"><a href="falconers-iqg---exercises.html#cb55-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">NN =</span> q<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb55-4"><a href="falconers-iqg---exercises.html#cb55-4" aria-hidden="true" tabindex="-1"></a>expected</span></code></pre></div>
+<pre><code>##        MM        MN        NN 
+## 0.2910434 0.4968820 0.2120746</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>How well do the observed frequencies agree with the expectation? Data from Wiener, A.S. (1943) quoted by Stem, C. (1973) Principles of Human Genetics. Freeman, San Francisco.</li>
+</ol>
+<p>We can measure how well the observed frequencies agree with the expected ones with a Chi-squared test:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="falconers-iqg---exercises.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarizing what we have</span></span>
+<span id="cb57-2"><a href="falconers-iqg---exercises.html#cb57-2" aria-hidden="true" tabindex="-1"></a>exp_obs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb57-3"><a href="falconers-iqg---exercises.html#cb57-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Expected freq</span><span class="st">`</span> <span class="ot">=</span> expected,</span>
+<span id="cb57-4"><a href="falconers-iqg---exercises.html#cb57-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Observed freq</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(P, H, Q))</span>
+<span id="cb57-5"><a href="falconers-iqg---exercises.html#cb57-5" aria-hidden="true" tabindex="-1"></a>exp_obs</span></code></pre></div>
+<pre><code>##    Expected.freq Observed.freq
+## MM     0.2910434     0.2915647
+## MN     0.4968820     0.4958395
+## NN     0.2120746     0.2125959</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="falconers-iqg---exercises.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying Chi-squared test</span></span>
+<span id="cb59-2"><a href="falconers-iqg---exercises.html#cb59-2" aria-hidden="true" tabindex="-1"></a>observed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> <span class="dv">1787</span>, <span class="at">MN =</span> <span class="dv">3039</span>, <span class="at">NN =</span> <span class="dv">1303</span>)</span>
+<span id="cb59-3"><a href="falconers-iqg---exercises.html#cb59-3" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(observed, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Chi-square test with continuity correction for Hardy-Weinberg equilibrium (autosomal)
+## Chi2 =  0.02104769 DF =  1 p-value =  0.8846491 D =  -3.194771 f =  0.002098103</code></pre>
+<p>The <span class="math inline">\(\chi^2\)</span> statistic is very close to 0, with <em>P</em> &gt; 0.05. Then, we conclude that the observed and expected frequencies are not different.</p>
+</div>
+<div id="problem-2" class="section level3 unnumbered">
+<h3>Problem 2</h3>
+<p><strong>About 30 per cent of people do not recognize the bitter taste of phenyl-thio-carbamate (PTC). Inability to taste it is due to a single autosomal recessive gene. What is the frequency of the non-tasting gene, assuming the population to be in Hardy-Weinberg equilibrium?</strong></p>
+<p>If the trait is caused by two recessive alleles (<em>aa</em>), then the frequency of <em>aa</em> will be equal to <span class="math inline">\(q^2\)</span>. As <span class="math inline">\(q^2 = 0.3\)</span>, <span class="math inline">\(q = \sqrt{0.3} = 0.548\)</span>.</p>
+</div>
+<div id="problem-3" class="section level3 unnumbered">
+<h3>Problem 3</h3>
+<p><strong>Albinism occurs with a frequency of about 1 in 20,000 in European populations. Assuming it to be due to a single autosomal recessive gene, and assuming the population to be in Hardy-Weinberg equilibrium, what proportion of people are carriers? Only an approximate answer is needed.</strong></p>
+<p>Carriers are heterozigote individuals, i.e., <em>2pq</em>. From <span class="math inline">\(q^2\)</span>, we can calculate p and, hence, <em>2pq</em> as follows:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="falconers-iqg---exercises.html#cb61-1" aria-hidden="true" tabindex="-1"></a>q2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">20000</span> </span>
+<span id="cb61-2"><a href="falconers-iqg---exercises.html#cb61-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(q2)</span>
+<span id="cb61-3"><a href="falconers-iqg---exercises.html#cb61-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> q</span>
+<span id="cb61-4"><a href="falconers-iqg---exercises.html#cb61-4" aria-hidden="true" tabindex="-1"></a>heterozygotes <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q</span>
+<span id="cb61-5"><a href="falconers-iqg---exercises.html#cb61-5" aria-hidden="true" tabindex="-1"></a>heterozygotes</span></code></pre></div>
+<pre><code>## [1] 0.01404214</code></pre>
+</div>
+<div id="problem-4" class="section level3 unnumbered">
+<h3>Problem 4</h3>
+<p><strong>As an exercise in algebra, work out the gene frequency of a recessive mutant in a random-breeding population that would result in one-third of normal individuals being carriers.</strong></p>
+<p>1/3 of the normal individuals as carriers means:</p>
+<p><span class="math display">\[
+\frac{2pq}{1-q^2} = \frac{2q(1-q)}{1-q^2} = \frac{2q(1-q)}{(1+q)(1-q)} = \frac{2q}{1+q}
+\]</span></p>
+</div>
+<div id="problem-5" class="section level3 unnumbered">
+<h3>Problem 5</h3>
+<p><strong>Three allelic variants, A, B, and C, of the red cell acid phosphatase enzyme were found in a sample of 178 English people. All genotypes were distinguishable by electrophoresis, and the frequencies in the sample were</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Genotype</th>
+<th>AA</th>
+<th>AB</th>
+<th>BB</th>
+<th>AC</th>
+<th>BC</th>
+<th>CC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Freq (%)</td>
+<td>9.6</td>
+<td>48.3</td>
+<td>34.3</td>
+<td>2.8</td>
+<td>5.0</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What are the gene frequencies in the sample? Why were no CC individuals found?</strong></p>
+<p>As the frequency of a gene is equal to the frequency of homozygotes + 1/2 the frequency of heterozygotes, we have:</p>
+<p><span class="math display">\[A = 0.096 + \frac{1}{2}(0.483 + 0.028) = 0.3515\]</span></p>
+<p><span class="math display">\[B = 0.343 + \frac{1}{2}(0.483 + 0.05) = 0.6095\]</span></p>
+<p><span class="math display">\[C = 0.0 + \frac{1}{2}(0.028 + 0.05) = 0.039\]</span> The expected frequency of CC individuals is <span class="math inline">\(C^2 = 0.039^2 = 0.0015\)</span>. As we have a sample size of 178 individuals, we would expect <span class="math inline">\(178 * 0.0015 = 0.27\)</span> CC individuals (less than 1). Thus, the observed frequency (zero) is expected. We would be able to observe CC individuals if the sample size was larger.</p>
+</div>
+<div id="problem-6" class="section level3 unnumbered">
+<h3>Problem 6</h3>
+<p><strong>About 7 per cent of men are colour-blind in consequence of a sex-linked recessive gene. Assuming Hardy-Weinberg equilibrium, what proportion of women are expected to be (1) carriers, and (2) colour-blind? (3) In what proportion of marriages are both husband and wife expected to be colour-blind?</strong></p>
+<p>7% of men are color-blind, which means that <span class="math inline">\(q = 0.07\)</span>. Under Hardy-Weinberg equilibrium, the frequency in men is equal to the frequency in women. Then:</p>
+<p><span class="math display">\[Carriers = 2pq = 2q(1-q)\]</span></p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="falconers-iqg---exercises.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carriers</span></span>
+<span id="cb63-2"><a href="falconers-iqg---exercises.html#cb63-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fl">0.07</span></span>
+<span id="cb63-3"><a href="falconers-iqg---exercises.html#cb63-3" aria-hidden="true" tabindex="-1"></a>carriers <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>q<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>q)</span>
+<span id="cb63-4"><a href="falconers-iqg---exercises.html#cb63-4" aria-hidden="true" tabindex="-1"></a>carriers</span></code></pre></div>
+<pre><code>## [1] 0.1302</code></pre>
+<p>Color-blind = <span class="math inline">\(q^2 = 0.0049\)</span>.</p>
+<p>To find the frequency of marriages with both men and women color-blind, we simply multiply the frequency of color-blind men <strong>and</strong> the frequency of color-blind women. That is:</p>
+<p><span class="math display">\[P(men) \times P(women) = 0.07 \times 0.0049 = 0.000343\]</span></p>
+</div>
+<div id="problem-7" class="section level3 unnumbered">
+<h3>Problem 7</h3>
+<p><strong>Sine oculis (so) and cinnabar (cn) are two autosomal recessive genes in Drosophila melanogaster. They are very closely linked and can be treated as if they were alleles at one locus. The ‘heterozygote,’ so/cn, is wild-type and is distinguishable from both homozygotes; (so/so has no eyes; cn/cn has white eyes if the stock is made homozygous for another eye-colour mutant, brown, hw). In a class experiment 4 males and 4 females of an so/so stock were put in a vial together with 16 males and 16 females from a cn/cn stock and allowed to mate. There were 20 such vials. The total count of progeny, classified by genotype, was as follows.</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>so/so</th>
+<th>so/cn</th>
+<th>cn/cn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>135</td>
+<td>359</td>
+<td>947</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How do these numbers differ from the Hardy-Weinberg expectations? Suggest a reason for the discrepancy.</strong></p>
+<p>To compare the observed frequencies to the expected under HW equilibrium, we can perform a <span class="math inline">\(\chi^2\)</span> test.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="falconers-iqg---exercises.html#cb65-1" aria-hidden="true" tabindex="-1"></a>obs_freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">SS =</span> <span class="dv">135</span>, <span class="at">SC =</span> <span class="dv">359</span>, <span class="at">CC =</span> <span class="dv">947</span>)</span>
+<span id="cb65-2"><a href="falconers-iqg---exercises.html#cb65-2" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(obs_freq, <span class="at">verbose=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## Chi-square test with continuity correction for Hardy-Weinberg equilibrium (autosomal)
+## Chi2 =  103.671 DF =  1 p-value =  0.000000000000000000000002388595 D =  -66.35999 f =  0.2699097</code></pre>
+<p>We can see, the <span class="math inline">\(\chi^2\)</span> statistic is very high, and so is the linkage disequilibrium coefficient (D = -66.35). A possible reason for this is assortative mating.</p>
+</div>
+<div id="problem-8" class="section level3 unnumbered">
+<h3>Problem 8</h3>
+<p><strong>Suppose that Drosophila cultures are set up in vials as described in Problem 1.7, but this time with a gene frequency of 0.5. This is done by putting 10 males and 10 females of each stock in each vial. The supply of so/so females ran out and only 4 were left for the last vial. So, to preserve the intended gene frequency and numbers of parents, this vial was made up as follows: 16 males + 4 females of so/so with 4 males + 16 females of cn/cn. The student who got this vial was a bit surprised by what he found. What genotype frequencies would you expect in the progeny?</strong></p>
+<p>We would not expect HW equilibrium, as the gene frequencies are different between males and females.</p>
+<p><span class="math display">\[so_{males} = \frac{16}{20} = 0.8\]</span></p>
+<p><span class="math display">\[so_{females} = \frac{4}{20} = 0.2\]</span>
+Obtaining genotype frequencies from the gene frequencies:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="falconers-iqg---exercises.html#cb67-1" aria-hidden="true" tabindex="-1"></a>soso <span class="ot">&lt;-</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fl">0.2</span></span>
+<span id="cb67-2"><a href="falconers-iqg---exercises.html#cb67-2" aria-hidden="true" tabindex="-1"></a>soso</span></code></pre></div>
+<pre><code>## [1] 0.16</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="falconers-iqg---exercises.html#cb69-1" aria-hidden="true" tabindex="-1"></a>cncn <span class="ot">&lt;-</span> <span class="fl">0.2</span> <span class="sc">*</span> <span class="fl">0.8</span></span>
+<span id="cb69-2"><a href="falconers-iqg---exercises.html#cb69-2" aria-hidden="true" tabindex="-1"></a>cncn</span></code></pre></div>
+<pre><code>## [1] 0.16</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="falconers-iqg---exercises.html#cb71-1" aria-hidden="true" tabindex="-1"></a>socn <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (soso <span class="sc">+</span> cncn)</span>
+<span id="cb71-2"><a href="falconers-iqg---exercises.html#cb71-2" aria-hidden="true" tabindex="-1"></a>socn</span></code></pre></div>
+<pre><code>## [1] 0.68</code></pre>
+<p>Under Hardy-Weinberg equilibrium, we would expect genotype frequencies to be 0.25, 0.5, 0.25.</p>
+</div>
+<div id="problem-9" class="section level3 unnumbered">
+<h3>Problem 9</h3>
+<p><strong>Prove that when there are any number of alleles at a locus the total frequency of heterozygotes is greatest when all alleles have the same frequency. What is then the total frequency of heterozygotes?</strong></p>
+<p>This can be demonstrated by simulating two alelles with increasingly similar frequencies and calculating the frequency of heterozygotes for each simulation step.</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="falconers-iqg---exercises.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define function to calculate heterozygote frequency</span></span>
+<span id="cb73-2"><a href="falconers-iqg---exercises.html#cb73-2" aria-hidden="true" tabindex="-1"></a>heterozygote_freq <span class="ot">&lt;-</span> <span class="cf">function</span>(p, q) {</span>
+<span id="cb73-3"><a href="falconers-iqg---exercises.html#cb73-3" aria-hidden="true" tabindex="-1"></a>    heterozygotes <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q</span>
+<span id="cb73-4"><a href="falconers-iqg---exercises.html#cb73-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(heterozygotes)</span>
+<span id="cb73-5"><a href="falconers-iqg---exercises.html#cb73-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb73-6"><a href="falconers-iqg---exercises.html#cb73-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-7"><a href="falconers-iqg---exercises.html#cb73-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create vectors of frequencies for p and q</span></span>
+<span id="cb73-8"><a href="falconers-iqg---exercises.html#cb73-8" aria-hidden="true" tabindex="-1"></a>psim <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.01</span>, <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">50</span>)</span>
+<span id="cb73-9"><a href="falconers-iqg---exercises.html#cb73-9" aria-hidden="true" tabindex="-1"></a>qsim <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.99</span>, <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">50</span>)</span>
+<span id="cb73-10"><a href="falconers-iqg---exercises.html#cb73-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-11"><a href="falconers-iqg---exercises.html#cb73-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate heterozygote frequency for simulated p and q freqs</span></span>
+<span id="cb73-12"><a href="falconers-iqg---exercises.html#cb73-12" aria-hidden="true" tabindex="-1"></a>hfreq <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_along</span>(psim), <span class="cf">function</span>(x) {</span>
+<span id="cb73-13"><a href="falconers-iqg---exercises.html#cb73-13" aria-hidden="true" tabindex="-1"></a>    freq <span class="ot">&lt;-</span> <span class="fu">heterozygote_freq</span>(<span class="at">p =</span> psim[x], <span class="at">q =</span> qsim[x])</span>
+<span id="cb73-14"><a href="falconers-iqg---exercises.html#cb73-14" aria-hidden="true" tabindex="-1"></a>    distance <span class="ot">&lt;-</span> <span class="fu">abs</span>(psim[x] <span class="sc">-</span> qsim[x])</span>
+<span id="cb73-15"><a href="falconers-iqg---exercises.html#cb73-15" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb73-16"><a href="falconers-iqg---exercises.html#cb73-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">Hfreq</span><span class="st">`</span> <span class="ot">=</span> freq,</span>
+<span id="cb73-17"><a href="falconers-iqg---exercises.html#cb73-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">Diff</span><span class="st">`</span> <span class="ot">=</span> distance</span>
+<span id="cb73-18"><a href="falconers-iqg---exercises.html#cb73-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb73-19"><a href="falconers-iqg---exercises.html#cb73-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df)</span>
+<span id="cb73-20"><a href="falconers-iqg---exercises.html#cb73-20" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb73-21"><a href="falconers-iqg---exercises.html#cb73-21" aria-hidden="true" tabindex="-1"></a>hfreq <span class="ot">&lt;-</span> <span class="fu">Reduce</span>(rbind, hfreq)</span>
+<span id="cb73-22"><a href="falconers-iqg---exercises.html#cb73-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-23"><a href="falconers-iqg---exercises.html#cb73-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspecting visually</span></span>
+<span id="cb73-24"><a href="falconers-iqg---exercises.html#cb73-24" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(ggplot2))</span>
+<span id="cb73-25"><a href="falconers-iqg---exercises.html#cb73-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(hfreq, <span class="fu">aes</span>(<span class="at">y =</span> Hfreq, <span class="at">x =</span> Diff, <span class="at">group=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb73-26"><a href="falconers-iqg---exercises.html#cb73-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb73-27"><a href="falconers-iqg---exercises.html#cb73-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb73-28"><a href="falconers-iqg---exercises.html#cb73-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb73-29"><a href="falconers-iqg---exercises.html#cb73-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>)) <span class="sc">+</span></span>
+<span id="cb73-30"><a href="falconers-iqg---exercises.html#cb73-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Allele frequency difference&quot;</span>,</span>
+<span id="cb73-31"><a href="falconers-iqg---exercises.html#cb73-31" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Relative frequency of heterozygotes&quot;</span>,</span>
+<span id="cb73-32"><a href="falconers-iqg---exercises.html#cb73-32" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">&quot;Frequency of heterozygotes as a function of allele frequency differences&quot;</span>,</span>
+<span id="cb73-33"><a href="falconers-iqg---exercises.html#cb73-33" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;The frequency of heterozygotes reaches its maximum when p and q have equal frequencies&quot;</span>)</span></code></pre></div>
+<p><img src="IQG_solutions_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+</div>
+<div id="problem-10" class="section level3 unnumbered">
+<h3>Problem 10</h3>
+<p><strong>Suppose that a strain of genotype AA BB is mixed with another strain of genotype aa bb, with equal numbers of the two strains and equal numbers of males and females, which mate at random. Call this generation of parents generation 0. Subsequent generations also mate at random and there are no differences of fertility or viability among the genotypes. What will be the frequency of the genotype AA bb in the progeny of generation 2, i.e. after two generations of recombination, if the two loci are (1) unlinked, (2) linked with a recombination frequency of 20 per cent?</strong></p>
+<p>The genotype AAbb results from two recombinant gametes Ab (i.e., <span class="math inline">\(p_Aq_B\)</span>). The equilibrium frequency of Ab gametes is represented as <strong>s</strong> (repulsion phase).</p>
+<p>As the population is in equilibrium, we know that:</p>
+<p><span class="math display">\[p = q = 0.5\]</span></p>
+<p>NOTE: Under Hardy-Weinberg equilibrium, <strong>the frequency of gametes in coupling phase is equal to the frequency of gametes in repulsion phase</strong>, or <span class="math inline">\(2ru = 2st\)</span>.</p>
+<p><span class="math display">\[
+\hat{s} = 0.5 \times 0.5 = 0.25
+\]</span></p>
+<p>Disequilibrium in any generation calculated from the frequencies of Ab gametes:</p>
+<p><span class="math display">\[
+\begin{aligned}
+-D &amp;= s - \hat{s} \\
+-D &amp;= 0 - 0.25 \\
+D &amp;= 0.25
+\end{aligned}
+\]</span></p>
+<p>Then, the coefficient of linkage disequilibrium in generation <em>t</em> can be calculated with:</p>
+<p><span class="math display">\[
+D_{t} = D_{0}(1-c)^t
+\]</span></p>
+<ol style="list-style-type: decimal">
+<li>After 2 generations of recombination, with unlinked loci (c = 0.5), we have:</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+D_2 &amp;= 0.25(0.5)^2 \\
+&amp;= 0.25 \times 0.25 \\
+&amp;= 0.0625
+\end{aligned}
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>After 2 generations of recombination, with linked loci with a recombination frequency of 20% (c = 0.2):</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+D_2 &amp;= 0.25(0.8)^2 \\
+&amp;= 0.25 \times 0.64 \\
+&amp;= 0.16
+\end{aligned}
+\]</span></p>
+<p>Now that we have <span class="math inline">\(D_2\)</span> for these 2 scenarios, we can replace it in the previous formula. As <span class="math inline">\(s\)</span> is the frequency of the Ab gamete, the frequency of the genotype AAbb will be <span class="math inline">\(s^2\)</span>.</p>
+<p>Unlinked loci:</p>
+<p><span class="math display">\[
+\begin{aligned}
+-D &amp;= s - \hat{s} \\
+s &amp;= \hat{s} - D \\
+&amp;= 0.25 - 0.0625 \\
+&amp;= 0.1875 \\
+\\
+s^2 &amp;= 0.03515
+\end{aligned}
+\]</span>
+Linked loci, with 20% of recombination:</p>
+<p><span class="math display">\[
+\begin{aligned}
+-D &amp;= s - \hat{s} \\
+s &amp;= \hat{s} - D \\
+&amp;= 0.25 - 0.16 \\
+&amp;= 0.09 \\
+\\
+s^2 &amp;= 0.0081
+\end{aligned}
+\]</span></p>
+</div>
+<div id="problem-11" class="section level3 unnumbered">
+<h3>Problem 11</h3>
+<p><strong>How will the solutions of Problem 1.10 be altered if the two strains are crossed by taking males of one strain and females of the other?</strong></p>
+<p>There would be more disequilibrium, as mating would not be random.</p>
+</div>
+</div>
+<div id="changes-of-gene-frequency" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Changes of gene frequency</h2>
+<div id="problem-1-1" class="section level3 unnumbered">
+<h3>Problem 1</h3>
+<p><strong>Rare white-flowered plants occur in populations of a Delphinium species which normally has deep blue flowers. In an area in the Rocky Mountains the frequency of white-flowered plants was 7.4 X 10^-4. White-flowered plants were found to set an average of 143 seeds per plant while blue-flowered plants set 229, the reduction in seed-production being due to discrimination by pollinators, which are bumble-bees and humming-birds. On the assumption that white flowers are due to a single recessive gene, and that the population was in equilibrium, what rate of mutation would be needed to balance the selection?</strong></p>
+<p><span class="math inline">\(Fitness = \frac{143}{229} = 0.62\)</span>, so <span class="math inline">\(s = 0.38\)</span>.</p>
+<p>Thus, we get to:</p>
+<p><span class="math display">\[
+\begin{aligned}
+u &amp;= sq^2 \\
+u &amp;= 0.38 \times 7.4e-04 \\
+u &amp;= 0.0002812 = 2.8e-04
+\end{aligned}
+\]</span></p>
+</div>
+<div id="problem-2-1" class="section level3 unnumbered">
+<h3>Problem 2</h3>
+<p><strong>If the white flowers in Problem 2.1 were due to a completely dominant gene, what would be the mutation rate needed to maintain equilibrium?</strong></p>
+<p>Considering that homozygotes would be very rare, we have:</p>
+<p><span class="math display">\[
+\begin{aligned}
+u &amp;= \frac{sH}{2} \\
+u &amp;= \frac{0.38 \times 7.4e-04}{2} = 1.4e-04\\
+\end{aligned}
+\]</span></p>
+</div>
+<div id="problem-3-1" class="section level3 unnumbered">
+<h3>Problem 3</h3>
+<p><strong>If an allele, A, mutates to a with a frequency of 1 in 10,000 and back-mutates with a frequency of 1 in 100,000, and if the three genotypes have equal fitnesses, what will be the genotype frequencies at equilibrium in a random-mating population?</strong></p>
+<p>In the equilibrium, <span class="math inline">\(pu = qv\)</span>. Then:</p>
+<p><span class="math display">\[
+\begin{aligned}
+q &amp;= \frac{u}{u + v} \\
+q &amp;= \frac{1e-04}{1e-04 + 1e-05} \\
+q &amp;= 0.9090909
+\end{aligned}
+\]</span>
+Hence, p = 0.0909091. Then:</p>
+<p><span class="math display">\[
+\begin{aligned}
+AA &amp;= p^2 = 0.008264464 \\
+Aa &amp;= 2pq = 0.1652893 \\
+aa &amp;= q^2 = 0.8264463
+\end{aligned}
+\]</span></p>
+<p>Checking if frequencies sum um to 1:</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="falconers-iqg---exercises.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.008264628</span> <span class="sc">+</span> <span class="fl">0.1652907</span> <span class="sc">+</span> <span class="fl">0.8264446</span></span></code></pre></div>
+<pre><code>## [1] 0.9999999</code></pre>
+</div>
+<div id="problem-4-1" class="section level3 unnumbered">
+<h3>Problem 4</h3>
+<p><strong>Refer to Problem 2.3. What would be the consequences of doubling the mutation rate in both directions?</strong></p>
+<p>As rates would double in both directions, the frequencies would be the same. Nothing would change.</p>
+</div>
+<div id="problem-5-1" class="section level3 unnumbered">
+<h3>Problem 5</h3>
+<p><strong>Medical treatment is, or will be, available for several serious autosomal recessive diseases. What would be the long-term consequences if treatment allowed sufferers from such a disease to have on average half the number of children that normal people have, whereas without treatment they would have no children? Assume that the present frequency is the mutation versus selection equilibrium, that in the long term a new equilibrium will be reached, and that no other circumstances change.</strong></p>
+<p>Without treatment, s = 1. With treatment, s = 0.5. At equilibrium, <span class="math inline">\(q^2 = \frac{u}{s}\)</span>. Then, the treatment would double the frequency of <span class="math inline">\(q^2\)</span>. However, as the change in gene frequency is due to mutation, it would take a very long time to reach the new equilibrium.</p>
+</div>
+<div id="problem-6-1" class="section level3 unnumbered">
+<h3>Problem 6</h3>
+<p><strong>Cystic fibrosis is an autosomal recessive human disease with an incidence of about 1 in 2,500 live births among Caucasians. What would be the consequence in the immediately following generation if the mutation rate were doubled? Assume that the present frequency is the mutation versus selection equilibrium, that back-mutation is negligible, and that affected individuals have no children. Express your result as a percentage increase of incidence and as the number of additional cases per million births.</strong></p>
+<p><span class="math inline">\(q^2 = \frac{1}{2500} = 0.0004\)</span>, then <span class="math inline">\(q = 0.02\)</span>. In the equilibrium, <span class="math inline">\(u = sq^2 = 1 \times 0.0004 = 0.0004\)</span>. Assuming back-mutation is negligible, we have:</p>
+<ul>
+<li><p>change in gene frequency due to mutation: <span class="math inline">\(\Delta{q} = up\)</span></p></li>
+<li><p>change in gene frequency due to selection against a recessive gene: <span class="math inline">\(\Delta{q} = -sq^2p\)</span></p></li>
+</ul>
+<p>Then, the net change will be:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta{q} &amp;= u_1p - sq^2p \\
+&amp;= u_1 (1-q) - sq^2 (1-q) \\
+\end{aligned}
+\]</span></p>
+<p>Knowing that <span class="math inline">\(sq^2 = u = 0.0004\)</span>, q = 0.02, and assuming <span class="math inline">\(u_1 = 2u\)</span>, we have:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta{q} &amp;= u_1 0.98 - u 0.98 \\
+&amp;= 2u \times 0.98 - u 0.98 \\
+&amp;= 0.0008 \times 0.98 - 0.0004 \times 0.98 \\
+&amp;= 0.000392
+\end{aligned}
+\]</span></p>
+<p>Hence, the new gene frequency will be:</p>
+<p><span class="math display">\[
+\begin{aligned}
+q_1 &amp;= q_0 + \Delta{q} \\
+&amp;= 0.02 + 0.000392 = 0.020392 \\
+\\
+q_1^2 &amp;= 0.0004158337
+\end{aligned}
+\]</span></p>
+<p>Checking percent increase:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="falconers-iqg---exercises.html#cb76-1" aria-hidden="true" tabindex="-1"></a>percent_increase <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">initial =</span> <span class="cn">NULL</span>, <span class="at">final =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb76-2"><a href="falconers-iqg---exercises.html#cb76-2" aria-hidden="true" tabindex="-1"></a>    inc <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> ( (final <span class="sc">-</span> initial) <span class="sc">/</span> <span class="fu">abs</span>(initial) )</span>
+<span id="cb76-3"><a href="falconers-iqg---exercises.html#cb76-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(inc)</span>
+<span id="cb76-4"><a href="falconers-iqg---exercises.html#cb76-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb76-5"><a href="falconers-iqg---exercises.html#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="fu">percent_increase</span>(<span class="at">initial =</span> <span class="fl">0.0004</span>, <span class="at">final =</span> <span class="fl">0.0004158337</span>)</span></code></pre></div>
+<pre><code>## [1] 3.958425</code></pre>
+<p>Then, doubling the mutation rate would increase the gene frequency by ~4%, which means there would be 16 additional cases per million births.</p>
+</div>
+<div id="problem-7-1" class="section level3 unnumbered">
+<h3>Problem 7</h3>
+<p><strong>A careless Drosophila stock-keeper allows a stock of a dominant autosomal mutant to be contaminated by wild-type flies. Originally all flies were homozygous for the mutant, but after 10 generations some wild-type flies were found in the stock. Precautions were then taken to prevent further contamination. Suppose that we make the following assumptions: (i) In every generation 1 per cent of flies were contaminants, (ii) all contaminants were homozygous wild type, (iii) mutant and wild-type flies have equal fitness. With these assumptions what would be (1) the proportion of wild-type flies in the generations after the last contamination, and (2) the proportion of heterozygotes among the flies with the mutant phenotype?</strong></p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li></li>
+</ol></li>
+</ul>
+<p>Change in gene frequency due to migration in generation n:</p>
+<p><span class="math display">\[
+(q_n - q_m) = (1-m)^n(q_0-q_m)
+\]</span></p>
+<p>Consdering that q is mutant allele, <span class="math inline">\(q_0 = 1\)</span> and <span class="math inline">\(q_m = 0\)</span>. Then, in generation 10, we would have:</p>
+<p><span class="math display">\[
+\begin{aligned}
+(q_{10} - 0) &amp;= (1-0.01)^{10}(1-0) \\
+q_{10} &amp;= 0.9043821
+\end{aligned}
+\]</span></p>
+<p>Then, <span class="math inline">\(p_{10} = 1-q_{10} = 0.0956179\)</span>, the proportion of wild-type individuals will be <span class="math inline">\(p^2 = 0.009142783 = 0.91\%\)</span>.</p>
+<ul>
+<li><ol start="2" style="list-style-type: decimal">
+<li></li>
+</ol></li>
+</ul>
+<p>Frequency of mutants = <span class="math inline">\(1-p^2 = 99.09\%\)</span></p>
+<p>Frequency of heterozygotes = <span class="math inline">\(2pq = 17.30\%\)</span></p>
+<p>Frequency of heterozygotes among mutants = <span class="math inline">\(\frac{17.30}{99.09} = 17.46\%\)</span></p>
+</div>
+<div id="problem-8-1" class="section level3 unnumbered">
+<h3>Problem 8</h3>
+<p><strong>The two closely linked recessive genes of Drosophila described in Problem 1.7 can be treated as alleles. Two populations were set up with initial gene frequencies of so of 0.2 in one and 0.8 in the other. After 7 generations of random breeding the gene frequency of so was close to 0.35 in both populations. What does this tell us about the selection operating?</strong></p>
+<p>It indicates that selection is favoring heterozygotes, as both populations reached the same intermediate gene frequency.</p>
+</div>
+<div id="problem-9-1" class="section level3 unnumbered">
+<h3>Problem 9</h3>
+<p><strong>The gene that makes wild rats resistant to the anticoagulant poison warfarin exhibits heterozygote advantage because rats homozygous for the resistance gene suffer from vitamin K deficiency. Heterozygotes are resistant to the poison and do not suffer from vitamin K deficiency. The proportion of resistant homozygotes that die from vitamin K deficiency was estimated to be 63 per cent. Susceptible homozygotes are not all killed when poison is applied to an area. A population under continuous treatment with poison came to equilibrium with the resistance gene at a frequency of 0.34. What percentage of all rats in this population will die in consequence of the resistance gene and the poisoning?</strong></p>
+<p>If 63% of the resistant homozygotes die, <span class="math inline">\(s_1 = 0.63\)</span>. Then, the load is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+L &amp;= s_1p \\
+&amp;= 0.63 \times 0.34 \\
+&amp;= 0.2142
+\end{aligned}
+\]</span></p>
+<p>21.42% of the individuals will be lost.</p>
+</div>
+<div id="problem-10-1" class="section level3 unnumbered">
+<h3>Problem 10</h3>
+<p><strong>Suppose that two mutant genes are used in a class experiment on selection in Drosophila. In both cases heterozygotes are distinguishable from homozygotes but the genes are recessive with respect to fitness. (These are not known genes.) With gene (a) mutant homozygotes of both sexes have their fertility reduced by 50 per cent relative to the other genotypes, but have unimpaired viability. With gene (b) mutant homozygotes are fully fertile but both sexes have their pre-adult mortality increased by 50 per cent relative to the other genotypes. In both cases a parental population is made up of 30 male + 30 female homozygous wild type and 20 male + 20 female homozygous mutant. What genotype frequencies will be found in the progeny? How do they compare with Hardy-Weinberg expectations based on the observed gene frequency in the progeny? What conclusions about the selection can be drawn from the frequencies in the progeny? Why does delta q differ in the two cases?</strong></p>
+</div>
+<div id="problem-11-1" class="section level3 unnumbered">
+<h3>Problem 11</h3>
+<p><strong>Suppose a sex-linked trait due to a recessive gene has its genotypes in Hardy-Weinberg frequencies. A breeder then culls all affected individuals of both sexes. Derive an expression, in terms of the initial gene frequency, for the change of gene frequency resulting from one generation of selection.</strong></p>
+</div>
+<div id="problem-12" class="section level3 unnumbered">
+<h3>Problem 12</h3>
+<p><strong>What is the approximate equilibrium gene frequency of a deleterious sex-linked recessive gene, when selection is balanced by a mutation rate of m? Human X-linked muscular dystrophy was found in a survey in England to have an incidence of 32.6 per 100,000 males. The mutation rate was estimated from the number of ‘sporadic’ cases to be 10.5 X 10^-5. Do these estimates agree with the expectation for a population in equilibrium when sufferers from the disease do not reproduce and carriers have normal survival and fertility?</strong></p>
+</div>
+<div id="problem-13" class="section level3 unnumbered">
+<h3>Problem 13</h3>
+<p><strong>Red coat colour in many breeds of cattle is due to an autosomal recessive gene, the dominant phenotype being black. Suppose that 1 per cent of red calves are bom in a pre? dominantly black breed, and suppose that it is desired to eliminate the red gene. Assuming the genotypes in the initial population to be in Hardy-Weinberg proportions, what propor? tion of red calves would there be after applying the following alternative selection procedures over two generations? (1) No red animals are used for breeding. (2) In addition to culling all red animals, all black bulls to be used for breeding are first tested by 6 progeny each from cows known to be heterozygotes. Any bull producing one or more red calves in the test is discarded. Cows used for breeding are not tested.</strong></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exercícios.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="provas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["IQG_solutions.pdf", "IQG_solutions.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

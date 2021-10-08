@@ -1,6 +1,9 @@
-# Genetic constitution of a population
 
-## Problem 1
+# Falconer's IQG - Exercises
+
+## Genetic constitution of a population
+
+### Problem 1 {.unnumbered}
 
 The following numbers of the human M-N blood groups were recorded in a sample of American Whites.
 
@@ -75,13 +78,13 @@ HardyWeinberg::HWChisq(observed, verbose=TRUE)
 
 The $\chi^2$ statistic is very close to 0, with *P* \> 0.05. Then, we conclude that the observed and expected frequencies are not different.
 
-## Problem 2
+### Problem 2 {.unnumbered}
 
 **About 30 per cent of people do not recognize the bitter taste of phenyl-thio-carbamate (PTC). Inability to taste it is due to a single autosomal recessive gene. What is the frequency of the non-tasting gene, assuming the population to be in Hardy-Weinberg equilibrium?**
 
 If the trait is caused by two recessive alleles (*aa*), then the frequency of *aa* will be equal to $q^2$. As $q^2 = 0.3$, $q = \sqrt{0.3} = 0.548$.
 
-## Problem 3
+### Problem 3 {.unnumbered}
 
 **Albinism occurs with a frequency of about 1 in 20,000 in European populations. Assuming it to be due to a single autosomal recessive gene, and assuming the population to be in Hardy-Weinberg equilibrium, what proportion of people are carriers? Only an approximate answer is needed.**
 
@@ -95,7 +98,7 @@ heterozygotes <- 2*p*q
 heterozygotes
 ```
 
-## Problem 4
+### Problem 4 {.unnumbered}
 
 **As an exercise in algebra, work out the gene frequency of a recessive mutant in a random-breeding population that would result in one-third of normal individuals being carriers.**
 
@@ -105,7 +108,7 @@ $$
 \frac{2pq}{1-q^2} = \frac{2q(1-q)}{1-q^2} = \frac{2q(1-q)}{(1+q)(1-q)} = \frac{2q}{1+q}
 $$
 
-## Problem 5
+### Problem 5 {.unnumbered}
 
 **Three allelic variants, A, B, and C, of the red cell acid phosphatase enzyme were found in a sample of 178 English people. All genotypes were distinguishable by electrophoresis, and the frequencies in the sample were**
 
@@ -123,7 +126,7 @@ $$B = 0.343 + \frac{1}{2}(0.483 + 0.05) = 0.6095$$
 
 $$C = 0.0 + \frac{1}{2}(0.028 + 0.05) = 0.039$$ The expected frequency of CC individuals is $C^2 = 0.039^2 = 0.0015$. As we have a sample size of 178 individuals, we would expect $178 * 0.0015 = 0.27$ CC individuals (less than 1). Thus, the observed frequency (zero) is expected. We would be able to observe CC individuals if the sample size was larger.
 
-## Problem 6
+### Problem 6 {.unnumbered}
 
 **About 7 per cent of men are colour-blind in consequence of a sex-linked recessive gene. Assuming Hardy-Weinberg equilibrium, what proportion of women are expected to be (1) carriers, and (2) colour-blind? (3) In what proportion of marriages are both husband and wife expected to be colour-blind?**
 
@@ -143,7 +146,7 @@ To find the frequency of marriages with both men and women color-blind, we simpl
 
 $$P(men) \times P(women) = 0.07 \times 0.0049 = 0.000343$$
 
-## Problem 7
+### Problem 7 {.unnumbered}
 
 **Sine oculis (so) and cinnabar (cn) are two autosomal recessive genes in Drosophila melanogaster. They are very closely linked and can be treated as if they were alleles at one locus. The 'heterozygote', so/cn, is wild-type and is distinguishable from both homozygotes; (so/so has no eyes; cn/cn has white eyes if the stock is made homozygous for another eye-colour mutant, brown, hw). In a class experiment 4 males and 4 females of an so/so stock were put in a vial together with 16 males and 16 females from a cn/cn stock and allowed to mate. There were 20 such vials. The total count of progeny, classified by genotype, was as follows.**
 
@@ -163,7 +166,7 @@ HardyWeinberg::HWChisq(obs_freq, verbose=TRUE)
 
 We can see, the $\chi^2$ statistic is very high, and so is the linkage disequilibrium coefficient (D = -66.35). A possible reason for this is assortative mating.
 
-## Problem 8
+### Problem 8 {.unnumbered}
 
 **Suppose that Drosophila cultures are set up in vials as described in Problem 1.7, but this time with a gene frequency of 0.5. This is done by putting 10 males and 10 females of each stock in each vial. The supply of so/so females ran out and only 4 were left for the last vial. So, to preserve the intended gene frequency and numbers of parents, this vial was made up as follows: 16 males + 4 females of so/so with 4 males + 16 females of cn/cn. The student who got this vial was a bit surprised by what he found. What genotype frequencies would you expect in the progeny?**
 
@@ -187,7 +190,7 @@ socn
 
 Under Hardy-Weinberg equilibrium, we would expect genotype frequencies to be 0.25, 0.5, 0.25.
 
-## Problem 9
+### Problem 9 {.unnumbered}
 
 **Prove that when there are any number of alleles at a locus the total frequency of heterozygotes is greatest when all alleles have the same frequency. What is then the total frequency of heterozygotes?**
 
@@ -231,7 +234,7 @@ ggplot(hfreq, aes(y = Hfreq, x = Diff, group=1)) +
 ```
 
 
-## Problem 10
+### Problem 10 {.unnumbered}
 
 **Suppose that a strain of genotype AA BB is mixed with another strain of genotype aa bb, with equal numbers of the two strains and equal numbers of males and females, which mate at random. Call this generation of parents generation 0. Subsequent generations also mate at random and there are no differences of fertility or viability among the genotypes. What will be the frequency of the genotype AA bb in the progeny of generation 2, i.e. after two generations of recombination, if the two loci are (1) unlinked, (2) linked with a recombination frequency of 20 per cent?**
 
@@ -310,8 +313,218 @@ s^2 &= 0.0081
 \end{aligned}
 $$
 
-## Problem 11
+### Problem 11 {.unnumbered}
 
 **How will the solutions of Problem 1.10 be altered if the two strains are crossed by taking males of one strain and females of the other?**
 
 There would be more disequilibrium, as mating would not be random.
+
+
+## Changes of gene frequency
+
+### Problem 1 {.unnumbered}
+
+**Rare white-flowered plants occur in populations of a Delphinium species which normally has deep blue flowers. In an area in the Rocky Mountains the frequency of white-flowered plants was 7.4 X 10^-4. White-flowered plants were found to set an average of 143 seeds per plant while blue-flowered plants set 229, the reduction in seed-production being due to discrimination by pollinators, which are bumble-bees and humming-birds. On the assumption that white flowers are due to a single recessive gene, and that the population was in equilibrium, what rate of mutation would be needed to balance the selection?**
+
+$Fitness = \frac{143}{229} = 0.62$, so $s = 0.38$.
+
+Thus, we get to:
+
+$$
+\begin{aligned}
+u &= sq^2 \\
+u &= 0.38 \times 7.4e-04 \\
+u &= 0.0002812 = 2.8e-04
+\end{aligned}
+$$
+
+
+### Problem 2 {.unnumbered}
+
+**If the white flowers in Problem 2.1 were due to a completely dominant gene, what would be the mutation rate needed to maintain equilibrium?**
+
+Considering that homozygotes would be very rare, we have:
+
+$$
+\begin{aligned}
+u &= \frac{sH}{2} \\
+u &= \frac{0.38 \times 7.4e-04}{2} = 1.4e-04\\
+\end{aligned}
+$$
+
+### Problem 3 {.unnumbered}
+
+**If an allele, A, mutates to a with a frequency of 1 in 10,000 and back-mutates with a frequency of 1 in 100,000, and if the three genotypes have equal fitnesses, what will be the genotype frequencies at equilibrium in a random-mating population?**
+
+In the equilibrium, $pu = qv$. Then:
+
+$$
+\begin{aligned}
+q &= \frac{u}{u + v} \\
+q &= \frac{1e-04}{1e-04 + 1e-05} \\
+q &= 0.9090909
+\end{aligned}
+$$
+Hence, p = 0.0909091. Then:
+
+$$
+\begin{aligned}
+AA &= p^2 = 0.008264464 \\
+Aa &= 2pq = 0.1652893 \\
+aa &= q^2 = 0.8264463
+\end{aligned}
+$$
+
+Checking if frequencies sum um to 1:
+
+```{r}
+0.008264628 + 0.1652907 + 0.8264446
+```
+
+
+### Problem 4 {.unnumbered}
+
+**Refer to Problem 2.3. What would be the consequences of doubling the mutation rate in both directions?**
+
+As rates would double in both directions, the frequencies would be the same. Nothing would change.
+
+### Problem 5 {.unnumbered}
+
+**Medical treatment is, or will be, available for several serious autosomal recessive diseases. What would be the long-term consequences if treatment allowed sufferers from such a disease to have on average half the number of children that normal people have, whereas without treatment they would have no children? Assume that the present frequency is the mutation versus selection equilibrium, that in the long term a new equilibrium will be reached, and that no other circumstances change.**
+
+Without treatment, s = 1. With treatment, s = 0.5. At equilibrium, $q^2 = \frac{u}{s}$. Then, the treatment would double the frequency of $q^2$. However, as the change in gene frequency is due to mutation, it would take a very long time to reach the new equilibrium.
+
+
+### Problem 6 {.unnumbered}
+
+**Cystic fibrosis is an autosomal recessive human disease with an incidence of about 1 in 2,500 live births among Caucasians. What would be the consequence in the immediately following generation if the mutation rate were doubled? Assume that the present frequency is the mutation versus selection equilibrium, that back-mutation is negligible, and that affected individuals have no children. Express your result as a percentage increase of incidence and as the number of additional cases per million births.**
+
+$q^2 = \frac{1}{2500} = 0.0004$, then $q = 0.02$. In the equilibrium, $u = sq^2 = 1 \times 0.0004 = 0.0004$. Assuming back-mutation is negligible, we have:
+
+- change in gene frequency due to mutation: $\Delta{q} = up$
+
+- change in gene frequency due to selection against a recessive gene: $\Delta{q} = -sq^2p$
+
+Then, the net change will be:
+
+$$
+\begin{aligned}
+\Delta{q} &= u_1p - sq^2p \\
+&= u_1 (1-q) - sq^2 (1-q) \\
+\end{aligned}
+$$
+
+Knowing that $sq^2 = u = 0.0004$, q = 0.02, and assuming $u_1 = 2u$, we have:
+
+$$
+\begin{aligned}
+\Delta{q} &= u_1 0.98 - u 0.98 \\
+&= 2u \times 0.98 - u 0.98 \\
+&= 0.0008 \times 0.98 - 0.0004 \times 0.98 \\
+&= 0.000392
+\end{aligned}
+$$
+
+Hence, the new gene frequency will be:
+
+$$
+\begin{aligned}
+q_1 &= q_0 + \Delta{q} \\
+&= 0.02 + 0.000392 = 0.020392 \\
+\\
+q_1^2 &= 0.0004158337
+\end{aligned}
+$$
+
+Checking percent increase:
+
+```{r}
+percent_increase <- function(initial = NULL, final = NULL) {
+    inc <- 100 * ( (final - initial) / abs(initial) )
+    return(inc)
+}
+percent_increase(initial = 0.0004, final = 0.0004158337)
+```
+
+Then, doubling the mutation rate would increase the gene frequency by ~4%, which means there would be 16 additional cases per million births.
+
+
+### Problem 7 {.unnumbered}
+
+**A careless Drosophila stock-keeper allows a stock of a dominant autosomal mutant to be contaminated by wild-type flies. Originally all flies were homozygous for the mutant, but after 10 generations some wild-type flies were found in the stock. Precautions were then taken to prevent further contamination. Suppose that we make the following assumptions: (i) In every generation 1 per cent of flies were contaminants, (ii) all contaminants were homozygous wild type, (iii) mutant and wild-type flies have equal fitness. With these assumptions what would be (1) the proportion of wild-type flies in the generations after the last contamination, and (2) the proportion of heterozygotes among the flies with the mutant phenotype?**
+
+- (1) 
+
+Change in gene frequency due to migration in generation n:
+
+$$
+(q_n - q_m) = (1-m)^n(q_0-q_m)
+$$
+
+Consdering that q is mutant allele, $q_0 = 1$ and $q_m = 0$. Then, in generation 10, we would have:
+
+$$
+\begin{aligned}
+(q_{10} - 0) &= (1-0.01)^{10}(1-0) \\
+q_{10} &= 0.9043821
+\end{aligned}
+$$
+
+Then, $p_{10} = 1-q_{10} = 0.0956179$, the proportion of wild-type individuals will be $p^2 = 0.009142783 = 0.91\%$.
+
+- (2)
+
+Frequency of mutants = $1-p^2 = 99.09\%$
+
+Frequency of heterozygotes = $2pq = 17.30\%$
+
+Frequency of heterozygotes among mutants = $\frac{17.30}{99.09} = 17.46\%$
+
+
+### Problem 8 {.unnumbered}
+
+**The two closely linked recessive genes of Drosophila described in Problem 1.7 can be treated as alleles. Two populations were set up with initial gene frequencies of so of 0.2 in one and 0.8 in the other. After 7 generations of random breeding the gene frequency of so was close to 0.35 in both populations. What does this tell us about the selection operating?**
+
+It indicates that selection is favoring heterozygotes, as both populations reached the same intermediate gene frequency.
+
+
+### Problem 9 {.unnumbered}
+
+**The gene that makes wild rats resistant to the anticoagulant poison warfarin exhibits heterozygote advantage because rats homozygous for the resistance gene suffer from vitamin K deficiency. Heterozygotes are resistant to the poison and do not suffer from vitamin K deficiency. The proportion of resistant homozygotes that die from vitamin K deficiency was estimated to be 63 per cent. Susceptible homozygotes are not all killed when poison is applied to an area. A population under continuous treatment with poison came to equilibrium with the resistance gene at a frequency of 0.34. What percentage of all rats in this population will die in consequence of the resistance gene and the poisoning?**
+
+If 63% of the resistant homozygotes die, $s_1 = 0.63$. Then, the load is:
+
+$$
+\begin{aligned}
+L &= s_1p \\
+&= 0.63 \times 0.34 \\
+&= 0.2142
+\end{aligned}
+$$
+
+21.42% of the individuals will be lost.
+
+
+### Problem 10 {.unnumbered}
+
+**Suppose that two mutant genes are used in a class experiment on selection in Drosophila. In both cases heterozygotes are distinguishable from homozygotes but the genes are recessive with respect to fitness. (These are not known genes.) With gene (a) mutant homozygotes of both sexes have their fertility reduced by 50 per cent relative to the other genotypes, but have unimpaired viability. With gene (b) mutant homozygotes are fully fertile but both sexes have their pre-adult mortality increased by 50 per cent relative to the other genotypes. In both cases a parental population is made up of 30 male + 30 female homozygous wild type and 20 male + 20 female homozygous mutant. What genotype frequencies will be found in the progeny? How do they compare with Hardy-Weinberg expectations based on the observed gene frequency in the progeny? What conclusions about the selection can be drawn from the frequencies in the progeny? Why does delta q differ in the two cases?**
+
+
+
+
+### Problem 11 {.unnumbered}
+
+**Suppose a sex-linked trait due to a recessive gene has its genotypes in Hardy-Weinberg frequencies. A breeder then culls all affected individuals of both sexes. Derive an expression, in terms of the initial gene frequency, for the change of gene frequency resulting from one generation of selection.**
+
+
+### Problem 12 {.unnumbered}
+
+**What is the approximate equilibrium gene frequency of a deleterious sex-linked recessive gene, when selection is balanced by a mutation rate of m? Human X-linked muscular dystrophy was found in a survey in England to have an incidence of 32.6 per 100,000 males. The mutation rate was estimated from the number of ‘sporadic’ cases to be 10.5 X 10^-5. Do these estimates agree with the expectation for a population in equilibrium when sufferers from the disease do not reproduce and carriers have normal survival and fertility?**
+
+
+### Problem 13 {.unnumbered}
+
+
+**Red coat colour in many breeds of cattle is due to an autosomal recessive gene, the dominant phenotype being black. Suppose that 1 per cent of red calves are bom in a pre? dominantly black breed, and suppose that it is desired to eliminate the red gene. Assuming the genotypes in the initial population to be in Hardy-Weinberg proportions, what propor? tion of red calves would there be after applying the following alternative selection procedures over two generations? (1) No red animals are used for breeding. (2) In addition to culling all red animals, all black bulls to be used for breeding are first tested by 6 progeny each from cows known to be heterozygotes. Any bull producing one or more red calves in the test is discarded. Cows used for breeding are not tested.**
+
+
