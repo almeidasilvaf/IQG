@@ -871,3 +871,148 @@ F &= 1-P = 0.447
 \end{aligned}
 $$
 
+
+## Semana 5: Populações pequenas {.unnumbered}
+
+### Q1 {.unnumbered}
+
+**Quatro sub-populações são mantidas em cruzamento ao acaso separadamente. Todas as subpopulações possuem 40 fêmeas, mas um número diferente de machos sendo 4, 8, 2 e 6 respectivamente. Calcular o tamanho efetivo (Ne) de cada sub-população e o coeficiente de endogamia (F) após 5 gerações.**
+
+Sabendo que $N_e = \frac{4N_m N_f}{N_m + N_f}$, $\Delta{F} = \frac{1}{2N_e}$, e $F_t = 1 - ( 1 - \Delta{F})^t$.
+
+Implementando função para calcular $N_e$ e coeficiente de endogamia após t gerações.
+
+```{r}
+calc_Ne <- function(m = NULL, f = NULL) {
+  ne <- (4 * m * f) / (m + f)
+  return(ne)
+}
+
+calc_deltaF <- function(m = NULL, f = NULL) {
+  ne <- calc_Ne(m, f)
+  deltaF <- 1 / (2 * ne)
+  return(deltaF)
+}
+
+calc_inbreeding_sp <- function(m = NULL, f = NULL, t = NULL) {
+  ne <- calc_Ne(m, f)
+  deltaF <- 1 / (2 * ne)
+  Ft <- 1 - (1 - deltaF)^t
+  return(Ft)
+}
+
+
+# Aplicando funções
+# Calculando Ne
+calc_Ne(4, 40) # pop. 1
+calc_Ne(8, 40) # pop. 2
+calc_Ne(2, 40) # pop. 3
+calc_Ne(6, 40) # pop. 4
+
+# Calculando delta F
+calc_deltaF(4, 40) # pop. 1
+calc_deltaF(8, 40) # pop. 2
+calc_deltaF(2, 40) # pop. 3
+calc_deltaF(6, 40) # pop. 4
+
+# Calculando F(t = 5)
+calc_inbreeding_sp(4, 40, t = 5) # pop. 1
+calc_inbreeding_sp(8, 40, t = 5) # pop. 2
+calc_inbreeding_sp(2, 40, t = 5) # pop. 3
+calc_inbreeding_sp(6, 40, t = 5) # pop. 4
+```
+
+| Populacao | N machos | N femeas | $N_e$ | $\Delta{F}$ | F(t = 5) |
+|:----------|:---------|:---------|:------|:------------|:---------|
+|     1     |     4    |    40    | 14.55 |    0.034    |  0.160   |
+|     2     |     8    |    40    | 26.67 |    0.019    |  0.090   |
+|     3     |     2    |    40    | 7.62  |    0.066    |  0.288   |
+|     4     |     6    |    40    | 20.87 |    0.024    |  0.114   |
+
+
+### Q2 {.unnumbered}
+
+**Suponha que uma população se mantenha isolada durante 6 gerações, com o número de pares de acasalamento nas sucessivas gerações sendo 2, 4, 50, 100, 150 e 400. Calcular Ne e delta F.**
+
+Implementando função para calcular $N_e$ para números desiguais em sucessivas gerações:
+
+```{r}
+calc_Ne_unequal_suc <- function(t = NULL, N = NULL) {
+  sums <- sum(sapply(N, function(x) 1/x))
+  one_over_Ne <- (1 / t) * sums
+  Ne <- 1 / one_over_Ne
+  return(Ne)
+}
+
+pares <- c(2, 4, 50, 100, 150, 400)
+N <- pares * 2 
+
+# Aplicando função
+calc_Ne_unequal_suc(t = 6, N = N)
+```
+
+$\Delta{F} = \frac{1}{2N_e} = \frac{1}{30.41} = 0.0329$
+
+### Q3 {.unnumbered}
+
+**Calcular as taxas de endogamia (delta F) em duas populações de plantas, uma das quais é auto-fertil e a outra auto-esteril, quando ambas são propagadas por polinização ao acaso entre 40 plantas individuais.**
+
+- Auto-fértil:
+
+$N_e = N$ (como uma população ideal), logo $\Delta{F} = \frac{1}{2N_e} = \frac{1}{80} = 0.0125$ ou 1.25%.
+
+- Auto-estéril:
+
+$\Delta{F} = \frac{1}{(2N + 1)} = \frac{1}{81} = 0.0123$ ou 1.23%.
+
+### Q4 {.unnumbered}
+
+**Deseja-se manter o grau de endogamia a um mínimo ao longo das gerações através do uso de 10 pares de indivíduos a cada geração. Em uma determinada geração, os pares falharam em deixar os exatos dois descendentes para a próxima geração. Os números de descendentes por par foram: 0, 1, 1, 1, 2, 2, 3, 3, 3 e 4. Utilizando-se tal descendência como pais, qual o Ne em tal geração?**
+
+
+Sabendo que $N_e = \frac{4N}{V_k + 2}$:
+
+
+```{r}
+# Dados do enunciado
+N <- 10 * 2
+k <- c(0, 1, 1, 1, 2, 2, 3, 3, 3, 4)
+
+get_variance <- function(k = NULL) {
+  mean_k <- mean(k)
+  dev_k <- k - mean_k
+  var_k <- sum(dev_k^2)
+  return(var_k)
+}
+
+kvar <- get_variance(k)
+kvar
+
+Vk <- kvar / 10
+Vk
+
+Ne <- 4 * N / (Vk + 2)
+Ne
+```
+
+
+### Q5 {.unnumbered}
+
+**Considerando ainda o problema anterior (4), qual seria o Ne se de fato cada par deixasse exatamente 2 descendentes para serem usados como pais da próxima geração?**
+
+$N_e = 2N - 1 = 40 - 1 = 39$
+
+### Q6 {.unnumbered}
+
+**Qual o Coef. de Endogamia (F), no equilíbrio, considerando os processos dispersivos e os processos sistemáticos (migração e mutação) ocorrendo ao mesmo tempo, considerando Ne = 200; m = 0,20 e u + v = 0,00001?**
+
+$$
+\begin{aligned}
+F &= \frac{1}{4N_e (u + v + m) + 1} \\
+&= \frac{1}{4 \times 200 (0.00001 + 0.20) + 1} \\
+&= \frac{1}{800 \times 0.20001 + 1} \\
+&= \frac{1}{161.008} = 0.006210872
+\end{aligned}
+$$
+
+

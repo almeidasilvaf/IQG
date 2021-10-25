@@ -33,7 +33,7 @@ Messias Gonzaga Pereira.</p>" />
 <meta name="author" content="Fabrício Almeida-Silva" />
 
 
-<meta name="date" content="2021-10-19" />
+<meta name="date" content="2021-10-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,6 +194,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q4-3"><i class="fa fa-check"></i>Q4</a></li>
 <li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q5-3"><i class="fa fa-check"></i>Q5</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#semana-5-populações-pequenas"><i class="fa fa-check"></i>Semana 5: Populações pequenas</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q1-4"><i class="fa fa-check"></i>Q1</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q2-4"><i class="fa fa-check"></i>Q2</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q3-4"><i class="fa fa-check"></i>Q3</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q4-4"><i class="fa fa-check"></i>Q4</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q5-4"><i class="fa fa-check"></i>Q5</a></li>
+<li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html#q6-2"><i class="fa fa-check"></i>Q6</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="falconers-iqg---exercises.html"><a href="falconers-iqg---exercises.html"><i class="fa fa-check"></i><b>1</b> Falconer’s IQG - Exercises</a>
 <ul>
@@ -232,11 +241,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#prova-1"><i class="fa fa-check"></i>Prova 1</a>
 <ul>
-<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q1-4"><i class="fa fa-check"></i>Q1</a></li>
-<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q2-4"><i class="fa fa-check"></i>Q2</a></li>
-<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q3-4"><i class="fa fa-check"></i>Q3</a></li>
-<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q4-4"><i class="fa fa-check"></i>Q4</a></li>
-<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q5-4"><i class="fa fa-check"></i>Q5</a></li>
+<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q1-5"><i class="fa fa-check"></i>Q1</a></li>
+<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q2-5"><i class="fa fa-check"></i>Q2</a></li>
+<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q3-5"><i class="fa fa-check"></i>Q3</a></li>
+<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q4-5"><i class="fa fa-check"></i>Q4</a></li>
+<li class="chapter" data-level="" data-path="provas.html"><a href="provas.html#q5-5"><i class="fa fa-check"></i>Q5</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -1141,6 +1150,181 @@ P_t &amp;= 1-F_t = \frac{H_t}{H_0} \\
 &amp;= \frac{0.1343}{0.2427} = 0.553 \\
 \\
 F &amp;= 1-P = 0.447
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="semana-5-populações-pequenas" class="section level2 unnumbered">
+<h2>Semana 5: Populações pequenas</h2>
+<div id="q1-4" class="section level3 unnumbered">
+<h3>Q1</h3>
+<p><strong>Quatro sub-populações são mantidas em cruzamento ao acaso separadamente. Todas as subpopulações possuem 40 fêmeas, mas um número diferente de machos sendo 4, 8, 2 e 6 respectivamente. Calcular o tamanho efetivo (Ne) de cada sub-população e o coeficiente de endogamia (F) após 5 gerações.</strong></p>
+<p>Sabendo que <span class="math inline">\(N_e = \frac{4N_m N_f}{N_m + N_f}\)</span>, <span class="math inline">\(\Delta{F} = \frac{1}{2N_e}\)</span>, e <span class="math inline">\(F_t = 1 - ( 1 - \Delta{F})^t\)</span>.</p>
+<p>Implementando função para calcular <span class="math inline">\(N_e\)</span> e coeficiente de endogamia após t gerações.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="exercícios.html#cb64-1" aria-hidden="true" tabindex="-1"></a>calc_Ne <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">m =</span> <span class="cn">NULL</span>, <span class="at">f =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb64-2"><a href="exercícios.html#cb64-2" aria-hidden="true" tabindex="-1"></a>  ne <span class="ot">&lt;-</span> (<span class="dv">4</span> <span class="sc">*</span> m <span class="sc">*</span> f) <span class="sc">/</span> (m <span class="sc">+</span> f)</span>
+<span id="cb64-3"><a href="exercícios.html#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(ne)</span>
+<span id="cb64-4"><a href="exercícios.html#cb64-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb64-5"><a href="exercícios.html#cb64-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-6"><a href="exercícios.html#cb64-6" aria-hidden="true" tabindex="-1"></a>calc_deltaF <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">m =</span> <span class="cn">NULL</span>, <span class="at">f =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb64-7"><a href="exercícios.html#cb64-7" aria-hidden="true" tabindex="-1"></a>  ne <span class="ot">&lt;-</span> <span class="fu">calc_Ne</span>(m, f)</span>
+<span id="cb64-8"><a href="exercícios.html#cb64-8" aria-hidden="true" tabindex="-1"></a>  deltaF <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> ne)</span>
+<span id="cb64-9"><a href="exercícios.html#cb64-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(deltaF)</span>
+<span id="cb64-10"><a href="exercícios.html#cb64-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb64-11"><a href="exercícios.html#cb64-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-12"><a href="exercícios.html#cb64-12" aria-hidden="true" tabindex="-1"></a>calc_inbreeding_sp <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">m =</span> <span class="cn">NULL</span>, <span class="at">f =</span> <span class="cn">NULL</span>, <span class="at">t =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb64-13"><a href="exercícios.html#cb64-13" aria-hidden="true" tabindex="-1"></a>  ne <span class="ot">&lt;-</span> <span class="fu">calc_Ne</span>(m, f)</span>
+<span id="cb64-14"><a href="exercícios.html#cb64-14" aria-hidden="true" tabindex="-1"></a>  deltaF <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> ne)</span>
+<span id="cb64-15"><a href="exercícios.html#cb64-15" aria-hidden="true" tabindex="-1"></a>  Ft <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> deltaF)<span class="sc">^</span>t</span>
+<span id="cb64-16"><a href="exercícios.html#cb64-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(Ft)</span>
+<span id="cb64-17"><a href="exercícios.html#cb64-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb64-18"><a href="exercícios.html#cb64-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-19"><a href="exercícios.html#cb64-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-20"><a href="exercícios.html#cb64-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando funções</span></span>
+<span id="cb64-21"><a href="exercícios.html#cb64-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando Ne</span></span>
+<span id="cb64-22"><a href="exercícios.html#cb64-22" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne</span>(<span class="dv">4</span>, <span class="dv">40</span>) <span class="co"># pop. 1</span></span></code></pre></div>
+<pre><code>## [1] 14.54545</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="exercícios.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne</span>(<span class="dv">8</span>, <span class="dv">40</span>) <span class="co"># pop. 2</span></span></code></pre></div>
+<pre><code>## [1] 26.66667</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="exercícios.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne</span>(<span class="dv">2</span>, <span class="dv">40</span>) <span class="co"># pop. 3</span></span></code></pre></div>
+<pre><code>## [1] 7.619048</code></pre>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="exercícios.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne</span>(<span class="dv">6</span>, <span class="dv">40</span>) <span class="co"># pop. 4</span></span></code></pre></div>
+<pre><code>## [1] 20.86957</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="exercícios.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando delta F</span></span>
+<span id="cb72-2"><a href="exercícios.html#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_deltaF</span>(<span class="dv">4</span>, <span class="dv">40</span>) <span class="co"># pop. 1</span></span></code></pre></div>
+<pre><code>## [1] 0.034375</code></pre>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="exercícios.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_deltaF</span>(<span class="dv">8</span>, <span class="dv">40</span>) <span class="co"># pop. 2</span></span></code></pre></div>
+<pre><code>## [1] 0.01875</code></pre>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="exercícios.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_deltaF</span>(<span class="dv">2</span>, <span class="dv">40</span>) <span class="co"># pop. 3</span></span></code></pre></div>
+<pre><code>## [1] 0.065625</code></pre>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="exercícios.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_deltaF</span>(<span class="dv">6</span>, <span class="dv">40</span>) <span class="co"># pop. 4</span></span></code></pre></div>
+<pre><code>## [1] 0.02395833</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="exercícios.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando F(t = 5)</span></span>
+<span id="cb80-2"><a href="exercícios.html#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding_sp</span>(<span class="dv">4</span>, <span class="dv">40</span>, <span class="at">t =</span> <span class="dv">5</span>) <span class="co"># pop. 1</span></span></code></pre></div>
+<pre><code>## [1] 0.1604578</code></pre>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="exercícios.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding_sp</span>(<span class="dv">8</span>, <span class="dv">40</span>, <span class="at">t =</span> <span class="dv">5</span>) <span class="co"># pop. 2</span></span></code></pre></div>
+<pre><code>## [1] 0.09029968</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="exercícios.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding_sp</span>(<span class="dv">2</span>, <span class="dv">40</span>, <span class="at">t =</span> <span class="dv">5</span>) <span class="co"># pop. 3</span></span></code></pre></div>
+<pre><code>## [1] 0.2877933</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="exercícios.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding_sp</span>(<span class="dv">6</span>, <span class="dv">40</span>, <span class="at">t =</span> <span class="dv">5</span>) <span class="co"># pop. 4</span></span></code></pre></div>
+<pre><code>## [1] 0.1141875</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Populacao</th>
+<th align="left">N machos</th>
+<th align="left">N femeas</th>
+<th align="left"><span class="math inline">\(N_e\)</span></th>
+<th align="left"><span class="math inline">\(\Delta{F}\)</span></th>
+<th align="left">F(t = 5)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">4</td>
+<td align="left">40</td>
+<td align="left">14.55</td>
+<td align="left">0.034</td>
+<td align="left">0.160</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">8</td>
+<td align="left">40</td>
+<td align="left">26.67</td>
+<td align="left">0.019</td>
+<td align="left">0.090</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">2</td>
+<td align="left">40</td>
+<td align="left">7.62</td>
+<td align="left">0.066</td>
+<td align="left">0.288</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">6</td>
+<td align="left">40</td>
+<td align="left">20.87</td>
+<td align="left">0.024</td>
+<td align="left">0.114</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="q2-4" class="section level3 unnumbered">
+<h3>Q2</h3>
+<p><strong>Suponha que uma população se mantenha isolada durante 6 gerações, com o número de pares de acasalamento nas sucessivas gerações sendo 2, 4, 50, 100, 150 e 400. Calcular Ne e delta F.</strong></p>
+<p>Implementando função para calcular <span class="math inline">\(N_e\)</span> para números desiguais em sucessivas gerações:</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="exercícios.html#cb88-1" aria-hidden="true" tabindex="-1"></a>calc_Ne_unequal_suc <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">t =</span> <span class="cn">NULL</span>, <span class="at">N =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb88-2"><a href="exercícios.html#cb88-2" aria-hidden="true" tabindex="-1"></a>  sums <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(N, <span class="cf">function</span>(x) <span class="dv">1</span><span class="sc">/</span>x))</span>
+<span id="cb88-3"><a href="exercícios.html#cb88-3" aria-hidden="true" tabindex="-1"></a>  one_over_Ne <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">/</span> t) <span class="sc">*</span> sums</span>
+<span id="cb88-4"><a href="exercícios.html#cb88-4" aria-hidden="true" tabindex="-1"></a>  Ne <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> one_over_Ne</span>
+<span id="cb88-5"><a href="exercícios.html#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(Ne)</span>
+<span id="cb88-6"><a href="exercícios.html#cb88-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb88-7"><a href="exercícios.html#cb88-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-8"><a href="exercícios.html#cb88-8" aria-hidden="true" tabindex="-1"></a>pares <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">400</span>)</span>
+<span id="cb88-9"><a href="exercícios.html#cb88-9" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> pares <span class="sc">*</span> <span class="dv">2</span> </span>
+<span id="cb88-10"><a href="exercícios.html#cb88-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-11"><a href="exercícios.html#cb88-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando função</span></span>
+<span id="cb88-12"><a href="exercícios.html#cb88-12" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne_unequal_suc</span>(<span class="at">t =</span> <span class="dv">6</span>, <span class="at">N =</span> N)</span></code></pre></div>
+<pre><code>## [1] 15.20591</code></pre>
+<p><span class="math inline">\(\Delta{F} = \frac{1}{2N_e} = \frac{1}{30.41} = 0.0329\)</span></p>
+</div>
+<div id="q3-4" class="section level3 unnumbered">
+<h3>Q3</h3>
+<p><strong>Calcular as taxas de endogamia (delta F) em duas populações de plantas, uma das quais é auto-fertil e a outra auto-esteril, quando ambas são propagadas por polinização ao acaso entre 40 plantas individuais.</strong></p>
+<ul>
+<li>Auto-fértil:</li>
+</ul>
+<p><span class="math inline">\(N_e = N\)</span> (como uma população ideal), logo <span class="math inline">\(\Delta{F} = \frac{1}{2N_e} = \frac{1}{80} = 0.0125\)</span> ou 1.25%.</p>
+<ul>
+<li>Auto-estéril:</li>
+</ul>
+<p><span class="math inline">\(\Delta{F} = \frac{1}{(2N + 1)} = \frac{1}{81} = 0.0123\)</span> ou 1.23%.</p>
+</div>
+<div id="q4-4" class="section level3 unnumbered">
+<h3>Q4</h3>
+<p><strong>Deseja-se manter o grau de endogamia a um mínimo ao longo das gerações através do uso de 10 pares de indivíduos a cada geração. Em uma determinada geração, os pares falharam em deixar os exatos dois descendentes para a próxima geração. Os números de descendentes por par foram: 0, 1, 1, 1, 2, 2, 3, 3, 3 e 4. Utilizando-se tal descendência como pais, qual o Ne em tal geração?</strong></p>
+<p>Sabendo que <span class="math inline">\(N_e = \frac{4N}{V_k + 2}\)</span>:</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="exercícios.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados do enunciado</span></span>
+<span id="cb90-2"><a href="exercícios.html#cb90-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb90-3"><a href="exercícios.html#cb90-3" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb90-4"><a href="exercícios.html#cb90-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-5"><a href="exercícios.html#cb90-5" aria-hidden="true" tabindex="-1"></a>get_variance <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">k =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb90-6"><a href="exercícios.html#cb90-6" aria-hidden="true" tabindex="-1"></a>  mean_k <span class="ot">&lt;-</span> <span class="fu">mean</span>(k)</span>
+<span id="cb90-7"><a href="exercícios.html#cb90-7" aria-hidden="true" tabindex="-1"></a>  dev_k <span class="ot">&lt;-</span> k <span class="sc">-</span> mean_k</span>
+<span id="cb90-8"><a href="exercícios.html#cb90-8" aria-hidden="true" tabindex="-1"></a>  var_k <span class="ot">&lt;-</span> <span class="fu">sum</span>(dev_k<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb90-9"><a href="exercícios.html#cb90-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(var_k)</span>
+<span id="cb90-10"><a href="exercícios.html#cb90-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb90-11"><a href="exercícios.html#cb90-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-12"><a href="exercícios.html#cb90-12" aria-hidden="true" tabindex="-1"></a>kvar <span class="ot">&lt;-</span> <span class="fu">get_variance</span>(k)</span>
+<span id="cb90-13"><a href="exercícios.html#cb90-13" aria-hidden="true" tabindex="-1"></a>kvar</span></code></pre></div>
+<pre><code>## [1] 14</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="exercícios.html#cb92-1" aria-hidden="true" tabindex="-1"></a>Vk <span class="ot">&lt;-</span> kvar <span class="sc">/</span> <span class="dv">10</span></span>
+<span id="cb92-2"><a href="exercícios.html#cb92-2" aria-hidden="true" tabindex="-1"></a>Vk</span></code></pre></div>
+<pre><code>## [1] 1.4</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="exercícios.html#cb94-1" aria-hidden="true" tabindex="-1"></a>Ne <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">*</span> N <span class="sc">/</span> (Vk <span class="sc">+</span> <span class="dv">2</span>)</span>
+<span id="cb94-2"><a href="exercícios.html#cb94-2" aria-hidden="true" tabindex="-1"></a>Ne</span></code></pre></div>
+<pre><code>## [1] 23.52941</code></pre>
+</div>
+<div id="q5-4" class="section level3 unnumbered">
+<h3>Q5</h3>
+<p><strong>Considerando ainda o problema anterior (4), qual seria o Ne se de fato cada par deixasse exatamente 2 descendentes para serem usados como pais da próxima geração?</strong></p>
+<p><span class="math inline">\(N_e = 2N - 1 = 40 - 1 = 39\)</span></p>
+</div>
+<div id="q6-2" class="section level3 unnumbered">
+<h3>Q6</h3>
+<p><strong>Qual o Coef. de Endogamia (F), no equilíbrio, considerando os processos dispersivos e os processos sistemáticos (migração e mutação) ocorrendo ao mesmo tempo, considerando Ne = 200; m = 0,20 e u + v = 0,00001?</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+F &amp;= \frac{1}{4N_e (u + v + m) + 1} \\
+&amp;= \frac{1}{4 \times 200 (0.00001 + 0.20) + 1} \\
+&amp;= \frac{1}{800 \times 0.20001 + 1} \\
+&amp;= \frac{1}{161.008} = 0.006210872
 \end{aligned}
 \]</span></p>
 
