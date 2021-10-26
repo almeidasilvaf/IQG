@@ -33,7 +33,7 @@ Messias Gonzaga Pereira.</p>" />
 <meta name="author" content="Fabrício Almeida-Silva" />
 
 
-<meta name="date" content="2021-10-24" />
+<meta name="date" content="2021-10-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -157,6 +157,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-5"><i class="fa fa-check"></i>Semana 5</a></li>
 <li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-6"><i class="fa fa-check"></i>Semana 6</a></li>
 <li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-7"><i class="fa fa-check"></i>Semana 7</a></li>
+<li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-8"><i class="fa fa-check"></i>Semana 8</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html"><i class="fa fa-check"></i>Exercícios</a>
 <ul>
@@ -342,6 +343,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Semana 7</h2>
 <p><span class="math inline">\(p_0 = 0.3\)</span> e <span class="math inline">\(q_0 = 0.7\)</span>.</p>
 <p><span class="math inline">\(\sigma^2_q = p_0 q_0 = 0.3 \times 0.7 = 0.21\)</span></p>
+</div>
+<div id="semana-8" class="section level2 unnumbered">
+<h2>Semana 8</h2>
+<p>Calcular Ne para os seguintes dados:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="sabatinas.html#cb5-1" aria-hidden="true" tabindex="-1"></a>nt <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
+<span id="cb5-2"><a href="sabatinas.html#cb5-2" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb5-3"><a href="sabatinas.html#cb5-3" aria-hidden="true" tabindex="-1"></a>l <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb5-4"><a href="sabatinas.html#cb5-4" aria-hidden="true" tabindex="-1"></a>vk <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb5-5"><a href="sabatinas.html#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="sabatinas.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando dados faltantes</span></span>
+<span id="cb5-7"><a href="sabatinas.html#cb5-7" aria-hidden="true" tabindex="-1"></a>nc <span class="ot">&lt;-</span> nt <span class="sc">/</span> e</span>
+<span id="cb5-8"><a href="sabatinas.html#cb5-8" aria-hidden="true" tabindex="-1"></a>nc</span></code></pre></div>
+<pre><code>## [1] 100</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="sabatinas.html#cb7-1" aria-hidden="true" tabindex="-1"></a>Ne <span class="ot">&lt;-</span> (<span class="dv">4</span> <span class="sc">*</span> nc <span class="sc">*</span> l) <span class="sc">/</span> (vk <span class="sc">+</span> <span class="dv">2</span>) </span>
+<span id="cb7-2"><a href="sabatinas.html#cb7-2" aria-hidden="true" tabindex="-1"></a>Ne</span></code></pre></div>
+<pre><code>## [1] 2500</code></pre>
 
 </div>
 </div>

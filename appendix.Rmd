@@ -99,4 +99,22 @@ $p_0 = 0.3$ e $q_0 = 0.7$.
 $\sigma^2_q = p_0 q_0 = 0.3 \times 0.7 = 0.21$
 
 
+## Semana 8 {.unnumbered}
+
+Calcular Ne para os seguintes dados:
+
+```{r}
+nt <- 5000
+e <- 50
+l <- 25
+vk <- 2
+
+# Calculando dados faltantes
+nc <- nt / e
+nc
+
+Ne <- (4 * nc * l) / (vk + 2) 
+Ne
+```
+
 

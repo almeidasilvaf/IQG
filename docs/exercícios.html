@@ -33,7 +33,7 @@ Messias Gonzaga Pereira.</p>" />
 <meta name="author" content="Fabrício Almeida-Silva" />
 
 
-<meta name="date" content="2021-10-24" />
+<meta name="date" content="2021-10-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -157,6 +157,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-5"><i class="fa fa-check"></i>Semana 5</a></li>
 <li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-6"><i class="fa fa-check"></i>Semana 6</a></li>
 <li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-7"><i class="fa fa-check"></i>Semana 7</a></li>
+<li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-8"><i class="fa fa-check"></i>Semana 8</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html"><i class="fa fa-check"></i>Exercícios</a>
 <ul>
@@ -395,32 +396,32 @@ P(5\ altas\ e\ susceptíveis) &amp;= P(altas\ e\ susceptíveis)^5 \\
 <ul>
 <li><strong>01 plantas altas/resistentes:</strong></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="exercícios.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(alta e resistente)</span></span>
-<span id="cb5-2"><a href="exercícios.html#cb5-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.6</span> <span class="sc">*</span> <span class="fl">0.8</span></span>
-<span id="cb5-3"><a href="exercícios.html#cb5-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="exercícios.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(alta e resistente)</span></span>
+<span id="cb9-2"><a href="exercícios.html#cb9-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.6</span> <span class="sc">*</span> <span class="fl">0.8</span></span>
+<span id="cb9-3"><a href="exercícios.html#cb9-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <pre><code>## [1] 0.48</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="exercícios.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(alta e resistente) tomando-se 5</span></span>
-<span id="cb7-2"><a href="exercícios.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">1</span>, <span class="dv">5</span>, p)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="exercícios.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(alta e resistente) tomando-se 5</span></span>
+<span id="cb11-2"><a href="exercícios.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">1</span>, <span class="dv">5</span>, p)</span></code></pre></div>
 <pre><code>## [1] 0.1754788</code></pre>
 <ul>
 <li><strong>03 plantas altas/susceptíveis</strong></li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="exercícios.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(alta e susceptível)</span></span>
-<span id="cb9-2"><a href="exercícios.html#cb9-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.6</span> <span class="sc">*</span> <span class="fl">0.2</span></span>
-<span id="cb9-3"><a href="exercícios.html#cb9-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="exercícios.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(alta e susceptível)</span></span>
+<span id="cb13-2"><a href="exercícios.html#cb13-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.6</span> <span class="sc">*</span> <span class="fl">0.2</span></span>
+<span id="cb13-3"><a href="exercícios.html#cb13-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <pre><code>## [1] 0.12</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="exercícios.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(3 altas e susceptíveis) tomando-se 5</span></span>
-<span id="cb11-2"><a href="exercícios.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">3</span>, <span class="dv">5</span>, p)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="exercícios.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(3 altas e susceptíveis) tomando-se 5</span></span>
+<span id="cb15-2"><a href="exercícios.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">3</span>, <span class="dv">5</span>, p)</span></code></pre></div>
 <pre><code>## [1] 0.01338163</code></pre>
 <ul>
 <li><strong>01 plantas baixas/resistentes</strong></li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="exercícios.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(baixa e resistente)</span></span>
-<span id="cb13-2"><a href="exercícios.html#cb13-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span> <span class="sc">*</span> <span class="fl">0.8</span></span>
-<span id="cb13-3"><a href="exercícios.html#cb13-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="exercícios.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(baixa e resistente)</span></span>
+<span id="cb17-2"><a href="exercícios.html#cb17-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.4</span> <span class="sc">*</span> <span class="fl">0.8</span></span>
+<span id="cb17-3"><a href="exercícios.html#cb17-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <pre><code>## [1] 0.32</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="exercícios.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(baixa e resistente) tomando-se 5</span></span>
-<span id="cb15-2"><a href="exercícios.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">1</span>, <span class="dv">5</span>, p)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="exercícios.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># P(baixa e resistente) tomando-se 5</span></span>
+<span id="cb19-2"><a href="exercícios.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">1</span>, <span class="dv">5</span>, p)</span></code></pre></div>
 <pre><code>## [1] 0.342102</code></pre>
 </div>
 <div id="q4" class="section level3 unnumbered">
@@ -441,11 +442,11 @@ P(AAa) &amp;= \frac{combinação\ de\ 6\ tomados\ 2\ a\ 2\ \times combinação\ 
 \end{aligned}
 \]</span></p>
 <p>Resolvendo com R:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="exercícios.html#cb17-1" aria-hidden="true" tabindex="-1"></a>numerador1 <span class="ot">&lt;-</span> <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">2</span>)</span>
-<span id="cb17-2"><a href="exercícios.html#cb17-2" aria-hidden="true" tabindex="-1"></a>numerador2 <span class="ot">&lt;-</span> <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">1</span>)</span>
-<span id="cb17-3"><a href="exercícios.html#cb17-3" aria-hidden="true" tabindex="-1"></a>denominador <span class="ot">&lt;-</span> <span class="fu">choose</span>(<span class="dv">12</span>, <span class="dv">3</span>)</span>
-<span id="cb17-4"><a href="exercícios.html#cb17-4" aria-hidden="true" tabindex="-1"></a>pAAa <span class="ot">&lt;-</span> (numerador1 <span class="sc">*</span> numerador2) <span class="sc">/</span> denominador</span>
-<span id="cb17-5"><a href="exercícios.html#cb17-5" aria-hidden="true" tabindex="-1"></a>pAAa</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="exercícios.html#cb21-1" aria-hidden="true" tabindex="-1"></a>numerador1 <span class="ot">&lt;-</span> <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">2</span>)</span>
+<span id="cb21-2"><a href="exercícios.html#cb21-2" aria-hidden="true" tabindex="-1"></a>numerador2 <span class="ot">&lt;-</span> <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">1</span>)</span>
+<span id="cb21-3"><a href="exercícios.html#cb21-3" aria-hidden="true" tabindex="-1"></a>denominador <span class="ot">&lt;-</span> <span class="fu">choose</span>(<span class="dv">12</span>, <span class="dv">3</span>)</span>
+<span id="cb21-4"><a href="exercícios.html#cb21-4" aria-hidden="true" tabindex="-1"></a>pAAa <span class="ot">&lt;-</span> (numerador1 <span class="sc">*</span> numerador2) <span class="sc">/</span> denominador</span>
+<span id="cb21-5"><a href="exercícios.html#cb21-5" aria-hidden="true" tabindex="-1"></a>pAAa</span></code></pre></div>
 <pre><code>## [1] 0.4090909</code></pre>
 <p>Demonstrando o cálculo passo-a-passo:</p>
 <p><span class="math display">\[
@@ -544,38 +545,38 @@ chifrudos. Portanto, temos 100% de certeza de que o touro é homozigoto.</p>
 </tbody>
 </table>
 <p><strong>a) Qual a freqüência genotípica observada nesta amostra?</strong></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="exercícios.html#cb19-1" aria-hidden="true" tabindex="-1"></a>total <span class="ot">&lt;-</span> <span class="dv">5000</span> <span class="sc">+</span> <span class="dv">3000</span> <span class="sc">+</span> <span class="dv">2000</span></span>
-<span id="cb19-2"><a href="exercícios.html#cb19-2" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="dv">5000</span> <span class="sc">/</span> total</span>
-<span id="cb19-3"><a href="exercícios.html#cb19-3" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="dv">3000</span> <span class="sc">/</span> total</span>
-<span id="cb19-4"><a href="exercícios.html#cb19-4" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> <span class="dv">2000</span> <span class="sc">/</span> total</span>
-<span id="cb19-5"><a href="exercícios.html#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="exercícios.html#cb19-6" aria-hidden="true" tabindex="-1"></a>P <span class="co"># homozigotos dominantes</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="exercícios.html#cb23-1" aria-hidden="true" tabindex="-1"></a>total <span class="ot">&lt;-</span> <span class="dv">5000</span> <span class="sc">+</span> <span class="dv">3000</span> <span class="sc">+</span> <span class="dv">2000</span></span>
+<span id="cb23-2"><a href="exercícios.html#cb23-2" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="dv">5000</span> <span class="sc">/</span> total</span>
+<span id="cb23-3"><a href="exercícios.html#cb23-3" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="dv">3000</span> <span class="sc">/</span> total</span>
+<span id="cb23-4"><a href="exercícios.html#cb23-4" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> <span class="dv">2000</span> <span class="sc">/</span> total</span>
+<span id="cb23-5"><a href="exercícios.html#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="exercícios.html#cb23-6" aria-hidden="true" tabindex="-1"></a>P <span class="co"># homozigotos dominantes</span></span></code></pre></div>
 <pre><code>## [1] 0.5</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="exercícios.html#cb21-1" aria-hidden="true" tabindex="-1"></a>H <span class="co"># heterozigotos</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="exercícios.html#cb25-1" aria-hidden="true" tabindex="-1"></a>H <span class="co"># heterozigotos</span></span></code></pre></div>
 <pre><code>## [1] 0.3</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="exercícios.html#cb23-1" aria-hidden="true" tabindex="-1"></a>Q <span class="co"># homozigotos recessivos</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="exercícios.html#cb27-1" aria-hidden="true" tabindex="-1"></a>Q <span class="co"># homozigotos recessivos</span></span></code></pre></div>
 <pre><code>## [1] 0.2</code></pre>
 <p><strong>b) Quais são as freqüências gênicas?</strong></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="exercícios.html#cb25-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> P <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> H</span>
-<span id="cb25-2"><a href="exercícios.html#cb25-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> Q <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> H</span>
-<span id="cb25-3"><a href="exercícios.html#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="exercícios.html#cb25-4" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="exercícios.html#cb29-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> P <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> H</span>
+<span id="cb29-2"><a href="exercícios.html#cb29-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> Q <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> H</span>
+<span id="cb29-3"><a href="exercícios.html#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="exercícios.html#cb29-4" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <pre><code>## [1] 0.65</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="exercícios.html#cb27-1" aria-hidden="true" tabindex="-1"></a>q</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="exercícios.html#cb31-1" aria-hidden="true" tabindex="-1"></a>q</span></code></pre></div>
 <pre><code>## [1] 0.35</code></pre>
 <p><strong>c) Utilizando-se as freqüências gênicas observadas, quais seriam as
 freqüências genotípicas esperadas de acordo com a lei de
 Hardy-Weinberg?</strong></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="exercícios.html#cb29-1" aria-hidden="true" tabindex="-1"></a>esperado <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">P =</span> p<span class="sc">^</span><span class="dv">2</span>,</span>
-<span id="cb29-2"><a href="exercícios.html#cb29-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">H =</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q,</span>
-<span id="cb29-3"><a href="exercícios.html#cb29-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">Q =</span> q<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb29-4"><a href="exercícios.html#cb29-4" aria-hidden="true" tabindex="-1"></a>esperado</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="exercícios.html#cb33-1" aria-hidden="true" tabindex="-1"></a>esperado <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">P =</span> p<span class="sc">^</span><span class="dv">2</span>,</span>
+<span id="cb33-2"><a href="exercícios.html#cb33-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">H =</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q,</span>
+<span id="cb33-3"><a href="exercícios.html#cb33-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">Q =</span> q<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb33-4"><a href="exercícios.html#cb33-4" aria-hidden="true" tabindex="-1"></a>esperado</span></code></pre></div>
 <pre><code>##      P      H      Q 
 ## 0.4225 0.4550 0.1225</code></pre>
 <p><strong>d) Como os valores observados concordam com os valores esperados?</strong></p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="exercícios.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Teste de qui-quadrado</span></span>
-<span id="cb31-2"><a href="exercícios.html#cb31-2" aria-hidden="true" tabindex="-1"></a>observado <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> <span class="dv">5000</span>, <span class="at">MN =</span> <span class="dv">3000</span>, <span class="at">NN =</span> <span class="dv">2000</span>)</span>
-<span id="cb31-3"><a href="exercícios.html#cb31-3" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(observado)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="exercícios.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Teste de qui-quadrado</span></span>
+<span id="cb35-2"><a href="exercícios.html#cb35-2" aria-hidden="true" tabindex="-1"></a>observado <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">MM =</span> <span class="dv">5000</span>, <span class="at">MN =</span> <span class="dv">3000</span>, <span class="at">NN =</span> <span class="dv">2000</span>)</span>
+<span id="cb35-3"><a href="exercícios.html#cb35-3" aria-hidden="true" tabindex="-1"></a>HardyWeinberg<span class="sc">::</span><span class="fu">HWChisq</span>(observado)</span></code></pre></div>
 <pre><code>## Chi-square test with continuity correction for Hardy-Weinberg equilibrium (autosomal)
 ## Chi2 =  1159.331 DF =  1 p-value =  4.205711e-254 D =  -775 f =  0.3406593</code></pre>
 <p>O teste resultou em um <span class="math inline">\(\chi^2\)</span> muito elevado, com valor de P &lt; 0.05,
@@ -696,24 +697,24 @@ fêmeas na geração t1:</strong></p>
 em E.H.W.?</strong></p>
 <p>Implementando uma função para calcular frequências de genes ligados ao
 sexo em machos e fêmeas:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="exercícios.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">99999</span>)</span>
-<span id="cb33-2"><a href="exercícios.html#cb33-2" aria-hidden="true" tabindex="-1"></a>calc_freq_xlinked <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">pm0 =</span> <span class="cn">NULL</span>, <span class="at">pf0 =</span> <span class="cn">NULL</span>, </span>
-<span id="cb33-3"><a href="exercícios.html#cb33-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">generations =</span> <span class="dv">10</span>) {</span>
-<span id="cb33-4"><a href="exercícios.html#cb33-4" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb33-5"><a href="exercícios.html#cb33-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">Generation =</span> <span class="fu">seq_len</span>(generations),</span>
-<span id="cb33-6"><a href="exercícios.html#cb33-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">pf =</span> <span class="fu">c</span>(pf0, <span class="fu">rep</span>(<span class="cn">NA</span>, generations <span class="sc">-</span> <span class="dv">1</span>)),</span>
-<span id="cb33-7"><a href="exercícios.html#cb33-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">pm =</span> <span class="fu">c</span>(pm0, <span class="fu">rep</span>(<span class="cn">NA</span>, generations <span class="sc">-</span> <span class="dv">1</span>))</span>
-<span id="cb33-8"><a href="exercícios.html#cb33-8" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb33-9"><a href="exercícios.html#cb33-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>generations) {</span>
-<span id="cb33-10"><a href="exercícios.html#cb33-10" aria-hidden="true" tabindex="-1"></a>        df[t, <span class="st">&quot;pf&quot;</span>] <span class="ot">&lt;-</span> (df[t<span class="dv">-1</span>, <span class="st">&quot;pm&quot;</span>] <span class="sc">+</span> df[t<span class="dv">-1</span>, <span class="st">&quot;pf&quot;</span>]) <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb33-11"><a href="exercícios.html#cb33-11" aria-hidden="true" tabindex="-1"></a>        df[t, <span class="st">&quot;pm&quot;</span>] <span class="ot">&lt;-</span> df[t<span class="dv">-1</span>, <span class="st">&quot;pf&quot;</span>]</span>
-<span id="cb33-12"><a href="exercícios.html#cb33-12" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb33-13"><a href="exercícios.html#cb33-13" aria-hidden="true" tabindex="-1"></a>    df<span class="sc">$</span>difference <span class="ot">&lt;-</span> df<span class="sc">$</span>pf <span class="sc">-</span> df<span class="sc">$</span>pm</span>
-<span id="cb33-14"><a href="exercícios.html#cb33-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df)</span>
-<span id="cb33-15"><a href="exercícios.html#cb33-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb33-16"><a href="exercícios.html#cb33-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-17"><a href="exercícios.html#cb33-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando função com dados do enunciado</span></span>
-<span id="cb33-18"><a href="exercícios.html#cb33-18" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.2</span>, <span class="at">pf0 =</span> <span class="dv">1</span>, <span class="at">generations =</span> <span class="dv">15</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="exercícios.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">99999</span>)</span>
+<span id="cb37-2"><a href="exercícios.html#cb37-2" aria-hidden="true" tabindex="-1"></a>calc_freq_xlinked <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">pm0 =</span> <span class="cn">NULL</span>, <span class="at">pf0 =</span> <span class="cn">NULL</span>, </span>
+<span id="cb37-3"><a href="exercícios.html#cb37-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">generations =</span> <span class="dv">10</span>) {</span>
+<span id="cb37-4"><a href="exercícios.html#cb37-4" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb37-5"><a href="exercícios.html#cb37-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">Generation =</span> <span class="fu">seq_len</span>(generations),</span>
+<span id="cb37-6"><a href="exercícios.html#cb37-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">pf =</span> <span class="fu">c</span>(pf0, <span class="fu">rep</span>(<span class="cn">NA</span>, generations <span class="sc">-</span> <span class="dv">1</span>)),</span>
+<span id="cb37-7"><a href="exercícios.html#cb37-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">pm =</span> <span class="fu">c</span>(pm0, <span class="fu">rep</span>(<span class="cn">NA</span>, generations <span class="sc">-</span> <span class="dv">1</span>))</span>
+<span id="cb37-8"><a href="exercícios.html#cb37-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb37-9"><a href="exercícios.html#cb37-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>generations) {</span>
+<span id="cb37-10"><a href="exercícios.html#cb37-10" aria-hidden="true" tabindex="-1"></a>        df[t, <span class="st">&quot;pf&quot;</span>] <span class="ot">&lt;-</span> (df[t<span class="dv">-1</span>, <span class="st">&quot;pm&quot;</span>] <span class="sc">+</span> df[t<span class="dv">-1</span>, <span class="st">&quot;pf&quot;</span>]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb37-11"><a href="exercícios.html#cb37-11" aria-hidden="true" tabindex="-1"></a>        df[t, <span class="st">&quot;pm&quot;</span>] <span class="ot">&lt;-</span> df[t<span class="dv">-1</span>, <span class="st">&quot;pf&quot;</span>]</span>
+<span id="cb37-12"><a href="exercícios.html#cb37-12" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb37-13"><a href="exercícios.html#cb37-13" aria-hidden="true" tabindex="-1"></a>    df<span class="sc">$</span>difference <span class="ot">&lt;-</span> df<span class="sc">$</span>pf <span class="sc">-</span> df<span class="sc">$</span>pm</span>
+<span id="cb37-14"><a href="exercícios.html#cb37-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df)</span>
+<span id="cb37-15"><a href="exercícios.html#cb37-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb37-16"><a href="exercícios.html#cb37-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-17"><a href="exercícios.html#cb37-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando função com dados do enunciado</span></span>
+<span id="cb37-18"><a href="exercícios.html#cb37-18" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.2</span>, <span class="at">pf0 =</span> <span class="dv">1</span>, <span class="at">generations =</span> <span class="dv">15</span>)</span></code></pre></div>
 <pre><code>##    Generation        pf        pm     difference
 ## 1           1 1.0000000 0.2000000  0.80000000000
 ## 2           2 0.6000000 1.0000000 -0.40000000000
@@ -732,37 +733,37 @@ sexo em machos e fêmeas:</p>
 ## 15         15 0.7333496 0.7333008  0.00004882813</code></pre>
 <p>Para verificar a frequência de A no equilíbrio, vamos simular 100
 gerações de cruzamento ao acaso e obter a frequência na geração 100.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="exercícios.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.2</span>, <span class="at">pf0 =</span> <span class="dv">1</span>, <span class="at">generations =</span> <span class="dv">100</span>)<span class="sc">$</span>pf[<span class="dv">100</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="exercícios.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.2</span>, <span class="at">pf0 =</span> <span class="dv">1</span>, <span class="at">generations =</span> <span class="dv">100</span>)<span class="sc">$</span>pf[<span class="dv">100</span>]</span></code></pre></div>
 <pre><code>## [1] 0.7333333</code></pre>
 <p>Verificando de forma visual:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="exercícios.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
-<span id="cb37-2"><a href="exercícios.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="exercícios.html#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando 20 gerações</span></span>
-<span id="cb37-4"><a href="exercícios.html#cb37-4" aria-hidden="true" tabindex="-1"></a>freq50 <span class="ot">&lt;-</span> <span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.2</span>, <span class="at">pf0 =</span> <span class="dv">1</span>, <span class="at">generations =</span> <span class="dv">20</span>)</span>
-<span id="cb37-5"><a href="exercícios.html#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-6"><a href="exercícios.html#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizando simulação</span></span>
-<span id="cb37-7"><a href="exercícios.html#cb37-7" aria-hidden="true" tabindex="-1"></a>freq50[, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>] <span class="sc">%&gt;%</span></span>
-<span id="cb37-8"><a href="exercícios.html#cb37-8" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(</span>
-<span id="cb37-9"><a href="exercícios.html#cb37-9" aria-hidden="true" tabindex="-1"></a>        <span class="sc">!</span>Generation, <span class="at">names_to =</span> <span class="st">&quot;sex&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;freq&quot;</span></span>
-<span id="cb37-10"><a href="exercícios.html#cb37-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb37-11"><a href="exercícios.html#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">str_replace_all</span>(sex, <span class="fu">c</span>(<span class="st">&quot;pf&quot;</span> <span class="ot">=</span> <span class="st">&quot;Fêmea&quot;</span>,</span>
-<span id="cb37-12"><a href="exercícios.html#cb37-12" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;pm&quot;</span> <span class="ot">=</span> <span class="st">&quot;Macho&quot;</span>))) <span class="sc">%&gt;%</span></span>
-<span id="cb37-13"><a href="exercícios.html#cb37-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x =</span> Generation, <span class="at">y =</span> freq)) <span class="sc">+</span></span>
-<span id="cb37-14"><a href="exercícios.html#cb37-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb37-15"><a href="exercícios.html#cb37-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group=</span>sex, <span class="at">color=</span>sex)) <span class="sc">+</span></span>
-<span id="cb37-16"><a href="exercícios.html#cb37-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey40&quot;</span>, <span class="st">&quot;goldenrod&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb37-17"><a href="exercícios.html#cb37-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb37-18"><a href="exercícios.html#cb37-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb37-19"><a href="exercícios.html#cb37-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb37-20"><a href="exercícios.html#cb37-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">&quot;Sexo&quot;</span>,</span>
-<span id="cb37-21"><a href="exercícios.html#cb37-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;Frequência do gene A ao longo de 20 gerações&quot;</span>,</span>
-<span id="cb37-22"><a href="exercícios.html#cb37-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">&quot;O gene A é ligado ao sexo&quot;</span>,</span>
-<span id="cb37-23"><a href="exercícios.html#cb37-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">&quot;Geração&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequência&quot;</span></span>
-<span id="cb37-24"><a href="exercícios.html#cb37-24" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
-<p><img src="IQG_solutions_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="exercícios.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb41-2"><a href="exercícios.html#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="exercícios.html#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando 20 gerações</span></span>
+<span id="cb41-4"><a href="exercícios.html#cb41-4" aria-hidden="true" tabindex="-1"></a>freq50 <span class="ot">&lt;-</span> <span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.2</span>, <span class="at">pf0 =</span> <span class="dv">1</span>, <span class="at">generations =</span> <span class="dv">20</span>)</span>
+<span id="cb41-5"><a href="exercícios.html#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="exercícios.html#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizando simulação</span></span>
+<span id="cb41-7"><a href="exercícios.html#cb41-7" aria-hidden="true" tabindex="-1"></a>freq50[, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>] <span class="sc">%&gt;%</span></span>
+<span id="cb41-8"><a href="exercícios.html#cb41-8" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(</span>
+<span id="cb41-9"><a href="exercícios.html#cb41-9" aria-hidden="true" tabindex="-1"></a>        <span class="sc">!</span>Generation, <span class="at">names_to =</span> <span class="st">&quot;sex&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;freq&quot;</span></span>
+<span id="cb41-10"><a href="exercícios.html#cb41-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb41-11"><a href="exercícios.html#cb41-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">str_replace_all</span>(sex, <span class="fu">c</span>(<span class="st">&quot;pf&quot;</span> <span class="ot">=</span> <span class="st">&quot;Fêmea&quot;</span>,</span>
+<span id="cb41-12"><a href="exercícios.html#cb41-12" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;pm&quot;</span> <span class="ot">=</span> <span class="st">&quot;Macho&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb41-13"><a href="exercícios.html#cb41-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x =</span> Generation, <span class="at">y =</span> freq)) <span class="sc">+</span></span>
+<span id="cb41-14"><a href="exercícios.html#cb41-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb41-15"><a href="exercícios.html#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group=</span>sex, <span class="at">color=</span>sex)) <span class="sc">+</span></span>
+<span id="cb41-16"><a href="exercícios.html#cb41-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey40&quot;</span>, <span class="st">&quot;goldenrod&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb41-17"><a href="exercícios.html#cb41-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb41-18"><a href="exercícios.html#cb41-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb41-19"><a href="exercícios.html#cb41-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb41-20"><a href="exercícios.html#cb41-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">&quot;Sexo&quot;</span>,</span>
+<span id="cb41-21"><a href="exercícios.html#cb41-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;Frequência do gene A ao longo de 20 gerações&quot;</span>,</span>
+<span id="cb41-22"><a href="exercícios.html#cb41-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">&quot;O gene A é ligado ao sexo&quot;</span>,</span>
+<span id="cb41-23"><a href="exercícios.html#cb41-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">&quot;Geração&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequência&quot;</span></span>
+<span id="cb41-24"><a href="exercícios.html#cb41-24" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<p><img src="IQG_solutions_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p><strong>b) Após três gerações de acasalamento ao acaso, (t4), qual será a
 freqüência do gene “A” nos machos (pm) e nas fêmeas (pf)?</strong></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="exercícios.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.2</span>, <span class="at">pf0 =</span> <span class="dv">1</span>, <span class="at">generations =</span> <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="exercícios.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.2</span>, <span class="at">pf0 =</span> <span class="dv">1</span>, <span class="at">generations =</span> <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>##   Generation  pf  pm difference
 ## 1          1 1.0 0.2        0.8
 ## 2          2 0.6 1.0       -0.4
@@ -875,28 +876,28 @@ r^2 &amp;= 0.00143641
 <ul>
 <li>Frequência para <em>loci</em> não ligados:</li>
 </ul>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="exercícios.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequências gaméticas na geração 2 para genes independentes</span></span>
-<span id="cb40-2"><a href="exercícios.html#cb40-2" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fl">0.0525</span></span>
-<span id="cb40-3"><a href="exercícios.html#cb40-3" aria-hidden="true" tabindex="-1"></a>AB <span class="ot">&lt;-</span> <span class="fl">0.21</span> <span class="sc">-</span> D</span>
-<span id="cb40-4"><a href="exercícios.html#cb40-4" aria-hidden="true" tabindex="-1"></a>Ab <span class="ot">&lt;-</span> <span class="fl">0.09</span> <span class="sc">+</span> D</span>
-<span id="cb40-5"><a href="exercícios.html#cb40-5" aria-hidden="true" tabindex="-1"></a>aB <span class="ot">&lt;-</span> <span class="fl">0.49</span> <span class="sc">+</span> D</span>
-<span id="cb40-6"><a href="exercícios.html#cb40-6" aria-hidden="true" tabindex="-1"></a>ab <span class="ot">&lt;-</span> <span class="fl">0.21</span> <span class="sc">-</span> D</span>
-<span id="cb40-7"><a href="exercícios.html#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-8"><a href="exercícios.html#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Soma dos produtos</span></span>
-<span id="cb40-9"><a href="exercícios.html#cb40-9" aria-hidden="true" tabindex="-1"></a>(AB <span class="sc">*</span> ab) <span class="sc">+</span> (Ab <span class="sc">*</span> aB) <span class="sc">+</span> (aB <span class="sc">*</span> Ab) <span class="sc">+</span> (ab <span class="sc">*</span> AB)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="exercícios.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequências gaméticas na geração 2 para genes independentes</span></span>
+<span id="cb44-2"><a href="exercícios.html#cb44-2" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fl">0.0525</span></span>
+<span id="cb44-3"><a href="exercícios.html#cb44-3" aria-hidden="true" tabindex="-1"></a>AB <span class="ot">&lt;-</span> <span class="fl">0.21</span> <span class="sc">-</span> D</span>
+<span id="cb44-4"><a href="exercícios.html#cb44-4" aria-hidden="true" tabindex="-1"></a>Ab <span class="ot">&lt;-</span> <span class="fl">0.09</span> <span class="sc">+</span> D</span>
+<span id="cb44-5"><a href="exercícios.html#cb44-5" aria-hidden="true" tabindex="-1"></a>aB <span class="ot">&lt;-</span> <span class="fl">0.49</span> <span class="sc">+</span> D</span>
+<span id="cb44-6"><a href="exercícios.html#cb44-6" aria-hidden="true" tabindex="-1"></a>ab <span class="ot">&lt;-</span> <span class="fl">0.21</span> <span class="sc">-</span> D</span>
+<span id="cb44-7"><a href="exercícios.html#cb44-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-8"><a href="exercícios.html#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Soma dos produtos</span></span>
+<span id="cb44-9"><a href="exercícios.html#cb44-9" aria-hidden="true" tabindex="-1"></a>(AB <span class="sc">*</span> ab) <span class="sc">+</span> (Ab <span class="sc">*</span> aB) <span class="sc">+</span> (aB <span class="sc">*</span> Ab) <span class="sc">+</span> (ab <span class="sc">*</span> AB)</span></code></pre></div>
 <pre><code>## [1] 0.204225</code></pre>
 <ul>
 <li>Frequência para <em>loci</em> ligados com c = 0.1:</li>
 </ul>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="exercícios.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequências gaméticas na geração 2 para genes ligados</span></span>
-<span id="cb42-2"><a href="exercícios.html#cb42-2" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fl">0.1701</span></span>
-<span id="cb42-3"><a href="exercícios.html#cb42-3" aria-hidden="true" tabindex="-1"></a>AB <span class="ot">&lt;-</span> <span class="fl">0.21</span> <span class="sc">-</span> D</span>
-<span id="cb42-4"><a href="exercícios.html#cb42-4" aria-hidden="true" tabindex="-1"></a>Ab <span class="ot">&lt;-</span> <span class="fl">0.09</span> <span class="sc">+</span> D</span>
-<span id="cb42-5"><a href="exercícios.html#cb42-5" aria-hidden="true" tabindex="-1"></a>aB <span class="ot">&lt;-</span> <span class="fl">0.49</span> <span class="sc">+</span> D</span>
-<span id="cb42-6"><a href="exercícios.html#cb42-6" aria-hidden="true" tabindex="-1"></a>ab <span class="ot">&lt;-</span> <span class="fl">0.21</span> <span class="sc">-</span> D</span>
-<span id="cb42-7"><a href="exercícios.html#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-8"><a href="exercícios.html#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Soma dos produtos</span></span>
-<span id="cb42-9"><a href="exercícios.html#cb42-9" aria-hidden="true" tabindex="-1"></a>(AB <span class="sc">*</span> ab) <span class="sc">+</span> (Ab <span class="sc">*</span> aB) <span class="sc">+</span> (aB <span class="sc">*</span> Ab) <span class="sc">+</span> (ab <span class="sc">*</span> AB)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="exercícios.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequências gaméticas na geração 2 para genes ligados</span></span>
+<span id="cb46-2"><a href="exercícios.html#cb46-2" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fl">0.1701</span></span>
+<span id="cb46-3"><a href="exercícios.html#cb46-3" aria-hidden="true" tabindex="-1"></a>AB <span class="ot">&lt;-</span> <span class="fl">0.21</span> <span class="sc">-</span> D</span>
+<span id="cb46-4"><a href="exercícios.html#cb46-4" aria-hidden="true" tabindex="-1"></a>Ab <span class="ot">&lt;-</span> <span class="fl">0.09</span> <span class="sc">+</span> D</span>
+<span id="cb46-5"><a href="exercícios.html#cb46-5" aria-hidden="true" tabindex="-1"></a>aB <span class="ot">&lt;-</span> <span class="fl">0.49</span> <span class="sc">+</span> D</span>
+<span id="cb46-6"><a href="exercícios.html#cb46-6" aria-hidden="true" tabindex="-1"></a>ab <span class="ot">&lt;-</span> <span class="fl">0.21</span> <span class="sc">-</span> D</span>
+<span id="cb46-7"><a href="exercícios.html#cb46-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-8"><a href="exercícios.html#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Soma dos produtos</span></span>
+<span id="cb46-9"><a href="exercícios.html#cb46-9" aria-hidden="true" tabindex="-1"></a>(AB <span class="sc">*</span> ab) <span class="sc">+</span> (Ab <span class="sc">*</span> aB) <span class="sc">+</span> (aB <span class="sc">*</span> Ab) <span class="sc">+</span> (ab <span class="sc">*</span> AB)</span></code></pre></div>
 <pre><code>## [1] 0.346568</code></pre>
 </div>
 </div>
@@ -967,7 +968,7 @@ aa &amp;= q^2 = 0.8264446
 \end{aligned}
 \]</span></p>
 <p>Conferindo se as frequências somam a 1:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="exercícios.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.008264628</span> <span class="sc">+</span> <span class="fl">0.1652907</span> <span class="sc">+</span> <span class="fl">0.8264446</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="exercícios.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.008264628</span> <span class="sc">+</span> <span class="fl">0.1652907</span> <span class="sc">+</span> <span class="fl">0.8264446</span></span></code></pre></div>
 <pre><code>## [1] 0.9999999</code></pre>
 </div>
 <div id="q5-2" class="section level3 unnumbered">
@@ -1028,7 +1029,7 @@ q_{15} &amp;= 0.08735422
 </table>
 <p><strong>a) As freq. correspondentes são compatíveis com uma amostra vinda de uma pop. em cruzamento ao acaso?</strong></p>
 <p>Se a população estivesse em cruzamento ao acaso, as frequências observadas seriam iguais às frequências no equilíbrio de Hardy-Weinberg. Verificando se a população está em equilíbrio:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="exercícios.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(HardyWeinberg)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="exercícios.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(HardyWeinberg)</span></code></pre></div>
 <pre><code>## Loading required package: mice</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;mice&#39;</code></pre>
@@ -1044,8 +1045,8 @@ q_{15} &amp;= 0.08735422
 <pre><code>## The following object is masked from &#39;package:dplyr&#39;:
 ## 
 ##     recode</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="exercícios.html#cb54-1" aria-hidden="true" tabindex="-1"></a>frequencies <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">AA =</span> <span class="dv">180</span>, <span class="at">Aa =</span> <span class="dv">713</span>, <span class="at">aa =</span> <span class="dv">1708</span>)</span>
-<span id="cb54-2"><a href="exercícios.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">HWChisq</span>(frequencies)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="exercícios.html#cb58-1" aria-hidden="true" tabindex="-1"></a>frequencies <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">AA =</span> <span class="dv">180</span>, <span class="at">Aa =</span> <span class="dv">713</span>, <span class="at">aa =</span> <span class="dv">1708</span>)</span>
+<span id="cb58-2"><a href="exercícios.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">HWChisq</span>(frequencies)</span></code></pre></div>
 <pre><code>## Chi-square test with continuity correction for Hardy-Weinberg equilibrium (autosomal)
 ## Chi2 =  68.13025 DF =  1 p-value =  0.0000000000000001530447 D =  -69.33785 f =  0.1628269</code></pre>
 <p>A estatística <span class="math inline">\(\chi^2\)</span> é muito elevada, com <em>P</em> &lt; 0.05, indicando que a população não está em equilíbrio. O mesmo pode ser observado pelo valor de D.</p>
@@ -1065,16 +1066,16 @@ F_{10} = 1 - 0.99375^10 = 0.0607712
 \end{aligned}
 \]</span></p>
 <p>Implementando função para calcular <span class="math inline">\(F_t\)</span> para dado N:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="exercícios.html#cb56-1" aria-hidden="true" tabindex="-1"></a>calc_inbreeding <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">N =</span> <span class="cn">NULL</span>, <span class="at">t =</span> <span class="cn">NULL</span>) {</span>
-<span id="cb56-2"><a href="exercícios.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  deltaF <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>N)</span>
-<span id="cb56-3"><a href="exercícios.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  Ft <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> deltaF)<span class="sc">^</span>t</span>
-<span id="cb56-4"><a href="exercícios.html#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(Ft)</span>
-<span id="cb56-5"><a href="exercícios.html#cb56-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-6"><a href="exercícios.html#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-7"><a href="exercícios.html#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Testando</span></span>
-<span id="cb56-8"><a href="exercícios.html#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding</span>(<span class="at">N =</span> <span class="dv">80</span>, <span class="at">t =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="exercícios.html#cb60-1" aria-hidden="true" tabindex="-1"></a>calc_inbreeding <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">N =</span> <span class="cn">NULL</span>, <span class="at">t =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb60-2"><a href="exercícios.html#cb60-2" aria-hidden="true" tabindex="-1"></a>  deltaF <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>N)</span>
+<span id="cb60-3"><a href="exercícios.html#cb60-3" aria-hidden="true" tabindex="-1"></a>  Ft <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> deltaF)<span class="sc">^</span>t</span>
+<span id="cb60-4"><a href="exercícios.html#cb60-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(Ft)</span>
+<span id="cb60-5"><a href="exercícios.html#cb60-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb60-6"><a href="exercícios.html#cb60-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-7"><a href="exercícios.html#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Testando</span></span>
+<span id="cb60-8"><a href="exercícios.html#cb60-8" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding</span>(<span class="at">N =</span> <span class="dv">80</span>, <span class="at">t =</span> <span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] 0.03086181</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="exercícios.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding</span>(<span class="at">N =</span> <span class="dv">80</span>, <span class="at">t =</span> <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="exercícios.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding</span>(<span class="at">N =</span> <span class="dv">80</span>, <span class="at">t =</span> <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 0.06077117</code></pre>
 </div>
 <div id="q3-3" class="section level3 unnumbered">
@@ -1085,7 +1086,7 @@ F_{10} = 1 - 0.99375^10 = 0.0607712
 <p><span class="math inline">\(\bar{p} = p_0 = 0.2\)</span>.</p>
 <p><strong>b) Quanta variação seria esperada entre pesquisadores, quanto à suas estimativas de freq. gênica?</strong></p>
 <p>Após 10 gerações, 11 gerações de deriva teriam ocorrido nas amostras de cada pesquisador. Calculando <span class="math inline">\(F_{11}\)</span> com a função implementada anteriormente:</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="exercícios.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding</span>(<span class="at">N =</span> <span class="dv">20</span>, <span class="at">t =</span> <span class="dv">11</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="exercícios.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding</span>(<span class="at">N =</span> <span class="dv">20</span>, <span class="at">t =</span> <span class="dv">11</span>)</span></code></pre></div>
 <pre><code>## [1] 0.2430786</code></pre>
 <p>Sabendo que <span class="math inline">\(\sigma^2_q = p_0q_0F_t\)</span>, temos:</p>
 <p><span class="math display">\[
@@ -1108,7 +1109,7 @@ A_2A_2 &amp;= q_0^2 + \sigma^2_q = 0.64 + 0.03889258 = 0.6788926
 \end{aligned}
 \]</span></p>
 <p>Conferindo se as frequências somam a 1:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="exercícios.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.07889258</span> <span class="sc">+</span> <span class="fl">0.2422148</span> <span class="sc">+</span> <span class="fl">0.6788926</span></span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="exercícios.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.07889258</span> <span class="sc">+</span> <span class="fl">0.2422148</span> <span class="sc">+</span> <span class="fl">0.6788926</span></span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 </div>
 <div id="q5-3" class="section level3 unnumbered">
@@ -1161,52 +1162,52 @@ F &amp;= 1-P = 0.447
 <p><strong>Quatro sub-populações são mantidas em cruzamento ao acaso separadamente. Todas as subpopulações possuem 40 fêmeas, mas um número diferente de machos sendo 4, 8, 2 e 6 respectivamente. Calcular o tamanho efetivo (Ne) de cada sub-população e o coeficiente de endogamia (F) após 5 gerações.</strong></p>
 <p>Sabendo que <span class="math inline">\(N_e = \frac{4N_m N_f}{N_m + N_f}\)</span>, <span class="math inline">\(\Delta{F} = \frac{1}{2N_e}\)</span>, e <span class="math inline">\(F_t = 1 - ( 1 - \Delta{F})^t\)</span>.</p>
 <p>Implementando função para calcular <span class="math inline">\(N_e\)</span> e coeficiente de endogamia após t gerações.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="exercícios.html#cb64-1" aria-hidden="true" tabindex="-1"></a>calc_Ne <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">m =</span> <span class="cn">NULL</span>, <span class="at">f =</span> <span class="cn">NULL</span>) {</span>
-<span id="cb64-2"><a href="exercícios.html#cb64-2" aria-hidden="true" tabindex="-1"></a>  ne <span class="ot">&lt;-</span> (<span class="dv">4</span> <span class="sc">*</span> m <span class="sc">*</span> f) <span class="sc">/</span> (m <span class="sc">+</span> f)</span>
-<span id="cb64-3"><a href="exercícios.html#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(ne)</span>
-<span id="cb64-4"><a href="exercícios.html#cb64-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb64-5"><a href="exercícios.html#cb64-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-6"><a href="exercícios.html#cb64-6" aria-hidden="true" tabindex="-1"></a>calc_deltaF <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">m =</span> <span class="cn">NULL</span>, <span class="at">f =</span> <span class="cn">NULL</span>) {</span>
-<span id="cb64-7"><a href="exercícios.html#cb64-7" aria-hidden="true" tabindex="-1"></a>  ne <span class="ot">&lt;-</span> <span class="fu">calc_Ne</span>(m, f)</span>
-<span id="cb64-8"><a href="exercícios.html#cb64-8" aria-hidden="true" tabindex="-1"></a>  deltaF <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> ne)</span>
-<span id="cb64-9"><a href="exercícios.html#cb64-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(deltaF)</span>
-<span id="cb64-10"><a href="exercícios.html#cb64-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb64-11"><a href="exercícios.html#cb64-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-12"><a href="exercícios.html#cb64-12" aria-hidden="true" tabindex="-1"></a>calc_inbreeding_sp <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">m =</span> <span class="cn">NULL</span>, <span class="at">f =</span> <span class="cn">NULL</span>, <span class="at">t =</span> <span class="cn">NULL</span>) {</span>
-<span id="cb64-13"><a href="exercícios.html#cb64-13" aria-hidden="true" tabindex="-1"></a>  ne <span class="ot">&lt;-</span> <span class="fu">calc_Ne</span>(m, f)</span>
-<span id="cb64-14"><a href="exercícios.html#cb64-14" aria-hidden="true" tabindex="-1"></a>  deltaF <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> ne)</span>
-<span id="cb64-15"><a href="exercícios.html#cb64-15" aria-hidden="true" tabindex="-1"></a>  Ft <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> deltaF)<span class="sc">^</span>t</span>
-<span id="cb64-16"><a href="exercícios.html#cb64-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(Ft)</span>
-<span id="cb64-17"><a href="exercícios.html#cb64-17" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb64-18"><a href="exercícios.html#cb64-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-19"><a href="exercícios.html#cb64-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-20"><a href="exercícios.html#cb64-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando funções</span></span>
-<span id="cb64-21"><a href="exercícios.html#cb64-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando Ne</span></span>
-<span id="cb64-22"><a href="exercícios.html#cb64-22" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne</span>(<span class="dv">4</span>, <span class="dv">40</span>) <span class="co"># pop. 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="exercícios.html#cb68-1" aria-hidden="true" tabindex="-1"></a>calc_Ne <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">m =</span> <span class="cn">NULL</span>, <span class="at">f =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb68-2"><a href="exercícios.html#cb68-2" aria-hidden="true" tabindex="-1"></a>  ne <span class="ot">&lt;-</span> (<span class="dv">4</span> <span class="sc">*</span> m <span class="sc">*</span> f) <span class="sc">/</span> (m <span class="sc">+</span> f)</span>
+<span id="cb68-3"><a href="exercícios.html#cb68-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(ne)</span>
+<span id="cb68-4"><a href="exercícios.html#cb68-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb68-5"><a href="exercícios.html#cb68-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-6"><a href="exercícios.html#cb68-6" aria-hidden="true" tabindex="-1"></a>calc_deltaF <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">m =</span> <span class="cn">NULL</span>, <span class="at">f =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb68-7"><a href="exercícios.html#cb68-7" aria-hidden="true" tabindex="-1"></a>  ne <span class="ot">&lt;-</span> <span class="fu">calc_Ne</span>(m, f)</span>
+<span id="cb68-8"><a href="exercícios.html#cb68-8" aria-hidden="true" tabindex="-1"></a>  deltaF <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> ne)</span>
+<span id="cb68-9"><a href="exercícios.html#cb68-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(deltaF)</span>
+<span id="cb68-10"><a href="exercícios.html#cb68-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb68-11"><a href="exercícios.html#cb68-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-12"><a href="exercícios.html#cb68-12" aria-hidden="true" tabindex="-1"></a>calc_inbreeding_sp <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">m =</span> <span class="cn">NULL</span>, <span class="at">f =</span> <span class="cn">NULL</span>, <span class="at">t =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb68-13"><a href="exercícios.html#cb68-13" aria-hidden="true" tabindex="-1"></a>  ne <span class="ot">&lt;-</span> <span class="fu">calc_Ne</span>(m, f)</span>
+<span id="cb68-14"><a href="exercícios.html#cb68-14" aria-hidden="true" tabindex="-1"></a>  deltaF <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> ne)</span>
+<span id="cb68-15"><a href="exercícios.html#cb68-15" aria-hidden="true" tabindex="-1"></a>  Ft <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> deltaF)<span class="sc">^</span>t</span>
+<span id="cb68-16"><a href="exercícios.html#cb68-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(Ft)</span>
+<span id="cb68-17"><a href="exercícios.html#cb68-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb68-18"><a href="exercícios.html#cb68-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-19"><a href="exercícios.html#cb68-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-20"><a href="exercícios.html#cb68-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando funções</span></span>
+<span id="cb68-21"><a href="exercícios.html#cb68-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando Ne</span></span>
+<span id="cb68-22"><a href="exercícios.html#cb68-22" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne</span>(<span class="dv">4</span>, <span class="dv">40</span>) <span class="co"># pop. 1</span></span></code></pre></div>
 <pre><code>## [1] 14.54545</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="exercícios.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne</span>(<span class="dv">8</span>, <span class="dv">40</span>) <span class="co"># pop. 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="exercícios.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne</span>(<span class="dv">8</span>, <span class="dv">40</span>) <span class="co"># pop. 2</span></span></code></pre></div>
 <pre><code>## [1] 26.66667</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="exercícios.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne</span>(<span class="dv">2</span>, <span class="dv">40</span>) <span class="co"># pop. 3</span></span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="exercícios.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne</span>(<span class="dv">2</span>, <span class="dv">40</span>) <span class="co"># pop. 3</span></span></code></pre></div>
 <pre><code>## [1] 7.619048</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="exercícios.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne</span>(<span class="dv">6</span>, <span class="dv">40</span>) <span class="co"># pop. 4</span></span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="exercícios.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne</span>(<span class="dv">6</span>, <span class="dv">40</span>) <span class="co"># pop. 4</span></span></code></pre></div>
 <pre><code>## [1] 20.86957</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="exercícios.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando delta F</span></span>
-<span id="cb72-2"><a href="exercícios.html#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_deltaF</span>(<span class="dv">4</span>, <span class="dv">40</span>) <span class="co"># pop. 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="exercícios.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando delta F</span></span>
+<span id="cb76-2"><a href="exercícios.html#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_deltaF</span>(<span class="dv">4</span>, <span class="dv">40</span>) <span class="co"># pop. 1</span></span></code></pre></div>
 <pre><code>## [1] 0.034375</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="exercícios.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_deltaF</span>(<span class="dv">8</span>, <span class="dv">40</span>) <span class="co"># pop. 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="exercícios.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_deltaF</span>(<span class="dv">8</span>, <span class="dv">40</span>) <span class="co"># pop. 2</span></span></code></pre></div>
 <pre><code>## [1] 0.01875</code></pre>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="exercícios.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_deltaF</span>(<span class="dv">2</span>, <span class="dv">40</span>) <span class="co"># pop. 3</span></span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="exercícios.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_deltaF</span>(<span class="dv">2</span>, <span class="dv">40</span>) <span class="co"># pop. 3</span></span></code></pre></div>
 <pre><code>## [1] 0.065625</code></pre>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="exercícios.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_deltaF</span>(<span class="dv">6</span>, <span class="dv">40</span>) <span class="co"># pop. 4</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="exercícios.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_deltaF</span>(<span class="dv">6</span>, <span class="dv">40</span>) <span class="co"># pop. 4</span></span></code></pre></div>
 <pre><code>## [1] 0.02395833</code></pre>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="exercícios.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando F(t = 5)</span></span>
-<span id="cb80-2"><a href="exercícios.html#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding_sp</span>(<span class="dv">4</span>, <span class="dv">40</span>, <span class="at">t =</span> <span class="dv">5</span>) <span class="co"># pop. 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="exercícios.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando F(t = 5)</span></span>
+<span id="cb84-2"><a href="exercícios.html#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding_sp</span>(<span class="dv">4</span>, <span class="dv">40</span>, <span class="at">t =</span> <span class="dv">5</span>) <span class="co"># pop. 1</span></span></code></pre></div>
 <pre><code>## [1] 0.1604578</code></pre>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="exercícios.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding_sp</span>(<span class="dv">8</span>, <span class="dv">40</span>, <span class="at">t =</span> <span class="dv">5</span>) <span class="co"># pop. 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="exercícios.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding_sp</span>(<span class="dv">8</span>, <span class="dv">40</span>, <span class="at">t =</span> <span class="dv">5</span>) <span class="co"># pop. 2</span></span></code></pre></div>
 <pre><code>## [1] 0.09029968</code></pre>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="exercícios.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding_sp</span>(<span class="dv">2</span>, <span class="dv">40</span>, <span class="at">t =</span> <span class="dv">5</span>) <span class="co"># pop. 3</span></span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="exercícios.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding_sp</span>(<span class="dv">2</span>, <span class="dv">40</span>, <span class="at">t =</span> <span class="dv">5</span>) <span class="co"># pop. 3</span></span></code></pre></div>
 <pre><code>## [1] 0.2877933</code></pre>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="exercícios.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding_sp</span>(<span class="dv">6</span>, <span class="dv">40</span>, <span class="at">t =</span> <span class="dv">5</span>) <span class="co"># pop. 4</span></span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="exercícios.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_inbreeding_sp</span>(<span class="dv">6</span>, <span class="dv">40</span>, <span class="at">t =</span> <span class="dv">5</span>) <span class="co"># pop. 4</span></span></code></pre></div>
 <pre><code>## [1] 0.1141875</code></pre>
 <table>
 <thead>
@@ -1259,18 +1260,18 @@ F &amp;= 1-P = 0.447
 <h3>Q2</h3>
 <p><strong>Suponha que uma população se mantenha isolada durante 6 gerações, com o número de pares de acasalamento nas sucessivas gerações sendo 2, 4, 50, 100, 150 e 400. Calcular Ne e delta F.</strong></p>
 <p>Implementando função para calcular <span class="math inline">\(N_e\)</span> para números desiguais em sucessivas gerações:</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="exercícios.html#cb88-1" aria-hidden="true" tabindex="-1"></a>calc_Ne_unequal_suc <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">t =</span> <span class="cn">NULL</span>, <span class="at">N =</span> <span class="cn">NULL</span>) {</span>
-<span id="cb88-2"><a href="exercícios.html#cb88-2" aria-hidden="true" tabindex="-1"></a>  sums <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(N, <span class="cf">function</span>(x) <span class="dv">1</span><span class="sc">/</span>x))</span>
-<span id="cb88-3"><a href="exercícios.html#cb88-3" aria-hidden="true" tabindex="-1"></a>  one_over_Ne <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">/</span> t) <span class="sc">*</span> sums</span>
-<span id="cb88-4"><a href="exercícios.html#cb88-4" aria-hidden="true" tabindex="-1"></a>  Ne <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> one_over_Ne</span>
-<span id="cb88-5"><a href="exercícios.html#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(Ne)</span>
-<span id="cb88-6"><a href="exercícios.html#cb88-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb88-7"><a href="exercícios.html#cb88-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb88-8"><a href="exercícios.html#cb88-8" aria-hidden="true" tabindex="-1"></a>pares <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">400</span>)</span>
-<span id="cb88-9"><a href="exercícios.html#cb88-9" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> pares <span class="sc">*</span> <span class="dv">2</span> </span>
-<span id="cb88-10"><a href="exercícios.html#cb88-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb88-11"><a href="exercícios.html#cb88-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando função</span></span>
-<span id="cb88-12"><a href="exercícios.html#cb88-12" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne_unequal_suc</span>(<span class="at">t =</span> <span class="dv">6</span>, <span class="at">N =</span> N)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="exercícios.html#cb92-1" aria-hidden="true" tabindex="-1"></a>calc_Ne_unequal_suc <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">t =</span> <span class="cn">NULL</span>, <span class="at">N =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb92-2"><a href="exercícios.html#cb92-2" aria-hidden="true" tabindex="-1"></a>  sums <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sapply</span>(N, <span class="cf">function</span>(x) <span class="dv">1</span><span class="sc">/</span>x))</span>
+<span id="cb92-3"><a href="exercícios.html#cb92-3" aria-hidden="true" tabindex="-1"></a>  one_over_Ne <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">/</span> t) <span class="sc">*</span> sums</span>
+<span id="cb92-4"><a href="exercícios.html#cb92-4" aria-hidden="true" tabindex="-1"></a>  Ne <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> one_over_Ne</span>
+<span id="cb92-5"><a href="exercícios.html#cb92-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(Ne)</span>
+<span id="cb92-6"><a href="exercícios.html#cb92-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb92-7"><a href="exercícios.html#cb92-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-8"><a href="exercícios.html#cb92-8" aria-hidden="true" tabindex="-1"></a>pares <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">400</span>)</span>
+<span id="cb92-9"><a href="exercícios.html#cb92-9" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> pares <span class="sc">*</span> <span class="dv">2</span> </span>
+<span id="cb92-10"><a href="exercícios.html#cb92-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-11"><a href="exercícios.html#cb92-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando função</span></span>
+<span id="cb92-12"><a href="exercícios.html#cb92-12" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_Ne_unequal_suc</span>(<span class="at">t =</span> <span class="dv">6</span>, <span class="at">N =</span> N)</span></code></pre></div>
 <pre><code>## [1] 15.20591</code></pre>
 <p><span class="math inline">\(\Delta{F} = \frac{1}{2N_e} = \frac{1}{30.41} = 0.0329\)</span></p>
 </div>
@@ -1290,25 +1291,25 @@ F &amp;= 1-P = 0.447
 <h3>Q4</h3>
 <p><strong>Deseja-se manter o grau de endogamia a um mínimo ao longo das gerações através do uso de 10 pares de indivíduos a cada geração. Em uma determinada geração, os pares falharam em deixar os exatos dois descendentes para a próxima geração. Os números de descendentes por par foram: 0, 1, 1, 1, 2, 2, 3, 3, 3 e 4. Utilizando-se tal descendência como pais, qual o Ne em tal geração?</strong></p>
 <p>Sabendo que <span class="math inline">\(N_e = \frac{4N}{V_k + 2}\)</span>:</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="exercícios.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados do enunciado</span></span>
-<span id="cb90-2"><a href="exercícios.html#cb90-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb90-3"><a href="exercícios.html#cb90-3" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb90-4"><a href="exercícios.html#cb90-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-5"><a href="exercícios.html#cb90-5" aria-hidden="true" tabindex="-1"></a>get_variance <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">k =</span> <span class="cn">NULL</span>) {</span>
-<span id="cb90-6"><a href="exercícios.html#cb90-6" aria-hidden="true" tabindex="-1"></a>  mean_k <span class="ot">&lt;-</span> <span class="fu">mean</span>(k)</span>
-<span id="cb90-7"><a href="exercícios.html#cb90-7" aria-hidden="true" tabindex="-1"></a>  dev_k <span class="ot">&lt;-</span> k <span class="sc">-</span> mean_k</span>
-<span id="cb90-8"><a href="exercícios.html#cb90-8" aria-hidden="true" tabindex="-1"></a>  var_k <span class="ot">&lt;-</span> <span class="fu">sum</span>(dev_k<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb90-9"><a href="exercícios.html#cb90-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(var_k)</span>
-<span id="cb90-10"><a href="exercícios.html#cb90-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb90-11"><a href="exercícios.html#cb90-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-12"><a href="exercícios.html#cb90-12" aria-hidden="true" tabindex="-1"></a>kvar <span class="ot">&lt;-</span> <span class="fu">get_variance</span>(k)</span>
-<span id="cb90-13"><a href="exercícios.html#cb90-13" aria-hidden="true" tabindex="-1"></a>kvar</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="exercícios.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados do enunciado</span></span>
+<span id="cb94-2"><a href="exercícios.html#cb94-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb94-3"><a href="exercícios.html#cb94-3" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb94-4"><a href="exercícios.html#cb94-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb94-5"><a href="exercícios.html#cb94-5" aria-hidden="true" tabindex="-1"></a>get_variance <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">k =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb94-6"><a href="exercícios.html#cb94-6" aria-hidden="true" tabindex="-1"></a>  mean_k <span class="ot">&lt;-</span> <span class="fu">mean</span>(k)</span>
+<span id="cb94-7"><a href="exercícios.html#cb94-7" aria-hidden="true" tabindex="-1"></a>  dev_k <span class="ot">&lt;-</span> k <span class="sc">-</span> mean_k</span>
+<span id="cb94-8"><a href="exercícios.html#cb94-8" aria-hidden="true" tabindex="-1"></a>  var_k <span class="ot">&lt;-</span> <span class="fu">sum</span>(dev_k<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb94-9"><a href="exercícios.html#cb94-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(var_k)</span>
+<span id="cb94-10"><a href="exercícios.html#cb94-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb94-11"><a href="exercícios.html#cb94-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb94-12"><a href="exercícios.html#cb94-12" aria-hidden="true" tabindex="-1"></a>kvar <span class="ot">&lt;-</span> <span class="fu">get_variance</span>(k)</span>
+<span id="cb94-13"><a href="exercícios.html#cb94-13" aria-hidden="true" tabindex="-1"></a>kvar</span></code></pre></div>
 <pre><code>## [1] 14</code></pre>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="exercícios.html#cb92-1" aria-hidden="true" tabindex="-1"></a>Vk <span class="ot">&lt;-</span> kvar <span class="sc">/</span> <span class="dv">10</span></span>
-<span id="cb92-2"><a href="exercícios.html#cb92-2" aria-hidden="true" tabindex="-1"></a>Vk</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="exercícios.html#cb96-1" aria-hidden="true" tabindex="-1"></a>Vk <span class="ot">&lt;-</span> kvar <span class="sc">/</span> <span class="dv">10</span></span>
+<span id="cb96-2"><a href="exercícios.html#cb96-2" aria-hidden="true" tabindex="-1"></a>Vk</span></code></pre></div>
 <pre><code>## [1] 1.4</code></pre>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="exercícios.html#cb94-1" aria-hidden="true" tabindex="-1"></a>Ne <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">*</span> N <span class="sc">/</span> (Vk <span class="sc">+</span> <span class="dv">2</span>)</span>
-<span id="cb94-2"><a href="exercícios.html#cb94-2" aria-hidden="true" tabindex="-1"></a>Ne</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="exercícios.html#cb98-1" aria-hidden="true" tabindex="-1"></a>Ne <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">*</span> N <span class="sc">/</span> (Vk <span class="sc">+</span> <span class="dv">2</span>)</span>
+<span id="cb98-2"><a href="exercícios.html#cb98-2" aria-hidden="true" tabindex="-1"></a>Ne</span></code></pre></div>
 <pre><code>## [1] 23.52941</code></pre>
 </div>
 <div id="q5-4" class="section level3 unnumbered">
