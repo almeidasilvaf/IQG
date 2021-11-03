@@ -289,3 +289,182 @@ A frequência não é sempre maior na mãe. Se a frequência é maior na mãe na
 **e) ( V ) Em uma população em EHW, para um alelo raro recessivo, a grande maioria dos genótipos recessivos são oriundos de indivíduos normais.**
 
 **f) ( V ) Quanto maior o número de locos, mais rapidamente se observa a aproximação ao equilíbrio quando em cruzamento ao acaso.**
+
+--------------------------------------------------------------------------------
+
+## Prova 2 {.unnumbered}
+
+### Q1 {.unnumbered}
+
+**(20%) Falso ou verdadeiro. Se falso, marque a(s) palavra(s) que justifique(m) sua resposta.**
+
+**A ( F ) A ausência da ocorrência de cruzamentos intimamente aparentados faz com que Ne < N;**
+
+Quando desconsideramos os cruzamentos intimamente aparentados, Ne > N.
+
+**B ( F ) O número desigual de machos e fêmeas faz com que: Ne > N, sendo N = soma dos machos e fêmeas.**
+
+O número desigual de machos e fêmeas faz com que Ne < N.
+
+**C ( F ) Considerando os Processos Dispersivos (PD) e Sistemáticos (PS) atuando em uma população ao mesmo tempo, conclui-se que a mutação é efetiva para "equilibrar" o PD mesmo quando em populações muito pequenas.**
+
+Em populações muito pequenas, a mutação não é efetiva para equilibrar o PD. O equilíbrio em consequência da mutação só ocorre em populações muito grandes.
+
+**D ( V ) Os processos sistemáticos de mud. de freq. gênica (Δq) podem ser previstos em quantidade e em direção.**
+
+**E ( V ) Considerando apenas Mut. Rec. Rev. atuando em uma população, no equilíbrio se teria mais mutantes do que selvagens (não mutantes).**
+
+**F ( V ) Mutação é mais efetiva quando o gene mutante é raro. A seleção por sua vez é muito pouco efetiva quando o gene deletério é raro.**
+
+**G ( F ) Quanto menor uma população menos drástico é o processo dispersivo.**
+
+Quanto menor uma população, mais drástico é o processo dispersivo.
+
+**H ( F ) Com o processo dispersivo, a freq. de homozigoto aumenta, consequentemente a variância da frequência gênica entre linhas diminui.**
+
+A variância da frequência gênica entre linhas aumenta à medida que o processo dispersivo ocorre.
+
+**I ( F ) Considerando apenas o PD, a freq. gênica média no conjunto de linhas permanece constante. Consequentemente, no decorrer do mesmo, a cada geração vai aumentando o grau de similaridade entre as diversas linhas.**
+
+A cada geração, as diversas linhas tornam-se mais diferentes entre si. Entretanto, dentro de cada linha, a uniformidade aumenta. Em síntese, ocorre aumento da diferenciação entre linhas e da uniformidade dentro de linhas.
+
+**J ( V ) Com o processo dispersivo, vai ocorrendo um incremento no coeficiente de endogamia (F), com um correspondente decréscimo no índice de pamixia (P). Portanto, após infinitas gerações de amostragem, F tende a 1, e P tende a zero. Consequentemente, a proporção de linhas segregantes tende a zero.**
+
+
+### Q2 {.unnumbered}
+
+**(10%)- Conceitue brevemente:**
+
+a. **Em uma população em cruzamento ao acaso, comente o significado de: Pt = 1; Pt < 1; Pt > 1. (Pt = Ht/Ho).**
+
+O índice de panmixia corresponde à frequência de heterozigotos em uma população subdividida. $P_t$ representa o índice de panmixia na geração t, sendo $P_t = 1 - F_t = \frac{H_t}{H_0}$. Quando $P_t = 1$, isso significa que a população não está subdividida; quando $P_t < 1$, significa que há uma deficiência de heterozigotos, pois $H_t < H_0$; quando $P_t > 1$, significa que há um excesso de heterozigotos, pois $H_t > H_0$.
+
+b. **"Fitness" (Valor adaptativo)**
+
+O valor adaptativo de um indivíduo representa o quanto esse contribui com prole para a geração seguinte. Por exemplo, se um genótipo está sob seleção com coeficiente de seleção s = 0,1, seu valor adaptativo é 1 - s = 0,9, ou seja, ele deixa apenas 90% do número de descendentes que o genótipo mais favorecido deixa.
+
+c. **Polimorfismo**
+
+Polimorfismos são diferenças causadas por genes com frequência intermediária. Eles são comumente usados como medidas de variação genética.
+
+d. **Endogamia**
+
+A endogamia consiste no acasalamento entre indivíduos que são intimimamente aparentados por ascendência. O principal problema da endogamia é o aumento considerável da possibilidade de união de 2 alelos raros com efeito negativo, formando indivíduos com menor valor adaptativo.
+
+e. **Deriva**
+
+Processo dispersivo de mudança na frequência gênica que ocorre em populações muito pequenas. Uma mudança por deriva genética ocorre simplesmente por efeito de amostragem, e não como consequência de uma vantagem adaptativa, como ocorre com a seleção.
+
+
+### Q3 {.unnumbered}
+
+**(10%) Comente brevemente as possíveis causas de polimorfismo.**
+
+Existem várias possíveis explicações para o surgimento de polimorfismos, dentre elas:
+
+1. Sobredominância (vantagem do heterozigoto): mantém as frequências gênicas em níveis intermediários;
+
+2. Seleção dependente de frequência: nesse tipo de seleção, um alelo em baixa frequência produz um fenótipo raro que é favorecido. Entretanto, se esse fenótipo estiver em alta frequência, a seleção atua contra ele. Esse tipo de seleção é comum em dinâmicas de populações que envolvem ciclos patógeno-hospedeiro e predador-presa, por exemplo.
+
+3. Ambiente heterogêneo: cada um dos alelos de um loco pode ser favorecido por ambientes diferentes. Por exemplo, em ambientes bem irrigados, o alelo A1 é mais vantajoso, enquanto em ambientes de seca o alelo A2 é mais vantajoso.
+
+4. Transição: um polimorfismo pode representar um estágio de transição de um alelo para outro que, por algum motivo, se tornou mais vantajoso em um novo cenário. Como o tempo necessário para a fixação completa de um alelo pode ser longo, em um curto prazo podemos verificar a presença de um estágio de transição onde ambos os alelos estão presentes.
+
+5. Mutação neutra: em alguns casos, o coeficiente de seleção agindo sobre um loco é tão baixo que mutações neutras podem surgir. Nesse caso, os polimorfismos não têm efeito sobre o valor adaptativo do indivíduo. Esse tipo de mutação é comum em regiões não-codificantes do genoma, por exemplo.
+
+
+### Q4 {.unnumbered}
+
+**(20%) Em uma pop. de milho, detectou-se a ocorrência de um fator (gene A2) eliminador de pólen (s = 1 contra o gameta masculino portador de tal gene). Supondo que A1A1 = plantas normais; A1A2 = plantas semiestereis, se um pesquisador constituiu uma população de 100% de indivíduos semiestereis, quais as freq. gênicas e genotípicas após:**
+
+a. **Uma;**
+
+b. **Três;**
+
+c. **Infinitas gerações de cruzamentos ao acaso? (Considere apenas seleção)**
+
+100% A1A2, logo $p = q = 0.5$.
+
+
+Para semi-esterilidade, $\Delta{q} = -0.5q$. Ou seja, a frequência do alelo letal reduz à metade após cada geração de cruzamento ao acaso. Logo:
+
+```{r}
+# Implementando função para simular frequências gênicas e genotípicas para semi-esterilidade ao longo do tempo
+options(scipen = 9999999)
+freq_semiesteril <- function(p = NULL, q = NULL, t = 10) {
+    half <- function(x, t) {
+        return(x / 2^(1:t))
+    }
+    q <- half(q, t)
+    tabela <- data.frame(p = NA, q = q, geracao = seq_len(t))
+    tabela$p <- 1 - tabela$q
+    
+    tabela$P <- tabela$p^2
+    tabela$Q <- tabela$q^2
+    tabela$H <- 2 * tabela$p * tabela$q
+    return(tabela)
+}
+
+# Aplicando função para p = q = 0.5 (resposta da letra A e B)
+freq_semiesteril(p = 0.5, q = 0.5, t = 3)
+
+# Para infinitas gerações, testando com t = 1000 (resposta da C)
+tail(freq_semiesteril(p = 0.5, q=0.5, t=1000))
+```
+
+A frequência de q fica muito próxima de zero após muitas gerações, mas sua frequência é "protegida" pelos heterozigotos.
+
+**NOTA:** Após muitas gerações, o valor de q é tão baixo que o computador aproxima p = 1 e P = 1 (ver avaliação do bloco de código acima). Tenha em mente que esses valores não são **exatamente** 1, mas um número **muito** próximo.
+
+
+### Q5 {.unnumbered}
+
+**(20%) Considerando-se a atuação apenas do processo dispersivo (PD) em uma população ideal responda:**
+
+a. **Cite as consequências do PD.**
+
+Os processos dispersivos podem gerar deriva genética (mudança casual na frequência gênica); aumento da diferença genética entre subpopulações distintas; aumento da similaridade entre indivíduos de uma mesma subpopulação (maior uniformidade); aumento da homozigose e diminuição da heterozigose. 
+
+b. **Se uma determinada população base com freq. gênica:**
+
+**P(A) = p0 = 0.2; P(a) = q0 = 0.8, após completa fixação, responder:**
+
+- **Freq. gênica considerando-se todas as sub-populações como um todo.**
+    
+A frequência gênica média é igual à frequência gênica inicial. Logo, p = 0.2 e q = 0.8.
+
+- **Freq. genotípica.**
+
+Após a fixação, $A1A1 = p_0 = 0.2$, $A1A2 = 0$, e $A2A2 = q_0 = 0.8$. 
+
+- $\sigma^2_q$ **(variância da freq. gênica entre linhas)**
+
+$\sigma^2_q = p_0q_0 = 0.16$
+
+
+### Q6 {.unnumbered}
+
+
+**O gene br2 determina o fenótipo braquítico em milho, sendo o mesmo, recessivo em relação ao milho não mutante Br2-. O melhorista possuía duas populações, uma em homozigose para porte baixo (br2br2) e outra em homozigose para porte alto (Br2Br2). Ele plantou uma área composta pela mistura de 60% das sementes oriundas da população de porte alto (Br2Br2) e de 40% das sementes oriundas da população braquítica (br2br2). Na população resultante de tal mistura, supondo que a mesma tenha atingido o EHW, responda:**
+
+
+- **Quais as freqüências gênicas?**
+
+60% Br2Br2 e 40% br2br2, logo:
+
+p(Br2) = 0.6 <br />
+q(br2) = 0.4
+
+
+- **Quais as freqüências genotípicas?**
+
+Br2Br2 = $p^2 = 0.6^2 = 0.36$
+
+Br2br2 = $2pq = 2 \times 0.6 \times 0.4 = 0.48$
+
+br2br2 = $q^2 = 0.4^2 = 0.16$
+
+- **Quais as freqüências fenotípicas?**
+
+84% porte alto : 16% braquíticos
+
