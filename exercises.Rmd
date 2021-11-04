@@ -1015,4 +1015,150 @@ F &= \frac{1}{4N_e (u + v + m) + 1} \\
 \end{aligned}
 $$
 
+## Semana 6: Populações pequenas com pedigree {.unnumbered}
+
+### Q1 {.unnumbered}
+
+**Calcular o coef. de endogamia (F) de indivíduos resultantes dos seguintes cruzamentos:**
+
+- **Entre primos de primeiro grau (simples).**
+
+$(\frac{1}{2})^5 + (\frac{1}{2})^5 = \frac{1}{16}$
+
+
+- **Entre primos de primeiro grau (duplo).**
+
+$4 \times (\frac{1}{2})^5 = \frac{1}{8}$
+
+- **Entre tio e sobrinha.**
+
+$2 \times (\frac{1}{2})^4 = \frac{1}{8}$
+
+- **Entre pai e filho, sendo o pai uma linha pura**
+
+$\frac{1}{2}$
+
+- **Entre pai e filho, correspondendo às gerações F2 e F3, sendo os pais originais, meios irmãos, sendo o pai comum, uma linha pura.**
+
+$\frac{1}{8}$
+
+- **Entre pai e filho, correspondendo às gerações F3 e F4, sendo os pais originais não endogâmicos.**
+
+$\frac{1}{4}$
+
+
+### Q2 {.unnumbered}
+
+**Qual o coeficiente de parentesco entre crianças oriundas de gêmeos idênticos casados com indivíduos não aparentados.**
+
+Como os gêmeos são, geneticamente, o mesmo indivíduo, as crianças são tratadas como meio-irmãos (filhos de um mesmo pai, mas mães diferentes). Portanto, o coeficiente de parentesco é $\frac{1}{8}$.
+
+### Q3 {.unnumbered}
+
+**Calcule o coef. de endogamia do indivíduo X, utilizando-se os dois métodos ("path coefficient" e coef. de parentesco).**
+
+```{r echo=FALSE, out.width='50%'}
+knitr::include_graphics("figs/ex6_q3.png")
+```
+
+Simplificando o heredograma para o formato padrão, similar a um grafo:
+
+```{r}
+suppressPackageStartupMessages(library(igraph))
+df <- data.frame(
+  from = c("A", "A", "B", "B", "C", "C", "D", "D",
+           "E", "E", "F", "F", "H", "G", 
+           "L", "I", "J", "K", "M", "N"),
+  to = c("E", "H", "E", "H", "F", "G", "F", "G",
+         "I", "J", "I", "J", "K", "K",
+         "M", "M", "N", "N", "X", "X")
+)
+graph <- graph_from_data_frame(df, directed=FALSE)
+
+# Create layers
+#layer 1: ABCD;layer 2: EFGH;layer 3: LIJK;layer 4: MN;layer 5: X
+layers <- c(rep(1, 4),
+            rep(2, 4),
+            rep(3, 4),
+            rep(4, 2),
+            5)
+layout <- layout_with_sugiyama(graph, layers = layers)
+plot(graph, layout = cbind(layers, layout$layout[,1]),
+     vertex.color = "brown2", vertex.label.color = "white",
+     vertex.size = 30)
+```
+
+Caminhos possíveis:
+
+- $MI\bar{E}JN$
+- $MI\bar{F}JN$
+- $MIE\bar{A}HKN$
+- $MIE\bar{B}HKN$
+- $MIF\bar{C}GKN$
+- $MIF\bar{D}GKN$
+
+Logo, 
+
+$$
+\begin{aligned}
+F_x &= 2(\frac{1}{2})^5 + 4(\frac{1}{2})^7 \\
+&= \frac{1}{16} + \frac{1}{32} \\
+&= \frac{3}{32} = 0.09375
+\end{aligned}
+$$
+
+### Q4 {.unnumbered}
+
+**Duas linhas puras são cruzadas para obter a geração F1. Os indivíduos F1 são autofecundados para obter a geração F2. Indivíduos F2 são retrocruzados com o F1 e com um dos progenitores. Quais são os coeficientes de endogamia das progênies oriundas dos dois retrocruzamentos?**
+
+Chamando as linhas puras de A e B, os indivíduos da geração F2 produzem gametas A e B em proporções iguais aos indivíduos da F1, pois o retrocruzamento da F2 com F1 gera 1/4 AA e 1/4 BB, ou seja, 1/2 de homozigotos. De forma similar, o retrocruzamento de F2 com A gera 1/2 AA. Logo, ambos os retrocruzamentos produzem 50% de homozigotos, então o coeficiente de endogamia é 0.5.
+
+
+### Q5 {.unnumbered}
+
+**Uma população de plantas foi submetida a endogamia via cruzamento entre irmãos completos durante 15 gerações. Após este estádio, uma amostra de tamanho efetivo de 30 plantas foi mantida por mais 20 gerações. Qual o coeficiente de endogamia resultante?**
+
+Implementando função para calcular o coeficiente de endogamia de cruzamentos entre irmãos completos após t gerações:
+
+```{r}
+F_full_sib <- function(Ft_1 = NULL, Ft_2 = NULL) {
+  Fx <- 0.25 * (1 + 2*Ft_1 + Ft_2)
+  return(Fx)
+}
+
+sim_inbreeding_full_sib <- function(F0 = 0, t = 10) {
+  f1 <- F_full_sib(F0, 0)
+  df <- data.frame(
+    geracao = c(0, seq_len(t)),
+    Fx = c(0, f1, rep(NA, t-1))
+  )
+  for(gen in 2:t+1) {
+    df$Fx[gen] <- F_full_sib(df$Fx[gen-1], df$Fx[gen-2])
+  }
+  return(df)
+}
+
+# Calculando para 15 gerações
+sim_inbreeding_full_sib(t=15)
+```
+
+Após 15 gerações, o coeficiente de endogamia é 0.9605713. Logo, $P_{BA} = 1 - 0.9605713 = 0.0394287$.
+
+Em seguida, o coeficiente de endogamia de uma população com $Ne = 30$ mantida por 20 geracões será:
+
+$$
+\begin{aligned}
+\Delta{F} &= \frac{1}{2Ne} = \frac{1}{60} = 0.01666667 \\
+\\
+F_t &= 1 - (1 - \Delta{F})^t \\
+&= 1 - 0.9833333^{20} \\
+&= 1 - 0.7145209 = 0.2855 \\
+\\
+P_{XB} &= 1 - 0.2855 = 0.7145
+\end{aligned}
+$$
+
+Portanto, $P_{XA} = 0.7145 \times 0.0394287 = 0.02817$. Finalmente, o coeficiente de endogamia resultante será $1-P_{XA} = 0.97183$.
+
+
 
