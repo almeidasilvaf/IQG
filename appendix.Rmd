@@ -117,4 +117,14 @@ Ne <- (4 * nc * l) / (vk + 2)
 Ne
 ```
 
+## Semana 9 {.unnumbered}
+
+- Coeficiente de parentesco de um indivíduo com ele mesmo, sendo o coeficiente de endogamia do indivíduo = 0.5.
+
+$fAA = \frac{1}{2} (1 + FA) = \frac{1}{2} \times 1.5 = 0.75$
+
+- Coeficiente de parentesco entre pai e filho, sendo o coeficiente de endogamia do pai = 0.75.
+
+$fPA = \frac{1}{2}(fAB + fAA) = \frac{1}{2}(0.75 + 0.5) = 0.5 \times 1.25 = 0.625$
+
 
