@@ -1161,4 +1161,251 @@ $$
 Portanto, $P_{XA} = 0.7145 \times 0.0394287 = 0.02817$. Finalmente, o coeficiente de endogamia resultante será $1-P_{XA} = 0.97183$.
 
 
+## Semana 7: Variação contínua {.unnumbered}
 
+### Q1 {.unnumbered}
+
+**Calcular a média, variância e herdabilidade com base nos seguintes dados relativos a tempo de florescimento em arroz: (Vencovsky R. ). Interprete as diferenças de variância.**
+
+- **Geração F1:**
+
+81 79 79 77 78 79 79 83 79 79 78 79 79 79 79 81 79 85 79 81 79 81 81 79
+
+- **Geração F2:**
+
+124 86 91 107 83 84 89 98 77 84 78 96 106 107 79 108 101 104 82 104 79
+
+84 104 79 84 79 79 76 86 79 85 95 84 103 81 107 99 81 78 102 81 107
+
+84 95 86 76 84 84 100 100 83 89 101 81 106 83 125 88 99 81 100 86 81
+
+```{r}
+# Dados
+f1 <- c(81, 79, 79, 77, 78, 79, 79, 83, 79, 79, 78,
+        79, 79, 79, 79, 81, 79, 85, 79, 81, 79, 81,
+        81, 79)
+
+f2 <- c(124, 86, 91, 107, 83, 84, 89, 98, 77, 84, 78,
+        96, 106, 107, 79, 108, 101, 104, 82, 104, 79,
+        84, 104, 79, 84, 79, 79, 76, 86, 79, 85, 95, 
+        84, 103, 81, 107, 99, 81, 78, 102, 81, 107,
+        84, 95, 86, 76, 84, 84, 100, 100, 83, 89, 101, 
+        81, 106, 83, 125, 88, 99, 81, 100, 86, 81)
+
+# Calculando médias e variâncias
+df_summary <- data.frame(
+  Geracao = c("F1", "F2"),
+  Media = c(mean(f1), mean(f2)),
+  Variancia = c(var(f1), var(f2))
+)
+df_summary
+```
+
+Calculando herdabilidade na F2:
+
+$$
+\begin{aligned}
+VG &= VF - VM \\
+&= 140.69 - 2.93 \\
+&= 137.76
+\\
+\\
+h^2 &= \frac{VG}{VF} \\
+&= \frac{137.76}{140.69} = 0.979
+\end{aligned}
+$$
+
+A variância fenotípica é bem maior na F2, pois há variância genotípica + variância do ambiente. Na F1, não há variância genotípica, pois toda população é formada por indivíduos heterozigotos. Portanto, toda a variância na F1 é consequência do efeito do ambiente, apenas. 
+
+### Q2 {.unnumbered}
+
+**Calcular a distribuição de freqüência e construir um histograma de uma característica métrica governada por seis locos independentes, dois alelos por loco e dominância completa. Cada loco quando homozigoto recessivo reduz o valor fenotípico em dez unidades. Considere a freqüência dos alelos recessivos de 0.4 nos respectivos locos.**
+
+```{r}
+# Implementando função para calcular frequências de cada classe
+get_freq_binom <- function(n_loci = 6, q = 0.4) {
+  a <- q^2
+  freq <- round(dbinom(0:n_loci, n_loci, prob = a), 3)
+  df_freq <- data.frame(
+    class = 0:n_loci,
+    n = freq
+  )
+  return(df_freq)
+}
+
+# Obter frequências relativas de cada classe
+get_freq_binom(n_loci = 6, q = 0.4)
+
+
+# Construindo histograma
+df <- data.frame(x = rbinom(10^6, size = 6, prob = 0.4^2))
+df %>%
+  ggplot(., aes(x = x, y = ..count.. / sum(..count..) * 100)) +
+  geom_histogram(bins = 7, fill = "grey60", color = "black") +
+  theme_bw() +
+  scale_x_continuous(breaks = 0:6) +
+  labs(x = "Classes",
+       y = "Porcentagem (%)",
+       title = "Distribuição de frequência para característica métrica",
+       subtitle = "Característica governada por 6 loci de 2 alelos, com q = 0.4")
+```
+
+
+### Q3 {.unnumbered}
+
+**Idem anterior considerando: em três locos a freq. dos alelos recessivos = 0.3 e nos outros três de 0.8.**
+
+```{r}
+# Calculando frequências para cada caso
+x <- get_freq_binom(3, 0.3)$n
+names(x) <- 0:3
+y <- get_freq_binom(3, 0.8)$n
+names(y) <- 0:3
+
+# Combinando frequências
+suppressPackageStartupMessages(library(tidyverse))
+freqs <- outer(x, y, "*") %>%
+  reshape2::melt(.) %>%
+  mutate(class = Var1 + Var2) %>%
+  group_by(class) %>%
+  summarise(n = round(sum(value), 3)) 
+
+freqs
+
+# Representando graficamente
+vals <- c(
+  round(rep(0, freqs[1,2] * 10^6)),
+  round(rep(1, freqs[2,2] * 10^6)),
+  round(rep(2, freqs[3,2] * 10^6)),
+  round(rep(3, freqs[4,2] * 10^6)),
+  round(rep(4, freqs[5,2] * 10^6)),
+  round(rep(5, freqs[6,2] * 10^6)),
+  round(rep(6, 1))
+)
+df_q3 <- data.frame(x = vals)
+df_q3 %>%
+  ggplot(., aes(x = x, y = ..count.. / sum(..count..) * 100)) +
+  geom_histogram(bins = 7, fill = "grey60", color = "black") +
+  theme_bw() +
+  scale_x_continuous(breaks = 0:6) +
+  labs(x = "Classes",
+       y = "Porcentagem (%)",
+       title = "Distribuição de frequência para característica métrica",
+       subtitle = "6 loci de 2 alelos, com q = 0.3 para 3 loci e q = 0.8 para os demais")
+```
+
+
+### Q4 {.unnumbered}
+
+**Idem anterior considerando: em dois locos a freq dos recessivos = 0.1; em outros dois = 0.4 e nos outros = 0.6.**
+
+```{r}
+# Calculando frequências para cada caso
+x <- get_freq_binom(2, 0.1)$n
+n <- 0:2
+names(x) <- n
+y <- get_freq_binom(2, 0.4)$n
+names(y) <- n
+z <- get_freq_binom(2, 0.6)$n
+names(z) <- n
+
+# Combinando frequências
+suppressPackageStartupMessages(library(tidyverse))
+
+freqs <- outer(x, y, "*") %>%
+  reshape2::melt(.)
+
+flist <- list(c0 = freqs,
+              c1 = freqs, 
+              c2 = freqs)
+flist$c0$Var3 <- 0
+flist$c0$value <- flist$c0$value * z[1]
+
+flist$c1$Var3 <- 1
+flist$c1$value <- flist$c1$value * z[2]
+
+flist$c2$Var3 <- 2
+flist$c2$value <- flist$c2$value * z[3]
+
+freqdf <- Reduce(rbind, lapply(flist, function(x) {
+  y <- x[, c("Var1", "Var2", "Var3", "value")]
+  y$class <- y$Var1 + y$Var2 + y$Var3
+  return(y)
+})) %>%
+  group_by(class) %>%
+  summarise(n = round(sum(value), 3))
+freqdf
+
+# Representando graficamente
+vals <- c(
+  round(rep(0, freqdf[1,2] * 10^6)),
+  round(rep(1, freqdf[2,2] * 10^6)),
+  round(rep(2, freqdf[3,2] * 10^6)),
+  round(rep(3, freqdf[4,2] * 10^6)),
+  round(rep(4, freqdf[5,2] * 10^6)),
+  round(rep(5, 1)),
+  round(rep(6, 1))
+)
+df_q3 <- data.frame(x = vals)
+df_q3 %>%
+  ggplot(., aes(x = x, y = ..count.. / sum(..count..) * 100)) +
+  geom_histogram(bins = 7, fill = "grey60", color = "black") +
+  theme_bw() +
+  scale_x_continuous(breaks = 0:6) +
+  labs(x = "Classes",
+       y = "Porcentagem (%)",
+       title = "Distribuição de frequência para característica métrica",
+       subtitle = "2 loci com q = 0.1; 2 loci com q = 0.4; 2 loci com q = 0.6")
+```
+
+
+## Semana 8: Valores e médias {.unnumbered}
+
+
+### Q1 {.unnumbered}
+
+**Supondo que altura de planta em uma determinada espécie seja determinada por um gene e três alelos. Supondo que seja possível identificar em uma amostra os seguintes dados:**
+
+| Genótipos | Freq. (%) | Altura (cm) |
+|:--------- |:----------|:------------|
+|    AA     |    9.6    |     100     |
+|    AB     |    48.3   |     190     |
+|    BB     |    34.3   |     210     |
+|    AC     |    2.8    |     150     |
+|    BC     |    5.0    |     230     |
+
+
+- **Calcule a altura média de planta nesta população.**
+
+- **Calcule a altura média de planta em populações considerando que o alelo C esteja ausente, e as seguintes freq. gênicas do alelo A: (1) 0.1, (2) 0.5, (3) 0.8.**
+
+
+### Q2 {.unnumbered}
+
+**Supondo um loco sobredominante com respeito a um caracter métrico, com os valores genotípicos dados abaixo:**
+
+
+| A1A1 | A1A2 | A2A2 |
+|:-----|:-----|:-----|
+|  120 | 140  |  60  | 
+
+
+**Considerando a freq. gênica A1 = 0.6, estimar:**
+
+- Valores Genotípicos codificados (a, d, -a)
+
+- Média
+
+c- Grau de dominância
+
+d- Efeito médio dos genes (a1, a2)
+
+e- Efeito médio de substituição (a)
+
+f- Valor genético dos diferentes genótipos (A)
+
+g- Valor genotípico em termos de desvio (G)
+
+h- Desvio devido a dominância (D).
+
+i- Mostre graficamente os valores de a, d, -a, a, A e D.
