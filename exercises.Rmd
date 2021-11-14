@@ -1576,3 +1576,20 @@ D_a2a2
 
 - **Mostre graficamente os valores de a, d, -a, a, A e D.**
 
+Resumo:
+
+```{r}
+suppressPackageStartupMessages(library(gt))
+resumo_tabela <- data.frame(
+  Genotipo = c("A1A1", "A1A2", "A2A2"),
+  Codificados = c("+a = 30", "d = 50", "-a = -30"),
+  A = c(16, -4, -24),
+  G = c(0, 20, -60),
+  D = c(-16, 24, -36)
+)
+gt(resumo_tabela)
+```
+
+```{r echo=FALSE, fig.align='center', out.width='80%'}
+knitr::include_graphics("figs/ex9_q2.jpg")
+```

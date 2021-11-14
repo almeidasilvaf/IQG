@@ -1940,6 +1940,387 @@ D(A2A2) &amp;= -2p^2d = G(A2A2) - A(A2A2)
 <ul>
 <li><strong>Mostre graficamente os valores de a, d, -a, a, A e D.</strong></li>
 </ul>
+<p>Resumo:</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="exercícios.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(gt))</span>
+<span id="cb162-2"><a href="exercícios.html#cb162-2" aria-hidden="true" tabindex="-1"></a>resumo_tabela <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb162-3"><a href="exercícios.html#cb162-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Genotipo =</span> <span class="fu">c</span>(<span class="st">&quot;A1A1&quot;</span>, <span class="st">&quot;A1A2&quot;</span>, <span class="st">&quot;A2A2&quot;</span>),</span>
+<span id="cb162-4"><a href="exercícios.html#cb162-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Codificados =</span> <span class="fu">c</span>(<span class="st">&quot;+a = 30&quot;</span>, <span class="st">&quot;d = 50&quot;</span>, <span class="st">&quot;-a = -30&quot;</span>),</span>
+<span id="cb162-5"><a href="exercícios.html#cb162-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">A =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">24</span>),</span>
+<span id="cb162-6"><a href="exercícios.html#cb162-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">G =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="sc">-</span><span class="dv">60</span>),</span>
+<span id="cb162-7"><a href="exercícios.html#cb162-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">D =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">16</span>, <span class="dv">24</span>, <span class="sc">-</span><span class="dv">36</span>)</span>
+<span id="cb162-8"><a href="exercícios.html#cb162-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb162-9"><a href="exercícios.html#cb162-9" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(resumo_tabela)</span></code></pre></div>
+<div id="tjidcyggco" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#tjidcyggco .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#tjidcyggco .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tjidcyggco .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#tjidcyggco .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#tjidcyggco .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tjidcyggco .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tjidcyggco .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#tjidcyggco .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#tjidcyggco .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#tjidcyggco .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#tjidcyggco .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#tjidcyggco .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#tjidcyggco .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#tjidcyggco .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#tjidcyggco .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#tjidcyggco .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#tjidcyggco .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#tjidcyggco .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tjidcyggco .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#tjidcyggco .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tjidcyggco .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#tjidcyggco .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#tjidcyggco .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tjidcyggco .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tjidcyggco .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#tjidcyggco .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tjidcyggco .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#tjidcyggco .gt_left {
+  text-align: left;
+}
+
+#tjidcyggco .gt_center {
+  text-align: center;
+}
+
+#tjidcyggco .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#tjidcyggco .gt_font_normal {
+  font-weight: normal;
+}
+
+#tjidcyggco .gt_font_bold {
+  font-weight: bold;
+}
+
+#tjidcyggco .gt_font_italic {
+  font-style: italic;
+}
+
+#tjidcyggco .gt_super {
+  font-size: 65%;
+}
+
+#tjidcyggco .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 65%;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Genotipo</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Codificados</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">A</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">G</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">D</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">A1A1</td>
+<td class="gt_row gt_left">+a = 30</td>
+<td class="gt_row gt_right">16</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">-16</td></tr>
+    <tr><td class="gt_row gt_left">A1A2</td>
+<td class="gt_row gt_left">d = 50</td>
+<td class="gt_row gt_right">-4</td>
+<td class="gt_row gt_right">20</td>
+<td class="gt_row gt_right">24</td></tr>
+    <tr><td class="gt_row gt_left">A2A2</td>
+<td class="gt_row gt_left">-a = -30</td>
+<td class="gt_row gt_right">-24</td>
+<td class="gt_row gt_right">-60</td>
+<td class="gt_row gt_right">-36</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<p><img src="figs/ex9_q2.jpg" width="80%" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

@@ -353,49 +353,49 @@ n &amp;= \frac{\log 0.05}{\log \frac{5}{6}} \\
 <p><strong>(15%) Mostre graficamente a aproximação ao equilíbrio sob acasalamento ao acaso para o caso de um gene ligado ao sexo. Considere as seguintes frequências iniciais: qf = 0,2 e qm = 0,8. Qual a freqüência gênica (q) no equilíbrio?</strong></p>
 <p>Implementando uma função para calcular frequências de genes ligados ao
 sexo em machos e fêmeas:</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="provas.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">99999</span>)</span>
-<span id="cb194-2"><a href="provas.html#cb194-2" aria-hidden="true" tabindex="-1"></a>calc_freq_xlinked <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">pm0 =</span> <span class="cn">NULL</span>, <span class="at">pf0 =</span> <span class="cn">NULL</span>, </span>
-<span id="cb194-3"><a href="provas.html#cb194-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">generations =</span> <span class="dv">10</span>) {</span>
-<span id="cb194-4"><a href="provas.html#cb194-4" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb194-5"><a href="provas.html#cb194-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">Generation =</span> <span class="fu">seq_len</span>(generations),</span>
-<span id="cb194-6"><a href="provas.html#cb194-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">pf =</span> <span class="fu">c</span>(pf0, <span class="fu">rep</span>(<span class="cn">NA</span>, generations <span class="sc">-</span> <span class="dv">1</span>)),</span>
-<span id="cb194-7"><a href="provas.html#cb194-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">pm =</span> <span class="fu">c</span>(pm0, <span class="fu">rep</span>(<span class="cn">NA</span>, generations <span class="sc">-</span> <span class="dv">1</span>))</span>
-<span id="cb194-8"><a href="provas.html#cb194-8" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb194-9"><a href="provas.html#cb194-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>generations) {</span>
-<span id="cb194-10"><a href="provas.html#cb194-10" aria-hidden="true" tabindex="-1"></a>        df[t, <span class="st">&quot;pf&quot;</span>] <span class="ot">&lt;-</span> (df[t<span class="dv">-1</span>, <span class="st">&quot;pm&quot;</span>] <span class="sc">+</span> df[t<span class="dv">-1</span>, <span class="st">&quot;pf&quot;</span>]) <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb194-11"><a href="provas.html#cb194-11" aria-hidden="true" tabindex="-1"></a>        df[t, <span class="st">&quot;pm&quot;</span>] <span class="ot">&lt;-</span> df[t<span class="dv">-1</span>, <span class="st">&quot;pf&quot;</span>]</span>
-<span id="cb194-12"><a href="provas.html#cb194-12" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb194-13"><a href="provas.html#cb194-13" aria-hidden="true" tabindex="-1"></a>    df<span class="sc">$</span>difference <span class="ot">&lt;-</span> df<span class="sc">$</span>pf <span class="sc">-</span> df<span class="sc">$</span>pm</span>
-<span id="cb194-14"><a href="provas.html#cb194-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df)</span>
-<span id="cb194-15"><a href="provas.html#cb194-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="provas.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">99999</span>)</span>
+<span id="cb195-2"><a href="provas.html#cb195-2" aria-hidden="true" tabindex="-1"></a>calc_freq_xlinked <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">pm0 =</span> <span class="cn">NULL</span>, <span class="at">pf0 =</span> <span class="cn">NULL</span>, </span>
+<span id="cb195-3"><a href="provas.html#cb195-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">generations =</span> <span class="dv">10</span>) {</span>
+<span id="cb195-4"><a href="provas.html#cb195-4" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb195-5"><a href="provas.html#cb195-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">Generation =</span> <span class="fu">seq_len</span>(generations),</span>
+<span id="cb195-6"><a href="provas.html#cb195-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">pf =</span> <span class="fu">c</span>(pf0, <span class="fu">rep</span>(<span class="cn">NA</span>, generations <span class="sc">-</span> <span class="dv">1</span>)),</span>
+<span id="cb195-7"><a href="provas.html#cb195-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">pm =</span> <span class="fu">c</span>(pm0, <span class="fu">rep</span>(<span class="cn">NA</span>, generations <span class="sc">-</span> <span class="dv">1</span>))</span>
+<span id="cb195-8"><a href="provas.html#cb195-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb195-9"><a href="provas.html#cb195-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>generations) {</span>
+<span id="cb195-10"><a href="provas.html#cb195-10" aria-hidden="true" tabindex="-1"></a>        df[t, <span class="st">&quot;pf&quot;</span>] <span class="ot">&lt;-</span> (df[t<span class="dv">-1</span>, <span class="st">&quot;pm&quot;</span>] <span class="sc">+</span> df[t<span class="dv">-1</span>, <span class="st">&quot;pf&quot;</span>]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb195-11"><a href="provas.html#cb195-11" aria-hidden="true" tabindex="-1"></a>        df[t, <span class="st">&quot;pm&quot;</span>] <span class="ot">&lt;-</span> df[t<span class="dv">-1</span>, <span class="st">&quot;pf&quot;</span>]</span>
+<span id="cb195-12"><a href="provas.html#cb195-12" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb195-13"><a href="provas.html#cb195-13" aria-hidden="true" tabindex="-1"></a>    df<span class="sc">$</span>difference <span class="ot">&lt;-</span> df<span class="sc">$</span>pf <span class="sc">-</span> df<span class="sc">$</span>pm</span>
+<span id="cb195-14"><a href="provas.html#cb195-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df)</span>
+<span id="cb195-15"><a href="provas.html#cb195-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Aplicando função com dados do enunciado e demonstrando graficamente, simulando 20 gerações:</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="provas.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
-<span id="cb195-2"><a href="provas.html#cb195-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb195-3"><a href="provas.html#cb195-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando 20 gerações</span></span>
-<span id="cb195-4"><a href="provas.html#cb195-4" aria-hidden="true" tabindex="-1"></a>freq20 <span class="ot">&lt;-</span> <span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.8</span>, <span class="at">pf0 =</span> <span class="fl">0.2</span>, <span class="at">generations =</span> <span class="dv">20</span>)</span>
-<span id="cb195-5"><a href="provas.html#cb195-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb195-6"><a href="provas.html#cb195-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizando simulação</span></span>
-<span id="cb195-7"><a href="provas.html#cb195-7" aria-hidden="true" tabindex="-1"></a>freq20[, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>] <span class="sc">%&gt;%</span></span>
-<span id="cb195-8"><a href="provas.html#cb195-8" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(</span>
-<span id="cb195-9"><a href="provas.html#cb195-9" aria-hidden="true" tabindex="-1"></a>        <span class="sc">!</span>Generation, <span class="at">names_to =</span> <span class="st">&quot;sex&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;freq&quot;</span></span>
-<span id="cb195-10"><a href="provas.html#cb195-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb195-11"><a href="provas.html#cb195-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">str_replace_all</span>(sex, <span class="fu">c</span>(<span class="st">&quot;pf&quot;</span> <span class="ot">=</span> <span class="st">&quot;Fêmea&quot;</span>,</span>
-<span id="cb195-12"><a href="provas.html#cb195-12" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;pm&quot;</span> <span class="ot">=</span> <span class="st">&quot;Macho&quot;</span>))) <span class="sc">%&gt;%</span></span>
-<span id="cb195-13"><a href="provas.html#cb195-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x =</span> Generation, <span class="at">y =</span> freq)) <span class="sc">+</span></span>
-<span id="cb195-14"><a href="provas.html#cb195-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb195-15"><a href="provas.html#cb195-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group=</span>sex, <span class="at">color=</span>sex)) <span class="sc">+</span></span>
-<span id="cb195-16"><a href="provas.html#cb195-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey40&quot;</span>, <span class="st">&quot;goldenrod&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb195-17"><a href="provas.html#cb195-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb195-18"><a href="provas.html#cb195-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb195-19"><a href="provas.html#cb195-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb195-20"><a href="provas.html#cb195-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">&quot;Sexo&quot;</span>,</span>
-<span id="cb195-21"><a href="provas.html#cb195-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;Frequência do gene A ao longo de 20 gerações&quot;</span>,</span>
-<span id="cb195-22"><a href="provas.html#cb195-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">&quot;O gene A é ligado ao sexo&quot;</span>,</span>
-<span id="cb195-23"><a href="provas.html#cb195-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">&quot;Geração&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequência&quot;</span></span>
-<span id="cb195-24"><a href="provas.html#cb195-24" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
-<p><img src="IQG_solutions_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="provas.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb196-2"><a href="provas.html#cb196-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-3"><a href="provas.html#cb196-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando 20 gerações</span></span>
+<span id="cb196-4"><a href="provas.html#cb196-4" aria-hidden="true" tabindex="-1"></a>freq20 <span class="ot">&lt;-</span> <span class="fu">calc_freq_xlinked</span>(<span class="at">pm0 =</span> <span class="fl">0.8</span>, <span class="at">pf0 =</span> <span class="fl">0.2</span>, <span class="at">generations =</span> <span class="dv">20</span>)</span>
+<span id="cb196-5"><a href="provas.html#cb196-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-6"><a href="provas.html#cb196-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizando simulação</span></span>
+<span id="cb196-7"><a href="provas.html#cb196-7" aria-hidden="true" tabindex="-1"></a>freq20[, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>] <span class="sc">%&gt;%</span></span>
+<span id="cb196-8"><a href="provas.html#cb196-8" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(</span>
+<span id="cb196-9"><a href="provas.html#cb196-9" aria-hidden="true" tabindex="-1"></a>        <span class="sc">!</span>Generation, <span class="at">names_to =</span> <span class="st">&quot;sex&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;freq&quot;</span></span>
+<span id="cb196-10"><a href="provas.html#cb196-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb196-11"><a href="provas.html#cb196-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">str_replace_all</span>(sex, <span class="fu">c</span>(<span class="st">&quot;pf&quot;</span> <span class="ot">=</span> <span class="st">&quot;Fêmea&quot;</span>,</span>
+<span id="cb196-12"><a href="provas.html#cb196-12" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;pm&quot;</span> <span class="ot">=</span> <span class="st">&quot;Macho&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb196-13"><a href="provas.html#cb196-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x =</span> Generation, <span class="at">y =</span> freq)) <span class="sc">+</span></span>
+<span id="cb196-14"><a href="provas.html#cb196-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb196-15"><a href="provas.html#cb196-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group=</span>sex, <span class="at">color=</span>sex)) <span class="sc">+</span></span>
+<span id="cb196-16"><a href="provas.html#cb196-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey40&quot;</span>, <span class="st">&quot;goldenrod&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb196-17"><a href="provas.html#cb196-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb196-18"><a href="provas.html#cb196-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb196-19"><a href="provas.html#cb196-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb196-20"><a href="provas.html#cb196-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">&quot;Sexo&quot;</span>,</span>
+<span id="cb196-21"><a href="provas.html#cb196-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;Frequência do gene A ao longo de 20 gerações&quot;</span>,</span>
+<span id="cb196-22"><a href="provas.html#cb196-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">&quot;O gene A é ligado ao sexo&quot;</span>,</span>
+<span id="cb196-23"><a href="provas.html#cb196-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">&quot;Geração&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequência&quot;</span></span>
+<span id="cb196-24"><a href="provas.html#cb196-24" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<p><img src="IQG_solutions_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 <p>Verificando a frequência de q no equilíbrio:</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="provas.html#cb196-1" aria-hidden="true" tabindex="-1"></a>freq20</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="provas.html#cb197-1" aria-hidden="true" tabindex="-1"></a>freq20</span></code></pre></div>
 <pre><code>##    Generation        pf        pm      difference
 ## 1           1 0.2000000 0.8000000 -0.600000000000
 ## 2           2 0.5000000 0.2000000  0.300000000000
@@ -472,29 +472,29 @@ u &amp;= \hat{u} + D_t
 \end{aligned}
 \]</span></p>
 <p>Implementando função para calcular o desequilíbrio e a frequência gamética em t gerações:</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="provas.html#cb198-1" aria-hidden="true" tabindex="-1"></a>calc_D_freq <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">D0 =</span> <span class="fl">0.25</span>, <span class="at">feq =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="fl">0.25</span>),</span>
-<span id="cb198-2"><a href="provas.html#cb198-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">c =</span> <span class="fl">0.5</span>, <span class="at">t =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)) {</span>
-<span id="cb198-3"><a href="provas.html#cb198-3" aria-hidden="true" tabindex="-1"></a>    dt <span class="ot">&lt;-</span> D0 <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span>c)<span class="sc">^</span>t</span>
-<span id="cb198-4"><a href="provas.html#cb198-4" aria-hidden="true" tabindex="-1"></a>    rt <span class="ot">&lt;-</span> feq[<span class="dv">1</span>] <span class="sc">+</span> dt</span>
-<span id="cb198-5"><a href="provas.html#cb198-5" aria-hidden="true" tabindex="-1"></a>    st <span class="ot">&lt;-</span> feq[<span class="dv">2</span>] <span class="sc">-</span> dt</span>
-<span id="cb198-6"><a href="provas.html#cb198-6" aria-hidden="true" tabindex="-1"></a>    tt <span class="ot">&lt;-</span> feq[<span class="dv">3</span>] <span class="sc">-</span> dt</span>
-<span id="cb198-7"><a href="provas.html#cb198-7" aria-hidden="true" tabindex="-1"></a>    ut <span class="ot">&lt;-</span> feq[<span class="dv">4</span>] <span class="sc">+</span> dt</span>
-<span id="cb198-8"><a href="provas.html#cb198-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb198-9"><a href="provas.html#cb198-9" aria-hidden="true" tabindex="-1"></a>    df_result <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">D=</span><span class="cn">NA</span>, <span class="at">r=</span><span class="cn">NA</span>, <span class="at">s=</span><span class="cn">NA</span>, <span class="at">t=</span><span class="cn">NA</span>, <span class="at">u=</span><span class="cn">NA</span>, <span class="at">Generation=</span><span class="cn">NA</span>)</span>
-<span id="cb198-10"><a href="provas.html#cb198-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(t)) {</span>
-<span id="cb198-11"><a href="provas.html#cb198-11" aria-hidden="true" tabindex="-1"></a>        df_result[i, <span class="st">&quot;r&quot;</span>] <span class="ot">&lt;-</span> rt[i]</span>
-<span id="cb198-12"><a href="provas.html#cb198-12" aria-hidden="true" tabindex="-1"></a>        df_result[i, <span class="st">&quot;s&quot;</span>] <span class="ot">&lt;-</span> st[i]</span>
-<span id="cb198-13"><a href="provas.html#cb198-13" aria-hidden="true" tabindex="-1"></a>        df_result[i, <span class="st">&quot;t&quot;</span>] <span class="ot">&lt;-</span> tt[i]</span>
-<span id="cb198-14"><a href="provas.html#cb198-14" aria-hidden="true" tabindex="-1"></a>        df_result[i, <span class="st">&quot;u&quot;</span>] <span class="ot">&lt;-</span> ut[i]</span>
-<span id="cb198-15"><a href="provas.html#cb198-15" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb198-16"><a href="provas.html#cb198-16" aria-hidden="true" tabindex="-1"></a>    df_result<span class="sc">$</span>D <span class="ot">&lt;-</span> dt</span>
-<span id="cb198-17"><a href="provas.html#cb198-17" aria-hidden="true" tabindex="-1"></a>    df_result<span class="sc">$</span>Generation <span class="ot">&lt;-</span> t</span>
-<span id="cb198-18"><a href="provas.html#cb198-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df_result)</span>
-<span id="cb198-19"><a href="provas.html#cb198-19" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="provas.html#cb199-1" aria-hidden="true" tabindex="-1"></a>calc_D_freq <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">D0 =</span> <span class="fl">0.25</span>, <span class="at">feq =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="fl">0.25</span>),</span>
+<span id="cb199-2"><a href="provas.html#cb199-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">c =</span> <span class="fl">0.5</span>, <span class="at">t =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)) {</span>
+<span id="cb199-3"><a href="provas.html#cb199-3" aria-hidden="true" tabindex="-1"></a>    dt <span class="ot">&lt;-</span> D0 <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span>c)<span class="sc">^</span>t</span>
+<span id="cb199-4"><a href="provas.html#cb199-4" aria-hidden="true" tabindex="-1"></a>    rt <span class="ot">&lt;-</span> feq[<span class="dv">1</span>] <span class="sc">+</span> dt</span>
+<span id="cb199-5"><a href="provas.html#cb199-5" aria-hidden="true" tabindex="-1"></a>    st <span class="ot">&lt;-</span> feq[<span class="dv">2</span>] <span class="sc">-</span> dt</span>
+<span id="cb199-6"><a href="provas.html#cb199-6" aria-hidden="true" tabindex="-1"></a>    tt <span class="ot">&lt;-</span> feq[<span class="dv">3</span>] <span class="sc">-</span> dt</span>
+<span id="cb199-7"><a href="provas.html#cb199-7" aria-hidden="true" tabindex="-1"></a>    ut <span class="ot">&lt;-</span> feq[<span class="dv">4</span>] <span class="sc">+</span> dt</span>
+<span id="cb199-8"><a href="provas.html#cb199-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb199-9"><a href="provas.html#cb199-9" aria-hidden="true" tabindex="-1"></a>    df_result <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">D=</span><span class="cn">NA</span>, <span class="at">r=</span><span class="cn">NA</span>, <span class="at">s=</span><span class="cn">NA</span>, <span class="at">t=</span><span class="cn">NA</span>, <span class="at">u=</span><span class="cn">NA</span>, <span class="at">Generation=</span><span class="cn">NA</span>)</span>
+<span id="cb199-10"><a href="provas.html#cb199-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(t)) {</span>
+<span id="cb199-11"><a href="provas.html#cb199-11" aria-hidden="true" tabindex="-1"></a>        df_result[i, <span class="st">&quot;r&quot;</span>] <span class="ot">&lt;-</span> rt[i]</span>
+<span id="cb199-12"><a href="provas.html#cb199-12" aria-hidden="true" tabindex="-1"></a>        df_result[i, <span class="st">&quot;s&quot;</span>] <span class="ot">&lt;-</span> st[i]</span>
+<span id="cb199-13"><a href="provas.html#cb199-13" aria-hidden="true" tabindex="-1"></a>        df_result[i, <span class="st">&quot;t&quot;</span>] <span class="ot">&lt;-</span> tt[i]</span>
+<span id="cb199-14"><a href="provas.html#cb199-14" aria-hidden="true" tabindex="-1"></a>        df_result[i, <span class="st">&quot;u&quot;</span>] <span class="ot">&lt;-</span> ut[i]</span>
+<span id="cb199-15"><a href="provas.html#cb199-15" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb199-16"><a href="provas.html#cb199-16" aria-hidden="true" tabindex="-1"></a>    df_result<span class="sc">$</span>D <span class="ot">&lt;-</span> dt</span>
+<span id="cb199-17"><a href="provas.html#cb199-17" aria-hidden="true" tabindex="-1"></a>    df_result<span class="sc">$</span>Generation <span class="ot">&lt;-</span> t</span>
+<span id="cb199-18"><a href="provas.html#cb199-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df_result)</span>
+<span id="cb199-19"><a href="provas.html#cb199-19" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Agora, podemos simular 20 gerações de cruzamento ao acaso e verificar as frequências gaméticas no equilíbrio para c = 0.5 e c = 0.4.</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="provas.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequencias para c = 0.5 (locos independentes)</span></span>
-<span id="cb199-2"><a href="provas.html#cb199-2" aria-hidden="true" tabindex="-1"></a>independentes <span class="ot">&lt;-</span> <span class="fu">calc_D_freq</span>(<span class="at">c =</span> <span class="fl">0.5</span>, <span class="at">t=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span>
-<span id="cb199-3"><a href="provas.html#cb199-3" aria-hidden="true" tabindex="-1"></a>independentes</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="provas.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequencias para c = 0.5 (locos independentes)</span></span>
+<span id="cb200-2"><a href="provas.html#cb200-2" aria-hidden="true" tabindex="-1"></a>independentes <span class="ot">&lt;-</span> <span class="fu">calc_D_freq</span>(<span class="at">c =</span> <span class="fl">0.5</span>, <span class="at">t=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span>
+<span id="cb200-3"><a href="provas.html#cb200-3" aria-hidden="true" tabindex="-1"></a>independentes</span></code></pre></div>
 <pre><code>##                  D         r         s         t         u Generation
 ## 1  0.1250000000000 0.3750000 0.1250000 0.1250000 0.3750000          1
 ## 2  0.0625000000000 0.3125000 0.1875000 0.1875000 0.3125000          2
@@ -516,9 +516,9 @@ u &amp;= \hat{u} + D_t
 ## 18 0.0000009536743 0.2500010 0.2499990 0.2499990 0.2500010         18
 ## 19 0.0000004768372 0.2500005 0.2499995 0.2499995 0.2500005         19
 ## 20 0.0000002384186 0.2500002 0.2499998 0.2499998 0.2500002         20</code></pre>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="provas.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequencias para c = 0.4 (locos ligados com taxa de recombinação de 40%)</span></span>
-<span id="cb201-2"><a href="provas.html#cb201-2" aria-hidden="true" tabindex="-1"></a>ligados <span class="ot">&lt;-</span> <span class="fu">calc_D_freq</span>(<span class="at">c =</span> <span class="fl">0.4</span>, <span class="at">t=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span>
-<span id="cb201-3"><a href="provas.html#cb201-3" aria-hidden="true" tabindex="-1"></a>ligados</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="provas.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequencias para c = 0.4 (locos ligados com taxa de recombinação de 40%)</span></span>
+<span id="cb202-2"><a href="provas.html#cb202-2" aria-hidden="true" tabindex="-1"></a>ligados <span class="ot">&lt;-</span> <span class="fu">calc_D_freq</span>(<span class="at">c =</span> <span class="fl">0.4</span>, <span class="at">t=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span>
+<span id="cb202-3"><a href="provas.html#cb202-3" aria-hidden="true" tabindex="-1"></a>ligados</span></code></pre></div>
 <pre><code>##                 D         r         s         t         u Generation
 ## 1  0.150000000000 0.4000000 0.1000000 0.1000000 0.4000000          1
 ## 2  0.090000000000 0.3400000 0.1600000 0.1600000 0.3400000          2
@@ -549,21 +549,21 @@ u &amp;= \hat{u} + D_t
 <li>ab e AB (ur)</li>
 </ul>
 <p>Usando as frequências obtidas na <strong>letra A)</strong>, temos:</p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="provas.html#cb203-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> independentes</span>
-<span id="cb203-2"><a href="provas.html#cb203-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb203-3"><a href="provas.html#cb203-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Para c = 0.5</span></span>
-<span id="cb203-4"><a href="provas.html#cb203-4" aria-hidden="true" tabindex="-1"></a>(i<span class="sc">$</span>r[<span class="dv">20</span>] <span class="sc">*</span> i<span class="sc">$</span>u[<span class="dv">20</span>]) <span class="sc">+</span> </span>
-<span id="cb203-5"><a href="provas.html#cb203-5" aria-hidden="true" tabindex="-1"></a>    (i<span class="sc">$</span>s[<span class="dv">20</span>] <span class="sc">*</span> i<span class="sc">$</span>t[<span class="dv">20</span>]) <span class="sc">+</span> </span>
-<span id="cb203-6"><a href="provas.html#cb203-6" aria-hidden="true" tabindex="-1"></a>    (i<span class="sc">$</span>t[<span class="dv">20</span>] <span class="sc">*</span> i<span class="sc">$</span>s[<span class="dv">20</span>]) <span class="sc">+</span> </span>
-<span id="cb203-7"><a href="provas.html#cb203-7" aria-hidden="true" tabindex="-1"></a>    (i<span class="sc">$</span>u[<span class="dv">20</span>] <span class="sc">*</span> i<span class="sc">$</span>r[<span class="dv">20</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="provas.html#cb204-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> independentes</span>
+<span id="cb204-2"><a href="provas.html#cb204-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-3"><a href="provas.html#cb204-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Para c = 0.5</span></span>
+<span id="cb204-4"><a href="provas.html#cb204-4" aria-hidden="true" tabindex="-1"></a>(i<span class="sc">$</span>r[<span class="dv">20</span>] <span class="sc">*</span> i<span class="sc">$</span>u[<span class="dv">20</span>]) <span class="sc">+</span> </span>
+<span id="cb204-5"><a href="provas.html#cb204-5" aria-hidden="true" tabindex="-1"></a>    (i<span class="sc">$</span>s[<span class="dv">20</span>] <span class="sc">*</span> i<span class="sc">$</span>t[<span class="dv">20</span>]) <span class="sc">+</span> </span>
+<span id="cb204-6"><a href="provas.html#cb204-6" aria-hidden="true" tabindex="-1"></a>    (i<span class="sc">$</span>t[<span class="dv">20</span>] <span class="sc">*</span> i<span class="sc">$</span>s[<span class="dv">20</span>]) <span class="sc">+</span> </span>
+<span id="cb204-7"><a href="provas.html#cb204-7" aria-hidden="true" tabindex="-1"></a>    (i<span class="sc">$</span>u[<span class="dv">20</span>] <span class="sc">*</span> i<span class="sc">$</span>r[<span class="dv">20</span>])</span></code></pre></div>
 <pre><code>## [1] 0.25</code></pre>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="provas.html#cb205-1" aria-hidden="true" tabindex="-1"></a>l <span class="ot">&lt;-</span> ligados</span>
-<span id="cb205-2"><a href="provas.html#cb205-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb205-3"><a href="provas.html#cb205-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Para c = 0.4 </span></span>
-<span id="cb205-4"><a href="provas.html#cb205-4" aria-hidden="true" tabindex="-1"></a>(l<span class="sc">$</span>r[<span class="dv">20</span>] <span class="sc">*</span> l<span class="sc">$</span>u[<span class="dv">20</span>]) <span class="sc">+</span> </span>
-<span id="cb205-5"><a href="provas.html#cb205-5" aria-hidden="true" tabindex="-1"></a>    (l<span class="sc">$</span>s[<span class="dv">20</span>] <span class="sc">*</span> l<span class="sc">$</span>t[<span class="dv">20</span>]) <span class="sc">+</span> </span>
-<span id="cb205-6"><a href="provas.html#cb205-6" aria-hidden="true" tabindex="-1"></a>    (l<span class="sc">$</span>t[<span class="dv">20</span>] <span class="sc">*</span> l<span class="sc">$</span>s[<span class="dv">20</span>]) <span class="sc">+</span> </span>
-<span id="cb205-7"><a href="provas.html#cb205-7" aria-hidden="true" tabindex="-1"></a>    (l<span class="sc">$</span>u[<span class="dv">20</span>] <span class="sc">*</span> l<span class="sc">$</span>r[<span class="dv">20</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="provas.html#cb206-1" aria-hidden="true" tabindex="-1"></a>l <span class="ot">&lt;-</span> ligados</span>
+<span id="cb206-2"><a href="provas.html#cb206-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb206-3"><a href="provas.html#cb206-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Para c = 0.4 </span></span>
+<span id="cb206-4"><a href="provas.html#cb206-4" aria-hidden="true" tabindex="-1"></a>(l<span class="sc">$</span>r[<span class="dv">20</span>] <span class="sc">*</span> l<span class="sc">$</span>u[<span class="dv">20</span>]) <span class="sc">+</span> </span>
+<span id="cb206-5"><a href="provas.html#cb206-5" aria-hidden="true" tabindex="-1"></a>    (l<span class="sc">$</span>s[<span class="dv">20</span>] <span class="sc">*</span> l<span class="sc">$</span>t[<span class="dv">20</span>]) <span class="sc">+</span> </span>
+<span id="cb206-6"><a href="provas.html#cb206-6" aria-hidden="true" tabindex="-1"></a>    (l<span class="sc">$</span>t[<span class="dv">20</span>] <span class="sc">*</span> l<span class="sc">$</span>s[<span class="dv">20</span>]) <span class="sc">+</span> </span>
+<span id="cb206-7"><a href="provas.html#cb206-7" aria-hidden="true" tabindex="-1"></a>    (l<span class="sc">$</span>u[<span class="dv">20</span>] <span class="sc">*</span> l<span class="sc">$</span>r[<span class="dv">20</span>])</span></code></pre></div>
 <pre><code>## [1] 0.25</code></pre>
 </div>
 <div id="q4-7" class="section level3 unnumbered">
@@ -579,24 +579,24 @@ u &amp;= \hat{u} + D_t
 <li>aaa</li>
 </ul>
 <p>Calculando frequências:</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="provas.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequência de AAA</span></span>
-<span id="cb207-2"><a href="provas.html#cb207-2" aria-hidden="true" tabindex="-1"></a>AAA <span class="ot">&lt;-</span> <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">3</span>) <span class="sc">/</span> <span class="fu">choose</span>(<span class="dv">12</span>, <span class="dv">3</span>)</span>
-<span id="cb207-3"><a href="provas.html#cb207-3" aria-hidden="true" tabindex="-1"></a>AAA</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="provas.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequência de AAA</span></span>
+<span id="cb208-2"><a href="provas.html#cb208-2" aria-hidden="true" tabindex="-1"></a>AAA <span class="ot">&lt;-</span> <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">3</span>) <span class="sc">/</span> <span class="fu">choose</span>(<span class="dv">12</span>, <span class="dv">3</span>)</span>
+<span id="cb208-3"><a href="provas.html#cb208-3" aria-hidden="true" tabindex="-1"></a>AAA</span></code></pre></div>
 <pre><code>## [1] 0.09090909</code></pre>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="provas.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequência de AAa</span></span>
-<span id="cb209-2"><a href="provas.html#cb209-2" aria-hidden="true" tabindex="-1"></a>AAa <span class="ot">&lt;-</span> ( <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">2</span>) <span class="sc">*</span> <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">1</span>) ) <span class="sc">/</span> <span class="fu">choose</span>(<span class="dv">12</span>, <span class="dv">3</span>)</span>
-<span id="cb209-3"><a href="provas.html#cb209-3" aria-hidden="true" tabindex="-1"></a>AAa</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="provas.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequência de AAa</span></span>
+<span id="cb210-2"><a href="provas.html#cb210-2" aria-hidden="true" tabindex="-1"></a>AAa <span class="ot">&lt;-</span> ( <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">2</span>) <span class="sc">*</span> <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">1</span>) ) <span class="sc">/</span> <span class="fu">choose</span>(<span class="dv">12</span>, <span class="dv">3</span>)</span>
+<span id="cb210-3"><a href="provas.html#cb210-3" aria-hidden="true" tabindex="-1"></a>AAa</span></code></pre></div>
 <pre><code>## [1] 0.4090909</code></pre>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="provas.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequência de Aaa</span></span>
-<span id="cb211-2"><a href="provas.html#cb211-2" aria-hidden="true" tabindex="-1"></a>Aaa <span class="ot">&lt;-</span> ( <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">choose</span>(<span class="dv">6</span>,<span class="dv">2</span>) ) <span class="sc">/</span> <span class="fu">choose</span>(<span class="dv">12</span>, <span class="dv">3</span>)</span>
-<span id="cb211-3"><a href="provas.html#cb211-3" aria-hidden="true" tabindex="-1"></a>Aaa</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="provas.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequência de Aaa</span></span>
+<span id="cb212-2"><a href="provas.html#cb212-2" aria-hidden="true" tabindex="-1"></a>Aaa <span class="ot">&lt;-</span> ( <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">choose</span>(<span class="dv">6</span>,<span class="dv">2</span>) ) <span class="sc">/</span> <span class="fu">choose</span>(<span class="dv">12</span>, <span class="dv">3</span>)</span>
+<span id="cb212-3"><a href="provas.html#cb212-3" aria-hidden="true" tabindex="-1"></a>Aaa</span></code></pre></div>
 <pre><code>## [1] 0.4090909</code></pre>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="provas.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequência de aaa</span></span>
-<span id="cb213-2"><a href="provas.html#cb213-2" aria-hidden="true" tabindex="-1"></a>aaa <span class="ot">&lt;-</span> <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">3</span>) <span class="sc">/</span> <span class="fu">choose</span>(<span class="dv">12</span>, <span class="dv">3</span>)</span>
-<span id="cb213-3"><a href="provas.html#cb213-3" aria-hidden="true" tabindex="-1"></a>aaa</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="provas.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequência de aaa</span></span>
+<span id="cb214-2"><a href="provas.html#cb214-2" aria-hidden="true" tabindex="-1"></a>aaa <span class="ot">&lt;-</span> <span class="fu">choose</span>(<span class="dv">6</span>, <span class="dv">3</span>) <span class="sc">/</span> <span class="fu">choose</span>(<span class="dv">12</span>, <span class="dv">3</span>)</span>
+<span id="cb214-3"><a href="provas.html#cb214-3" aria-hidden="true" tabindex="-1"></a>aaa</span></code></pre></div>
 <pre><code>## [1] 0.09090909</code></pre>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="provas.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Conferindo se as frequências somam a 1</span></span>
-<span id="cb215-2"><a href="provas.html#cb215-2" aria-hidden="true" tabindex="-1"></a>AAA <span class="sc">+</span> AAa <span class="sc">+</span> Aaa <span class="sc">+</span> aaa</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="provas.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Conferindo se as frequências somam a 1</span></span>
+<span id="cb216-2"><a href="provas.html#cb216-2" aria-hidden="true" tabindex="-1"></a>AAA <span class="sc">+</span> AAa <span class="sc">+</span> Aaa <span class="sc">+</span> aaa</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p><strong>b) Quais as frequências fenotípicas?</strong></p>
 <p>Como indivíduos de porte baixo são representados pelo genótipo aaaaaa, a sua frequência será <span class="math inline">\(aaa^2 = 0.008264463\)</span> ou 0.8264463%. Sendo assim, temos as seguintes frequências fenotípicas:</p>
@@ -684,30 +684,30 @@ u &amp;= \hat{u} + D_t
 </ol>
 <p>100% A1A2, logo <span class="math inline">\(p = q = 0.5\)</span>.</p>
 <p>Para semi-esterilidade, <span class="math inline">\(\Delta{q} = -0.5q\)</span>. Ou seja, a frequência do alelo letal reduz à metade após cada geração de cruzamento ao acaso. Logo:</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="provas.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Implementando função para simular frequências gênicas e genotípicas para semi-esterilidade ao longo do tempo</span></span>
-<span id="cb217-2"><a href="provas.html#cb217-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">9999999</span>)</span>
-<span id="cb217-3"><a href="provas.html#cb217-3" aria-hidden="true" tabindex="-1"></a>freq_semiesteril <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">p =</span> <span class="cn">NULL</span>, <span class="at">q =</span> <span class="cn">NULL</span>, <span class="at">t =</span> <span class="dv">10</span>) {</span>
-<span id="cb217-4"><a href="provas.html#cb217-4" aria-hidden="true" tabindex="-1"></a>    half <span class="ot">&lt;-</span> <span class="cf">function</span>(x, t) {</span>
-<span id="cb217-5"><a href="provas.html#cb217-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(x <span class="sc">/</span> <span class="dv">2</span><span class="sc">^</span>(<span class="dv">1</span><span class="sc">:</span>t))</span>
-<span id="cb217-6"><a href="provas.html#cb217-6" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb217-7"><a href="provas.html#cb217-7" aria-hidden="true" tabindex="-1"></a>    q <span class="ot">&lt;-</span> <span class="fu">half</span>(q, t)</span>
-<span id="cb217-8"><a href="provas.html#cb217-8" aria-hidden="true" tabindex="-1"></a>    tabela <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">p =</span> <span class="cn">NA</span>, <span class="at">q =</span> q, <span class="at">geracao =</span> <span class="fu">seq_len</span>(t))</span>
-<span id="cb217-9"><a href="provas.html#cb217-9" aria-hidden="true" tabindex="-1"></a>    tabela<span class="sc">$</span>p <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> tabela<span class="sc">$</span>q</span>
-<span id="cb217-10"><a href="provas.html#cb217-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb217-11"><a href="provas.html#cb217-11" aria-hidden="true" tabindex="-1"></a>    tabela<span class="sc">$</span>P <span class="ot">&lt;-</span> tabela<span class="sc">$</span>p<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb217-12"><a href="provas.html#cb217-12" aria-hidden="true" tabindex="-1"></a>    tabela<span class="sc">$</span>Q <span class="ot">&lt;-</span> tabela<span class="sc">$</span>q<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb217-13"><a href="provas.html#cb217-13" aria-hidden="true" tabindex="-1"></a>    tabela<span class="sc">$</span>H <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> tabela<span class="sc">$</span>p <span class="sc">*</span> tabela<span class="sc">$</span>q</span>
-<span id="cb217-14"><a href="provas.html#cb217-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(tabela)</span>
-<span id="cb217-15"><a href="provas.html#cb217-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb217-16"><a href="provas.html#cb217-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb217-17"><a href="provas.html#cb217-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando função para p = q = 0.5 (resposta da letra A e B)</span></span>
-<span id="cb217-18"><a href="provas.html#cb217-18" aria-hidden="true" tabindex="-1"></a><span class="fu">freq_semiesteril</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">q =</span> <span class="fl">0.5</span>, <span class="at">t =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="provas.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Implementando função para simular frequências gênicas e genotípicas para semi-esterilidade ao longo do tempo</span></span>
+<span id="cb218-2"><a href="provas.html#cb218-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">9999999</span>)</span>
+<span id="cb218-3"><a href="provas.html#cb218-3" aria-hidden="true" tabindex="-1"></a>freq_semiesteril <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">p =</span> <span class="cn">NULL</span>, <span class="at">q =</span> <span class="cn">NULL</span>, <span class="at">t =</span> <span class="dv">10</span>) {</span>
+<span id="cb218-4"><a href="provas.html#cb218-4" aria-hidden="true" tabindex="-1"></a>    half <span class="ot">&lt;-</span> <span class="cf">function</span>(x, t) {</span>
+<span id="cb218-5"><a href="provas.html#cb218-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(x <span class="sc">/</span> <span class="dv">2</span><span class="sc">^</span>(<span class="dv">1</span><span class="sc">:</span>t))</span>
+<span id="cb218-6"><a href="provas.html#cb218-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb218-7"><a href="provas.html#cb218-7" aria-hidden="true" tabindex="-1"></a>    q <span class="ot">&lt;-</span> <span class="fu">half</span>(q, t)</span>
+<span id="cb218-8"><a href="provas.html#cb218-8" aria-hidden="true" tabindex="-1"></a>    tabela <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">p =</span> <span class="cn">NA</span>, <span class="at">q =</span> q, <span class="at">geracao =</span> <span class="fu">seq_len</span>(t))</span>
+<span id="cb218-9"><a href="provas.html#cb218-9" aria-hidden="true" tabindex="-1"></a>    tabela<span class="sc">$</span>p <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> tabela<span class="sc">$</span>q</span>
+<span id="cb218-10"><a href="provas.html#cb218-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb218-11"><a href="provas.html#cb218-11" aria-hidden="true" tabindex="-1"></a>    tabela<span class="sc">$</span>P <span class="ot">&lt;-</span> tabela<span class="sc">$</span>p<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb218-12"><a href="provas.html#cb218-12" aria-hidden="true" tabindex="-1"></a>    tabela<span class="sc">$</span>Q <span class="ot">&lt;-</span> tabela<span class="sc">$</span>q<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb218-13"><a href="provas.html#cb218-13" aria-hidden="true" tabindex="-1"></a>    tabela<span class="sc">$</span>H <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> tabela<span class="sc">$</span>p <span class="sc">*</span> tabela<span class="sc">$</span>q</span>
+<span id="cb218-14"><a href="provas.html#cb218-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(tabela)</span>
+<span id="cb218-15"><a href="provas.html#cb218-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb218-16"><a href="provas.html#cb218-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb218-17"><a href="provas.html#cb218-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando função para p = q = 0.5 (resposta da letra A e B)</span></span>
+<span id="cb218-18"><a href="provas.html#cb218-18" aria-hidden="true" tabindex="-1"></a><span class="fu">freq_semiesteril</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">q =</span> <span class="fl">0.5</span>, <span class="at">t =</span> <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##        p      q geracao         P          Q         H
 ## 1 0.7500 0.2500       1 0.5625000 0.06250000 0.3750000
 ## 2 0.8750 0.1250       2 0.7656250 0.01562500 0.2187500
 ## 3 0.9375 0.0625       3 0.8789062 0.00390625 0.1171875</code></pre>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="provas.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Para infinitas gerações, testando com t = 1000 (resposta da C)</span></span>
-<span id="cb219-2"><a href="provas.html#cb219-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(<span class="fu">freq_semiesteril</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">q=</span><span class="fl">0.5</span>, <span class="at">t=</span><span class="dv">1000</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="provas.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Para infinitas gerações, testando com t = 1000 (resposta da C)</span></span>
+<span id="cb220-2"><a href="provas.html#cb220-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(<span class="fu">freq_semiesteril</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">q=</span><span class="fl">0.5</span>, <span class="at">t=</span><span class="dv">1000</span>))</span></code></pre></div>
 <pre><code>##      p
 ## 995  1
 ## 996  1
