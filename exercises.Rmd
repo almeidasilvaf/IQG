@@ -1426,168 +1426,126 @@ media_0.8
 
 **Considerando a freq. gênica A1 = 0.6, estimar:**
 
+Para fins práticos, o melhor a fazer é implementar uma função para calcular automaticamente todas as métricas do capítulo "Médias e Valores" do livro do DS Falconer. O código abaixo consiste na implementação de tal função. Para calcular os valores, só é preciso dar como entrada:
+- os valores genotípicos (apresentados no enunciado)
+- p
+
+```{r}
+means_and_values <- function(genotype_values = NULL, p = NULL) {
+  if(length(genotype_values) != 3) {
+    stop("Object 'genotype_values' must be a character vector of length 3.")
+  }
+  q <- 1 - p
+  
+  # Assigned values
+  midpoint <- (genotype_values[1] + genotype_values[3]) / 2
+  a <- genotype_values[1] - midpoint
+  d <- genotype_values[2] - midpoint
+  
+  # Mean
+  M <- a * (p-q) + 2 * d * p * q
+  M <- as.numeric(midpoint + M)
+
+  # Degree of dominance  
+  dg <- as.numeric(d / a)
+  
+  # Average effect
+  alpha <- as.numeric(a + d * (q-p))
+  alpha1 <- as.numeric(q * alpha)
+  alpha2 <- as.numeric(-p * alpha)
+  
+  # Breeding values for each genotype
+  A <- c(a1a1 = 2*q*alpha, 
+         a1a2 = alpha * (q-p),
+         a2a2 = -2 * p * alpha)
+  
+  # Genotypic value in terms of deviation
+  G <- c(a1a1 = 2*q*(alpha - q*d),
+         a1a2 = alpha*(q-p) + 2*p*q*d,
+         a2a2 = -2*p*(alpha + p*d))
+  
+  # Dominance deviation
+  D <- c(a1a1 = -2 * q^2 * d,
+         a1a2 = 2*p*q*d,
+         a2a2 = -2 * p^2 * d)
+  
+  table <- data.frame(
+    Genotype = c("A1A1", "A1A2", "A2A2"),
+    Assigned_values = c(paste0("+a = ", a),
+                        paste0("d = ", d),
+                        paste0("-a = ", -a)),
+    A = A,
+    G = G,
+    D = D
+  )
+  rownames(table) <- NULL
+  result_list <- list(
+    Mean = M,
+    `Degree of dominance` = dg,
+    `Average effects` = c(alpha = alpha,
+                          alpha1 = alpha1,
+                          alpha2 = alpha2),
+    Summary_table = table
+  )
+  return(result_list)
+}
+
+genotypic_values <- c("A1A1" = 120, 
+                      "A1A2" = 140,
+                      "A2A2" = 60)
+questao_2 <- means_and_values(genotypic_values, p = 0.6)
+questao_2
+```
+
 - **Valores Genotípicos codificados (a, d, -a)**
 
 ```{r}
-midpoint <- (120+60) / 2
-midpoint
-
-# a = A1A1 - ponto médio
-a <- 120 - midpoint
-a
-
-# -a = A2A2 - ponto médio
-minus_a <- 60 - midpoint
-minus_a
-
-# d = A1A2 - ponto médio
-d <- 140 - midpoint
-d
+questao_2$Summary_table
 ```
 
 Note que d > a, pois há sobredominância.
 
-$$
-\begin{aligned}
-a &= 120 - 90 = 30 \\
--a &= 60 - 90 = -30 \\
-d &= 140 - 90 - 50
-\end{aligned}
-$$
-
 - **Média**
 
-$M = a(p-q) + 2dpq$
-
 ```{r}
-p <- 0.6
-q <- 1-p
-
-media <- a * (p-q) + 2*d*p*q
-media
-```
-
-Como essa média é estimada a partir do ponto médio, devemos somá-la ao valor do ponto médio. Portanto:
-
-```{r}
-M <- midpoint + media
-M
+questao_2$Mean
 ```
 
 - **Grau de dominância**
 
 ```{r}
-gd <- d/a
-gd
+questao_2$`Degree of dominance`
 ```
-
-$S_{total} = \sum\limits_{i=1}^n S_i$
 
 
 - **Efeito médio dos genes (alfa1, alfa2)**
 
-$$
-\begin{aligned}
-\alpha1 &= q[a+d(q-p)] = q \alpha \\
-\alpha2 &= -p[a+d(q-p)] = -p \alpha
-\end{aligned}
-$$
-
-
 ```{r}
-alpha <- a + d * (q-p)
-
-alpha1 <- q * alpha
-alpha1
-
-alpha2 <- -p * alpha
-alpha2
+questao_2$`Average effects`
 ```
 
 - **Efeito médio de substituição (alfa)**
 
 ```{r}
-alpha
+questao_2$`Average effects`
 ```
 
 - **Valor genético dos diferentes genótipos (A)**
 
-$$
-\begin{aligned}
-A(A1A1) &= 2 \alpha1 = 2q\alpha \\
-A(A1A2) &= \alpha1 + \alpha2 = \alpha(q-p) \\
-A(A2A2) &= 2 \alpha2 = -2p \alpha
-\end{aligned}
-$$
-
-```{r}
-A_a1a1 <- 2 * alpha1
-A_a1a1
-
-A_a1a2 <- alpha1 + alpha2
-A_a1a2
-
-A_a2a2 <- 2 * alpha2
-A_a2a2
-```
-
 - **Valor genotípico em termos de desvio (G)**
-
-$$
-\begin{aligned}
-G(A1A1) &= 2q(\alpha - qd) \\
-G(A1A2) &= \alpha (q-p) + 2pqd \\
-G(A2A2) &= -2p (\alpha + pd)
-\end{aligned}
-$$
-
-```{r}
-G_a1a1 <- 2 * q * (alpha - q * d)
-G_a1a1
-
-G_a1a2 <- alpha * (q-p) + 2*p*q*d
-G_a1a2
-
-G_a2a2 <- -2 * p * (alpha + p*d)
-G_a2a2
-```
 
 - **Desvio devido a dominância (D).**
 
-$$
-\begin{aligned}
-D(A1A1) &= -2q^2d = G(A1A1) - A(A1A1) \\
-D(A1A2) &= 2pqd = G(A1A2) - A(A1A2) \\
-D(A2A2) &= -2p^2d = G(A2A2) - A(A2A2)
-\end{aligned}
-$$
-
 ```{r}
-D_a1a1 <- -2 * q^2 * d
-D_a1a1
-
-D_a1a2 <- 2 * p * q * d
-D_a1a2
-
-D_a2a2 <- -2 * p^2 * d
-D_a2a2
+questao_2$Summary_table
 ```
-
 
 - **Mostre graficamente os valores de a, d, -a, a, A e D.**
 
 Resumo:
 
 ```{r}
-suppressPackageStartupMessages(library(gt))
-resumo_tabela <- data.frame(
-  Genotipo = c("A1A1", "A1A2", "A2A2"),
-  Codificados = c("+a = 30", "d = 50", "-a = -30"),
-  A = c(16, -4, -24),
-  G = c(0, 20, -60),
-  D = c(-16, 24, -36)
-)
-gt(resumo_tabela)
+gt::gt(questao_2$Summary_table)
 ```
 
 ```{r echo=FALSE, fig.align='center', out.width='80%'}
