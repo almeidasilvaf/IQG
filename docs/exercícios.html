@@ -33,7 +33,7 @@ Messias Gonzaga Pereira.</p>" />
 <meta name="author" content="Fabrício Almeida-Silva" />
 
 
-<meta name="date" content="2021-11-12" />
+<meta name="date" content="2021-11-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1753,9 +1753,43 @@ h^2 &amp;= \frac{VG}{VF} \\
 </tbody>
 </table>
 <ul>
-<li><p><strong>Calcule a altura média de planta nesta população.</strong></p></li>
-<li><p><strong>Calcule a altura média de planta em populações considerando que o alelo C esteja ausente, e as seguintes freq. gênicas do alelo A: (1) 0.1, (2) 0.5, (3) 0.8.</strong></p></li>
+<li><strong>Calcule a altura média de planta nesta população.</strong></li>
 </ul>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="exercícios.html#cb114-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb114-2"><a href="exercícios.html#cb114-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Genotipos =</span> <span class="fu">c</span>(<span class="st">&quot;AA&quot;</span>, <span class="st">&quot;AB&quot;</span>, <span class="st">&quot;BB&quot;</span>, <span class="st">&quot;AC&quot;</span>, <span class="st">&quot;BC&quot;</span>),</span>
+<span id="cb114-3"><a href="exercícios.html#cb114-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Freq =</span> <span class="fu">c</span>(<span class="fl">9.6</span>, <span class="fl">48.3</span>, <span class="fl">34.3</span>, <span class="fl">2.8</span>, <span class="fl">5.0</span>),</span>
+<span id="cb114-4"><a href="exercícios.html#cb114-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Altura =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">190</span>, <span class="dv">210</span>, <span class="dv">150</span>, <span class="dv">230</span>)</span>
+<span id="cb114-5"><a href="exercícios.html#cb114-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb114-6"><a href="exercícios.html#cb114-6" aria-hidden="true" tabindex="-1"></a>df1<span class="sc">$</span>mult <span class="ot">&lt;-</span> df1<span class="sc">$</span>Freq <span class="sc">*</span> df1<span class="sc">$</span>Altura</span>
+<span id="cb114-7"><a href="exercícios.html#cb114-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-8"><a href="exercícios.html#cb114-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Altura média</span></span>
+<span id="cb114-9"><a href="exercícios.html#cb114-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(df1<span class="sc">$</span>mult) <span class="sc">/</span> <span class="dv">100</span></span></code></pre></div>
+<pre><code>## [1] 189.1</code></pre>
+<ul>
+<li><strong>Calcule a altura média de planta em populações considerando que o alelo C esteja ausente, e as seguintes freq. gênicas do alelo A: (1) 0.1, (2) 0.5, (3) 0.8.</strong></li>
+</ul>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="exercícios.html#cb116-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> df1[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span>
+<span id="cb116-2"><a href="exercícios.html#cb116-2" aria-hidden="true" tabindex="-1"></a>df2<span class="sc">$</span>F_0<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span><span class="sc">^</span><span class="dv">1</span>, <span class="dv">2</span> <span class="sc">*</span> <span class="fl">0.1</span> <span class="sc">*</span> <span class="fl">0.9</span>, <span class="fl">0.9</span><span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb116-3"><a href="exercícios.html#cb116-3" aria-hidden="true" tabindex="-1"></a>df2<span class="sc">$</span>F_0<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span><span class="sc">^</span><span class="dv">2</span>, <span class="dv">2</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">*</span> <span class="fl">0.5</span>, <span class="fl">0.5</span><span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb116-4"><a href="exercícios.html#cb116-4" aria-hidden="true" tabindex="-1"></a>df2<span class="sc">$</span>F_0<span class="fl">.8</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.8</span><span class="sc">^</span><span class="dv">2</span>, <span class="dv">2</span> <span class="sc">*</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fl">0.2</span>, <span class="fl">0.2</span><span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb116-5"><a href="exercícios.html#cb116-5" aria-hidden="true" tabindex="-1"></a>df2</span></code></pre></div>
+<pre><code>##   Genotipos Altura F_0.1 F_0.5 F_0.8
+## 1        AA    100  0.10  0.25  0.64
+## 2        AB    190  0.18  0.50  0.32
+## 3        BB    210  0.81  0.25  0.04</code></pre>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="exercícios.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando altura média para cada cenário</span></span>
+<span id="cb118-2"><a href="exercícios.html#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="co"># F(A) = 0.1</span></span>
+<span id="cb118-3"><a href="exercícios.html#cb118-3" aria-hidden="true" tabindex="-1"></a>media_0<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">sum</span>(df2<span class="sc">$</span>Altura <span class="sc">*</span> df2<span class="sc">$</span>F_0<span class="fl">.1</span>)</span>
+<span id="cb118-4"><a href="exercícios.html#cb118-4" aria-hidden="true" tabindex="-1"></a>media_0<span class="fl">.1</span> </span></code></pre></div>
+<pre><code>## [1] 214.3</code></pre>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="exercícios.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># F(A) = 0.5</span></span>
+<span id="cb120-2"><a href="exercícios.html#cb120-2" aria-hidden="true" tabindex="-1"></a>media_0<span class="fl">.5</span> <span class="ot">&lt;-</span> <span class="fu">sum</span>(df2<span class="sc">$</span>Altura <span class="sc">*</span> df2<span class="sc">$</span>F_0<span class="fl">.5</span>)</span>
+<span id="cb120-3"><a href="exercícios.html#cb120-3" aria-hidden="true" tabindex="-1"></a>media_0<span class="fl">.5</span></span></code></pre></div>
+<pre><code>## [1] 172.5</code></pre>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="exercícios.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># F(A) = 0.8</span></span>
+<span id="cb122-2"><a href="exercícios.html#cb122-2" aria-hidden="true" tabindex="-1"></a>media_0<span class="fl">.8</span> <span class="ot">&lt;-</span> <span class="fu">sum</span>(df2<span class="sc">$</span>Altura <span class="sc">*</span> df2<span class="sc">$</span>F_0<span class="fl">.8</span>)</span>
+<span id="cb122-3"><a href="exercícios.html#cb122-3" aria-hidden="true" tabindex="-1"></a>media_0<span class="fl">.8</span></span></code></pre></div>
+<pre><code>## [1] 133.2</code></pre>
 </div>
 <div id="q2-7" class="section level3 unnumbered">
 <h3>Q2</h3>
@@ -1778,16 +1812,134 @@ h^2 &amp;= \frac{VG}{VF} \\
 </table>
 <p><strong>Considerando a freq. gênica A1 = 0.6, estimar:</strong></p>
 <ul>
-<li><p>Valores Genotípicos codificados (a, d, -a)</p></li>
-<li><p>Média</p></li>
+<li><strong>Valores Genotípicos codificados (a, d, -a)</strong></li>
 </ul>
-<p>c- Grau de dominância</p>
-<p>d- Efeito médio dos genes (a1, a2)</p>
-<p>e- Efeito médio de substituição (a)</p>
-<p>f- Valor genético dos diferentes genótipos (A)</p>
-<p>g- Valor genotípico em termos de desvio (G)</p>
-<p>h- Desvio devido a dominância (D).</p>
-<p>i- Mostre graficamente os valores de a, d, -a, a, A e D.</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="exercícios.html#cb124-1" aria-hidden="true" tabindex="-1"></a>midpoint <span class="ot">&lt;-</span> (<span class="dv">120</span><span class="sc">+</span><span class="dv">60</span>) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb124-2"><a href="exercícios.html#cb124-2" aria-hidden="true" tabindex="-1"></a>midpoint</span></code></pre></div>
+<pre><code>## [1] 90</code></pre>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="exercícios.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a = A1A1 - ponto médio</span></span>
+<span id="cb126-2"><a href="exercícios.html#cb126-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">120</span> <span class="sc">-</span> midpoint</span>
+<span id="cb126-3"><a href="exercícios.html#cb126-3" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<pre><code>## [1] 30</code></pre>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="exercícios.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -a = A2A2 - ponto médio</span></span>
+<span id="cb128-2"><a href="exercícios.html#cb128-2" aria-hidden="true" tabindex="-1"></a>minus_a <span class="ot">&lt;-</span> <span class="dv">60</span> <span class="sc">-</span> midpoint</span>
+<span id="cb128-3"><a href="exercícios.html#cb128-3" aria-hidden="true" tabindex="-1"></a>minus_a</span></code></pre></div>
+<pre><code>## [1] -30</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="exercícios.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="co"># d = A1A2 - ponto médio</span></span>
+<span id="cb130-2"><a href="exercícios.html#cb130-2" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="dv">140</span> <span class="sc">-</span> midpoint</span>
+<span id="cb130-3"><a href="exercícios.html#cb130-3" aria-hidden="true" tabindex="-1"></a>d</span></code></pre></div>
+<pre><code>## [1] 50</code></pre>
+<p>Note que d &gt; a, pois há sobredominância.</p>
+<p><span class="math display">\[
+\begin{aligned}
+a &amp;= 120 - 90 = 30 \\
+-a &amp;= 60 - 90 = -30 \\
+d &amp;= 140 - 90 - 50
+\end{aligned}
+\]</span></p>
+<ul>
+<li><strong>Média</strong></li>
+</ul>
+<p><span class="math inline">\(M = a(p-q) + 2dpq\)</span></p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="exercícios.html#cb132-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
+<span id="cb132-2"><a href="exercícios.html#cb132-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span>p</span>
+<span id="cb132-3"><a href="exercícios.html#cb132-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-4"><a href="exercícios.html#cb132-4" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> a <span class="sc">*</span> (p<span class="sc">-</span>q) <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>d<span class="sc">*</span>p<span class="sc">*</span>q</span>
+<span id="cb132-5"><a href="exercícios.html#cb132-5" aria-hidden="true" tabindex="-1"></a>media</span></code></pre></div>
+<pre><code>## [1] 30</code></pre>
+<p>Como essa média é estimada a partir do ponto médio, devemos somá-la ao valor do ponto médio. Portanto:</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="exercícios.html#cb134-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> midpoint <span class="sc">+</span> media</span>
+<span id="cb134-2"><a href="exercícios.html#cb134-2" aria-hidden="true" tabindex="-1"></a>M</span></code></pre></div>
+<pre><code>## [1] 120</code></pre>
+<ul>
+<li><strong>Grau de dominância</strong></li>
+</ul>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="exercícios.html#cb136-1" aria-hidden="true" tabindex="-1"></a>gd <span class="ot">&lt;-</span> d<span class="sc">/</span>a</span>
+<span id="cb136-2"><a href="exercícios.html#cb136-2" aria-hidden="true" tabindex="-1"></a>gd</span></code></pre></div>
+<pre><code>## [1] 1.666667</code></pre>
+<p><span class="math inline">\(S_{total} = \sum\limits_{i=1}^n S_i\)</span></p>
+<ul>
+<li><strong>Efeito médio dos genes (alfa1, alfa2)</strong></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\alpha1 &amp;= q[a+d(q-p)] = q \alpha \\
+\alpha2 &amp;= -p[a+d(q-p)] = -p \alpha
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="exercícios.html#cb138-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> a <span class="sc">+</span> d <span class="sc">*</span> (q<span class="sc">-</span>p)</span>
+<span id="cb138-2"><a href="exercícios.html#cb138-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-3"><a href="exercícios.html#cb138-3" aria-hidden="true" tabindex="-1"></a>alpha1 <span class="ot">&lt;-</span> q <span class="sc">*</span> alpha</span>
+<span id="cb138-4"><a href="exercícios.html#cb138-4" aria-hidden="true" tabindex="-1"></a>alpha1</span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="exercícios.html#cb140-1" aria-hidden="true" tabindex="-1"></a>alpha2 <span class="ot">&lt;-</span> <span class="sc">-</span>p <span class="sc">*</span> alpha</span>
+<span id="cb140-2"><a href="exercícios.html#cb140-2" aria-hidden="true" tabindex="-1"></a>alpha2</span></code></pre></div>
+<pre><code>## [1] -12</code></pre>
+<ul>
+<li><strong>Efeito médio de substituição (alfa)</strong></li>
+</ul>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="exercícios.html#cb142-1" aria-hidden="true" tabindex="-1"></a>alpha</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<ul>
+<li><strong>Valor genético dos diferentes genótipos (A)</strong></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+A(A1A1) &amp;= 2 \alpha1 = 2q\alpha \\
+A(A1A2) &amp;= \alpha1 + \alpha2 = \alpha(q-p) \\
+A(A2A2) &amp;= 2 \alpha2 = -2p \alpha
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="exercícios.html#cb144-1" aria-hidden="true" tabindex="-1"></a>A_a1a1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> alpha1</span>
+<span id="cb144-2"><a href="exercícios.html#cb144-2" aria-hidden="true" tabindex="-1"></a>A_a1a1</span></code></pre></div>
+<pre><code>## [1] 16</code></pre>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="exercícios.html#cb146-1" aria-hidden="true" tabindex="-1"></a>A_a1a2 <span class="ot">&lt;-</span> alpha1 <span class="sc">+</span> alpha2</span>
+<span id="cb146-2"><a href="exercícios.html#cb146-2" aria-hidden="true" tabindex="-1"></a>A_a1a2</span></code></pre></div>
+<pre><code>## [1] -4</code></pre>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="exercícios.html#cb148-1" aria-hidden="true" tabindex="-1"></a>A_a2a2 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> alpha2</span>
+<span id="cb148-2"><a href="exercícios.html#cb148-2" aria-hidden="true" tabindex="-1"></a>A_a2a2</span></code></pre></div>
+<pre><code>## [1] -24</code></pre>
+<ul>
+<li><strong>Valor genotípico em termos de desvio (G)</strong></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+G(A1A1) &amp;= 2q(\alpha - qd) \\
+G(A1A2) &amp;= \alpha (q-p) + 2pqd \\
+G(A2A2) &amp;= -2p (\alpha + pd)
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="exercícios.html#cb150-1" aria-hidden="true" tabindex="-1"></a>G_a1a1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> q <span class="sc">*</span> (alpha <span class="sc">-</span> q <span class="sc">*</span> d)</span>
+<span id="cb150-2"><a href="exercícios.html#cb150-2" aria-hidden="true" tabindex="-1"></a>G_a1a1</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="exercícios.html#cb152-1" aria-hidden="true" tabindex="-1"></a>G_a1a2 <span class="ot">&lt;-</span> alpha <span class="sc">*</span> (q<span class="sc">-</span>p) <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q<span class="sc">*</span>d</span>
+<span id="cb152-2"><a href="exercícios.html#cb152-2" aria-hidden="true" tabindex="-1"></a>G_a1a2</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="exercícios.html#cb154-1" aria-hidden="true" tabindex="-1"></a>G_a2a2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> p <span class="sc">*</span> (alpha <span class="sc">+</span> p<span class="sc">*</span>d)</span>
+<span id="cb154-2"><a href="exercícios.html#cb154-2" aria-hidden="true" tabindex="-1"></a>G_a2a2</span></code></pre></div>
+<pre><code>## [1] -60</code></pre>
+<ul>
+<li><strong>Desvio devido a dominância (D).</strong></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+D(A1A1) &amp;= -2q^2d = G(A1A1) - A(A1A1) \\
+D(A1A2) &amp;= 2pqd = G(A1A2) - A(A1A2) \\
+D(A2A2) &amp;= -2p^2d = G(A2A2) - A(A2A2)
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="exercícios.html#cb156-1" aria-hidden="true" tabindex="-1"></a>D_a1a1 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> q<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> d</span>
+<span id="cb156-2"><a href="exercícios.html#cb156-2" aria-hidden="true" tabindex="-1"></a>D_a1a1</span></code></pre></div>
+<pre><code>## [1] -16</code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="exercícios.html#cb158-1" aria-hidden="true" tabindex="-1"></a>D_a1a2 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> p <span class="sc">*</span> q <span class="sc">*</span> d</span>
+<span id="cb158-2"><a href="exercícios.html#cb158-2" aria-hidden="true" tabindex="-1"></a>D_a1a2</span></code></pre></div>
+<pre><code>## [1] 24</code></pre>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="exercícios.html#cb160-1" aria-hidden="true" tabindex="-1"></a>D_a2a2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> p<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> d</span>
+<span id="cb160-2"><a href="exercícios.html#cb160-2" aria-hidden="true" tabindex="-1"></a>D_a2a2</span></code></pre></div>
+<pre><code>## [1] -36</code></pre>
+<ul>
+<li><strong>Mostre graficamente os valores de a, d, -a, a, A e D.</strong></li>
+</ul>
 
 </div>
 </div>
