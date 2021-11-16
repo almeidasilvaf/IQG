@@ -128,3 +128,32 @@ $fAA = \frac{1}{2} (1 + FA) = \frac{1}{2} \times 1.5 = 0.75$
 $fPA = \frac{1}{2}(fAB + fAA) = \frac{1}{2}(0.75 + 0.5) = 0.5 \times 1.25 = 0.625$
 
 
+## Semana 10 {.unnumbered}
+
+```{r}
+# Dados da questão
+valores <- c("A1A1" = 150,
+             "A1A2" = 120,
+             "A2A2" = 50)
+p <- 0.6
+
+# Valores codificados
+q <- 1 - p
+  
+pm <- (valores[1] + valores[3]) / 2
+a <- as.numeric(valores[1] - pm)
+a
+d <- as.numeric(valores[2] - pm)
+d
+
+# Média
+M <- a * (p-q) + 2 * d * p * q
+M <- as.numeric(pm + M)
+M
+```
+
+- a = 50
+- -a = -50
+- -d = 20
+- Média: 119.6
+

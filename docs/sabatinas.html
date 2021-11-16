@@ -33,7 +33,7 @@ Messias Gonzaga Pereira.</p>" />
 <meta name="author" content="Fabrício Almeida-Silva" />
 
 
-<meta name="date" content="2021-11-14" />
+<meta name="date" content="2021-11-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -159,6 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-7"><i class="fa fa-check"></i>Semana 7</a></li>
 <li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-8"><i class="fa fa-check"></i>Semana 8</a></li>
 <li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-9"><i class="fa fa-check"></i>Semana 9</a></li>
+<li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-10"><i class="fa fa-check"></i>Semana 10</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html"><i class="fa fa-check"></i>Exercícios</a>
 <ul>
@@ -400,6 +401,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Coeficiente de parentesco entre pai e filho, sendo o coeficiente de endogamia do pai = 0.75.</li>
 </ul>
 <p><span class="math inline">\(fPA = \frac{1}{2}(fAB + fAA) = \frac{1}{2}(0.75 + 0.5) = 0.5 \times 1.25 = 0.625\)</span></p>
+</div>
+<div id="semana-10" class="section level2 unnumbered">
+<h2>Semana 10</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="sabatinas.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados da questão</span></span>
+<span id="cb9-2"><a href="sabatinas.html#cb9-2" aria-hidden="true" tabindex="-1"></a>valores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A1A1&quot;</span> <span class="ot">=</span> <span class="dv">150</span>,</span>
+<span id="cb9-3"><a href="sabatinas.html#cb9-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;A1A2&quot;</span> <span class="ot">=</span> <span class="dv">120</span>,</span>
+<span id="cb9-4"><a href="sabatinas.html#cb9-4" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;A2A2&quot;</span> <span class="ot">=</span> <span class="dv">50</span>)</span>
+<span id="cb9-5"><a href="sabatinas.html#cb9-5" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
+<span id="cb9-6"><a href="sabatinas.html#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="sabatinas.html#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores codificados</span></span>
+<span id="cb9-8"><a href="sabatinas.html#cb9-8" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> p</span>
+<span id="cb9-9"><a href="sabatinas.html#cb9-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-10"><a href="sabatinas.html#cb9-10" aria-hidden="true" tabindex="-1"></a>pm <span class="ot">&lt;-</span> (valores[<span class="dv">1</span>] <span class="sc">+</span> valores[<span class="dv">3</span>]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb9-11"><a href="sabatinas.html#cb9-11" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(valores[<span class="dv">1</span>] <span class="sc">-</span> pm)</span>
+<span id="cb9-12"><a href="sabatinas.html#cb9-12" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<pre><code>## [1] 50</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="sabatinas.html#cb11-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(valores[<span class="dv">2</span>] <span class="sc">-</span> pm)</span>
+<span id="cb11-2"><a href="sabatinas.html#cb11-2" aria-hidden="true" tabindex="-1"></a>d</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="sabatinas.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Média</span></span>
+<span id="cb13-2"><a href="sabatinas.html#cb13-2" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> a <span class="sc">*</span> (p<span class="sc">-</span>q) <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> d <span class="sc">*</span> p <span class="sc">*</span> q</span>
+<span id="cb13-3"><a href="sabatinas.html#cb13-3" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(pm <span class="sc">+</span> M)</span>
+<span id="cb13-4"><a href="sabatinas.html#cb13-4" aria-hidden="true" tabindex="-1"></a>M</span></code></pre></div>
+<pre><code>## [1] 119.6</code></pre>
+<ul>
+<li>a = 50</li>
+<li>-a = -50</li>
+<li>-d = 20</li>
+<li>Média: 119.6</li>
+</ul>
 
 </div>
 </div>
