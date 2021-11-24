@@ -1707,7 +1707,7 @@ Calculando valores para o locus A:
 
 ```{r}
 # Calculando frequências p e q
-qA <- 120/280
+qA <- sqrt(120/280)
 qA
 
 # Calculando a e d
@@ -1732,7 +1732,7 @@ Calculando valores para o locus B:
 
 ```{r}
 # Calculando frequências p e q
-qB <- 100/280
+qB <- sqrt(100/280)
 qB
 
 # Calculando a e d
