@@ -1551,3 +1551,292 @@ gt::gt(questao_2$Summary_table)
 ```{r echo=FALSE, fig.align='center', out.width='80%'}
 knitr::include_graphics("figs/ex9_q2.jpg")
 ```
+
+## Semana 9: Variância {.unnumbered}
+
+### Q1 {.unnumbered}
+
+**Em um experimento obtiveram-se os seguintes valores:**
+
+**VF1 = 1,80 VF2 = 4,00. Calcular VE, VG e herdabilidade**
+
+Na geração F1, todos os indivíduos são heterozigotos (Aa), então toda a variância fenotípica é atribuída ao ambiente. Logo, 
+
+$$V_E = V_{F1} = 1.80$$
+
+Na geração F2, a variância fenotípica deve-se à soma da variância genotípica e variância do ambiente. Logo,
+
+$$
+\begin{align}
+V_{F2} &= V_G + V_E \\
+4 &= V_G + 1.80 \\
+V_G &= 2.2
+\end{align}
+$$
+
+Com os dados acima, podemos calcular a herdabilidade:
+
+$$
+\begin{align}
+H^2 &= \frac{V_G}{V_G + V_E} = \frac{2.2}{4} = 0.55
+\end{align}
+$$
+
+### Q2 {.unnumbered}
+
+**Com base nos dados a seguir, calcular VA, VD, e VG para as seguintes freq. gênicas: P(A2) = (1) 0.2, (2) 0.5, (3) 0.9**
+
+| Genótipos | Valores (cm) |
+|:----------|:-------------|
+|   A1A1    |      200     |
+|   A1A2    |      175     |
+|   A2A2    |      100     |
+
+**(População em EHW)**
+
+
+Implementando função para calcular componentes genéticos da variância.
+
+```{r}
+var_components <- function(values = NULL, q = 0.2, 
+                           a = NULL, d = NULL) {
+  p <- 1-q
+
+  # Assigned values
+  if(is.null(a) | is.null(d)) {
+      midpoint <- (values[1] + values[3]) / 2
+      a <- values[1] - midpoint
+      d <- values[2] - midpoint
+  }
+
+  # VA
+  alpha <- as.numeric(a + d * (q-p))
+  va <- 2 * p * q * alpha^2
+  
+  # VD
+  vd <- (2 * p * q * d)^2
+  
+  # VG
+  vg <- va + vd
+  result_df <- data.frame(
+    Componentes = c("VG", "VA", "VD"),
+    Valores = c(vg, va, vd)
+  )
+  return(result_df)
+}
+```
+
+Aplicando função às diferentes frequências fornecidas pelo enunciado:
+
+```{r}
+values <- c(A1A1 = 200, 
+          A1A2 = 175,
+          A2A2 = 100)
+
+# q = 0.2
+var_components(values, q = 0.2)
+
+# q = 0.5
+var_components(values, q = 0.5)
+
+# q = 0.9
+var_components(values, q = 0.9)
+```
+
+### Q3 {.unnumbered}
+
+**Altura de planta em sorgo. Considere dois locos, A e B, com dominância completa, apresentando os seguintes valores fenotípicos médios:**
+
+─────────────────────────────────────────
+
+| Genótipos | Valores fenotípicos (cm) |
+|:----------|:-------------------------|
+|   A_B_    |           100            |
+|   A_bb    |            60            |
+|   aaB_    |            80            |
+|   aabb    |            40            |
+
+
+**Calcule para cada gene e para o caracter: a, d, alfa1, alfa2, alfa, A, D, G, VA, VD e VG.**
+
+Implementando função para calcular valores automaticamente:
+
+```{r}
+# Efeito médio (alfa, alfa1 e alfa2)
+avg_effect <- function(a = NULL, d = NULL, q = NULL) {
+  p <- 1 - q
+  alpha <- as.numeric(a + d * (q-p))
+  alpha_1 <- as.numeric(q * alpha)
+  alpha_2 <- as.numeric(-p * alpha)
+  df <- data.frame(alpha = alpha, 
+                   alpha1 = alpha_1, 
+                   alpha2 = alpha_2)
+  return(df)
+}
+
+# G, A e D
+calc_GAD <- function(a = NULL, d = NULL, q = NULL, alpha = NULL) {
+  
+  p <- 1 - q
+  # Breeding values for each genotype
+  A <- c(a1a1 = 2*q*alpha, 
+         a1a2 = alpha * (q-p),
+         a2a2 = -2 * p * alpha)
+  
+  # Genotypic value in terms of deviation
+  G <- c(a1a1 = 2*q*(alpha - q*d),
+         a1a2 = alpha*(q-p) + 2*p*q*d,
+         a2a2 = -2*p*(alpha + p*d))
+  
+  # Dominance deviation
+  D <- c(a1a1 = -2 * q^2 * d,
+         a1a2 = 2*p*q*d,
+         a2a2 = -2 * p^2 * d)
+  
+  df <- data.frame(
+    G = G,
+    A = A,
+    D = D
+  )
+  return(df)
+}
+
+```
+
+Calculando valores para o locus A:
+
+```{r}
+# Calculando frequências p e q
+qA <- 120/280
+qA
+
+# Calculando a e d
+aA <- (100-60)/2
+aA
+
+dA <- aA    # caráter dominante, logo d = a
+dA
+
+# Calculando alfa, alfa1 e alfa2
+ae_A <- avg_effect(a = aA, d = dA, q = qA)
+ae_A
+
+# Calculando G, A e D
+calc_GAD(a = aA, d = dA, q = qA, alpha = ae_A$alpha)
+
+# Calculando VG, VA e VD
+var_components(q = qA, a = aA, d = dA)
+```
+
+Calculando valores para o locus B:
+
+```{r}
+# Calculando frequências p e q
+qB <- 100/280
+qB
+
+# Calculando a e d
+aB <- (80-40)/2
+aB
+
+dB <- aB    # caráter dominante, logo d = a
+dB
+
+# Calculando alfa, alfa1 e alfa2
+ae_B <- avg_effect(a = aB, d = dB, q = qB)
+ae_B
+
+# Calculando G, A e D
+calc_GAD(a = aB, d = dB, q = qB, alpha = ae_B$alpha)
+
+# Calculando VG, VA e VD
+var_components(q = qB, a = aB, d = dB)
+```
+
+### Q4 {.unnumbered}
+
+**Uma amostra de 10 plantas retiradas ao acaso de uma população produziu os seguintes números de frutos no primeiro e segundo anos de colheita:**
+
+| Planta |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  10  |
+|:-------|:----|:----|:----|:----|:----|:----|:----|:----|:----|:-----|
+| 1o ano | 11  |  9  |  13 |  10 |  9  |  8  |  10 |  11 |  10 |  13  | 
+| 2o ano |  10 |  12 |  12 |  10 |  8  |  6  |  12 |  9  |  12 |  12  |
+
+
+- **Com esta amostra, calcule a repetibilidade do número de frutos por planta por ano.**
+
+
+Para calcular a repetibilidade, basta obter a correlação entre os dois anos.
+
+```{r}
+ano1 <- c(11, 9, 13, 10, 9, 8, 10, 11, 10, 13)
+ano2 <- c(10, 12, 12, 10, 8, 6, 12, 9, 12, 12)
+cor(ano1, ano2)
+```
+
+- **Qual a previsão do número de frutos no segundo ano para uma outra planta da mesma população que tenha produzido 12 frutos no primeiro ano?**
+
+```{r}
+tabela <- data.frame(ano1 = ano1, ano2 = ano2)
+modelo <- lm(ano2 ~ ano1, data = tabela)
+summary(modelo)
+
+# Predição para 12 frutos
+predict(modelo, newdata = data.frame(ano1 = 12))
+```
+
+
+### Q5 {.unnumbered}
+
+**Em estudo de fertilidade em suínos, o tamanho da leitegada de 156 matrizes, cada uma com dez leitegadas, foram sujeitas a uma análise de variância gerando o seguinte resultado:**
+
+|         Fonte      |  GL  |       Quadrado médio      |
+|:-------------------|:-----|:--------------------------|
+| Entre matrizes     |  155 | 25.56 $\sigma^2B = 2,233$ |
+| Entre leitegada    |   9  |            93.95          |
+| Dentro de matrizes | 1.395|  3.23 $\sigma^2W = 3,23$  |
+
+
+- **Calcule a repetibilidade do tamanho de leitegada.**
+
+```{r}
+ss <- (25.56 - 3.23) / 10
+r <- ss / (ss + 3.23)
+r
+```
+
+- **Em um programa de melhoramento, alta herdabilidade (VA/VP) é desejável. A fertilidade das fêmeas pode ser medida com base em uma ou (com maior precisão) mais leitegadas. Mostre de quanto a herdabilidade seria aumentada se o caráter fosse medido com base na media das 2, 3 e 4 primeiras leitegadas.**
+
+```{r}
+vpn_over_vp <- function(r = NULL, n = NULL) {
+  x <- ( 1 + r * (n-1) ) / n
+  return(x)
+}
+vp_over_vpn <- function(r = NULL, n = NULL) {
+  x <- n / ( 1 + r * (n-1) )
+  return(x)
+}
+
+df <- data.frame(
+  n = c(2, 3, 4),
+  vpn_over_vp = c(vpn_over_vp(r, 2), 
+                  vpn_over_vp(r, 3),
+                  vpn_over_vp(r, 4)),
+  h2n_over_h2 = c(vp_over_vpn(r, 2),
+                  vp_over_vpn(r, 3),
+                  vp_over_vpn(r, 4))
+)
+df
+```
+
+Portanto, usar as 2 primeiras leitegadas aumentaria a herdabilidade em 42%, usar as 3 primeiras aumentaria em 65%, e usar as 4 primeiras aumentaria em 80%. 
+
+
+
+
+
+
+
+
+
+
