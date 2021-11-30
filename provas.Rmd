@@ -8,9 +8,9 @@ Nessa página, encontram-se as soluções para as provas da disciplina "Genétic
 
 **(21%) Considerando uma planta de mamão duplo heterozigota (AaBb), sendo:**
 
-- **Loco A – determina o sexo da planta (AA = letal; Aa = hermafrodita e aa = feminina)**
+-   **Loco A -- determina o sexo da planta (AA = letal; Aa = hermafrodita e aa = feminina)**
 
-- **Loco B – determina a cor de polpa do fruto: (BB e Bb = polpa amarela; bb = polpa vermelha).** 
+-   **Loco B -- determina a cor de polpa do fruto: (BB e Bb = polpa amarela; bb = polpa vermelha).**
 
 **Considere que os locos são independentes. Considerando-se o plantio de uma progênie resultante da autofecundação desta planta, responda:**
 
@@ -18,9 +18,9 @@ Nessa página, encontram-se as soluções para as provas da disciplina "Genétic
 
 Da autofecundação de AaBb, temos:
 
-- Loco A: 2/3 hermafroditas : 1/3 femininas (n = 3, pois AA é letal)
+-   Loco A: 2/3 hermafroditas : 1/3 femininas (n = 3, pois AA é letal)
 
-- Loco B: 3/4 polpa amarela : 1/4 polpa vermelha
+-   Loco B: 3/4 polpa amarela : 1/4 polpa vermelha
 
 Portanto:
 
@@ -31,7 +31,6 @@ P(\text{hermafrodita e polpa vermelha}) &= \frac{2}{3} \times \frac{1}{4} \\
 \end{aligned}
 $$
 
-
 **b) Considerando-se 5 plantas ao acaso, qual a probabilidade de todas as plantas serem hermafroditas e de polpa amarela?**
 
 $$
@@ -41,7 +40,6 @@ P(\text{5 hermafroditas e polpa amarela}) &= (\frac{2}{3} \times \frac{3}{4})^5 
 &= \frac{1}{32} = 0.03125 = 3.125\%
 \end{aligned}
 $$
-
 
 **c) Quantas mudas devem ser plantadas para ter 95% de segurança de que pelo menos uma planta seja do tipo mais aceito comercialmente (hermafrodita e de polpa vermelha)?**
 
@@ -66,8 +64,7 @@ $$
 
 **(15%) Mostre graficamente a aproximação ao equilíbrio sob acasalamento ao acaso para o caso de um gene ligado ao sexo. Considere as seguintes frequências iniciais: qf = 0,2 e qm = 0,8. Qual a freqüência gênica (q) no equilíbrio?**
 
-Implementando uma função para calcular frequências de genes ligados ao
-sexo em machos e fêmeas:
+Implementando uma função para calcular frequências de genes ligados ao sexo em machos e fêmeas:
 
 ```{r}
 options(scipen = 99999)
@@ -87,7 +84,7 @@ calc_freq_xlinked <- function(pm0 = NULL, pf0 = NULL,
 }
 ```
 
-Aplicando função com dados do enunciado e demonstrando graficamente, simulando 20 gerações: 
+Aplicando função com dados do enunciado e demonstrando graficamente, simulando 20 gerações:
 
 ```{r}
 suppressPackageStartupMessages(library(tidyverse))
@@ -121,7 +118,7 @@ Verificando a frequência de q no equilíbrio:
 ```{r}
 freq20
 ```
- 
+
 A frequência de q no equilíbrio é de aproximadamente 0.40 ou 40%.
 
 ### Q3 {.unnumbered}
@@ -132,14 +129,13 @@ A frequência de q no equilíbrio é de aproximadamente 0.40 ou 40%.
 
 100% AaBb, logo:
 
-pA = qA = 0.5 <br />
-pB = qB = 0.5
+pA = qA = 0.5 <br /> pB = qB = 0.5
 
-| Gametas | AB | Ab | aB | ab |
-|:----|:----|:----|:----|:----|
-|Freq. EHW|0.25|0.25|0.25|0.25|
-|Freq. obs. inicial|r = 0.5|s = 0|t = 0|u = 0.5|
-|Desequilíbrio|0.25|-0.25|-0.25|0.25|
+| Gametas            | AB      | Ab    | aB    | ab      |
+|:-------------------|:--------|:------|:------|:--------|
+| Freq. EHW          | 0.25    | 0.25  | 0.25  | 0.25    |
+| Freq. obs. inicial | r = 0.5 | s = 0 | t = 0 | u = 0.5 |
+| Desequilíbrio      | 0.25    | -0.25 | -0.25 | 0.25    |
 
 Sabendo que $D_0 = 0.25$, podemos calcular $D_t$, sendo t a geração usando a seguinte fórmula:
 
@@ -155,7 +151,6 @@ t &= \hat{t} - D_t \\
 u &= \hat{u} + D_t
 \end{aligned}
 $$
-
 
 Implementando função para calcular o desequilíbrio e a frequência gamética em t gerações:
 
@@ -193,15 +188,14 @@ ligados <- calc_D_freq(c = 0.4, t=1:20)
 ligados
 ```
 
-
 **b) Qual a freq. do genótipo "AaBb" quando a população estiver atingida o equilíbrio, se os locos estiverem (1) não ligados, (2) ligados (fase aproximação) com uma frequência de recombinação de 40%?**
 
 O genótipo AaBb pode ser gerado por:
 
-- AB e ab (ru)
-- Ab e aB (st)
-- aB e Ab (ts)
-- ab e AB (ur)
+-   AB e ab (ru)
+-   Ab e aB (st)
+-   aB e Ab (ts)
+-   ab e AB (ur)
 
 Usando as frequências obtidas na **letra A)**, temos:
 
@@ -233,12 +227,12 @@ l <- ligados
 
 Segregação cromatídica: AAAAAAaaaaaa
 
-Gametas: 
+Gametas:
 
-- AAA
-- AAa
-- Aaa
-- aaa
+-   AAA
+-   AAa
+-   Aaa
+-   aaa
 
 Calculando frequências:
 
@@ -269,7 +263,6 @@ Como indivíduos de porte baixo são representados pelo genótipo aaaaaa, a sua 
 
 0.8264463% porte baixo : 99.17355% porte alto
 
-
 ### Q5 {.unnumbered}
 
 **(18%) Falso ou verdadeiro. (Se falso, marque a parte que invalida)**
@@ -290,7 +283,7 @@ A frequência não é sempre maior na mãe. Se a frequência é maior na mãe na
 
 **f) ( V ) Quanto maior o número de locos, mais rapidamente se observa a aproximação ao equilíbrio quando em cruzamento ao acaso.**
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 ## Prova 2 {.unnumbered}
 
@@ -298,13 +291,13 @@ A frequência não é sempre maior na mãe. Se a frequência é maior na mãe na
 
 **(20%) Falso ou verdadeiro. Se falso, marque a(s) palavra(s) que justifique(m) sua resposta.**
 
-**A ( F ) A ausência da ocorrência de cruzamentos intimamente aparentados faz com que Ne < N;**
+**A ( F ) A ausência da ocorrência de cruzamentos intimamente aparentados faz com que Ne \< N;**
 
-Quando desconsideramos os cruzamentos intimamente aparentados, Ne > N.
+Quando desconsideramos os cruzamentos intimamente aparentados, Ne \> N.
 
-**B ( F ) O número desigual de machos e fêmeas faz com que: Ne > N, sendo N = soma dos machos e fêmeas.**
+**B ( F ) O número desigual de machos e fêmeas faz com que: Ne \> N, sendo N = soma dos machos e fêmeas.**
 
-O número desigual de machos e fêmeas faz com que Ne < N.
+O número desigual de machos e fêmeas faz com que Ne \< N.
 
 **C ( F ) Considerando os Processos Dispersivos (PD) e Sistemáticos (PS) atuando em uma população ao mesmo tempo, conclui-se que a mutação é efetiva para "equilibrar" o PD mesmo quando em populações muito pequenas.**
 
@@ -330,31 +323,29 @@ A cada geração, as diversas linhas tornam-se mais diferentes entre si. Entreta
 
 **J ( V ) Com o processo dispersivo, vai ocorrendo um incremento no coeficiente de endogamia (F), com um correspondente decréscimo no índice de pamixia (P). Portanto, após infinitas gerações de amostragem, F tende a 1, e P tende a zero. Consequentemente, a proporção de linhas segregantes tende a zero.**
 
-
 ### Q2 {.unnumbered}
 
 **(10%)- Conceitue brevemente:**
 
-a. **Em uma população em cruzamento ao acaso, comente o significado de: Pt = 1; Pt < 1; Pt > 1. (Pt = Ht/Ho).**
+a.  **Em uma população em cruzamento ao acaso, comente o significado de: Pt = 1; Pt \< 1; Pt \> 1. (Pt = Ht/Ho).**
 
 O índice de panmixia corresponde à frequência de heterozigotos em uma população subdividida. $P_t$ representa o índice de panmixia na geração t, sendo $P_t = 1 - F_t = \frac{H_t}{H_0}$. Quando $P_t = 1$, isso significa que a população não está subdividida; quando $P_t < 1$, significa que há uma deficiência de heterozigotos, pois $H_t < H_0$; quando $P_t > 1$, significa que há um excesso de heterozigotos, pois $H_t > H_0$.
 
-b. **"Fitness" (Valor adaptativo)**
+b.  **"Fitness" (Valor adaptativo)**
 
 O valor adaptativo de um indivíduo representa o quanto esse contribui com prole para a geração seguinte. Por exemplo, se um genótipo está sob seleção com coeficiente de seleção s = 0,1, seu valor adaptativo é 1 - s = 0,9, ou seja, ele deixa apenas 90% do número de descendentes que o genótipo mais favorecido deixa.
 
-c. **Polimorfismo**
+c.  **Polimorfismo**
 
 Polimorfismos são diferenças causadas por genes com frequência intermediária. Eles são comumente usados como medidas de variação genética.
 
-d. **Endogamia**
+d.  **Endogamia**
 
 A endogamia consiste no acasalamento entre indivíduos que são intimimamente aparentados por ascendência. O principal problema da endogamia é o aumento considerável da possibilidade de união de 2 alelos raros com efeito negativo, formando indivíduos com menor valor adaptativo.
 
-e. **Deriva**
+e.  **Deriva**
 
 Processo dispersivo de mudança na frequência gênica que ocorre em populações muito pequenas. Uma mudança por deriva genética ocorre simplesmente por efeito de amostragem, e não como consequência de uma vantagem adaptativa, como ocorre com a seleção.
-
 
 ### Q3 {.unnumbered}
 
@@ -362,29 +353,27 @@ Processo dispersivo de mudança na frequência gênica que ocorre em populaçõe
 
 Existem várias possíveis explicações para o surgimento de polimorfismos, dentre elas:
 
-1. Sobredominância (vantagem do heterozigoto): mantém as frequências gênicas em níveis intermediários;
+1.  Sobredominância (vantagem do heterozigoto): mantém as frequências gênicas em níveis intermediários;
 
-2. Seleção dependente de frequência: nesse tipo de seleção, um alelo em baixa frequência produz um fenótipo raro que é favorecido. Entretanto, se esse fenótipo estiver em alta frequência, a seleção atua contra ele. Esse tipo de seleção é comum em dinâmicas de populações que envolvem ciclos patógeno-hospedeiro e predador-presa, por exemplo.
+2.  Seleção dependente de frequência: nesse tipo de seleção, um alelo em baixa frequência produz um fenótipo raro que é favorecido. Entretanto, se esse fenótipo estiver em alta frequência, a seleção atua contra ele. Esse tipo de seleção é comum em dinâmicas de populações que envolvem ciclos patógeno-hospedeiro e predador-presa, por exemplo.
 
-3. Ambiente heterogêneo: cada um dos alelos de um loco pode ser favorecido por ambientes diferentes. Por exemplo, em ambientes bem irrigados, o alelo A1 é mais vantajoso, enquanto em ambientes de seca o alelo A2 é mais vantajoso.
+3.  Ambiente heterogêneo: cada um dos alelos de um loco pode ser favorecido por ambientes diferentes. Por exemplo, em ambientes bem irrigados, o alelo A1 é mais vantajoso, enquanto em ambientes de seca o alelo A2 é mais vantajoso.
 
-4. Transição: um polimorfismo pode representar um estágio de transição de um alelo para outro que, por algum motivo, se tornou mais vantajoso em um novo cenário. Como o tempo necessário para a fixação completa de um alelo pode ser longo, em um curto prazo podemos verificar a presença de um estágio de transição onde ambos os alelos estão presentes.
+4.  Transição: um polimorfismo pode representar um estágio de transição de um alelo para outro que, por algum motivo, se tornou mais vantajoso em um novo cenário. Como o tempo necessário para a fixação completa de um alelo pode ser longo, em um curto prazo podemos verificar a presença de um estágio de transição onde ambos os alelos estão presentes.
 
-5. Mutação neutra: em alguns casos, o coeficiente de seleção agindo sobre um loco é tão baixo que mutações neutras podem surgir. Nesse caso, os polimorfismos não têm efeito sobre o valor adaptativo do indivíduo. Esse tipo de mutação é comum em regiões não-codificantes do genoma, por exemplo.
-
+5.  Mutação neutra: em alguns casos, o coeficiente de seleção agindo sobre um loco é tão baixo que mutações neutras podem surgir. Nesse caso, os polimorfismos não têm efeito sobre o valor adaptativo do indivíduo. Esse tipo de mutação é comum em regiões não-codificantes do genoma, por exemplo.
 
 ### Q4 {.unnumbered}
 
 **(20%) Em uma pop. de milho, detectou-se a ocorrência de um fator (gene A2) eliminador de pólen (s = 1 contra o gameta masculino portador de tal gene). Supondo que A1A1 = plantas normais; A1A2 = plantas semiestereis, se um pesquisador constituiu uma população de 100% de indivíduos semiestereis, quais as freq. gênicas e genotípicas após:**
 
-a. **Uma;**
+a.  **Uma;**
 
-b. **Três;**
+b.  **Três;**
 
-c. **Infinitas gerações de cruzamentos ao acaso? (Considere apenas seleção)**
+c.  **Infinitas gerações de cruzamentos ao acaso? (Considere apenas seleção)**
 
 100% A1A2, logo $p = q = 0.5$.
-
 
 Para semi-esterilidade, $\Delta{q} = -0.5q$. Ou seja, a frequência do alelo letal reduz à metade após cada geração de cruzamento ao acaso. Logo:
 
@@ -416,47 +405,41 @@ A frequência de q fica muito próxima de zero após muitas gerações, mas sua 
 
 **NOTA:** Após muitas gerações, o valor de q é tão baixo que o computador aproxima p = 1 e P = 1 (ver avaliação do bloco de código acima). Tenha em mente que esses valores não são **exatamente** 1, mas um número **muito** próximo.
 
-
 ### Q5 {.unnumbered}
 
 **(20%) Considerando-se a atuação apenas do processo dispersivo (PD) em uma população ideal responda:**
 
-a. **Cite as consequências do PD.**
+a.  **Cite as consequências do PD.**
 
-Os processos dispersivos podem gerar deriva genética (mudança casual na frequência gênica); aumento da diferença genética entre subpopulações distintas; aumento da similaridade entre indivíduos de uma mesma subpopulação (maior uniformidade); aumento da homozigose e diminuição da heterozigose. 
+Os processos dispersivos podem gerar deriva genética (mudança casual na frequência gênica); aumento da diferença genética entre subpopulações distintas; aumento da similaridade entre indivíduos de uma mesma subpopulação (maior uniformidade); aumento da homozigose e diminuição da heterozigose.
 
-b. **Se uma determinada população base com freq. gênica:**
+b.  **Se uma determinada população base com freq. gênica:**
 
 **P(A) = p0 = 0.2; P(a) = q0 = 0.8, após completa fixação, responder:**
 
-- **Freq. gênica considerando-se todas as sub-populações como um todo.**
-    
+-   **Freq. gênica considerando-se todas as sub-populações como um todo.**
+
 A frequência gênica média é igual à frequência gênica inicial. Logo, p = 0.2 e q = 0.8.
 
-- **Freq. genotípica.**
+-   **Freq. genotípica.**
 
-Após a fixação, $A1A1 = p_0 = 0.2$, $A1A2 = 0$, e $A2A2 = q_0 = 0.8$. 
+Após a fixação, $A1A1 = p_0 = 0.2$, $A1A2 = 0$, e $A2A2 = q_0 = 0.8$.
 
-- $\sigma^2_q$ **(variância da freq. gênica entre linhas)**
+-   $\sigma^2_q$ **(variância da freq. gênica entre linhas)**
 
 $\sigma^2_q = p_0q_0 = 0.16$
 
-
 ### Q6 {.unnumbered}
-
 
 **O gene br2 determina o fenótipo braquítico em milho, sendo o mesmo, recessivo em relação ao milho não mutante Br2-. O melhorista possuía duas populações, uma em homozigose para porte baixo (br2br2) e outra em homozigose para porte alto (Br2Br2). Ele plantou uma área composta pela mistura de 60% das sementes oriundas da população de porte alto (Br2Br2) e de 40% das sementes oriundas da população braquítica (br2br2). Na população resultante de tal mistura, supondo que a mesma tenha atingido o EHW, responda:**
 
-
-- **Quais as freqüências gênicas?**
+-   **Quais as freqüências gênicas?**
 
 60% Br2Br2 e 40% br2br2, logo:
 
-p(Br2) = 0.6 <br />
-q(br2) = 0.4
+p(Br2) = 0.6 <br /> q(br2) = 0.4
 
-
-- **Quais as freqüências genotípicas?**
+-   **Quais as freqüências genotípicas?**
 
 Br2Br2 = $p^2 = 0.6^2 = 0.36$
 
@@ -464,12 +447,11 @@ Br2br2 = $2pq = 2 \times 0.6 \times 0.4 = 0.48$
 
 br2br2 = $q^2 = 0.4^2 = 0.16$
 
-- **Quais as freqüências fenotípicas?**
+-   **Quais as freqüências fenotípicas?**
 
 84% porte alto : 16% braquíticos
 
-
---------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 ## Prova 3 {.unnumbered}
 
@@ -477,30 +459,29 @@ br2br2 = $q^2 = 0.4^2 = 0.16$
 
 **(20%) Falso ou verdadeiro. Se falso, marque ou justifique brevemente sua resposta.**
 
-- **( V ) O coeficiente de parentesco de dois indivíduos é equivalente à média dos coeficientes de parentesco de um dos indivíduos com os pais do outro indivíduo.**
+-   **( V ) O coeficiente de parentesco de dois indivíduos é equivalente à média dos coeficientes de parentesco de um dos indivíduos com os pais do outro indivíduo.**
 
-- **( F ) O coeficiente de parent. da progênie equivale ao coeficiente de endogamia dos pais.**
+-   **( F ) O coeficiente de parent. da progênie equivale ao coeficiente de endogamia dos pais.**
 
 O coeficiente de ENDOGAMIA da progênie equivale ao coeficiente de PARENTESCO dos pais.
 
-- **( V ) O coeficiente de endogamia será maior se calculado em relação a uma população base mais remota.**
+-   **( V ) O coeficiente de endogamia será maior se calculado em relação a uma população base mais remota.**
 
-- **( V ) A velocidade de elevação do grau de endogamia é a mesma para autofecundações sucessivas, e retrocruzamentos quando o genitor recorrente possui F=1.**
+-   **( V ) A velocidade de elevação do grau de endogamia é a mesma para autofecundações sucessivas, e retrocruzamentos quando o genitor recorrente possui F=1.**
 
-- **( F ) A variação continua é tão somente decorrente da segreg. simultânea de vários genes.**
+-   **( F ) A variação continua é tão somente decorrente da segreg. simultânea de vários genes.**
 
 A variação contínua também é decorrente de efeitos não-genéticos.
 
-- **( F ) A substituição de um alelo desfavorável por outro favorável (a) será sempre positiva, independente da freq. gênica.**
+-   **( F ) A substituição de um alelo desfavorável por outro favorável (a) será sempre positiva, independente da freq. gênica.**
 
 A substituição pode ser negativa a depender das frequências de p e q.
-
 
 ### Q2 {.unnumbered}
 
 **(20%) Responder às questões:**
 
-- **Calcule o coeficiente de endogamia em uma progênie após duas gerações de retrocruzamento (transferência de um gene dominante), sendo os progenitores iniciais, linhas puras (F=1).**
+-   **Calcule o coeficiente de endogamia em uma progênie após duas gerações de retrocruzamento (transferência de um gene dominante), sendo os progenitores iniciais, linhas puras (F=1).**
 
 Sabendo que $F_t = \frac{1}{2}(1 + F_{t-1})$:
 
@@ -512,19 +493,77 @@ F_3 &= \frac{1}{2}(1 + 0.75) = 0.875
 \end{aligned}
 $$
 
-- **Calcule o coeficiente de parentesco de um indivíduo com ele mesmo, sendo tal indivíduo, filho de irmãos completos, sendo os mesmos, filhos de pais endogâmicos.**
+-   **Calcule o coeficiente de parentesco de um indivíduo com ele mesmo, sendo tal indivíduo, filho de irmãos completos, sendo os mesmos, filhos de pais endogâmicos.**
 
+Sendo A o indivíduo em questão, e P e Q os seus pais (irmãos completos):
 
+$$
+\begin{aligned}
+F_A = f_{PQ} &= \frac{1}{4}(1+\bar{F}) \\
+&= \frac{1}{2} \\
+\\
+f_{AA} &= \frac{1}{2}(1+F_A) \\
+&= \frac{1}{2} \times 1.5 = 0.75
+\end{aligned}
+$$
 
 ### Q3 {.unnumbered}
 
 **(20%) Trabalhe a distribuição de freqüência para o caso de dois loci com alelos codominantes (ausência de dominância) com freqüência: (loco A: p = 0.4 e loco B: p = 0.6). Faça o gráfico da freqüência considerando que cada alelo favorável incrementa em 10 unidades no fenótipo. Considere que o duplo recessivo (aabb) seja igual a 40.**
 
+| Gametas M / F | AA (0.16; 40) | Aa (0.48; 30) | aa (0.36; 20) |
+|:--------------|:--------------|:--------------|:--------------|
+| BB (0.36; 40) | 0.0576; 80    | 0.1728; 70    | 0.1296; 60    |
+| Bb (0.48; 30) | 0.0768; 70    | 0.2304; 60    | 0.1728; 50    |
+| bb (0.16; 20) | 0.0256; 60    | 0.0768; 50    | 0.0576; 40    |
+
+
+```{r}
+tabela <- data.frame(
+    N_alelos_favoraveis = 0:4,
+    Classe_fenotipica = c(40, 50, 60, 70, 80),
+    Frequencia = c(0.0576, 
+                   0.0768 + 0.1728,
+                   0.0256 + 0.2304 + 0.1296,
+                   0.0768 + 0.1728,
+                   0.0576)
+)
+gt::gt(tabela)
+
+# Representando graficamente
+suppressPackageStartupMessages(library(tidyverse))
+vals <- c(
+  round(rep(0, tabela$Frequencia[1] * 10^6)),
+  round(rep(1, tabela$Frequencia[2] * 10^6)),
+  round(rep(2, tabela$Frequencia[3] * 10^6)),
+  round(rep(3, tabela$Frequencia[4] * 10^6)),
+  round(rep(4, tabela$Frequencia[5] * 10^6))
+)
+df_q3 <- data.frame(x = vals)
+df_q3 %>%
+  ggplot(., aes(x = x, y = ..count.. / sum(..count..) * 100)) +
+  geom_histogram(bins = 5, fill = "grey60", color = "black") +
+  theme_bw() +
+  scale_x_continuous(breaks = 0:6) +
+  labs(x = "Classes fenotípicas",
+       y = "Porcentagem na população (%)",
+       title = "Distribuição de frequência para característica métrica",
+       subtitle = "2 loci, ausência de dominância, pA = 0.4 e pB = 0.6")
+```
 
 ### Q4 {.unnumbered}
 
 **(20%) Em sorgo, uma espécie autógama, em média se observa 5% de fecundação cruzada. Qual será a freq. de heterozigotos em uma população em equilíbrio, para um loco com dois alelos, considerando que a população foi derivada do cruzamento entre duas linhas puras contrastantes para o referido loco, assumindo ausência dos processos sistemáticos?**
 
+$$
+\begin{aligned}
+F &= \frac{1-C}{1+C} \\
+&= \frac{0.95}{1.05} = 0.9048 \\
+\\
+H &= 1 - F \\
+&= 1-0.9048 = 0.0952 = 9.52\%
+\end{aligned}
+$$
 
 ### Q5 {.unnumbered}
 
@@ -532,18 +571,90 @@ $$
 
 | A1A1 | A1A2 | A2A2 |
 |:-----|:-----|:-----|
-|  140 |  130 |  100 |
+| 140  | 130  | 100  |
 
 **Considerando a freq. gênica A1 = 0.5, estimar:**
 
-- **Valores Genotípicos codificados (a, d, -a), Média e Grau médio de dominância.**
+-   **Valores Genotípicos codificados (a, d, -a), Média e Grau médio de dominância.**
 
-- **Efeito médio de substituição (a).**
+-   **Efeito médio de substituição (alfa).**
 
-- **Efeito médio dos genes (a1, a2).**
+-   **Efeito médio dos genes (alfa1, alfa2).**
 
-- **Valor genético (A), genotípico em termos de desvio (G) e desvio devido a dominância (D) dos diferentes genótipos.**
+-   **Valor genético (A), genotípico em termos de desvio (G) e desvio devido a dominância (D) dos diferentes genótipos.**
 
-- **Mostre graficamente os valores de a, d, -a, a, e A**
+-   **Mostre graficamente os valores de a, d, -a, alfa, e A**
 
+Usando função implementada previamente nos exercícios:
 
+```{r}
+means_and_values <- function(genotype_values = NULL, p = NULL) {
+  if(length(genotype_values) != 3) {
+    stop("Object 'genotype_values' must be a character vector of length 3.")
+  }
+  q <- 1 - p
+  
+  # Assigned values
+  midpoint <- (genotype_values[1] + genotype_values[3]) / 2
+  a <- genotype_values[1] - midpoint
+  d <- genotype_values[2] - midpoint
+  
+  # Mean
+  M <- a * (p-q) + 2 * d * p * q
+  M <- as.numeric(midpoint + M)
+
+  # Degree of dominance  
+  dg <- as.numeric(d / a)
+  
+  # Average effect
+  alpha <- as.numeric(a + d * (q-p))
+  alpha1 <- as.numeric(q * alpha)
+  alpha2 <- as.numeric(-p * alpha)
+  
+  # Breeding values for each genotype
+  A <- c(a1a1 = 2*q*alpha, 
+         a1a2 = alpha * (q-p),
+         a2a2 = -2 * p * alpha)
+  
+  # Genotypic value in terms of deviation
+  G <- c(a1a1 = 2*q*(alpha - q*d),
+         a1a2 = alpha*(q-p) + 2*p*q*d,
+         a2a2 = -2*p*(alpha + p*d))
+  
+  # Dominance deviation
+  D <- c(a1a1 = -2 * q^2 * d,
+         a1a2 = 2*p*q*d,
+         a2a2 = -2 * p^2 * d)
+  
+  table <- data.frame(
+    Genotype = c("A1A1", "A1A2", "A2A2"),
+    Assigned_values = c(paste0("+a = ", a),
+                        paste0("d = ", d),
+                        paste0("-a = ", -a)),
+    A = A,
+    G = G,
+    D = D
+  )
+  rownames(table) <- NULL
+  result_list <- list(
+    Mean = M,
+    `Degree of dominance` = dg,
+    `Average effects` = c(alpha = alpha,
+                          alpha1 = alpha1,
+                          alpha2 = alpha2),
+    Summary_table = table
+  )
+  return(result_list)
+}
+```
+
+Aplicando função com dados do enunciado:
+
+```{r}
+p <- 0.5
+genotypic_values <- c("A1A1" = 140, 
+                      "A1A2" = 130,
+                      "A2A2" = 100)
+means_and_values(genotypic_values, p)
+
+```

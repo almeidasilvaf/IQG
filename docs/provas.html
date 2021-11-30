@@ -369,8 +369,7 @@ n &amp;= \frac{\log 0.05}{\log \frac{5}{6}} \\
 <div id="q2-9" class="section level3 unnumbered">
 <h3>Q2</h3>
 <p><strong>(15%) Mostre graficamente a aproximação ao equilíbrio sob acasalamento ao acaso para o caso de um gene ligado ao sexo. Considere as seguintes frequências iniciais: qf = 0,2 e qm = 0,8. Qual a freqüência gênica (q) no equilíbrio?</strong></p>
-<p>Implementando uma função para calcular frequências de genes ligados ao
-sexo em machos e fêmeas:</p>
+<p>Implementando uma função para calcular frequências de genes ligados ao sexo em machos e fêmeas:</p>
 <div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="provas.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">99999</span>)</span>
 <span id="cb222-2"><a href="provas.html#cb222-2" aria-hidden="true" tabindex="-1"></a>calc_freq_xlinked <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">pm0 =</span> <span class="cn">NULL</span>, <span class="at">pf0 =</span> <span class="cn">NULL</span>, </span>
 <span id="cb222-3"><a href="provas.html#cb222-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">generations =</span> <span class="dv">10</span>) {</span>
@@ -442,8 +441,7 @@ sexo em machos e fêmeas:</p>
 <p><strong>(26%) Na geração parental “0,” uma determinada população é formada por 100% do genótipo duplo heterozigoto “AaBb.” Considerando acasalamento ao acaso em gerações sucessivas, pergunta-se:</strong></p>
 <p><strong>a) Quais as frequências gaméticas iniciais e no equilíbrio se os locos estiverem (1) não ligados, (2) ligados (fase aproximação) com uma frequência de recombinação de 40%?</strong></p>
 <p>100% AaBb, logo:</p>
-<p>pA = qA = 0.5 <br />
-pB = qB = 0.5</p>
+<p>pA = qA = 0.5 <br /> pB = qB = 0.5</p>
 <table>
 <thead>
 <tr class="header">
@@ -788,8 +786,7 @@ u &amp;= \hat{u} + D_t
 <li><strong>Quais as freqüências gênicas?</strong></li>
 </ul>
 <p>60% Br2Br2 e 40% br2br2, logo:</p>
-<p>p(Br2) = 0.6 <br />
-q(br2) = 0.4</p>
+<p>p(Br2) = 0.6 <br /> q(br2) = 0.4</p>
 <ul>
 <li><strong>Quais as freqüências genotípicas?</strong></li>
 </ul>
@@ -841,14 +838,461 @@ F_3 &amp;= \frac{1}{2}(1 + 0.75) = 0.875
 <ul>
 <li><strong>Calcule o coeficiente de parentesco de um indivíduo com ele mesmo, sendo tal indivíduo, filho de irmãos completos, sendo os mesmos, filhos de pais endogâmicos.</strong></li>
 </ul>
+<p>Sendo A o indivíduo em questão, e P e Q os seus pais (irmãos completos):</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_A = f_{PQ} &amp;= \frac{1}{4}(1+\bar{F}) \\
+&amp;= \frac{1}{2} \\
+\\
+f_{AA} &amp;= \frac{1}{2}(1+F_A) \\
+&amp;= \frac{1}{2} \times 1.5 = 0.75
+\end{aligned}
+\]</span></p>
 </div>
 <div id="q3-10" class="section level3 unnumbered">
 <h3>Q3</h3>
 <p><strong>(20%) Trabalhe a distribuição de freqüência para o caso de dois loci com alelos codominantes (ausência de dominância) com freqüência: (loco A: p = 0.4 e loco B: p = 0.6). Faça o gráfico da freqüência considerando que cada alelo favorável incrementa em 10 unidades no fenótipo. Considere que o duplo recessivo (aabb) seja igual a 40.</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Gametas M / F</th>
+<th align="left">AA (0.16; 40)</th>
+<th align="left">Aa (0.48; 30)</th>
+<th align="left">aa (0.36; 20)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BB (0.36; 40)</td>
+<td align="left">0.0576; 80</td>
+<td align="left">0.1728; 70</td>
+<td align="left">0.1296; 60</td>
+</tr>
+<tr class="even">
+<td align="left">Bb (0.48; 30)</td>
+<td align="left">0.0768; 70</td>
+<td align="left">0.2304; 60</td>
+<td align="left">0.1728; 50</td>
+</tr>
+<tr class="odd">
+<td align="left">bb (0.16; 20)</td>
+<td align="left">0.0256; 60</td>
+<td align="left">0.0768; 50</td>
+<td align="left">0.0576; 40</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="provas.html#cb249-1" aria-hidden="true" tabindex="-1"></a>tabela <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb249-2"><a href="provas.html#cb249-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">N_alelos_favoraveis =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>,</span>
+<span id="cb249-3"><a href="provas.html#cb249-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Classe_fenotipica =</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>),</span>
+<span id="cb249-4"><a href="provas.html#cb249-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Frequencia =</span> <span class="fu">c</span>(<span class="fl">0.0576</span>, </span>
+<span id="cb249-5"><a href="provas.html#cb249-5" aria-hidden="true" tabindex="-1"></a>                   <span class="fl">0.0768</span> <span class="sc">+</span> <span class="fl">0.1728</span>,</span>
+<span id="cb249-6"><a href="provas.html#cb249-6" aria-hidden="true" tabindex="-1"></a>                   <span class="fl">0.0256</span> <span class="sc">+</span> <span class="fl">0.2304</span> <span class="sc">+</span> <span class="fl">0.1296</span>,</span>
+<span id="cb249-7"><a href="provas.html#cb249-7" aria-hidden="true" tabindex="-1"></a>                   <span class="fl">0.0768</span> <span class="sc">+</span> <span class="fl">0.1728</span>,</span>
+<span id="cb249-8"><a href="provas.html#cb249-8" aria-hidden="true" tabindex="-1"></a>                   <span class="fl">0.0576</span>)</span>
+<span id="cb249-9"><a href="provas.html#cb249-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb249-10"><a href="provas.html#cb249-10" aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(tabela)</span></code></pre></div>
+<div id="viecyuywlo" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#viecyuywlo .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#viecyuywlo .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#viecyuywlo .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#viecyuywlo .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#viecyuywlo .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#viecyuywlo .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#viecyuywlo .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#viecyuywlo .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#viecyuywlo .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#viecyuywlo .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#viecyuywlo .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#viecyuywlo .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#viecyuywlo .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#viecyuywlo .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#viecyuywlo .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#viecyuywlo .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#viecyuywlo .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#viecyuywlo .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#viecyuywlo .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#viecyuywlo .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#viecyuywlo .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#viecyuywlo .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#viecyuywlo .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#viecyuywlo .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#viecyuywlo .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#viecyuywlo .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#viecyuywlo .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#viecyuywlo .gt_left {
+  text-align: left;
+}
+
+#viecyuywlo .gt_center {
+  text-align: center;
+}
+
+#viecyuywlo .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#viecyuywlo .gt_font_normal {
+  font-weight: normal;
+}
+
+#viecyuywlo .gt_font_bold {
+  font-weight: bold;
+}
+
+#viecyuywlo .gt_font_italic {
+  font-style: italic;
+}
+
+#viecyuywlo .gt_super {
+  font-size: 65%;
+}
+
+#viecyuywlo .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 65%;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">N_alelos_favoraveis</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Classe_fenotipica</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Frequencia</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">40</td>
+<td class="gt_row gt_right">0.0576</td></tr>
+    <tr><td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">50</td>
+<td class="gt_row gt_right">0.2496</td></tr>
+    <tr><td class="gt_row gt_right">2</td>
+<td class="gt_row gt_right">60</td>
+<td class="gt_row gt_right">0.3856</td></tr>
+    <tr><td class="gt_row gt_right">3</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">0.2496</td></tr>
+    <tr><td class="gt_row gt_right">4</td>
+<td class="gt_row gt_right">80</td>
+<td class="gt_row gt_right">0.0576</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="provas.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Representando graficamente</span></span>
+<span id="cb250-2"><a href="provas.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb250-3"><a href="provas.html#cb250-3" aria-hidden="true" tabindex="-1"></a>vals <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb250-4"><a href="provas.html#cb250-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="fu">rep</span>(<span class="dv">0</span>, tabela<span class="sc">$</span>Frequencia[<span class="dv">1</span>] <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>)),</span>
+<span id="cb250-5"><a href="provas.html#cb250-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="fu">rep</span>(<span class="dv">1</span>, tabela<span class="sc">$</span>Frequencia[<span class="dv">2</span>] <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>)),</span>
+<span id="cb250-6"><a href="provas.html#cb250-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="fu">rep</span>(<span class="dv">2</span>, tabela<span class="sc">$</span>Frequencia[<span class="dv">3</span>] <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>)),</span>
+<span id="cb250-7"><a href="provas.html#cb250-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="fu">rep</span>(<span class="dv">3</span>, tabela<span class="sc">$</span>Frequencia[<span class="dv">4</span>] <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>)),</span>
+<span id="cb250-8"><a href="provas.html#cb250-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="fu">rep</span>(<span class="dv">4</span>, tabela<span class="sc">$</span>Frequencia[<span class="dv">5</span>] <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>))</span>
+<span id="cb250-9"><a href="provas.html#cb250-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb250-10"><a href="provas.html#cb250-10" aria-hidden="true" tabindex="-1"></a>df_q3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> vals)</span>
+<span id="cb250-11"><a href="provas.html#cb250-11" aria-hidden="true" tabindex="-1"></a>df_q3 <span class="sc">%&gt;%</span></span>
+<span id="cb250-12"><a href="provas.html#cb250-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> ..count.. <span class="sc">/</span> <span class="fu">sum</span>(..count..) <span class="sc">*</span> <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb250-13"><a href="provas.html#cb250-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">5</span>, <span class="at">fill =</span> <span class="st">&quot;grey60&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb250-14"><a href="provas.html#cb250-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb250-15"><a href="provas.html#cb250-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb250-16"><a href="provas.html#cb250-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Classes fenotípicas&quot;</span>,</span>
+<span id="cb250-17"><a href="provas.html#cb250-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Porcentagem na população (%)&quot;</span>,</span>
+<span id="cb250-18"><a href="provas.html#cb250-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Distribuição de frequência para característica métrica&quot;</span>,</span>
+<span id="cb250-19"><a href="provas.html#cb250-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;2 loci, ausência de dominância, pA = 0.4 e pB = 0.6&quot;</span>)</span></code></pre></div>
+<p><img src="IQG_solutions_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
 </div>
 <div id="q4-10" class="section level3 unnumbered">
 <h3>Q4</h3>
 <p><strong>(20%) Em sorgo, uma espécie autógama, em média se observa 5% de fecundação cruzada. Qual será a freq. de heterozigotos em uma população em equilíbrio, para um loco com dois alelos, considerando que a população foi derivada do cruzamento entre duas linhas puras contrastantes para o referido loco, assumindo ausência dos processos sistemáticos?</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+F &amp;= \frac{1-C}{1+C} \\
+&amp;= \frac{0.95}{1.05} = 0.9048 \\
+\\
+H &amp;= 1 - F \\
+&amp;= 1-0.9048 = 0.0952 = 9.52\%
+\end{aligned}
+\]</span></p>
 </div>
 <div id="q5-9" class="section level3 unnumbered">
 <h3>Q5</h3>
@@ -872,11 +1316,91 @@ F_3 &amp;= \frac{1}{2}(1 + 0.75) = 0.875
 <p><strong>Considerando a freq. gênica A1 = 0.5, estimar:</strong></p>
 <ul>
 <li><p><strong>Valores Genotípicos codificados (a, d, -a), Média e Grau médio de dominância.</strong></p></li>
-<li><p><strong>Efeito médio de substituição (a).</strong></p></li>
-<li><p><strong>Efeito médio dos genes (a1, a2).</strong></p></li>
+<li><p><strong>Efeito médio de substituição (alfa).</strong></p></li>
+<li><p><strong>Efeito médio dos genes (alfa1, alfa2).</strong></p></li>
 <li><p><strong>Valor genético (A), genotípico em termos de desvio (G) e desvio devido a dominância (D) dos diferentes genótipos.</strong></p></li>
-<li><p><strong>Mostre graficamente os valores de a, d, -a, a, e A</strong></p></li>
+<li><p><strong>Mostre graficamente os valores de a, d, -a, alfa, e A</strong></p></li>
 </ul>
+<p>Usando função implementada previamente nos exercícios:</p>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="provas.html#cb251-1" aria-hidden="true" tabindex="-1"></a>means_and_values <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">genotype_values =</span> <span class="cn">NULL</span>, <span class="at">p =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb251-2"><a href="provas.html#cb251-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">length</span>(genotype_values) <span class="sc">!=</span> <span class="dv">3</span>) {</span>
+<span id="cb251-3"><a href="provas.html#cb251-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;Object &#39;genotype_values&#39; must be a character vector of length 3.&quot;</span>)</span>
+<span id="cb251-4"><a href="provas.html#cb251-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb251-5"><a href="provas.html#cb251-5" aria-hidden="true" tabindex="-1"></a>  q <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> p</span>
+<span id="cb251-6"><a href="provas.html#cb251-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb251-7"><a href="provas.html#cb251-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Assigned values</span></span>
+<span id="cb251-8"><a href="provas.html#cb251-8" aria-hidden="true" tabindex="-1"></a>  midpoint <span class="ot">&lt;-</span> (genotype_values[<span class="dv">1</span>] <span class="sc">+</span> genotype_values[<span class="dv">3</span>]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb251-9"><a href="provas.html#cb251-9" aria-hidden="true" tabindex="-1"></a>  a <span class="ot">&lt;-</span> genotype_values[<span class="dv">1</span>] <span class="sc">-</span> midpoint</span>
+<span id="cb251-10"><a href="provas.html#cb251-10" aria-hidden="true" tabindex="-1"></a>  d <span class="ot">&lt;-</span> genotype_values[<span class="dv">2</span>] <span class="sc">-</span> midpoint</span>
+<span id="cb251-11"><a href="provas.html#cb251-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb251-12"><a href="provas.html#cb251-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Mean</span></span>
+<span id="cb251-13"><a href="provas.html#cb251-13" aria-hidden="true" tabindex="-1"></a>  M <span class="ot">&lt;-</span> a <span class="sc">*</span> (p<span class="sc">-</span>q) <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> d <span class="sc">*</span> p <span class="sc">*</span> q</span>
+<span id="cb251-14"><a href="provas.html#cb251-14" aria-hidden="true" tabindex="-1"></a>  M <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(midpoint <span class="sc">+</span> M)</span>
+<span id="cb251-15"><a href="provas.html#cb251-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb251-16"><a href="provas.html#cb251-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Degree of dominance  </span></span>
+<span id="cb251-17"><a href="provas.html#cb251-17" aria-hidden="true" tabindex="-1"></a>  dg <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(d <span class="sc">/</span> a)</span>
+<span id="cb251-18"><a href="provas.html#cb251-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb251-19"><a href="provas.html#cb251-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Average effect</span></span>
+<span id="cb251-20"><a href="provas.html#cb251-20" aria-hidden="true" tabindex="-1"></a>  alpha <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(a <span class="sc">+</span> d <span class="sc">*</span> (q<span class="sc">-</span>p))</span>
+<span id="cb251-21"><a href="provas.html#cb251-21" aria-hidden="true" tabindex="-1"></a>  alpha1 <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(q <span class="sc">*</span> alpha)</span>
+<span id="cb251-22"><a href="provas.html#cb251-22" aria-hidden="true" tabindex="-1"></a>  alpha2 <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="sc">-</span>p <span class="sc">*</span> alpha)</span>
+<span id="cb251-23"><a href="provas.html#cb251-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb251-24"><a href="provas.html#cb251-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Breeding values for each genotype</span></span>
+<span id="cb251-25"><a href="provas.html#cb251-25" aria-hidden="true" tabindex="-1"></a>  A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a1a1 =</span> <span class="dv">2</span><span class="sc">*</span>q<span class="sc">*</span>alpha, </span>
+<span id="cb251-26"><a href="provas.html#cb251-26" aria-hidden="true" tabindex="-1"></a>         <span class="at">a1a2 =</span> alpha <span class="sc">*</span> (q<span class="sc">-</span>p),</span>
+<span id="cb251-27"><a href="provas.html#cb251-27" aria-hidden="true" tabindex="-1"></a>         <span class="at">a2a2 =</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> p <span class="sc">*</span> alpha)</span>
+<span id="cb251-28"><a href="provas.html#cb251-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb251-29"><a href="provas.html#cb251-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Genotypic value in terms of deviation</span></span>
+<span id="cb251-30"><a href="provas.html#cb251-30" aria-hidden="true" tabindex="-1"></a>  G <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a1a1 =</span> <span class="dv">2</span><span class="sc">*</span>q<span class="sc">*</span>(alpha <span class="sc">-</span> q<span class="sc">*</span>d),</span>
+<span id="cb251-31"><a href="provas.html#cb251-31" aria-hidden="true" tabindex="-1"></a>         <span class="at">a1a2 =</span> alpha<span class="sc">*</span>(q<span class="sc">-</span>p) <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q<span class="sc">*</span>d,</span>
+<span id="cb251-32"><a href="provas.html#cb251-32" aria-hidden="true" tabindex="-1"></a>         <span class="at">a2a2 =</span> <span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>(alpha <span class="sc">+</span> p<span class="sc">*</span>d))</span>
+<span id="cb251-33"><a href="provas.html#cb251-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb251-34"><a href="provas.html#cb251-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Dominance deviation</span></span>
+<span id="cb251-35"><a href="provas.html#cb251-35" aria-hidden="true" tabindex="-1"></a>  D <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a1a1 =</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> q<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> d,</span>
+<span id="cb251-36"><a href="provas.html#cb251-36" aria-hidden="true" tabindex="-1"></a>         <span class="at">a1a2 =</span> <span class="dv">2</span><span class="sc">*</span>p<span class="sc">*</span>q<span class="sc">*</span>d,</span>
+<span id="cb251-37"><a href="provas.html#cb251-37" aria-hidden="true" tabindex="-1"></a>         <span class="at">a2a2 =</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> p<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> d)</span>
+<span id="cb251-38"><a href="provas.html#cb251-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb251-39"><a href="provas.html#cb251-39" aria-hidden="true" tabindex="-1"></a>  table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb251-40"><a href="provas.html#cb251-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">Genotype =</span> <span class="fu">c</span>(<span class="st">&quot;A1A1&quot;</span>, <span class="st">&quot;A1A2&quot;</span>, <span class="st">&quot;A2A2&quot;</span>),</span>
+<span id="cb251-41"><a href="provas.html#cb251-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">Assigned_values =</span> <span class="fu">c</span>(<span class="fu">paste0</span>(<span class="st">&quot;+a = &quot;</span>, a),</span>
+<span id="cb251-42"><a href="provas.html#cb251-42" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">paste0</span>(<span class="st">&quot;d = &quot;</span>, d),</span>
+<span id="cb251-43"><a href="provas.html#cb251-43" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">paste0</span>(<span class="st">&quot;-a = &quot;</span>, <span class="sc">-</span>a)),</span>
+<span id="cb251-44"><a href="provas.html#cb251-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">A =</span> A,</span>
+<span id="cb251-45"><a href="provas.html#cb251-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">G =</span> G,</span>
+<span id="cb251-46"><a href="provas.html#cb251-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">D =</span> D</span>
+<span id="cb251-47"><a href="provas.html#cb251-47" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb251-48"><a href="provas.html#cb251-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>(table) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb251-49"><a href="provas.html#cb251-49" aria-hidden="true" tabindex="-1"></a>  result_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb251-50"><a href="provas.html#cb251-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mean =</span> M,</span>
+<span id="cb251-51"><a href="provas.html#cb251-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Degree of dominance</span><span class="st">`</span> <span class="ot">=</span> dg,</span>
+<span id="cb251-52"><a href="provas.html#cb251-52" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average effects</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="at">alpha =</span> alpha,</span>
+<span id="cb251-53"><a href="provas.html#cb251-53" aria-hidden="true" tabindex="-1"></a>                          <span class="at">alpha1 =</span> alpha1,</span>
+<span id="cb251-54"><a href="provas.html#cb251-54" aria-hidden="true" tabindex="-1"></a>                          <span class="at">alpha2 =</span> alpha2),</span>
+<span id="cb251-55"><a href="provas.html#cb251-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">Summary_table =</span> table</span>
+<span id="cb251-56"><a href="provas.html#cb251-56" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb251-57"><a href="provas.html#cb251-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result_list)</span>
+<span id="cb251-58"><a href="provas.html#cb251-58" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Aplicando função com dados do enunciado:</p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="provas.html#cb252-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb252-2"><a href="provas.html#cb252-2" aria-hidden="true" tabindex="-1"></a>genotypic_values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A1A1&quot;</span> <span class="ot">=</span> <span class="dv">140</span>, </span>
+<span id="cb252-3"><a href="provas.html#cb252-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;A1A2&quot;</span> <span class="ot">=</span> <span class="dv">130</span>,</span>
+<span id="cb252-4"><a href="provas.html#cb252-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;A2A2&quot;</span> <span class="ot">=</span> <span class="dv">100</span>)</span>
+<span id="cb252-5"><a href="provas.html#cb252-5" aria-hidden="true" tabindex="-1"></a><span class="fu">means_and_values</span>(genotypic_values, p)</span></code></pre></div>
+<pre><code>## $Mean
+## [1] 125
+## 
+## $`Degree of dominance`
+## [1] 0.5
+## 
+## $`Average effects`
+##  alpha alpha1 alpha2 
+##     20     10    -10 
+## 
+## $Summary_table
+##   Genotype Assigned_values   A   G  D
+## 1     A1A1         +a = 20  20  15 -5
+## 2     A1A2          d = 10   0   5  5
+## 3     A2A2        -a = -20 -20 -25 -5</code></pre>
 
 </div>
 </div>
