@@ -190,7 +190,7 @@ var_components <- function(values = NULL, q = 0.2,
 }
 ```
 
-Calculado VD, VD e VG para p = 0.5 com os valores fenotípicos abaixo:
+Calculando VD, VD e VG para p = 0.5 com os valores fenotípicos abaixo:
 
 ```{r}
 p <- 0.5
