@@ -468,3 +468,82 @@ br2br2 = $q^2 = 0.4^2 = 0.16$
 
 84% porte alto : 16% braquíticos
 
+
+--------------------------------------------------------------------------------
+
+## Prova 3 {.unnumbered}
+
+### Q1 {.unnumbered}
+
+**(20%) Falso ou verdadeiro. Se falso, marque ou justifique brevemente sua resposta.**
+
+- **( V ) O coeficiente de parentesco de dois indivíduos é equivalente à média dos coeficientes de parentesco de um dos indivíduos com os pais do outro indivíduo.**
+
+- **( F ) O coeficiente de parent. da progênie equivale ao coeficiente de endogamia dos pais.**
+
+O coeficiente de ENDOGAMIA da progênie equivale ao coeficiente de PARENTESCO dos pais.
+
+- **( V ) O coeficiente de endogamia será maior se calculado em relação a uma população base mais remota.**
+
+- **( V ) A velocidade de elevação do grau de endogamia é a mesma para autofecundações sucessivas, e retrocruzamentos quando o genitor recorrente possui F=1.**
+
+- **( F ) A variação continua é tão somente decorrente da segreg. simultânea de vários genes.**
+
+A variação contínua também é decorrente de efeitos não-genéticos.
+
+- **( F ) A substituição de um alelo desfavorável por outro favorável (a) será sempre positiva, independente da freq. gênica.**
+
+A substituição pode ser negativa a depender das frequências de p e q.
+
+
+### Q2 {.unnumbered}
+
+**(20%) Responder às questões:**
+
+- **Calcule o coeficiente de endogamia em uma progênie após duas gerações de retrocruzamento (transferência de um gene dominante), sendo os progenitores iniciais, linhas puras (F=1).**
+
+Sabendo que $F_t = \frac{1}{2}(1 + F_{t-1})$:
+
+$$
+\begin{aligned}
+F_1 &= 0.5 \\
+F_2 &= \frac{1}{2}(1 + 0.5) = 0.75 \\
+F_3 &= \frac{1}{2}(1 + 0.75) = 0.875
+\end{aligned}
+$$
+
+- **Calcule o coeficiente de parentesco de um indivíduo com ele mesmo, sendo tal indivíduo, filho de irmãos completos, sendo os mesmos, filhos de pais endogâmicos.**
+
+
+
+### Q3 {.unnumbered}
+
+**(20%) Trabalhe a distribuição de freqüência para o caso de dois loci com alelos codominantes (ausência de dominância) com freqüência: (loco A: p = 0.4 e loco B: p = 0.6). Faça o gráfico da freqüência considerando que cada alelo favorável incrementa em 10 unidades no fenótipo. Considere que o duplo recessivo (aabb) seja igual a 40.**
+
+
+### Q4 {.unnumbered}
+
+**(20%) Em sorgo, uma espécie autógama, em média se observa 5% de fecundação cruzada. Qual será a freq. de heterozigotos em uma população em equilíbrio, para um loco com dois alelos, considerando que a população foi derivada do cruzamento entre duas linhas puras contrastantes para o referido loco, assumindo ausência dos processos sistemáticos?**
+
+
+### Q5 {.unnumbered}
+
+**(20%) - Uma característica métrica, com os seguintes valores fenotípicos:**
+
+| A1A1 | A1A2 | A2A2 |
+|:-----|:-----|:-----|
+|  140 |  130 |  100 |
+
+**Considerando a freq. gênica A1 = 0.5, estimar:**
+
+- **Valores Genotípicos codificados (a, d, -a), Média e Grau médio de dominância.**
+
+- **Efeito médio de substituição (a).**
+
+- **Efeito médio dos genes (a1, a2).**
+
+- **Valor genético (A), genotípico em termos de desvio (G) e desvio devido a dominância (D) dos diferentes genótipos.**
+
+- **Mostre graficamente os valores de a, d, -a, a, e A**
+
+
