@@ -33,7 +33,7 @@ Messias Gonzaga Pereira.</p>" />
 <meta name="author" content="Fabrício Almeida-Silva" />
 
 
-<meta name="date" content="2021-11-24" />
+<meta name="date" content="2021-11-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -160,6 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-8"><i class="fa fa-check"></i>Semana 8</a></li>
 <li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-9"><i class="fa fa-check"></i>Semana 9</a></li>
 <li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-10"><i class="fa fa-check"></i>Semana 10</a></li>
+<li class="chapter" data-level="" data-path="sabatinas.html"><a href="sabatinas.html#semana-11"><i class="fa fa-check"></i>Semana 11</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercícios.html"><a href="exercícios.html"><i class="fa fa-check"></i>Exercícios</a>
 <ul>
@@ -439,6 +440,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>-d = 20</li>
 <li>Média: 119.6</li>
 </ul>
+</div>
+<div id="semana-11" class="section level2 unnumbered">
+<h2>Semana 11</h2>
+<p>Função implementada no exercício da semana de variância:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="sabatinas.html#cb15-1" aria-hidden="true" tabindex="-1"></a>var_components <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">values =</span> <span class="cn">NULL</span>, <span class="at">q =</span> <span class="fl">0.2</span>, </span>
+<span id="cb15-2"><a href="sabatinas.html#cb15-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">a =</span> <span class="cn">NULL</span>, <span class="at">d =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb15-3"><a href="sabatinas.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span>q</span>
+<span id="cb15-4"><a href="sabatinas.html#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="sabatinas.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Assigned values</span></span>
+<span id="cb15-6"><a href="sabatinas.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.null</span>(a) <span class="sc">|</span> <span class="fu">is.null</span>(d)) {</span>
+<span id="cb15-7"><a href="sabatinas.html#cb15-7" aria-hidden="true" tabindex="-1"></a>      midpoint <span class="ot">&lt;-</span> (values[<span class="dv">1</span>] <span class="sc">+</span> values[<span class="dv">3</span>]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb15-8"><a href="sabatinas.html#cb15-8" aria-hidden="true" tabindex="-1"></a>      a <span class="ot">&lt;-</span> values[<span class="dv">1</span>] <span class="sc">-</span> midpoint</span>
+<span id="cb15-9"><a href="sabatinas.html#cb15-9" aria-hidden="true" tabindex="-1"></a>      d <span class="ot">&lt;-</span> values[<span class="dv">2</span>] <span class="sc">-</span> midpoint</span>
+<span id="cb15-10"><a href="sabatinas.html#cb15-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb15-11"><a href="sabatinas.html#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="sabatinas.html#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># VA</span></span>
+<span id="cb15-13"><a href="sabatinas.html#cb15-13" aria-hidden="true" tabindex="-1"></a>  alpha <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(a <span class="sc">+</span> d <span class="sc">*</span> (q<span class="sc">-</span>p))</span>
+<span id="cb15-14"><a href="sabatinas.html#cb15-14" aria-hidden="true" tabindex="-1"></a>  va <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> p <span class="sc">*</span> q <span class="sc">*</span> alpha<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb15-15"><a href="sabatinas.html#cb15-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-16"><a href="sabatinas.html#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># VD</span></span>
+<span id="cb15-17"><a href="sabatinas.html#cb15-17" aria-hidden="true" tabindex="-1"></a>  vd <span class="ot">&lt;-</span> (<span class="dv">2</span> <span class="sc">*</span> p <span class="sc">*</span> q <span class="sc">*</span> d)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb15-18"><a href="sabatinas.html#cb15-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-19"><a href="sabatinas.html#cb15-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># VG</span></span>
+<span id="cb15-20"><a href="sabatinas.html#cb15-20" aria-hidden="true" tabindex="-1"></a>  vg <span class="ot">&lt;-</span> va <span class="sc">+</span> vd</span>
+<span id="cb15-21"><a href="sabatinas.html#cb15-21" aria-hidden="true" tabindex="-1"></a>  result_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb15-22"><a href="sabatinas.html#cb15-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">Componentes =</span> <span class="fu">c</span>(<span class="st">&quot;VG&quot;</span>, <span class="st">&quot;VA&quot;</span>, <span class="st">&quot;VD&quot;</span>),</span>
+<span id="cb15-23"><a href="sabatinas.html#cb15-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">Valores =</span> <span class="fu">c</span>(vg, va, vd)</span>
+<span id="cb15-24"><a href="sabatinas.html#cb15-24" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-25"><a href="sabatinas.html#cb15-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result_df)</span>
+<span id="cb15-26"><a href="sabatinas.html#cb15-26" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Calculado VD, VD e VG para p = 0.5 com os valores fenotípicos abaixo:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="sabatinas.html#cb16-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb16-2"><a href="sabatinas.html#cb16-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb16-3"><a href="sabatinas.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="sabatinas.html#cb16-4" aria-hidden="true" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">A1A1 =</span> <span class="dv">150</span>,</span>
+<span id="cb16-5"><a href="sabatinas.html#cb16-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">A1A2 =</span> <span class="dv">120</span>,</span>
+<span id="cb16-6"><a href="sabatinas.html#cb16-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">A2A2 =</span> <span class="dv">50</span>)</span>
+<span id="cb16-7"><a href="sabatinas.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">var_components</span>(values, q)</span></code></pre></div>
+<pre><code>##   Componentes Valores
+## 1          VG    1350
+## 2          VA    1250
+## 3          VD     100</code></pre>
 
 </div>
 </div>

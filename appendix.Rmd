@@ -157,3 +157,51 @@ M
 - -d = 20
 - Média: 119.6
 
+## Semana 11 {.unnumbered}
+
+Função implementada no exercício da semana de variância:
+
+```{r}
+var_components <- function(values = NULL, q = 0.2, 
+                           a = NULL, d = NULL) {
+  p <- 1-q
+
+  # Assigned values
+  if(is.null(a) | is.null(d)) {
+      midpoint <- (values[1] + values[3]) / 2
+      a <- values[1] - midpoint
+      d <- values[2] - midpoint
+  }
+
+  # VA
+  alpha <- as.numeric(a + d * (q-p))
+  va <- 2 * p * q * alpha^2
+  
+  # VD
+  vd <- (2 * p * q * d)^2
+  
+  # VG
+  vg <- va + vd
+  result_df <- data.frame(
+    Componentes = c("VG", "VA", "VD"),
+    Valores = c(vg, va, vd)
+  )
+  return(result_df)
+}
+```
+
+Calculado VD, VD e VG para p = 0.5 com os valores fenotípicos abaixo:
+
+```{r}
+p <- 0.5
+q <- 0.5
+
+values <- c(A1A1 = 150,
+            A1A2 = 120,
+            A2A2 = 50)
+var_components(values, q)
+```
+
+
+
+
