@@ -601,7 +601,9 @@ means_and_values <- function(genotype_values = NULL, p = NULL) {
   
   # Mean
   M <- a * (p-q) + 2 * d * p * q
-  M <- as.numeric(midpoint + M)
+  M_plus_mp <- as.numeric(midpoint + M)
+  Mean <- c(Mean = as.numeric(M),
+            Mean_plus_midpoint = M_plus_mp)
 
   # Degree of dominance  
   dg <- as.numeric(d / a)
@@ -637,7 +639,7 @@ means_and_values <- function(genotype_values = NULL, p = NULL) {
   )
   rownames(table) <- NULL
   result_list <- list(
-    Mean = M,
+    Mean = Mean,
     `Degree of dominance` = dg,
     `Average effects` = c(alpha = alpha,
                           alpha1 = alpha1,
@@ -656,5 +658,12 @@ genotypic_values <- c("A1A1" = 140,
                       "A1A2" = 130,
                       "A2A2" = 100)
 means_and_values(genotypic_values, p)
-
 ```
+
+Representação gráfica:
+
+```{r echo=FALSE, fig.align='center', out.width='80%'}
+knitr::include_graphics("figs/prova3.jpg")
+```
+
+As linhas pontilhadas em azul representam os desvios (D), e o sinal de cruz em vermelho representa a média (M).
