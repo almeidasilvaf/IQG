@@ -667,3 +667,80 @@ knitr::include_graphics("figs/prova3.jpg")
 ```
 
 As linhas pontilhadas em azul representam os desvios (D), e o sinal de cruz em vermelho representa a média (M).
+
+
+------------------------------------------------------------------------
+
+## Prova 4 {.unnumbered}
+
+### Q1 {.unnumbered}
+
+**(25%) Falso ou verdadeiro (justifique sublinhando o erro):**
+
+- **( ) Quando p=q, a media de uma população (em termos de desvio do ponto médio), depende tão somente dos heterozigotos.**
+
+- **( ) Se p=1, a media referida no item a é igual ao próprio efeito aditivo "a".**
+
+- **( ) Valor genético (A) é o valor associado ao genótipo do indivíduo.**
+
+- **( ) Ação aditiva indica tão somente à ausência de dominância.**
+
+- **( ) Dominância e epistasia são sinônimos que se referem à interação entre locos.**
+
+- **( ) O Valor genético de um indivíduo (A) corresponde à soma dos efeitos médios dos genes que ele possui.**
+
+- **( ) Quando a repetibilidade é alta indica que se ganha muito em eficiência utilizando medidas múltiplas dada a previsibilidade dos resultados.**
+
+- **( ) A covariância entre grupos ou famílias eqüivale à Variância dentro de grupos ou famílias.**
+
+- **( ) A substituição de um alelo desfavorável por outro favorável (a) será sempre positiva, independente da freq. gênica**
+
+
+### Q2 {.unnumbered}
+
+**(40%)- Supondo que altura de espiga em milho seja determinada por um gene e dois alelos e que seja possível identificar em uma amostra os seguintes dados:**
+
+| Genótipos | Valores Fenotípicos (cm) |
+|:----------|:-------------------------|
+|   A2A2    |             80           |
+|   A1A2    |            120           |
+|   A1A1    |            140           |
+
+**Considerando a freq. gênica do alelo A1: p = 0.5, calcular:**
+
+- **A altura média de espiga**
+
+- **Valores Genotípicos codificados (a, d, -a)**
+
+- **Grau de dominância**
+
+- **Efeito médio dos genes (a1, a2)**
+
+- **Efeito médio de substituição (a)**
+
+- **Valor genético dos diferentes genótipos**
+
+- **Valor genotípico em termos de desvio (G)**
+
+- **Desvio devido a dominância (D).**
+
+- **Os componentes de variância VA, VD e VG.**
+
+### Q3 {.unnumbered}
+
+**(15%) Deduza com base na fórmula geral de covariância entre parentes (cov = rVA + uVD) qual a covariância de filho-avô [cov(OGP)], considerando o avô endogâmico.**
+
+
+### Q4 {.unnumbered}
+
+**(20%) Os dados a seguir referem-se a um estudo sobre a produção de leite envolvendo 1000 vacas durante as três primeiras lactações.**
+
+|       Lactações        |  1º  |  2º  |  3º  |
+|:-----------------------|:-----|:-----|:-----|
+|     Media (Kg/ano)     | 4000 | 4300 | 5000 |
+| Desv Padrão ($\sigma$) | 400  | 450  | 480  |
+| r com a 1º             |   -  | 0.5  | 0.5  |
+
+**Qual a previsão de produção de leite de uma novilha nas 2º e 3º lactações considerando que a mesma produziu 4800 kg de leite em sua 1º lactação?**
+
+
