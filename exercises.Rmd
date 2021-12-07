@@ -1832,10 +1832,164 @@ df
 Portanto, usar as 2 primeiras leitegadas aumentaria a herdabilidade em 42%, usar as 3 primeiras aumentaria em 65%, e usar as 4 primeiras aumentaria em 80%. 
 
 
+## Semana 10: Semelhança entre parentes {.unnumbered}
+
+### Q1 {.unnumbered}
+
+**Determine a covariância entre pai e filho considerando:**
+
+- **Geração F2-F3 sendo os pais originais, indivíduos não aparentados e não endogâmicos.**
+
+$$
+\begin{aligned}
+Cov_{F_2F_3} &= rV_A + uV_D \\
+\\
+F_{F1} &= fAB = 0 \\
+F_{F1F1} &= \frac{1}{2}(1 + F_{F1}) = \frac{1}{2} \\
+F_{F2} &= fF1F1 = \frac{1}{2} \\
+fF2F2 &= \frac{1}{2}(1 + F_{F2}) = \frac{3}{4} \\
+fF2F3 &= \frac{1}{2}(fF2F2 + fF2F2) = \frac{3}{4} \\
+r &= 2fF2F3 = \frac{3}{2}
+\\
+\\
+\\
+fF1F2 &= \frac{1}{2}(fF1F1 + fF1F1) = \frac{1}{2} \\
+u &= fF1F2 fF1F2 + fF1F2 fF1F2 = \frac{1}{2} \\
+\\
+\\
+\\
+Cov_{F2F3} &= \frac{3}{2}V_A + \frac{1}{2}V_D
+\end{aligned}
+$$
+
+- **Geração F2-F3 sendo os pais originais, indivíduos não aparentados e endogâmicos.**
+
+$$
+\begin{aligned}
+Cov_{F_2F_3} &= rV_A + uV_D \\
+\\
+F_{F1} &= fAB = 0 \\
+f_{F1F1} &= \frac{1}{2}(1 + F_{F1}) = \frac{1}{2} \\
+F_{F2} &= fF1F1 = \frac{1}{2} \\
+fF2F2 &= \frac{1}{2}(1 + F_{F2}) = \frac{3}{4} \\
+fF2F3 &= \frac{1}{2}(fF2F2 + fF2F2) = \frac{3}{4} \\
+r &= 2fF2F3 = \frac{3}{2}
+\\
+\\
+\\
+fF1F2 &= \frac{1}{2}(fF1F1 + fF1F1) = \frac{1}{2} \\
+u &= fF1F2 fF1F2 + fF1F2 fF1F2 = \frac{1}{2} \\
+\\
+\\
+\\
+Cov_{F2F3} &= \frac{3}{2}V_A + \frac{1}{2}V_D
+\end{aligned}
+$$
+
+- **Geração F2-F3 sendo os pais originais, indivíduos meios irmãos e não endogâmicos.**
+
+$$
+\begin{aligned}
+Cov_{F_2F_3} &= rV_A + uV_D \\
+\\
+F_{F1} &= fAB = \frac{1}{8}\text{ (meio-irmãos)} \\
+f_{F1F1} &= \frac{1}{2}(1 + F_{F1}) = \frac{9}{16} \\
+F_{F2} &= fF1F1 = \frac{9}{16} \\
+fF2F2 &= \frac{1}{2}(1 + F_{F2}) = \frac{25}{32} \\
+fF2F3 &= \frac{1}{2}(fF2F2 + fF2F2) = \frac{25}{32} \\
+r &= 2fF2F3 = \frac{25}{16}
+\\
+\\
+\\
+fF1F2 &= \frac{1}{2}(fF1F1 + fF1F1) = \frac{9}{16} \\
+u &= fF1F2 fF1F2 + fF1F2 fF1F2 = \frac{81}{128} \\
+\\
+\\
+\\
+Cov_{F2F3} &= \frac{25}{16}V_A + \frac{81}{128}V_D
+\end{aligned}
+$$
 
 
+- **Entre pai e filho, sendo o pai uma linha pura.**
+
+$$
+\begin{aligned}
+Cov_{PF} &= rV_A \text{ (pois u = 0)} \\
+&= 2fPF \times V_A \\
+&= \frac{1}{2}(1 + F_P) V_A \\
+&= V_A
+\end{aligned}
+$$
 
 
+### Q2 {.unnumbered}
+
+**Relacione os coeficientes calculados no problema anterior com a herdabilidade.**
+
+- Para o primeiro e segundo problema:
+
+$$
+\begin{aligned}
+b_{F2F3} &= \frac{ \frac{3}{2} \sigma^2_A } {\sigma^2_{P_{F2}}} \\
+&= \frac{3}{2}h^2 \\
+\\
+h^2 &=\frac{2}{3}b_{F2F3}
+\end{aligned}
+$$
+- Para o terceiro problema:
+
+
+$$
+\begin{aligned}
+b_{F2F3} &= \frac{ \frac{25}{16} \sigma^2_A } {\sigma^2_{P_{F2}}} \\
+&= \frac{25}{16}h^2 \\
+\\
+h^2 &=\frac{16}{25}b_{F2F3}
+\end{aligned}
+$$
+
+- Para o quarto problema:
+
+$$
+\begin{aligned}
+b_{PF} &= \frac{\sigma^2_A} {\sigma^2_P} \\
+&= h^2 \\
+\\
+h^2 &= b
+\end{aligned}
+$$
+
+### Q3 {.unnumbered}
+
+**Calcule as seguintes covariâncias:**
+
+- Entre meios irmãos, sendo o pai comum uma linha pura.
+
+$$
+\begin{aligned}
+Cov_{MI} &= \frac{1}{4}(1 + FA)V_A \\
+&= \frac{1}{2}V_A
+\end{aligned}
+$$
+
+- Entre meios irmãos, sendo o pai comum uma planta F1.
+
+$$
+\begin{aligned}
+Cov_{MI} &= \frac{1}{4}(1 + FA)V_A \\
+&= \frac{1}{4}V_A
+\end{aligned}
+$$
+
+- Entre irmãos completos, sendo os parentais, linhas puras.
+
+$$
+\begin{aligned}
+Cov_{IC} &= \frac{1}{2}(1 + \bar{F})V_A + \frac{1}{4}(1 + \bar{F})^2V_D \\
+&= V_A + V_D
+\end{aligned}
+$$
 
 
 
