@@ -677,23 +677,38 @@ As linhas pontilhadas em azul representam os desvios (D), e o sinal de cruz em v
 
 **(25%) Falso ou verdadeiro (justifique sublinhando o erro):**
 
-- **( ) Quando p=q, a media de uma população (em termos de desvio do ponto médio), depende tão somente dos heterozigotos.**
+- **( V ) Quando p=q, a media de uma população (em termos de desvio do ponto médio), depende tão somente dos heterozigotos.**
 
-- **( ) Se p=1, a media referida no item a é igual ao próprio efeito aditivo "a".**
+- **( V ) Se p=1, a media referida no item a é igual ao próprio efeito aditivo "a".**
 
-- **( ) Valor genético (A) é o valor associado ao genótipo do indivíduo.**
+- **( F ) Valor genético (A) é o** valor associado ao genótipo do indivíduo.
 
-- **( ) Ação aditiva indica tão somente à ausência de dominância.**
+É o valor associado aos genes do indivíduo, transmitidos para a progênie.
 
-- **( ) Dominância e epistasia são sinônimos que se referem à interação entre locos.**
 
-- **( ) O Valor genético de um indivíduo (A) corresponde à soma dos efeitos médios dos genes que ele possui.**
+- **( F ) Ação aditiva indica** tão somente **à ausência de dominância.**
 
-- **( ) Quando a repetibilidade é alta indica que se ganha muito em eficiência utilizando medidas múltiplas dada a previsibilidade dos resultados.**
+Ação aditiva também indica ausência de epistasia (interação entre loci distintos).
 
-- **( ) A covariância entre grupos ou famílias eqüivale à Variância dentro de grupos ou famílias.**
 
-- **( ) A substituição de um alelo desfavorável por outro favorável (a) será sempre positiva, independente da freq. gênica**
+- **( F )** Dominância e epistasia são sinônimos **que se referem à interação entre locos.**
+
+Dominância e epistasia não são sinônimos. Com dominância, nos referimos a relações entre alelos de um mesmo locus. Com epistasia, nos referimos a interações entre loci diferentes.
+
+- **( V ) O Valor genético de um indivíduo (A) corresponde à soma dos efeitos médios dos genes que ele possui.**
+
+- **( F ) Quando a repetibilidade é** alta **indica que se **ganha muito **em eficiência utilizando medidas múltiplas dada a previsibilidade dos resultados.**
+
+Quando a repetibilidade é baixa, ganha-se muito em acurácia com a repetição das medidas.
+
+- **( F )** A covariância **entre grupos ou famílias equivale à** Variância **dentro de grupos ou famílias.**
+
+A variância entre grupos equivale à covariância dentro de grupos.
+
+- **( F ) A substituição de um alelo desfavorável por outro favorável (a) será sempre positiva, independente da freq. gênica**
+
+A substituição pode ser negativa a depender das frequências de p e q.
+
 
 
 ### Q2 {.unnumbered}
@@ -708,27 +723,92 @@ As linhas pontilhadas em azul representam os desvios (D), e o sinal de cruz em v
 
 **Considerando a freq. gênica do alelo A1: p = 0.5, calcular:**
 
+```{r}
+# Dados do enunciado
+valores <- c("A1A1" = 140,
+            "A1A2" = 120,
+            "A2A2" = 80)
+p <- 0.5
+```
+
 - **A altura média de espiga**
+
+```{r}
+source(here::here("R", "utils.R"))
+means_and_values(valores, p)$Mean[2]
+```
+
+A altura média é de 115 cm.
 
 - **Valores Genotípicos codificados (a, d, -a)**
 
+```{r}
+means_and_values(valores, p)$Summary_table[, c(1,2)]
+```
+
 - **Grau de dominância**
 
-- **Efeito médio dos genes (a1, a2)**
+```{r}
+means_and_values(valores, p)$`Degree of dominance`
+```
 
-- **Efeito médio de substituição (a)**
+- **Efeito médio dos genes (alfa1, alfa2)**
+
+```{r}
+means_and_values(valores, p)$`Average effects`[c(2,3)]
+```
+
+- **Efeito médio de substituição (alfa)**
+
+```{r}
+means_and_values(valores, p)$`Average effects`[1]
+```
 
 - **Valor genético dos diferentes genótipos**
 
+```{r}
+means_and_values(valores, p)$Summary_table[, c("Genotype", "A")]
+```
+
+
 - **Valor genotípico em termos de desvio (G)**
+
+```{r}
+means_and_values(valores, p)$Summary_table[, c("Genotype", "G")]
+```
+
 
 - **Desvio devido a dominância (D).**
 
+```{r}
+means_and_values(valores, p)$Summary_table[, c("Genotype", "D")]
+```
+
 - **Os componentes de variância VA, VD e VG.**
+
+```{r}
+var_components(valores, q = 1-p)
+```
 
 ### Q3 {.unnumbered}
 
 **(15%) Deduza com base na fórmula geral de covariância entre parentes (cov = rVA + uVD) qual a covariância de filho-avô [cov(OGP)], considerando o avô endogâmico.**
+
+Sendo os avós A e B, os filhos P e Q, e o neto N, e sendo u = 0, temos:
+
+$$
+\begin{aligned}
+Cov_{NA} &= rV_A \\
+\\
+r &= 2f_{NA} \\
+f_{NA} &= \frac{1}{2}(f_{AP} + f_{AQ}) = \frac{1}{2}f_{AP} \\
+f_{AP} &= \frac{1}{4}(1 + F_A) = \frac{1}{2} \\
+f_{NA} &= \frac{1}{4} \\
+r &= 2 \frac{1}{4} = \frac{1}{2} \\
+\\
+Cov_{NA} &= \frac{1}{2} V_A
+\end{aligned}
+$$
 
 
 ### Q4 {.unnumbered}
@@ -743,4 +823,38 @@ As linhas pontilhadas em azul representam os desvios (D), e o sinal de cruz em v
 
 **Qual a previsão de produção de leite de uma novilha nas 2º e 3º lactações considerando que a mesma produziu 4800 kg de leite em sua 1º lactação?**
 
+Implementando função para predição:
 
+```{r}
+predict_production <- function(ybar = NULL, r_with_1 = NULL,
+                               sd_n = NULL, sd_1 = NULL,
+                               prod = NULL, m_1 = NULL) 
+  {
+  
+  b <- r_with_1 * (sd_n / sd_1)
+  y_hat <- ybar + b * (prod - m_1)
+  return(y_hat)
+}
+```
+
+Predizendo com base nos valores do enunciado:
+
+- Segunda lactação:
+
+```{r}
+predict_production(ybar = 4300, r_with_1 = 0.5, 
+                   sd_n = 450, sd_1 = 400,
+                   prod = 4800, m_1 = 4000)
+```
+
+4750 kg/ano.
+
+- Terceira lactação:
+
+```{r}
+predict_production(ybar = 5000, r_with_1 = 0.5, 
+                   sd_n = 480, sd_1 = 400,
+                   prod = 4800, m_1 = 4000)
+```
+
+5480 kg/ano.
